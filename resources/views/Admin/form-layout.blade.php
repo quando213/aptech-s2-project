@@ -1,5 +1,5 @@
 @extends('.Admin.layout.index')
-@section('tille')
+@section('title')
     Form Layout - Mazer Admin Dashboard
 @endsection
 @section('content')

@@ -12,7 +12,9 @@
   @include('.Admin.layout.menu')
     <div id="main">
        @include('.Admin.layout.header')
+
         @yield('content')
+        @yield('')
         @include('.Admin.layout.footer')
     </div>
 </div>
