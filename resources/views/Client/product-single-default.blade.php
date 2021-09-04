@@ -126,7 +126,7 @@
                             <ul class="tablist tablist--style-black tablist--style-title tablist--style-gap-30 nav">
                                 <li><a class="nav-link active" data-toggle="tab" href="#product-desc">Description</a></li>
                                 <li><a class="nav-link" data-toggle="tab" href="#product-dis">Product Details</a></li>
-                                <li><a class="nav-link" data-toggle="tab" href="#product-review">Reviews</a></li>
+                                <li><a class="nav-link" data-toggle="tab" href="#product-review">Đánh Giá</a></li>
                             </ul>
                             <div class="product-details-tab-box">
                                 <div class="tab-content">
@@ -188,7 +188,7 @@
                                             <li class="comment__list">
                                                 <div class="comment__wrapper">
                                                     <div class="comment__img">
-                                                        <img src="assets/img/user/image-1.png" alt="">
+                                                        <img src="assets/img/user/quynhaka.jpg" alt="">
                                                     </div>
                                                     <div class="comment__content">
                                                         <div class="comment__content-top">
@@ -208,40 +208,40 @@
                                                         </div>
 
                                                         <div class="para__content">
-                                                            <p class="para__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore dolorem a unde modi iste odio amet, fugit fuga aliquam, voluptatem maiores animi dolor nulla magnam ea! Dignissimos aspernatur cumque nam quod sint provident modi alias culpa, inventore deserunt accusantium amet earum soluta consequatur quasi eum eius laboriosam, maiores praesentium explicabo enim dolores quaerat! Voluptas ad ullam quia odio sint sunt. Ipsam officia, saepe repellat. </p>
+                                                            <p class="para__text">Sản phẩm okie, giao hàng nhanh dù trong mùa dịch, gói hàng kĩ,  táo nhìn ngon, ko bị dập…</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!-- Start - Review Comment Reply-->
-                                                <ul class="comment__reply">
-                                                    <li class="comment__reply-list">
-                                                        <div class="comment__wrapper">
-                                                            <div class="comment__img">
-                                                                <img src="assets/img/user/image-2.png" alt="">
-                                                            </div>
-                                                            <div class="comment__content">
-                                                                <div class="comment__content-top">
-                                                                    <div class="comment__content-left">
-                                                                        <h6 class="comment__name">Oaklee Odom</h6>
-                                                                    </div>
-                                                                    <div class="comment__content-right">
-                                                                        <a href="#" class="link--gray link--icon-left m-b-5"><i class="fas fa-reply"></i>Reply</a>
-                                                                    </div>
-                                                                </div>
+{{--                                                <ul class="comment__reply">--}}
+{{--                                                    <li class="comment__reply-list">--}}
+{{--                                                        <div class="comment__wrapper">--}}
+{{--                                                            <div class="comment__img">--}}
+{{--                                                                <img src="assets/img/user/image-2.png" alt="">--}}
+{{--                                                            </div>--}}
+{{--                                                            <div class="comment__content">--}}
+{{--                                                                <div class="comment__content-top">--}}
+{{--                                                                    <div class="comment__content-left">--}}
+{{--                                                                        <h6 class="comment__name">Oaklee Odom</h6>--}}
+{{--                                                                    </div>--}}
+{{--                                                                    <div class="comment__content-right">--}}
+{{--                                                                        <a href="#" class="link--gray link--icon-left m-b-5"><i class="fas fa-reply"></i>Reply</a>--}}
+{{--                                                                    </div>--}}
+{{--                                                                </div>--}}
 
-                                                                <div class="para__content">
-                                                                    <p class="para__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore dolorem a unde modi iste odio amet, fugit fuga aliquam, voluptatem maiores animi dolor nulla magnam ea! Dignissimos aspernatur cumque nam quod sint provident modi alias culpa, inventore deserunt accusantium amet earum soluta consequatur quasi eum eius laboriosam, maiores praesentium explicabo enim dolores quaerat! Voluptas ad ullam quia odio sint sunt. Ipsam officia, saepe repellat. </p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul> <!-- End - Review Comment Reply-->
+{{--                                                                <div class="para__content">--}}
+{{--                                                                    <p class="para__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore dolorem a unde modi iste odio amet, fugit fuga aliquam, voluptatem maiores animi dolor nulla magnam ea! Dignissimos aspernatur cumque nam quod sint provident modi alias culpa, inventore deserunt accusantium amet earum soluta consequatur quasi eum eius laboriosam, maiores praesentium explicabo enim dolores quaerat! Voluptas ad ullam quia odio sint sunt. Ipsam officia, saepe repellat. </p>--}}
+{{--                                                                </div>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+{{--                                                    </li>--}}
+{{--                                                </ul> <!-- End - Review Comment Reply-->--}}
                                             </li> <!-- End - Review Comment list-->
                                             <!-- Start - Review Comment list-->
                                             <li class="comment__list">
                                                 <div class="comment__wrapper">
                                                     <div class="comment__img">
-                                                        <img src="assets/img/user/image-3.png" alt="">
+                                                        <img src="assets/img/user/cai.jpg" alt="">
                                                     </div>
                                                     <div class="comment__content">
                                                         <div class="comment__content-top">
@@ -261,7 +261,7 @@
                                                         </div>
 
                                                         <div class="para__content">
-                                                            <p class="para__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore dolorem a unde modi iste odio amet, fugit fuga aliquam, voluptatem maiores animi dolor nulla magnam ea! Dignissimos aspernatur cumque nam quod sint provident modi alias culpa, inventore deserunt accusantium amet earum soluta consequatur quasi eum eius laboriosam, maiores praesentium explicabo enim dolores quaerat! Voluptas ad ullam quia odio sint sunt. Ipsam officia, saepe repellat. </p>
+                                                            <p class="para__text">Mua 2 lần rồi, táo tươi và giao nhanh lắm, cảm ơn shop nhiều. Shop nhiệt tình ạ</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -271,14 +271,14 @@
                                         <!-- Start Add Review Form-->
                                         <div class="review-form m-t-40">
                                             <div class="section-content">
-                                                <h6 class="font--bold text-uppercase">ADD A REVIEW</h6>
-                                                <p class="section-content__desc">Your email address will not be published. Required fields are marked *</p>
+                                                <h6 class="font--bold text-uppercase">Thêm đánh giá</h6>
+                                                <p class="section-content__desc">Địa chỉ email của bạn sẽ không được công bố. Các trường bắt buộc được đánh dấu *</p>
                                             </div>
                                             <form class="form-box" action="#" method="post">
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="form-box__single-group">
-                                                            <label for="form-name">Your Rating*</label>
+                                                            <label for="form-name">Xếp hạng của bạn *</label>
                                                             <ul class="product__review">
                                                                 <li class="product__review--fill"><i class="icon-star"></i></li>
                                                                 <li class="product__review--fill"><i class="icon-star"></i></li>
@@ -290,24 +290,24 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-box__single-group">
-                                                            <label for="form-name">Your Name*</label>
+                                                            <label for="form-name">Tên của bạn*</label>
                                                             <input type="text" id="form-name" placeholder="Enter your name">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-box__single-group">
-                                                            <label for="form-email">Your Email*</label>
+                                                            <label for="form-email">Email của bạn*</label>
                                                             <input type="email" id="form-email" placeholder="Enter your email" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="form-box__single-group">
-                                                            <label for="form-review">Your review*</label>
+                                                            <label for="form-review">Đánh giá của bạn*</label>
                                                             <textarea id="form-review" rows="8" placeholder="Write a review"></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
-                                                        <button class="btn btn--box btn--small btn--black btn--black-hover-green btn--uppercase font--bold m-t-30" type="submit">Submit</button>
+                                                        <button class="btn btn--box btn--small btn--black btn--black-hover-green btn--uppercase font--bold m-t-30" type="submit">Gửi</button>
                                                     </div>
                                                 </div>
                                             </form>
