@@ -32,6 +32,7 @@ Route::prefix('admin')->group(function () {
 
 
 Route::get('/api/ward/{id}', [WardController::class, 'api']);
+Route::get('/api/product/{id}', [ProductController::class, 'apiCheck']);
 
 
 Route::get('/', function () {
