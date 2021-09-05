@@ -88,4 +88,9 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('productList')->with('message','Xóa thành công sản phẩm dùng '.$product->name);
     }
+    public function apiCheck($id)
+    {
+        $product = Product::find($id);
+        return $product;
+    }
 }

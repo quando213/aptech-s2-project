@@ -44,6 +44,26 @@
                         <span>Groups</span>
                     </a>
                 </li>
+                <li class="sidebar-item  has-sub">
+                    <a class='sidebar-link'>
+                        <i class="bi bi-hexagon-fill"></i>
+                        <span>Combo Manager</span>
+                    </a>
+                    <ul class="submenu ">
+                        <li class="submenu-item ">
+                            <a href="{{route('comboList')}}" class='sidebar-link'>
+                                <i class="bi bi-cart-plus-fill"></i>
+                                <span>Combos</span>
+                            </a>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="{{route('comboDetail')}}" class='sidebar-link'>
+                                <i class="bi bi-card-checklist"></i>
+                                <span>Combo Detail</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="sidebar-title">Forms &amp; Tables</li>
 
                 <li class="sidebar-item  has-sub">

@@ -11,42 +11,9 @@ class ComboDetailController extends Controller
 
     public function index()
     {
-        //
-    }
-
-
-    public function create()
-    {
-        //
-    }
-
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-
-    public function show(ComboDetail $comboDetail)
-    {
-        //
-    }
-
-
-    public function edit(ComboDetail $comboDetail)
-    {
-        //
-    }
-
-
-    public function update(Request $request, ComboDetail $comboDetail)
-    {
-        //
-    }
-
-
-    public function destroy(ComboDetail $comboDetail)
-    {
-        //
+        return view('Admin.ComboDetail.list',[
+            'title' => 'Combos',
+            'breadcrumb' => 'Create Combo',
+        ]);
     }
 }
