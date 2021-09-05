@@ -112,43 +112,7 @@
         <section id="horizontal-input">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">Horizontal Input</h4>
-                        </div>
 
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <p>To make label in center of form-control, use <code>.col-form-label</code> class with
-                                        <code>&lt;label&gt;</code> element. This is default bootstrap class.
-                                    </p>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group row align-items-center">
-                                        <div class="col-lg-2 col-3">
-                                            <label class="col-form-label">First Name</label>
-                                        </div>
-                                        <div class="col-lg-10 col-9">
-                                            <input type="text" id="first-name" class="form-control" name="fname"
-                                                   placeholder="First Name">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group row align-items-center">
-                                        <div class="col-lg-2 col-3">
-                                            <label class="col-form-label">Last Name</label>
-                                        </div>
-                                        <div class="col-lg-10 col-9">
-                                            <input type="text" id="last-name" class="form-control" name="fname"
-                                                   placeholder="Last Name">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>

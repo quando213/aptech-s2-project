@@ -20,7 +20,30 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-
+                <li class="sidebar-item  ">
+                    <a href="{{route('userList')}}" class='sidebar-link'>
+                        <i class="bi bi-person-circle"></i>
+                        <span>Users</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{route('productList')}}" class='sidebar-link'>
+                        <i class="bi bi-box-seam"></i>
+                        <span>Products</span>
+                    </a>
+                </li>
+                <li class="sidebar-item ">
+                    <a href="{{route('categoryList')}}" class='sidebar-link'>
+                        <i class="bi bi-list-nested"></i>
+                        <span>Categories</span>
+                    </a>
+                </li>
+                <li class="sidebar-item  ">
+                    <a href="{{route('groupList')}}" class='sidebar-link'>
+                        <i class="bi bi-people-fill"></i>
+                        <span>Groups</span>
+                    </a>
+                </li>
                 <li class="sidebar-title">Forms &amp; Tables</li>
 
                 <li class="sidebar-item  has-sub">
