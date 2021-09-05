@@ -7,8 +7,8 @@
             <div class="row">
                 <div class="col-12">
                     <ul class="page-breadcrumb__menu">
-                        <li class="page-breadcrumb__nav"><a href="/">Home</a></li>
-                        <li class="page-breadcrumb__nav active">About</li>
+                        <li class="page-breadcrumb__nav"><a href="/">Trang Chủ</a></li>
+                        <li class="page-breadcrumb__nav active">Chúng Tôi</li>
                     </ul>
                 </div>
             </div>
@@ -28,17 +28,10 @@
                     </div>
                     <div class="col-md-6">
                         <div class="about-content">
-                            <h4 class="font--regular">We Are A Gsore Focused On Delivering Best Organic Food And User
-                                Experiences.</h4>
-                            <p class="para__text">Adipiscing lacus ut elementum, nec duis, tempor litora turpis dapibus.
-                                Imperdiet cursus odio tortor in elementum. Egestas nunc eleifend feugiat lectus laoreet,
-                                vel nunc taciti integer cras. Hac pede dis, praesent nibh ac dui mauris sit.
-                                Pellentesque mi, facilisi mauris, elit sociis leo sodales accumsan. Iaculis ac fringilla
-                                torquent lorem consectetuer, sociosqu phasellus risus urna aliquam, ornare. vel nunc
-                                taciti integer cras. Hac pede dis, praesent nibh ac dui mauris sit. Pellentesque</p>
+                            <h4 class="font--regular">Chúng tôi là người nhận đơn hàng của các bạn và thực hiện công việc đi mua sắm thay các bạn trong mùa dịch này.</h4>
+                            <p class="para__text">Thực phẩm cho các bữa ăn gia đình Việt: Chúng tôi muốn gửi gắm tới thực phẩm sạch, an toàn cho những bữa ăn ấm cúng, quây quần như đúng truyền thống và văn hóa người dân địa phương.</p>
                             <a href="#"
-                               class="btn btn--icon-left btn--small btn--radius btn--transparent btn--border-green btn--border-green-hover-green font--regular text-capitalize m-t-20">More
-                                Information<i class="fal fa-angle-right"></i></a>
+                               class="btn btn--icon-left btn--small btn--radius btn--transparent btn--border-green btn--border-green-hover-green font--regular text-capitalize m-t-20">Thêm Thông Tin<i class="fal fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>

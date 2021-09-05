@@ -6,8 +6,8 @@
             <div class="row">
                 <div class="col-12">
                     <ul class="page-breadcrumb__menu">
-                        <li class="page-breadcrumb__nav"><a href="/">Home</a></li>
-                        <li class="page-breadcrumb__nav active">Contact Us</li>
+                        <li class="page-breadcrumb__nav"><a href="/">Trang Chủ</a></li>
+                        <li class="page-breadcrumb__nav active">Liên Hệ</li>
                     </ul>
                 </div>
             </div>
@@ -34,8 +34,8 @@
                                 <i class="fas fa-phone-alt"></i>
                             </div>
                             <div class="contact-info-dec">
-                                <a href="tel://+012-345-678-102">+012 345 678 102</a>
-                                <a href="tel://+012-345-678-102">+012 345 678 102</a>
+                                <a href="tel://+012-345-678-102">0987654321</a>
+                                <a href="tel://+012-345-678-102">0198765432</a>
                             </div>
                         </div>
                         <div class="single-contact-info">
@@ -43,8 +43,8 @@
                                 <i class="fas fa-globe-asia"></i>
                             </div>
                             <div class="contact-info-dec">
-                                <a href="mailto://urname@email.com">urname@email.com</a>
-                                <a href="mailto://urwebsitenaem.com">urwebsitenaem.com</a>
+                                <a href="mailto://urname@email.com">........</a>
+                                <a href="mailto://urwebsitenaem.com">..........</a>
                             </div>
                         </div>
                         <div class="single-contact-info">
@@ -52,12 +52,12 @@
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div class="contact-info-dec">
-                                <span>Address goes here,</span>
-                                <span>street, Crossroad 123.</span>
+                                <span>Địa Chỉ</span>
+                                <span>Số 8, Tôn Thất Thuyết, Mĩ Đình, Nam Từ Liêm, Hà Nội.</span>
                             </div>
                         </div>
                         <div class="contact-social m-t-40">
-                            <h5>Follow Us</h5>
+                            <h5>Theo Dõi</h5>
                             <div class="social-link">
                                 <ul>
                                     <li>
@@ -83,13 +83,13 @@
                 <div class="col-lg-8 col-md-7">
                     <div class="contact-form gray-bg m-t-40">
                         <div class="section-content">
-                            <h5 class="section-content__title">Get In Touch</h5>
+                            <h5 class="section-content__title">Liên Hệ</h5>
                         </div>
                         <form class="contact-form-style" id="contact-form" action="#" method="POST">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-box__single-group">
-                                        <input type="text" placeholder="Name" required>
+                                        <input type="text" placeholder="Họ và Tên" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -99,12 +99,12 @@
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-box__single-group">
-                                        <input type="text" placeholder="Subject" required>
+                                        <input type="text" placeholder="Vấn Đề Cần Giải Quyết" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-box__single-group">
-                                        <textarea rows="10" placeholder="Your Messege" required></textarea>
+                                        <textarea rows="10" placeholder="Lời Nhắn" required></textarea>
                                     </div>
                                     <button class="btn btn--box btn--medium btn--radius-tiny btn--black btn--black-hover-green btn--uppercase font--bold m-t-30" type="submit">Send</button>
                                 </div>

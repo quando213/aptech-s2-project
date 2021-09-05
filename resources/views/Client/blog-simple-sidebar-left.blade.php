@@ -6,8 +6,8 @@
             <div class="row">
                 <div class="col-12">
                     <ul class="page-breadcrumb__menu">
-                        <li class="page-breadcrumb__nav"><a href="/">Home</a></li>
-                        <li class="page-breadcrumb__nav active">Blog Grid Sidebar Right </li>
+                        <li class="page-breadcrumb__nav"><a href="/">Trang Chủ</a></li>
+                        <li class="page-breadcrumb__nav active">Phản Hồi Từ Khách Hàng</li>
                     </ul>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                         <!-- Start Single Sidebar Widget - Recent Post -->
                         <div class="sidebar__widget">
                             <div class="sidebar__box">
-                                <h5 class="sidebar__title">Recent Post</h5>
+                                <h5 class="sidebar__title">Bài Đằn Gần </h5>
                             </div>
                             <ul class="sidebar__post-blog list-space--small">
                                 <li class="d-flex align-items-center ">
@@ -51,34 +51,34 @@
                         <!-- Start Single Sidebar Widget - Custom Menu -->
                         <div class="sidebar__widget">
                             <div class="sidebar__box">
-                                <h5 class="sidebar__title">CUSTOM MENU</h5>
+                                <h5 class="sidebar__title">Thực Đơn</h5>
                             </div>
                             <ul class="sidebar__menu">
-                                <li><a href="#">Search Terms</a></li>
-                                <li><a href="#">Advanced Search</a></li>
-                                <li><a href="#">Helps & Faqs</a></li>
-                                <li><a href="#">Store Location</a></li>
-                                <li><a href="#">Orders & Returns</a></li>
-                                <li><a href="#">Deliveries</a></li>
-                                <li><a href="#">Refund & Returns</a></li>
+                                <li><a href="#">Tìm Kiếm</a></li>
+                                {{--                                <li><a href="#">Advanced Search</a></li>--}}
+                                <li><a href="#">rợ Giúp và Câu Hỏi Thường Gặp</a></li>
+                                <li><a href="#">Vị Trí Cửa Hàng</a></li>
+                                <li><a href="#">Đơn Hàng</a></li>
+                                <li><a href="#">Giao Hàng</a></li>
+                                <li><a href="#">Đổi Trả</a></li>
                             </ul>
                         </div>  <!-- End Single Sidebar Widget - Custom Menu -->
 
                         <!-- ::::::  Start Single Sidebar Widget - Tag   ::::::  -->
-                        <div class="sidebar__widget">
-                            <div class="sidebar__box">
-                                <h5 class="sidebar__title">Tags</h5>
-                            </div>
-                            <ul class="sidebar__tag list-space--small">
-                                <li><a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green" href="#">blue</a></li>
-                                <li><a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green" href="#">gold</a></li>
-                                <li><a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green" href="#">gray</a></li>
-                                <li><a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green" href="#">green</a></li>
-                                <li><a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green" href="#">maroon</a></li>
-                                <li><a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green" href="#">red</a></li>
-                                <li><a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green" href="#">white</a></li>
-                            </ul>
-                        </div> <!-- ::::::  End Single Sidebar Widget - Recent Post   ::::::  -->
+{{--                        <div class="sidebar__widget">--}}
+{{--                            <div class="sidebar__box">--}}
+{{--                                <h5 class="sidebar__title">Tags</h5>--}}
+{{--                            </div>--}}
+{{--                            <ul class="sidebar__tag list-space--small">--}}
+{{--                                <li><a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green" href="#">blue</a></li>--}}
+{{--                                <li><a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green" href="#">gold</a></li>--}}
+{{--                                <li><a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green" href="#">gray</a></li>--}}
+{{--                                <li><a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green" href="#">green</a></li>--}}
+{{--                                <li><a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green" href="#">maroon</a></li>--}}
+{{--                                <li><a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green" href="#">red</a></li>--}}
+{{--                                <li><a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green" href="#">white</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div> <!-- ::::::  End Single Sidebar Widget - Recent Post   ::::::  -->--}}
 
                     </div>
                 </div>  <!-- End Left Sidebar  Widgets-->
@@ -92,37 +92,37 @@
                                 <div class="blog__type-single">
                                     <div class="img-responsive"><img src="assets/img/blog/feed/blog-feed-home-1-img-1.jpg" alt=""></div>
                                     <div class="blog__content">
-                                        <h3 class="blog__title">Consectetur adipisicing</h3>
+                                        <h3 class="blog__title">Chất Lượng Sản Phẩm</h3>
                                         <div class="blog__archive m-t-20">
                                             <a href="#" class="link--gray link--icon-left m-r-30"><i class="far fa-calendar"></i> Oct 29, 2020</a>
                                             <a href="#" class="link--gray link--icon-left"><i class="far fa-user"></i> Jhon Doe</a>
                                         </div>
                                         <div class="para m-tb-20">
                                             <p class="para__text">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat. Duis aute irure dolor in rep rehenderit. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiumod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat.
-                                            </p>
-                                            <p class="block-quote">
-                                                Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do eiusmod tempor incididunt labo dolor magna aliqua. Ut enim ad minim veniam quis nostrud.
+                                                Chất luọng các sản phẩm đảm bảo độ tươi ngon và an toàn, thực đơn đầy đủ chất ding dưỡng.
                                             </p>
                                             <p class="para__text">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiumod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat. Duis aute irure dolor in rep rehenderit. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiumod tempor incididunt ut labore et dolore magna aliqua. consectetur adipisicing elit, sed do eiumod tempor incididunt ut labore et dolore magna aliqua.
+                                                Đảm bảo mua chính xác thực đơn mà chúng tôi chọn.
                                             </p>
                                             <p class="para__text">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiumod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat. Duis aute irure dolor in rep rehenderit. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiumod tempor incididunt ut labore et dolore magna aliqua. consectetur adipisicing elit, sed do eiumod tempor incididunt ut labore et dolore magna aliqua.
+                                                Được lực luọng quân đội giao hàng nên chúng tôi an tâm về việc thực hiện chỉ thị của thành phố.
+                                            </p>
+                                            <p class="para__text">
+                                                Giao hàng nhanh và tiết kiệm, cac sản phẩm được giao tới nơi đảm bảo không bị dập nát.
                                             </p>
                                         </div>
                                     </div>
                                     <div class="blog__tag-share border-around m-t-30">
+{{--                                        <div class="nametag">--}}
+{{--                                            <span>Tags:</span>--}}
+{{--                                            <ul class="nametag__list">--}}
+{{--                                                <li><a href="#">Fashion,</a></li>--}}
+{{--                                                <li><a href="#">T-shirt,</a></li>--}}
+{{--                                                <li><a href="#">White</a></li>--}}
+{{--                                            </ul>--}}
+{{--                                        </div>--}}
                                         <div class="nametag">
-                                            <span>Tags:</span>
-                                            <ul class="nametag__list">
-                                                <li><a href="#">Fashion,</a></li>
-                                                <li><a href="#">T-shirt,</a></li>
-                                                <li><a href="#">White</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="nametag">
-                                            <span>Share:</span>
+                                            <span>Chia Sẻ:</span>
                                             <ul class="nametag__list">
                                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -140,7 +140,7 @@
                     <!-- Start Blog Comment -->
                     <div class="blog blog--comment m-t-100">
                         <div class="section-content">
-                            <h5>3 Comments</h5>
+                            <h5>3 Bình Luận</h5>
                         </div>
                         <!-- Start - Review Comment -->
                         <ul class="comment border-around m-t-40">
@@ -221,30 +221,30 @@
                     <!-- Start Blog Comment Form -->
                     <div class="blog blog--comment-form m-t-40">
                         <div class="section-content">
-                            <h5>Leave A Reply</h5>
+                            <h5>Để Lại Câu Hỏi</h5>
                         </div>
                         <form class="form-box" action="#" method="post">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-box__single-group">
-                                        <label for="form-name">Your Name*</label>
-                                        <input type="text" id="form-name" placeholder="Enter your name">
+                                        <label for="form-name">Tên*</label>
+                                        <input type="text" id="form-name" placeholder="Tên của bạn">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-box__single-group">
-                                        <label for="form-email">Your Email*</label>
-                                        <input type="email" id="form-email" placeholder="Enter your email" required>
+                                        <label for="form-email">Email*</label>
+                                        <input type="email" id="form-email" placeholder="Email của bạn" required>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-box__single-group">
-                                        <label for="form-review">Your review*</label>
-                                        <textarea id="form-review" rows="8" placeholder="Write a review"></textarea>
+                                        <label for="form-review">Đánh Giá Của Bạn *</label>
+                                        <textarea id="form-review" rows="8" placeholder="Viết nhận xét"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn--radius-tiny btn--small btn--black btn--black-hover-green text-uppercase font--bold m-t-30" type="submit">Post Comment</button>
+                                    <button class="btn btn--radius-tiny btn--small btn--black btn--black-hover-green text-uppercase font--bold m-t-30" type="submit">Gửi</button>
                                 </div>
                             </div>
                         </form>

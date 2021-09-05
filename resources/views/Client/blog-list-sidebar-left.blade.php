@@ -6,8 +6,8 @@
             <div class="row">
                 <div class="col-12">
                     <ul class="page-breadcrumb__menu">
-                        <li class="page-breadcrumb__nav"><a href="/">Home</a></li>
-                        <li class="page-breadcrumb__nav active">Blog Grid Sidebar Right</li>
+                        <li class="page-breadcrumb__nav"><a href="/">Trang Chủ</a></li>
+                        <li class="page-breadcrumb__nav active">Phản Hồi Từ Khách Hàng</li>
                     </ul>
                 </div>
             </div>
@@ -24,23 +24,23 @@
                         <!-- Start Single Sidebar Widget - Custom Menu -->
                         <div class="sidebar__widget">
                             <div class="sidebar__box">
-                                <h5 class="sidebar__title">CUSTOM MENU</h5>
+                                <h5 class="sidebar__title">Thực Đơn</h5>
                             </div>
                             <ul class="sidebar__menu">
-                                <li><a href="#">Search Terms</a></li>
-                                <li><a href="#">Advanced Search</a></li>
-                                <li><a href="#">Helps & Faqs</a></li>
-                                <li><a href="#">Store Location</a></li>
-                                <li><a href="#">Orders & Returns</a></li>
-                                <li><a href="#">Deliveries</a></li>
-                                <li><a href="#">Refund & Returns</a></li>
+                                <li><a href="#">Tìm Kiếm</a></li>
+{{--                                <li><a href="#">Advanced Search</a></li>--}}
+                                <li><a href="#">rợ Giúp và Câu Hỏi Thường Gặp</a></li>
+                                <li><a href="#">Vị Trí Cửa Hàng</a></li>
+                                <li><a href="#">Đơn Hàng</a></li>
+                                <li><a href="#">Giao Hàng</a></li>
+                                <li><a href="#">Đổi Trả</a></li>
                             </ul>
                         </div>  <!-- End Single Sidebar Widget - Custom Menu -->
 
                         <!-- Start Single Sidebar Widget - Recent Post -->
                         <div class="sidebar__widget">
                             <div class="sidebar__box">
-                                <h5 class="sidebar__title">Recent Post</h5>
+                                <h5 class="sidebar__title">Bài Đăng Gần Đây</h5>
                             </div>
                             <ul class="sidebar__post-blog list-space--small">
                                 <li class="d-flex align-items-center ">
@@ -65,34 +65,34 @@
                         </div>  <!-- End Single Sidebar Widget - Recent Post  -->
 
                         <!-- ::::::  Start Single Sidebar Widget - Tag   ::::::  -->
-                        <div class="sidebar__widget">
-                            <div class="sidebar__box">
-                                <h5 class="sidebar__title">Tags</h5>
-                            </div>
-                            <ul class="sidebar__tag list-space--small">
-                                <li>
-                                    <a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green"
-                                       href="#">blue</a></li>
-                                <li>
-                                    <a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green"
-                                       href="#">gold</a></li>
-                                <li>
-                                    <a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green"
-                                       href="#">gray</a></li>
-                                <li>
-                                    <a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green"
-                                       href="#">green</a></li>
-                                <li>
-                                    <a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green"
-                                       href="#">maroon</a></li>
-                                <li>
-                                    <a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green"
-                                       href="#">red</a></li>
-                                <li>
-                                    <a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green"
-                                       href="#">white</a></li>
-                            </ul>
-                        </div> <!-- ::::::  End Single Sidebar Widget - Recent Post   ::::::  -->
+{{--                        <div class="sidebar__widget">--}}
+{{--                            <div class="sidebar__box">--}}
+{{--                                <h5 class="sidebar__title">Tags</h5>--}}
+{{--                            </div>--}}
+{{--                            <ul class="sidebar__tag list-space--small">--}}
+{{--                                <li>--}}
+{{--                                    <a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green"--}}
+{{--                                       href="#">blue</a></li>--}}
+{{--                                <li>--}}
+{{--                                    <a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green"--}}
+{{--                                       href="#">gold</a></li>--}}
+{{--                                <li>--}}
+{{--                                    <a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green"--}}
+{{--                                       href="#">gray</a></li>--}}
+{{--                                <li>--}}
+{{--                                    <a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green"--}}
+{{--                                       href="#">green</a></li>--}}
+{{--                                <li>--}}
+{{--                                    <a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green"--}}
+{{--                                       href="#">maroon</a></li>--}}
+{{--                                <li>--}}
+{{--                                    <a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green"--}}
+{{--                                       href="#">red</a></li>--}}
+{{--                                <li>--}}
+{{--                                    <a class="btn btn--box btn--tiny btn--radius-tiny btn--border-gray btn--border-gray-hover-green"--}}
+{{--                                       href="#">white</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div> <!-- ::::::  End Single Sidebar Widget - Recent Post   ::::::  -->--}}
 
                     </div>
                 </div>  <!-- End Left Sidebar  Widgets-->
@@ -112,8 +112,7 @@
                                         </div>
                                         <div class="col-md-7">
                                             <div class="blog__content">
-                                                <a class="link--gray" href=""><h3 class="blog__title">Consectetur
-                                                        Adipisicing</h3></a>
+                                                <a class="link--gray" href=""><h3 class="blog__title">Chất Lượng Sản Phẩm</h3></a>
                                                 <div class="blog__archive m-t-20">
                                                     <a href="#" class="link--gray link--icon-left m-r-30"><i
                                                             class="far fa-calendar"></i> Oct 29, 2020</a>
@@ -121,15 +120,21 @@
                                                             class="far fa-user"></i> Jhon Doe</a>
                                                 </div>
                                                 <div class="para m-tb-20">
-                                                    <p class="para__text">
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                        Accusamus expedita quo voluptate, esse ratione facilis quibusdam
-                                                        vel ad, quas ut reiciendis neque voluptates adipisci laborum,
-                                                        dolor saepe natus.
-                                                    </p>
-                                                </div>
+                                                        <p class="para__text">
+                                                            Chất luọng các sản phẩm đảm bảo độ tươi ngon và an toàn, thực đơn đầy đủ chất ding dưỡng.
+                                                        </p>
+                                                        <p class="para__text">
+                                                            Đảm bảo mua chính xác thực đơn mà chúng tôi chọn.
+                                                        </p>
+                                                        <p class="para__text">
+                                                            Được lực luọng quân đội giao hàng nên chúng tôi an tâm về việc thực hiện chỉ thị của thành phố.
+                                                        </p>
+                                                        <p class="para__text">
+                                                            Giao hàng nhanh và tiết kiệm, cac sản phẩm được giao tới nơi đảm bảo không bị dập nát.
+                                                        </p>
+                                                    </div>
                                                 <a class="btn btn--radius btn--small btn--black btn--black-hover-green"
-                                                   href="/blog-single-sidebar-left">Read More</a>
+                                                   href="/blog-simple-sidebar-left">Đọc Thêm</a>
                                             </div>
                                         </div>
                                     </div>
@@ -154,7 +159,7 @@
                                         </div>
                                         <div class="col-md-7">
                                             <div class="blog__content">
-                                                <a href=""><h3 class="blog__title">Without Very Darkness</h3></a>
+                                                <a href=""><h3 class="blog__title"> Chất Lượng Dinh Dưỡng Từ sản Phẩm</h3></a>
                                                 <div class="blog__archive m-t-20">
                                                     <a href="#" class="link--gray link--icon-left m-r-30"><i
                                                             class="far fa-calendar"></i> Jul 9, 2020</a>
@@ -163,14 +168,20 @@
                                                 </div>
                                                 <div class="para m-tb-20">
                                                     <p class="para__text">
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                        Accusamus expedita quo voluptate, esse ratione facilis quibusdam
-                                                        vel ad, quas ut reiciendis neque voluptates adipisci laborum,
-                                                        dolor saepe natus.
+                                                        Chất luọng các sản phẩm đảm bảo độ tươi ngon và an toàn, thực đơn đầy đủ chất ding dưỡng.
+                                                    </p>
+                                                    <p class="para__text">
+                                                        Đảm bảo mua chính xác thực đơn mà chúng tôi chọn.
+                                                    </p>
+                                                    <p class="para__text">
+                                                        Được lực luọng quân đội giao hàng nên chúng tôi an tâm về việc thực hiện chỉ thị của thành phố.
+                                                    </p>
+                                                    <p class="para__text">
+                                                        Giao hàng nhanh và tiết kiệm, cac sản phẩm được giao tới nơi đảm bảo không bị dập nát.
                                                     </p>
                                                 </div>
                                                 <a class="btn btn--radius btn--small btn--black btn--black-hover-green"
-                                                   href="blog-single-sidebar-left.html">Read More</a>
+                                                   href="/blog-simple-sidebar-left">Đọc Thêm</a>
                                             </div>
                                         </div>
                                     </div>
@@ -193,7 +204,7 @@
                                         </div>
                                         <div class="col-md-7">
                                             <div class="blog__content">
-                                                <a href=""><h3 class="blog__title">How to Diet Properly</h3></a>
+                                                <a href=""><h3 class="blog__title">Thái Độ Phục </h3></a>
                                                 <div class="blog__archive m-t-20">
                                                     <a href="#" class="link--gray link--icon-left m-r-30"><i
                                                             class="far fa-calendar"></i> Mar 3, 2020</a>
@@ -201,15 +212,23 @@
                                                             class="far fa-user"></i> Jhon Doe</a>
                                                 </div>
                                                 <div class="para m-tb-20">
-                                                    <p class="para__text">
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                        Accusamus expedita quo voluptate, esse ratione facilis quibusdam
-                                                        vel ad, quas ut reiciendis neque voluptates adipisci laborum,
-                                                        dolor saepe natus.
-                                                    </p>
+                                                    <div class="para m-tb-20">
+                                                        <p class="para__text">
+                                                            Chất luọng các sản phẩm đảm bảo độ tươi ngon và an toàn, thực đơn đầy đủ chất ding dưỡng.
+                                                        </p>
+                                                        <p class="para__text">
+                                                            Đảm bảo mua chính xác thực đơn mà chúng tôi chọn.
+                                                        </p>
+                                                        <p class="para__text">
+                                                            Được lực luọng quân đội giao hàng nên chúng tôi an tâm về việc thực hiện chỉ thị của thành phố.
+                                                        </p>
+                                                        <p class="para__text">
+                                                            Giao hàng nhanh và tiết kiệm, cac sản phẩm được giao tới nơi đảm bảo không bị dập nát.
+                                                        </p>
+                                                    </div>
                                                 </div>
                                                 <a class="btn btn--radius btn--small btn--black btn--black-hover-green"
-                                                   href="blog-single-sidebar-left.html">Read More</a>
+                                                   href="/blog-simple-sidebar-left">Đọc Thêm</a>
                                             </div>
                                         </div>
                                     </div>
@@ -227,8 +246,7 @@
                                         </div>
                                         <div class="col-md-7">
                                             <div class="blog__content">
-                                                <a class="link--gray" href=""><h3 class="blog__title">Remaining
-                                                        Essential Foods</h3></a>
+                                                <a class="link--gray" href=""><h3 class="blog__title">Vấn Đề Phát Sinh</h3></a>
                                                 <div class="blog__archive m-t-20">
                                                     <a href="#" class="link--gray link--icon-left m-r-30"><i
                                                             class="far fa-calendar"></i> Feb 11, 2020</a>
@@ -236,15 +254,23 @@
                                                             class="far fa-user"></i> Jhon Doe</a>
                                                 </div>
                                                 <div class="para m-tb-20">
-                                                    <p class="para__text">
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                        Accusamus expedita quo voluptate, esse ratione facilis quibusdam
-                                                        vel ad, quas ut reiciendis neque voluptates adipisci laborum,
-                                                        dolor saepe natus.
-                                                    </p>
+                                                    <div class="para m-tb-20">
+                                                        <p class="para__text">
+                                                            Chất luọng các sản phẩm đảm bảo độ tươi ngon và an toàn, thực đơn đầy đủ chất ding dưỡng.
+                                                        </p>
+                                                        <p class="para__text">
+                                                            Đảm bảo mua chính xác thực đơn mà chúng tôi chọn.
+                                                        </p>
+                                                        <p class="para__text">
+                                                            Được lực luọng quân đội giao hàng nên chúng tôi an tâm về việc thực hiện chỉ thị của thành phố.
+                                                        </p>
+                                                        <p class="para__text">
+                                                            Giao hàng nhanh và tiết kiệm, cac sản phẩm được giao tới nơi đảm bảo không bị dập nát.
+                                                        </p>
+                                                    </div>
                                                 </div>
                                                 <a class="btn btn--radius btn--small btn--black btn--black-hover-green"
-                                                   href="blog-single-sidebar-left.html">Read More</a>
+                                                   href="/blog-simple-sidebar-left">Đọc Thêm</a>
                                             </div>
                                         </div>
                                     </div>
