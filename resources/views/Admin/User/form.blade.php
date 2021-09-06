@@ -27,7 +27,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title"><a href="{{route('userList')}}">Back to list Users </a></h4>
+                            <h4 class="card-title"><a href="{{route('userList')}}">Quay lại</a></h4>
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <ul>
@@ -46,13 +46,13 @@
                                     <div class="row">
                                         <div class="card mb-0">
                                             <div class="card-header p-0">
-                                                <h4 class="card-title">Information</h4>
+                                                <h4 class="card-title">Nhập thông tin</h4>
                                             </div>
                                             <div class="card-body">
                                                 <div class="row">
                                                     <div class="col-md-6 col-12">
                                                         <div class="form-group">
-                                                            <label for="first-name-column">First Name</label>
+                                                            <label for="first-name-column">Tên đầu</label>
                                                             <input type="text" id="first-name-column"
                                                                    class="form-control"
                                                                    placeholder="First Name"
@@ -62,7 +62,7 @@
                                                     </div>
                                                     <div class="col-md-6 col-12">
                                                         <div class="form-group">
-                                                            <label for="last-name-column">Last Name</label>
+                                                            <label for="last-name-column">Họ</label>
                                                             <input type="text" id="last-name-column"
                                                                    class="form-control"
                                                                    placeholder="Last Name"
@@ -82,7 +82,7 @@
 
                                                     <div class="col-md-6 col-12" {{$data != null ?'hidden' : ''}}>
                                                         <div class="form-group">
-                                                            <label for="company-Password">Password</label>
+                                                            <label for="company-Password">Mật khẩu</label>
                                                             <input type="password" id="company-Password"
                                                                    class="form-control"
                                                                    name="password">
@@ -90,7 +90,7 @@
                                                     </div>
                                                     <div class="col-md-6 col-12" {{$data != null ?'hidden' : ''}}>
                                                         <div class="form-group">
-                                                            <label for="company-Password">Confirm Password</label>
+                                                            <label for="company-Password">Nhập lại mật khẩu</label>
                                                             <input type="password" id="company-Password"
                                                                    class="form-control"
                                                                    name="company-Password">
@@ -99,7 +99,7 @@
 
                                                     <div class="col-md-6 col-12">
                                                         <div class="form-group">
-                                                            <label for="Phone">Phone</label>
+                                                            <label for="Phone">Số điện thoại</label>
                                                             <input type="text" id="Phone"
                                                                    value="{{ $data ? $data->phone : '' }}"
                                                                    class="form-control"
@@ -112,7 +112,7 @@
 
                                         <div class="card mb-0">
                                             <div class="card-header p-0">
-                                                <h4 class="card-title">Address</h4>
+                                                <h4 class="card-title">Địa chỉ</h4>
                                             </div>
                                             <div class="card-body">
                                                 <div class="row">

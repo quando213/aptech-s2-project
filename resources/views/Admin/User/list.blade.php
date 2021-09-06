@@ -27,7 +27,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title"><a href="{{route('userCreate')}}">Add User</a></h4>
+                            <h4 class="card-title"><a href="{{route('userCreate')}}">Tạo mới người dùng</a></h4>
                         </div>
                         <div class="card-content">
                             <div class="card-body">
@@ -36,14 +36,14 @@
                                     <table id="myTable" class="table table-lg">
                                         <thead class="thead-dark">
                                         <tr>
-                                            <th>Full name</th>
+                                            <th>Họ & tên</th>
                                             <th>Email</th>
-                                            <th>Address</th>
-                                            <th>Group</th>
-                                            <th>Phone</th>
-                                            <th>Role</th>
-                                            <th>Position</th>
-                                            <th>Action</th>
+                                            <th>Địa chỉ</th>
+                                            <th>Tập đoàn</th>
+                                            <th>Số điện thoại</th>
+                                            <th>Vai trò</th>
+                                            <th>Chức vụ</th>
+                                            <th>Trạng thái</th>
 
                                         </tr>
                                         </thead>

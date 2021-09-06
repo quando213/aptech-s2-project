@@ -27,7 +27,7 @@
                 <div class="col-12 ">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title"><a href="{{route('productCreate')}}">Add Product</a></h4>
+                            <h4 class="card-title"><a href="{{route('productCreate')}}">Tạo mới sản phẩm</a></h4>
                         </div>
                         <div class="card-content">
                             <div class="card-body">
@@ -35,17 +35,15 @@
                                     <table id="myTable" class="table table-lg">
                                         <thead class="thead-dark">
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Price</th>
-                                            <th>Thumbnail</th>
-                                            <th>Category</th>
-                                            <th>Stock</th>
-
-                                            <th>Mass</th>
-
-                                            <th>Origin</th>
-                                            <th>Brand</th>
-                                            <th>Action</th>
+                                            <th>Tên sản phẩm</th>
+                                            <th>Giá sản phẩm</th>
+                                            <th>Ảnh sản phẩm</th>
+                                            <th>Mặt hàng</th>
+                                            <th>Cổ phần</th>
+                                            <th>Khối lượng sản phẩm</th>
+                                            <th>Nguồn gốc sản phẩm</th>
+                                            <th>Thương hiệu sản phẩm</th>
+                                            <th>Trạng thái</th>
                                         </tr>
                                         </thead>
                                         <tbody>
