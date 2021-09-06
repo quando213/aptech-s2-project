@@ -7,6 +7,8 @@
             <div class="row">
                 <div class="col-12">
                     <ul class="page-breadcrumb__menu">
+                        <li class="page-breadcrumb__nav"><a href="/">Trang chủ</a></li>
+                        <li class="page-breadcrumb__nav active">Chúng tôi</li>
                         <li class="page-breadcrumb__nav"><a href="/">Trang Chủ</a></li>
                         <li class="page-breadcrumb__nav active">Chúng Tôi</li>
                     </ul>
@@ -28,6 +30,10 @@
                     </div>
                     <div class="col-md-6">
                         <div class="about-content">
+                            <h4 class="font--regular">Chúng tôi là người tập trung vào việc cung cấp thực phẩm hữu cơ tốt nhất và trải nghiệm người dùng.</h4>
+                            <p class="para__text">Gsore là ứng dụng mua thực phẩm Online dựa trên nền tảng công nghệ 4.0, kết nối người tiêu dùng đến với những sản phẩm được lấy từ những nhà sản xuất uy tín. Người tiêu dùng có thể chủ động đặt
+                                hàng mọi lúc mọi nơi, Gsore phục vụ dựa
+                                trên tiêu chí: Chu đáo, minh bạch, đảm bảo chất lượng và tuyệt đối an toàn.</p>
                             <h4 class="font--regular">Chúng tôi là người nhận đơn hàng của các bạn và thực hiện công việc đi mua sắm thay các bạn trong mùa dịch này.</h4>
                             <p class="para__text">Thực phẩm cho các bữa ăn gia đình Việt: Chúng tôi muốn gửi gắm tới thực phẩm sạch, an toàn cho những bữa ăn ấm cúng, quây quần như đúng truyền thống và văn hóa người dân địa phương.</p>
                             <a href="#"
@@ -49,9 +55,8 @@
                                 <i class="fas fa-truck"></i>
                             </div>
                             <div class="cms__text">
-                                <h6 class="cms__title">Free Shipping</h6>
-                                <p class="para__text">Erat metus sodales eget dolor consectetuer, porta ut purus at et
-                                    alias, nulla ornare velit amet</p>
+                                <h6 class="cms__title">Cước phí vận chuyển</h6>
+                                <p class="para__text">Cước phí vận chuyển sẽ theo Chính sách của Công ty ban hành phù hợp tại từng thời điểm.</p>
                             </div>
                         </div>
                     </div> <!-- End Single CMS box -->
@@ -62,9 +67,8 @@
                                 <i class="far fa-money-bill-alt"></i>
                             </div>
                             <div class="cms__text">
-                                <h6 class="cms__title">100% Money Back Guarantee</h6>
-                                <p class="para__text">Erat metus sodales eget dolor consectetuer, porta ut purus at et
-                                    alias, nulla ornare velit amet</p>
+                                <h6 class="cms__title">Đảm bảo hoàn tiền 100%</h6>
+                                <p class="para__text">Khi phát hiện sản phẩm bị hư hỏng khách hàng vui lòng ngưng sử dụng; giữ lại sản phẩm và hóa đơn mua hàng để được xem xét giải quyết liên quan sản phẩm.</p>
                             </div>
                         </div>
                     </div> <!-- End Single CMS box -->
@@ -75,9 +79,8 @@
                                 <i class="far fa-life-ring"></i>
                             </div>
                             <div class="cms__text">
-                                <h6 class="cms__title">Online Support 24/7</h6>
-                                <p class="para__text">Erat metus sodales eget dolor consectetuer, porta ut purus at et
-                                    alias, nulla ornare velit amet</p>
+                                <h6 class="cms__title">Hỗ trợ trực tuyến 24/7</h6>
+                                <p class="para__text">Nếu có bất kỳ yêu cầu hay góp ý nào, vui lòng liên hệ Gsore.com qua Email: <a><i>info@gsore.com</i></a> </p>
                             </div>
                         </div>
                     </div> <!-- End Single CMS box -->

@@ -6,8 +6,8 @@
             <div class="row">
                 <div class="col-12">
                     <ul class="page-breadcrumb__menu">
-                        <li class="page-breadcrumb__nav"><a href="/">Home</a></li>
-                        <li class="page-breadcrumb__nav active"> Privacy Policy</li>
+                        <li class="page-breadcrumb__nav"><a href="/">Trang chủ</a></li>
+                        <li class="page-breadcrumb__nav active"> Chính sách bảo mật</li>
                     </ul>
                 </div>
             </div>
@@ -21,7 +21,11 @@
                 <div class="col-12">
                     <div class="col-12">
                         <div class="section-content m-b-60 text-center">
-                            <h5 class="section-content__title">Privacy Policy</h5>
+                            <h5 class="section-content__title">Chính sách bảo mật</h5>
+                            <div class="para__text">
+                            <p>Chân thành cảm ơn Quý khách đã vào ứng dụng Gsore.com để xem hàng và mua hàng. Gsore.com cam kết sẽ bảo mật những thông tin riêng tư của khách hàng.
+                                Xin vui lòng tham khảo những cam kết của Gsore.com ở mục bên dưới.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -30,54 +34,59 @@
                 <div class="col-12">
                     <div class="privacy-policy-section">
                         <div class="text-area">
-                            <h5 class="font--bold">Who we are?</h5>
+                            <h5 class="font--bold">Thu thập thông tin cá nhân</h5>
                             <div class="para__text">
-                                <p>Our website address is: <a href="https://hasthemes.com/">HasTheme</a></p>
+                                <p>Khi Quý khách khởi tạo một tài khoản trên Gsore.com, hoặc cung cấp cho chúng tôi thông tin cá nhân của Quý khách thông qua Google hay Facebook, thông tin cá nhân chúng tôi thu thập có thể bao gồm:</p>
+                                <ul>
+                                    <li>+Tên;</li>
+                                    <li>+Địa chỉ giao hàng;</li>
+                                    <li>+Địa chỉ email;</li>
+                                    <li>+Số điện thoại;</li>
+                                    <li>+Ngày sinh;</li>
+                                    <li>+Giới tính.</li>
+                                </ul>
+                                <p>Thông tin chỉ được thu thập khi Quý khách tự nguyện gửi cho Gsore.com. Trong trường hợp Quý khách rút lại hoặc không đồng ý việc chia sẻ thông tin, giao dịch giữa Gsore.com và Quý khách không thể thực hiện. </p>
                             </div>
                         </div>
                         <div class="text-area">
-                            <h5 class="font--bold">What personal data we collect and why we collect it?</h5>
-                            <h6 class="font--bold">Comments</h6>
+                            <h5 class="font--bold"> Cập nhật thông tin cá nhân</h5>
                             <div class="para__text">
-                                <p>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor’s IP address and browser user agent string to help spam detection.</p>
-                                <p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p>
+                                <p>Quý khách có thể cập nhật thông tin cá nhân của mình bất cứ lúc nào bằng cách truy cập tài khoản của Quý khách trên Ubofood.com. Nếu Quý khách không có tài khoản với chúng tôi, Quý khách có thể cập nhật bằng cách liên hệ với chúng tôi theo địa chỉ của chúng tôi ở trên.</p>
                             </div>
 
-                            <h6 class="font--bold">Media</h6>
+                            <h6 class="font--bold">Truy cập thông tin cá nhân</h6>
                             <div class="para__text">
-                                <p>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p>
+                                <p>Nếu Quý khách có một tài khoản với Gsore.com, Quý khách có thể truy cập vào chi tiết đơn hàng của Quý khách bằng cách đăng nhập vào tài khoản của Quý khách.</p>
+                                <p>Chúng tôi không chịu bất kỳ trách nhiệm pháp lý đối với việc sử dụng sai trái tên người dùng Gsore.com, mật khẩu hoặc chi tiết yêu cầu của Quý khách.</p>
                             </div>
 
-                            <h6 class="font--bold">Cookies</h6>
+                            <h6 class="font--bold">Bảo mật thông tin cá nhân</h6>
                             <div class="para__text">
-                                <p>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p>
-                                <p>If you have an account and you log in to this site, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p>
-                                <p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select “Remember Me”, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p>
-                                <p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p>
-                            </div>
-                            <h6 class="font--bold">Embedded content from other websites</h6>
-                            <div class="para__text">
-                                <p>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p>
-                                <p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p>
+                                <p>Gsore.com cam kết rằng tất cả các thông tin sẽ được lưu trữ an toàn. Chúng tôi bảo vệ thông tin cá nhân của Quý khách bằng cách:</p>
+                                <p>+ Hạn chế quyền truy cập thông tin cá nhân.</p>
+                                <p>+ Duy trì các sản phẩm công nghệ để ngăn chặn truy cập trái phép trên máy tính.</p>
+                                <p>+ Hủy thông tin cá nhân của Quý khách an toàn khi không còn cần thiết cho bất kỳ mục đích pháp lý hoặc kinh doanh.</p>
+                                <p>+ Nếu Quý khách tin rằng bảo mật của Quý khách đã bị Ubofood.com xâm phạm, vui lòng liên hệ với chúng tôi theo địa chỉ Email của chúng tôi: info@Gsore.com</p>
                             </div>
                         </div>
                         <div class="text-area">
-                            <h5 class="font--bold">How long we retain your data</h5>
+                            <h5 class="font--bold">Thay đổi chính sách bảo mật</h5>
                             <div class="para__text">
-                                <p>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p>
-                                <p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p>
+                                <p>Gsore.com sẽ thường xuyên xem xét sự đầy đủ của Chính sách Bảo mật này. Chúng tôi bảo lưu quyền sửa đổi và thay đổi Chính sách Bảo mật vào thời điểm bất kỳ. Mọi thay đổi đối với chính sách này sẽ được công bố trên Sàn giao dịch.</p>
                             </div>
                         </div>
                         <div class="text-area">
-                            <h5 class="font--bold">What rights you have over your data</h5>
+                            <h5 class="font--bold">Quyền của Gsore</h5>
                             <div class="para__text">
-                                <p>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p>
-                            </div>
-                        </div>
-                        <div class="text-area">
-                            <h5 class="font--bold">Where we send your data</h5>
-                            <div class="para__text">
-                                <p>Visitor comments may be checked through an automated spam detection service.</p>
+                                <p>Bằng cách tham gia giao dịch trên Gsore.com, Quý khách thừa nhận và chấp thuận rằng
+                                    Gsore.com có quyền công bố thông tin cá nhân của Quý khách cho bất kỳ cơ quan pháp lý,
+                                    cơ quan quản lý nhà nước, chính phủ, cơ quan thuế hoặc cơ quan thực thi pháp luật hoặc bất kỳ
+                                    cơ quan khác hoặc các chủ sở hữu có thẩm quyền liên quan nếu Gsore.com có cơ sở hợp lý để tin rằng
+                                    , thông tin cá nhân của Quý khách cần thiết cho mục đích đáp ứng bất kỳ nghĩa vụ, yêu cầu
+                                    hoặc thỏa thuận, bất kể là tự nguyện hoặc bắt buộc, là kết quả của việc hợp tác theo lệnh,
+                                    điều tra và/hoặc yêu cầu về bản chất bất kỳ với các bên này. Trong phạm vi pháp luật cho phép,
+                                    Quý khách đồng ý không thực hiện bất kỳ hành động và/hoặc từ bỏ bất kỳ quyền thực hiện hành động chống
+                                    lại Gsore.com liên quan đến việc công bố thông tin cá nhân trong mọi trường hợp.</p>
                             </div>
                         </div>
                     </div>
