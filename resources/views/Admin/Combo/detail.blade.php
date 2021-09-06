@@ -70,7 +70,7 @@
                                                 <td class="text-bold-500">{{$item->name}}</td>
                                                 <td>
                                                     @foreach(\App\Models\ComboDetail::query()->where('combo_id',$item->id)->with('product')->get() as $key=>$detail)
-                                                        <p>{{$detail->product->name .' '. $detail->product->quantity.' \ '.\App\Enums\ProductUnit::getDescription( $detail->product->unit)}}
+                                                        <p>{{$detail->product->name .' '. $detail->product->quantity.' '.\App\Enums\ProductUnit::getDescription( $detail->product->unit)}}
                                                             | Số lượng {{ $detail->quantity}}
                                                         </p>
                                                         @if($key != sizeof(\App\Models\ComboDetail::query()->where('combo_id',$item->id)->with('product')->get()) -1)
