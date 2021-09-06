@@ -7,8 +7,8 @@
             <div class="row">
                 <div class="col-12">
                     <ul class="page-breadcrumb__menu">
-                        <li class="page-breadcrumb__nav"><a href="/">Home</a></li>
-                        <li class="page-breadcrumb__nav active">Wishlist</li>
+                        <li class="page-breadcrumb__nav"><a href="/">Trang Chủ</a></li>
+                        <li class="page-breadcrumb__nav active">Danh Sách Yêu Thích</li>
                     </ul>
                 </div>
             </div>
@@ -21,19 +21,19 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-content">
-                        <h5 class="section-content__title">Your Wishlist items</h5>
+                        <h5 class="section-content__title">Danh Sách Yêu Thích Của Bạn</h5>
                     </div>
                     <!-- Start Wishlist Table -->
                     <div class="table-content table-responsive cart-table-content m-t-30">
                         <table>
                             <thead>
                             <tr>
-                                <th>Image</th>
-                                <th>Product Name</th>
-                                <th>Until Price</th>
-                                <th>Qty</th>
-                                <th>Subtotal</th>
-                                <th>ADD TO CART</th>
+                                <th>Ảnh</th>
+                                <th>Tên</th>
+                                <th>Giá</th>
+                                <th>Số Lượng</th>
+                                <th>Tổng</th>
+                                <th>Giỏ Hàng</th>
                             </tr>
                             </thead>
                             <tbody>

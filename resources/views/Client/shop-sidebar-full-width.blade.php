@@ -6,8 +6,8 @@
             <div class="row">
                 <div class="col-12">
                     <ul class="page-breadcrumb__menu">
-                        <li class="page-breadcrumb__nav"><a href="/">Home</a></li>
-                        <li class="page-breadcrumb__nav active">Shop - Full Width</li>
+                        <li class="page-breadcrumb__nav"><a href="/">Trang Chủ</a></li>
+                        <li class="page-breadcrumb__nav active">Tất Cả Các Sản Phẩm</li>
                     </ul>
                 </div>
             </div>
@@ -35,24 +35,24 @@
                             </div>
                         </div> <!-- Start Sort Left Side -->
 
-                        <div class="sort-box-item d-flex align-items-center flex-warp">
-                            <span>Sort By:</span>
-                            <div class="sort-box__option">
-                                <label class="select-sort__arrow">
-                                    <select name="select-sort" class="select-sort">
-                                        <option value="1">Relevance</option>
-                                        <option value="2">Name, A to Z</option>
-                                        <option value="3"> Name, Z to A </option>
-                                        <option value="4"> Price, low to high</option>
-                                        <option value="5">Price, high to low</option>
-                                    </select>
-                                </label>
-                            </div>
-                        </div>
+{{--                        <div class="sort-box-item d-flex align-items-center flex-warp">--}}
+{{--                            <span>Sort By:</span>--}}
+{{--                            <div class="sort-box__option">--}}
+{{--                                <label class="select-sort__arrow">--}}
+{{--                                    <select name="select-sort" class="select-sort">--}}
+{{--                                        <option value="1">Relevance</option>--}}
+{{--                                        <option value="2">Name, A to Z</option>--}}
+{{--                                        <option value="3"> Name, Z to A </option>--}}
+{{--                                        <option value="4"> Price, low to high</option>--}}
+{{--                                        <option value="5">Price, high to low</option>--}}
+{{--                                    </select>--}}
+{{--                                </label>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <div class="sort-box-item">
-                            <span>Showing 1 - 9 of 12 result</span>
-                        </div>
+{{--                        <div class="sort-box-item">--}}
+{{--                            <span>Showing 1 - 9 of 12 result</span>--}}
+{{--                        </div>--}}
                     </div> <!-- ::::::  Start Sort Box Section  ::::::  -->
 
                     <div class="product-tab-area">
