@@ -27,7 +27,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title"><a href="{{route('categoryCreate')}}">Add Category</a></h4>
+                            <h4 class="card-title"><a href="{{route('categoryCreate')}}">Thêm mới loại sản phẩm</a></h4>
                         </div>
                         <div class="card-content">
                             <div class="card-body">
@@ -36,10 +36,10 @@
                                     <table id="myTable" class="table table-lg">
                                         <thead class="thead-dark">
                                         <tr>
-                                            <th>NAME</th>
-                                            <th>Description</th>
-                                            <th>Sort Number</th>
-                                            <th>Action</th>
+                                            <th>Tên sản phẩm</th>
+                                            <th>Miêu tả sản phẩm</th>
+                                            <th>Số thứ tự</th>
+                                            <th>Trạng thái</th>
                                         </tr>
                                         </thead>
                                         <tbody>

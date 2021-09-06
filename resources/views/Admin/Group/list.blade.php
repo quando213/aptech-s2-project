@@ -27,7 +27,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title"><a href="{{route('groupCreate')}}">Add Group</a></h4>
+                            <h4 class="card-title"><a href="{{route('groupCreate')}}">Tạo mới nhóm</a></h4>
                         </div>
                         <div class="card-content">
                             <div class="card-body">
@@ -35,10 +35,10 @@
                                     <table id="myTable" class="table table-lg">
                                         <thead class="thead-dark">
                                         <tr>
-                                            <th>NAME</th>
-                                            <th>Ward Manger</th>
-                                            <th>Type</th>
-                                            <th>Action</th>
+                                            <th>Tên nhóm</th>
+                                            <th>Vùng quản lý</th>
+                                            <th>Đơn vị</th>
+                                            <th>Trạng thái</th>
                                         </tr>
                                         </thead>
                                         <tbody>
