@@ -6,8 +6,8 @@
             <div class="row">
                 <div class="col-12">
                     <ul class="page-breadcrumb__menu">
-                        <li class="page-breadcrumb__nav"><a href="/">Home</a></li>
-                        <li class="page-breadcrumb__nav active">Cart</li>
+                        <li class="page-breadcrumb__nav"><a href="/">Trang Chủ</a></li>
+                        <li class="page-breadcrumb__nav active">Giỏ Hàng</li>
                     </ul>
                 </div>
             </div>
@@ -20,19 +20,19 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-content">
-                        <h5 class="section-content__title">Your cart items</h5>
+                        <h5 class="section-content__title">Giỏ Hàng Của Bạn</h5>
                     </div>
                     <!-- Start Cart Table -->
                     <div class="table-content table-responsive cart-table-content m-t-30">
                         <table>
                             <thead class="gray-bg" >
                             <tr>
-                                <th>Image</th>
-                                <th>Product Name</th>
-                                <th>Until Price</th>
-                                <th>Qty</th>
-                                <th>Subtotal</th>
-                                <th>Action</th>
+                                <th>ẢNh</th>
+                                <th>Tên</th>
+                                <th>Giá</th>
+                                <th>KHối Lượng</th>
+                                <th>Tổng</th>
+                                <th>Thay Đổi</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -93,11 +93,11 @@
                     <!-- Start Cart Table Button -->
                     <div class="cart-table-button m-t-10">
                         <div class="cart-table-button--left">
-                            <a href="#" class="btn btn--box btn--large btn--radius btn--green btn--green-hover-black btn--uppercase font--bold m-t-20">CONTINUE SHOPPING</a>
+                            <a href="#" class="btn btn--box btn--large btn--radius btn--green btn--green-hover-black btn--uppercase font--bold m-t-20">Tiếp Tục Mua Sắm</a>
                         </div>
                         <div class="cart-table-button--right">
-                            <a href="#" class="btn btn--box btn--large btn--radius btn--green btn--green-hover-black btn--uppercase font--bold m-t-20 m-r-20">UPDATE SHOPPING CART</a>
-                            <a href="#" class="btn btn--box btn--large btn--radius btn--black btn--black-hover-green btn--uppercase font--bold m-t-20">Clear Shopping Cart</a>
+                            <a href="#" class="btn btn--box btn--large btn--radius btn--green btn--green-hover-black btn--uppercase font--bold m-t-20 m-r-20">Cập Nhật Giỏ Hàng</a>
+                            <a href="#" class="btn btn--box btn--large btn--radius btn--black btn--black-hover-green btn--uppercase font--bold m-t-20">Xóa Giỏ Hàng</a>
                         </div>
                     </div>  <!-- End Cart Table Button -->
                 </div>
@@ -106,36 +106,40 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="sidebar__widget m-t-40">
                         <div class="sidebar__box">
-                            <h5 class="sidebar__title">Estimate Shipping And Tax</h5>
+                            <h5 class="sidebar__title">Phí Vận Chuyển</h5>
                         </div>
-                        <span>Enter your destination to get a shipping estimate.</span>
+                        <span>Nhập Địa Chỉ Nhận Hàng.</span>
                         <form action="#" method="post" class="form-box">
                             <div class="form-box__single-group">
-                                <label for="form-country">* Country</label>
+                                <label for="form-country">* Thành Phố</label>
                                 <select id="form-country">
-                                    <option value="BD" selected>Bangladesh</option>
-                                    <option value="US">USA</option>
-                                    <option value="UK">UK</option>
-                                    <option value="TR">Turkey</option>
-                                    <option value="CA">Canada</option>
+                                    <option value="HN" selected>Hà Nội</option>
                                 </select>
                             </div>
                             <div class="form-box__single-group">
-                                <label for="form-state">* Region / State</label>
-                                <select id="form-state">
-                                    <option value="Dha" selected>Dhaka</option>
-                                    <option value="Kha">Khulna</option>
-                                    <option value="Raj">Rajshahi</option>
-                                    <option value="Syl">Sylet</option>
-                                    <option value="Chi">Chittagong</option>
+                                <label for="form-state">* Quận</label>
+                                <select id="form-country">
+                                    <option value="HN" selected>Mê Linh</option>
+                                    <option value="NTL">Cầu Giấy</option>
+                                    <option value="CG">Bắc Từ Liêm</option>
+                                    <option value="GL">Gia Lâm</option>
                                 </select>
                             </div>
                             <div class="form-box__single-group">
-                                <label for="form-zipcode">* Zip/Postal Code</label>
+                                <label for="form-state">* Phường</label>
+                                <select id="form-country">
+                                    <option value="HN" selected>Mĩ Đình 1</option>
+                                    <option value="NTL">Mĩ Đình 2</option>
+                                    <option value="CG">Đình Thôn</option>
+                                    <option value="GL">Thiên Hiền</option>
+                                </select>
+                            </div>
+                            <div class="form-box__single-group">
+                                <label for="form-zipcode">* Số Nhà</label>
                                 <input type="text" id="form-zipcode">
                             </div>
                             <div class="from-box__buttons m-t-25">
-                                <button class="btn btn--box btn--small btn--radius btn--green btn--green-hover-black btn--uppercase font--semi-bold" type="submit">GET A QUOTE</button>
+                                <button class="btn btn--box btn--small btn--radius btn--green btn--green-hover-black btn--uppercase font--semi-bold" type="submit">Gửi Địa Chỉ</button>
                             </div>
                         </form>
                     </div>
@@ -143,16 +147,16 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="sidebar__widget m-t-40">
                         <div class="sidebar__box">
-                            <h5 class="sidebar__title">Use Coupon Code</h5>
+                            <h5 class="sidebar__title">Sử Dụng Mã Giảm Giá</h5>
                         </div>
-                        <span>Enter your coupon code if you have one.</span>
+                        <span>Nhập Mã Phiếu Giảm Giá Nếu Có.</span>
                         <form action="#" method="post" class="form-box">
                             <div class="form-box__single-group">
-                                <label for="form-coupon">*Enter Coupon Code</label>
+                                <label for="form-coupon">*Nhập mã Phiếu</label>
                                 <input type="text" id="form-coupon">
                             </div>
                             <div class="from-box__buttons m-t-25">
-                                <button class="btn btn--box btn--small btn--radius btn--green btn--green-hover-black btn--uppercase font--semi-bold" type="submit">Apply Coupon</button>
+                                <button class="btn btn--box btn--small btn--radius btn--green btn--green-hover-black btn--uppercase font--semi-bold" type="submit">Áp Dụng</button>
                             </div>
                         </form>
                     </div>
@@ -160,28 +164,29 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="sidebar__widget m-t-40">
                         <div class="sidebar__box">
-                            <h5 class="sidebar__title">Cart Total</h5>
+                            <h5 class="sidebar__title">Tổng Giỏ Hàng</h5>
                         </div>
-                        <h6 class="total-cost">Total products Price<span>$260.00</span></h6>
+                        <h6 class="total-cost">Tổng Sản Phẩm<span>$260.00</span></h6>
                         <div class="total-shipping">
-                            <span>Total shipping</span>
+                            <span>Phí Vận Chuyển</span>
                             <ul class="shipping-cost m-t-10">
                                 <li>
                                     <label for="ship-standard">
-                                        <input type="radio" class="shipping-select" name="shipping-cost" value="Standard" id="ship-standard" checked><span>Standard</span>
+                                        <input type="radio" class="shipping-select" name="shipping-cost" value="Standard" id="ship-standard" checked><span>Tiêu Chuẩn</span>
                                     </label>
                                     <span class="ship-price">$20.00</span>
                                 </li>
                                 <li>
                                     <label for="ship-express">
-                                        <input type="radio" class="shipping-select" name="shipping-cost" value="Express" id="ship-express"><span>Express</span>
+                                        <input type="radio" class="shipping-select" name="shipping-cost" value="Express" id="ship-express"><span>Nhanh</span>
                                     </label>
                                     <span class="ship-price">$30.00</span>
                                 </li>
                             </ul>
                         </div>
-                        <h4 class="grand-total m-tb-25">Grand Total <span>$260.00</span></h4>
-                        <button class="btn btn--box btn--small btn--radius btn--green btn--green-hover-black btn--uppercase font--semi-bold" type="submit">PROCEED TO CHECKOUT</button>
+                        <h4 class="grand-total m-tb-25">Tổng Thanh Toán <span>$260.00</span></h4>
+                        <button class="btn btn--box btn--small btn--radius btn--green btn--green-hover-black btn--uppercase font--semi-bold" type="submit">
+                            <a href="/checkout" class=" btn--green-hover-black btn--uppercase font--semi-bold">Thanh Toán</a> </button>
                     </div>
                 </div>
             </div>

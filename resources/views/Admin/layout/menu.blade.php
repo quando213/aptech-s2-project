@@ -3,7 +3,7 @@
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
                 <div class="logo">
-                    <a href="/admin"><img src="asset/images/logo/logo.png" alt="Logo" srcset=""></a>
+                    <a href="/admin"><img src="/asset/images/logo/logo.png" alt="Logo" srcset=""></a>
                 </div>
                 <div class="toggler">
                     <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -20,7 +20,50 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-
+                <li class="sidebar-item  ">
+                    <a href="{{route('userList')}}" class='sidebar-link'>
+                        <i class="bi bi-person-circle"></i>
+                        <span>Users</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{route('productList')}}" class='sidebar-link'>
+                        <i class="bi bi-box-seam"></i>
+                        <span>Products</span>
+                    </a>
+                </li>
+                <li class="sidebar-item ">
+                    <a href="{{route('categoryList')}}" class='sidebar-link'>
+                        <i class="bi bi-list-nested"></i>
+                        <span>Categories</span>
+                    </a>
+                </li>
+                <li class="sidebar-item  ">
+                    <a href="{{route('groupList')}}" class='sidebar-link'>
+                        <i class="bi bi-people-fill"></i>
+                        <span>Groups</span>
+                    </a>
+                </li>
+                <li class="sidebar-item  has-sub">
+                    <a class='sidebar-link'>
+                        <i class="bi bi-hexagon-fill"></i>
+                        <span>Combo Manager</span>
+                    </a>
+                    <ul class="submenu ">
+                        <li class="submenu-item ">
+                            <a href="{{route('comboList')}}" class='sidebar-link'>
+                                <i class="bi bi-cart-plus-fill"></i>
+                                <span>Combos</span>
+                            </a>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="{{route('comboDetail')}}" class='sidebar-link'>
+                                <i class="bi bi-card-checklist"></i>
+                                <span>Combo Detail</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="sidebar-title">Forms &amp; Tables</li>
 
                 <li class="sidebar-item  has-sub">

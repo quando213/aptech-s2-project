@@ -12,8 +12,8 @@
                             </a>
                         </div>
                         <ul class="footer__address">
-                            <li class="footer__address-item"><i class="fa fa-home"></i>No: 58 A, your Street, Baltimore, USA 4508</li>
-                            <li class="footer__address-item"><i class="fa fa-phone-alt"></i>+01 23456789</li>
+                            <li class="footer__address-item"><i class="fa fa-home"></i>Địa Chỉ: Số 8, Tôn Thất Thuyết, Mĩ Đình, Nam Từ Liêm, Hà Nội</li>
+                            <li class="footer__address-item"><i class="fa fa-phone-alt"></i>0987654321</li>
                             <li class="footer__address-item"><i class="fa fa-envelope"></i>support@somemail.com</li>
                         </ul>
                         <ul class="footer__social-nav">
@@ -27,59 +27,59 @@
                 <div class="col-lg-2 col-md-3 col-sm-6 col-12">
                     <!-- Start Footer Nav -->
                     <div class="footer__menu">
-                        <h4 class="footer__nav-title footer__nav-title--dash footer__nav-title--dash-red">INFORMATION</h4>
+                        <h4 class="footer__nav-title footer__nav-title--dash footer__nav-title--dash-red">THÔNG TIN</h4>
                         <ul class="footer__nav">
-                            <li class="footer__list"><a href="" class="footer__link">Delivery Information</a></li>
-                            <li class="footer__list"><a href="" class="footer__link">Advanced Search</a></li>
-                            <li class="footer__list"><a href="" class="footer__link">Helps & Faqs</a></li>
-                            <li class="footer__list"><a href="" class="footer__link">Store Location</a></li>
-                            <li class="footer__list"><a href="" class="footer__link">Orders & Returns</a></li>
-                            <li class="footer__list"><a href="" class="footer__link">Deliveries</a></li>
-                            <li class="footer__list"><a href="" class="footer__link"> Refund & Returns</a></li>
+                            <li class="footer__list"><a href="" class="footer__link">Thông Tin Giao Hàng</a></li>
+                            <li class="footer__list"><a href="" class="footer__link">Tìm Kiếm </a></li>
+                            <li class="footer__list"><a href="" class="footer__link">Trợ Giúp và Câu Hỏi </a></li>
+                            <li class="footer__list"><a href="" class="footer__link">Vị Trí Cửa Hàng</a></li>
+                            <li class="footer__list"><a href="" class="footer__link">Đơn Hàng</a></li>
+                            <li class="footer__list"><a href="" class="footer__link">Giao Hàng</a></li>
+                            <li class="footer__list"><a href="" class="footer__link"> Trả Hàng</a></li>
                         </ul>
                     </div> <!-- End Footer Nav -->
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-6 col-12">
                     <div class="footer__menu">
-                        <h4 class="footer__nav-title footer__nav-title--dash footer__nav-title--dash-red">OUR COMPANY</h4>
+                        <h4 class="footer__nav-title footer__nav-title--dash footer__nav-title--dash-red">Công Ty Của Chúng Tôi</h4>
                         <ul class="footer__nav">
-                            <li class="footer__list"><a href="" class="footer__link">Delivery</a></li>
-                            <li class="footer__list"><a href="" class="footer__link">Legal Notice</a></li>
-                            <li class="footer__list"><a href="" class="footer__link">Sitemap</a></li>
-                            <li class="footer__list"><a href="" class="footer__link">Secure payment</a></li>
+                            <li class="footer__list"><a href="" class="footer__link">Giao Dịch</a></li>
+                            <li class="footer__list"><a href="" class="footer__link">Thông Tin Pháp Lý</a></li>
+                            <li class="footer__list"><a href="" class="footer__link">Sơ Lược Về Trang</a></li>
+                            <li class="footer__list"><a href="" class="footer__link">Thanh Toán An Toàn</a></li>
                             <li class="footer__list"><a href="" class="footer__link">Blog</a></li>
-                            <li class="footer__list"><a href="" class="footer__link">About us</a></li>
-                            <li class="footer__list"><a href="" class="footer__link">Carrers</a></li>
+                            <li class="footer__list"><a href="" class="footer__link">Chúng Tôi</a></li>
+                            <li class="footer__list"><a href="" class="footer__link">Người Vận Chuyển</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-6 col-12">
                     <div class="footer__menu">
-                        <h4 class="footer__nav-title footer__nav-title--dash footer__nav-title--dash-red">MY ACCOUNT</h4>
+                        <h4 class="footer__nav-title footer__nav-title--dash footer__nav-title--dash-red">Tài Khoản NGười Dùng</h4>
                         <ul class="footer__nav">
-                            <li class="footer__list"><a href="" class="footer__link">Search Terms</a></li>
-                            <li class="footer__list"><a href="" class="footer__link">Advanced Search</a></li>
-                            <li class="footer__list"><a href="" class="footer__link">Helps & Faqs</a></li>
-                            <li class="footer__list"><a href="" class="footer__link">Store Location</a></li>
-                            <li class="footer__list"><a href="" class="footer__link">Orders & Returns</a></li>
-                            <li class="footer__list"><a href="" class="footer__link">Deliveries</a></li>
-                            <li class="footer__list"><a href="" class="footer__link">Refund & Returns</a></li>
+                            <li class="footer__list"><a href="" class="footer__link">Tìm Kiếm </a></li>
+{{--                            <li class="footer__list"><a href="" class="footer__link">Advanced Search</a></li>--}}
+                            <li class="footer__list"><a href="" class="footer__link">Trợ Giúp và Câu Hỏi</a></li>
+                            <li class="footer__list"><a href="" class="footer__link">Vị trí Cửa hàng</a></li>
+                            <lia class="footer__list"><a href="" class="footer__link">Đơn Hàng</a></lia>
+                            <li class="footer__list"><a href="" class="footer__link">Giao Hàng</a></li>
+                            <li class="footer__list"><a href="" class="footer__link">Đổi Trả Hàng</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-6 col-12">
-                    <div class="footer__menu">
-                        <h4 class="footer__nav-title footer__nav-title--dash footer__nav-title--dash-red">OPENING TIME</h4>
-                        <ul class="footer__nav">
-                            <li class="footer__list">Mon - Fri: 8AM - 10PM</li>
-                            <li class="footer__list">Sat: 9AM-8PM</li>
-                            <li class="footer__list">Suns: 14hPM-18hPM</li>
-                            <li class="footer__list">Mon - Fri: 8AM - 10PM</li>
-                            <li class="footer__list">We Work All The Holidays</li>
-                            <li class="footer__list"><a href="" class="footer__link font--bold">Download our app</a></li>
-                        </ul>
-                    </div>
-                </div>
+{{--                <div class="col-lg-2 col-md-3 col-sm-6 col-12">--}}
+{{--                    <div class="footer__menu">--}}
+{{--                        <h4 class="footer__nav-title footer__nav-title--dash footer__nav-title--dash-red">OPENING TIME</h4>--}}
+{{--                        <ul class="footer__nav">--}}
+{{--                            <li class="footer__list">Mon - Fri: 8AM - 10PM</li>--}}
+{{--                            <li class="footer__list">Sat: 9AM-8PM</li>--}}
+{{--                            <li class="footer__list">Suns: 14hPM-18hPM</li>--}}
+{{--                            <li class="footer__list">Mon - Fri: 8AM - 10PM</li>--}}
+{{--                            <li class="footer__list">We Work All The Holidays</li>--}}
+{{--                            <li class="footer__list"><a href="" class="footer__link font--bold">Download our app</a></li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div> <!-- End Footer Top Section -->
         <!-- Start Footer Bottom Section -->

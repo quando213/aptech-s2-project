@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title')Dashboard - Mazer Admin Dashboard</title>
+    <title>@yield('title')</title>
     @include('.Admin.layout.link')
 </head>
 
@@ -12,7 +12,9 @@
   @include('.Admin.layout.menu')
     <div id="main">
        @include('.Admin.layout.header')
+
         @yield('content')
+        @yield('')
         @include('.Admin.layout.footer')
     </div>
 </div>

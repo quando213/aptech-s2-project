@@ -1,7 +1,14 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminUserController;
+use App\Http\Controllers\Admin\CategoryController;
+
+use App\Http\Controllers\Admin\GroupController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\WardController;
 use App\Http\Controllers\TemplateAdminController;
 use App\Http\Controllers\TemplateClientController;
+use App\Http\Controllers\Admin\ComboController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,12 +22,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::prefix('admin')->group(function () {
+    require_once __DIR__ . '/admin.php';
+});
+
+
+
+
+
+
+Route::get('/api/ward/{id}', [WardController::class, 'api']);
+Route::get('/api/product/{id}', [ProductController::class, 'apiCheck']);
+
+
 Route::get('/', function () {
     return view('welcome');
 });
+// phân quản lý user trang admin
+
+
 //template admin
-Route::get('/admin', [TemplateAdminController::class, 'index']);
-Route::get('/admin', [TemplateAdminController::class, 'page_content']);
+
 Route::get('/form-layout', [TemplateAdminController::class, 'form_layout']);
 Route::get('/input', [TemplateAdminController::class, 'input']);
 Route::get('/table', [TemplateAdminController::class, 'table']);
@@ -29,6 +51,8 @@ Route::get('/email', [TemplateAdminController::class, 'email']);
 Route::get('/login', [TemplateAdminController::class, 'login']);
 Route::get('/sign-up', [TemplateAdminController::class, 'sign_in']);
 Route::get('/forgot', [TemplateAdminController::class, 'forgot']);
+Route::get('/product/create', [TemplateAdminController::class, 'createProduct']);
+Route::get('/product/list', [TemplateAdminController::class, 'listProduct']);
 
 //Template-Client
 Route::get('/', [TemplateClientController::class, 'index']);

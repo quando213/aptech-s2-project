@@ -9,6 +9,8 @@
                     <ul class="page-breadcrumb__menu">
                         <li class="page-breadcrumb__nav"><a href="/">Trang chủ</a></li>
                         <li class="page-breadcrumb__nav active">Chúng tôi</li>
+                        <li class="page-breadcrumb__nav"><a href="/">Trang Chủ</a></li>
+                        <li class="page-breadcrumb__nav active">Chúng Tôi</li>
                     </ul>
                 </div>
             </div>
@@ -32,9 +34,10 @@
                             <p class="para__text">Gsore là ứng dụng mua thực phẩm Online dựa trên nền tảng công nghệ 4.0, kết nối người tiêu dùng đến với những sản phẩm được lấy từ những nhà sản xuất uy tín. Người tiêu dùng có thể chủ động đặt
                                 hàng mọi lúc mọi nơi, Gsore phục vụ dựa
                                 trên tiêu chí: Chu đáo, minh bạch, đảm bảo chất lượng và tuyệt đối an toàn.</p>
+                            <h4 class="font--regular">Chúng tôi là người nhận đơn hàng của các bạn và thực hiện công việc đi mua sắm thay các bạn trong mùa dịch này.</h4>
+                            <p class="para__text">Thực phẩm cho các bữa ăn gia đình Việt: Chúng tôi muốn gửi gắm tới thực phẩm sạch, an toàn cho những bữa ăn ấm cúng, quây quần như đúng truyền thống và văn hóa người dân địa phương.</p>
                             <a href="#"
-                               class="btn btn--icon-left btn--small btn--radius btn--transparent btn--border-green btn--border-green-hover-green font--regular text-capitalize m-t-20">More
-                                Information<i class="fal fa-angle-right"></i></a>
+                               class="btn btn--icon-left btn--small btn--radius btn--transparent btn--border-green btn--border-green-hover-green font--regular text-capitalize m-t-20">Thêm Thông Tin<i class="fal fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
