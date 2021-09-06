@@ -1,4 +1,7 @@
 @extends('.Admin.layout.index')
+@section('title')
+    Profile - Mazer Admin Dashboard
+@endsection
 @section('content')
     <div class="page-heading">
         <h3>Thống kê dịch bệnh</h3>

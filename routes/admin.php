@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\CategoryController;
 
 use App\Http\Controllers\Admin\GroupController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\WardController;
 use App\Http\Controllers\TemplateAdminController;
@@ -64,12 +65,17 @@ Route::prefix('/products')->group(function () {
 
 Route::prefix('/combos')->group(function () {
     Route::get('', [ComboController::class, 'index'])->name('comboList');
-    Route::get('create', [ComboController::class, 'create'])->name('');
+    Route::get('detail', [ComboController::class, 'detail'])->name('comboDetail');
+    Route::get('create', [ComboController::class, 'create'])->name('comboCreate');
     Route::post('create', [ComboController::class, 'store']);
-    Route::get('update/{id}', [ComboController::class, 'update'])->name('');
+    Route::get('update/{id}', [ComboController::class, 'update'])->name('comboUpdate');
     Route::post('update/{id}', [ComboController::class, 'save']);
-    Route::get('delete/{id}', [ComboController::class, 'destroy'])->name('');
+    Route::get('delete/{id}', [ComboController::class, 'destroy'])->name('comboDelete');
 });
+Route::prefix('/orders')->group(function () {
+    Route::get('', [OrderController::class, 'index']);
+});
+
 
 
 

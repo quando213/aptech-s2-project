@@ -48,4 +48,12 @@ class TemplateAdminController extends Controller
     {
         return view('.Admin.forgot');
     }
+    public function createProduct()
+    {
+        return view('.Admin.product.form');
+    }
+    public function listProduct()
+    {
+        return view('.Admin.product.list');
+    }
 }

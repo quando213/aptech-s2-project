@@ -1,5 +1,5 @@
 @extends('.Admin.layout.index')
-@section('tille')
+@section('title')
     DataTable - Mazer Admin Dashboard
 @endsection
 @section('content')

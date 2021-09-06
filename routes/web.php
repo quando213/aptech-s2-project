@@ -32,6 +32,7 @@ Route::prefix('admin')->group(function () {
 
 
 Route::get('/api/ward/{id}', [WardController::class, 'api']);
+Route::get('/api/product/{id}', [ProductController::class, 'apiCheck']);
 
 
 Route::get('/', function () {
@@ -50,6 +51,8 @@ Route::get('/email', [TemplateAdminController::class, 'email']);
 Route::get('/login', [TemplateAdminController::class, 'login']);
 Route::get('/sign-up', [TemplateAdminController::class, 'sign_in']);
 Route::get('/forgot', [TemplateAdminController::class, 'forgot']);
+Route::get('/product/create', [TemplateAdminController::class, 'createProduct']);
+Route::get('/product/list', [TemplateAdminController::class, 'listProduct']);
 
 //Template-Client
 Route::get('/', [TemplateClientController::class, 'index']);

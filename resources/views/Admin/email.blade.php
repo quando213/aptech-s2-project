@@ -1,5 +1,5 @@
 @extends('.Admin.layout.index')
-@section('tille')
+@section('title')
     Email Application - Mazer Admin Dashboard
 @endsection
 @section('content')

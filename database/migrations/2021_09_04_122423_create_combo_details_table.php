@@ -19,7 +19,6 @@ class CreateComboDetailsTable extends Migration
             $table->integer('product_id')->unsigned();
             $table->integer('quantity')->unsigned();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

@@ -6,8 +6,8 @@
             <div class="row">
                 <div class="col-12">
                     <ul class="page-breadcrumb__menu">
-                        <li class="page-breadcrumb__nav"><a href="/">Home</a></li>
-                        <li class="page-breadcrumb__nav active">Single Product - Default</li>
+                        <li class="page-breadcrumb__nav"><a href="/">Trang Chủ</a></li>
+                        <li class="page-breadcrumb__nav active">CHi Tiết Sản Phẩm</li>
                     </ul>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="col-md-7">
                         <div class="product-details-box m-b-60">
-                            <h4 class="font--regular m-b-20">Fresh Green Apple</h4>
+                            <h4 class="font--regular m-b-20">Táo Xanh</h4>
                             <ul class="product__review">
                                 <li class="product__review--fill"><i class="icon-star"></i></li>
                                 <li class="product__review--fill"><i class="icon-star"></i></li>
@@ -58,21 +58,21 @@
                             </div>
 
                             <div class="product__desc m-t-25 m-b-30">
-                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+                                <p>Táo Xanh nhập khẩu</p>
                             </div>
                             <div class="product-var p-tb-30">
                                 <div class="product__stock m-b-20">
-                                    <span class="product__stock--in"><i class="fas fa-check-circle"></i> 199 IN STOCK</span>
+                                    <span class="product__stock--in"><i class="fas fa-check-circle"></i> 199 CÓ HÀNG</span>
                                 </div>
                                 <div class="product-quantity product-var__item">
                                     <ul class="product-modal-group">
-                                        <li><a href="#modalSizeGuide" data-toggle="modal"  class="link--gray link--icon-left"><i class="fal fa-money-check-edit"></i>Size Guide</a></li>
-                                        <li><a href="#modalShippinginfo" data-toggle="modal"  class="link--gray link--icon-left"><i class="fal fa-truck-container"></i>Shipping</a></li>
-                                        <li><a href="#modalProductAsk" data-toggle="modal"  class="link--gray link--icon-left"><i class="fal fa-envelope"></i>Ask About This product</a></li>
+                                        <li><a href="#modalSizeGuide" data-toggle="modal"  class="link--gray link--icon-left"><i class="fal fa-money-check-edit"></i>Khối Lượng</a></li>
+                                        <li><a href="#modalShippinginfo" data-toggle="modal"  class="link--gray link--icon-left"><i class="fal fa-truck-container"></i>Vận Chuyển</a></li>
+                                        <li><a href="#modalProductAsk" data-toggle="modal"  class="link--gray link--icon-left"><i class="fal fa-envelope"></i>Hỏi Đáp về Sanr Phẩm</a></li>
                                     </ul>
                                 </div>
                                 <div class="product-quantity product-var__item d-flex align-items-center">
-                                    <span class="product-var__text">Quantity: </span>
+                                    <span class="product-var__text">Số Lượng: </span>
                                     <form class="quantity-scale m-l-20">
                                         <div class="value-button" id="decrease" onclick="decreaseValue()">-</div>
                                         <input type="number" id="number" value="1" />
@@ -80,18 +80,18 @@
                                     </form>
                                 </div>
                                 <div class="product-var__item">
-                                    <a href="#modalAddCart" data-toggle="modal" data-dismiss="modal" class="btn btn--long btn--radius-tiny btn--green btn--green-hover-black btn--uppercase btn--weight m-r-20">Add to cart</a>
+                                    <a href="#modalAddCart" data-toggle="modal" data-dismiss="modal" class="btn btn--long btn--radius-tiny btn--green btn--green-hover-black btn--uppercase btn--weight m-r-20">Thêm Vào Giỏ Hàng</a>
                                     <a href="/wishlist" class="btn btn--round btn--round-size-small btn--green btn--green-hover-black"><i class="fas fa-heart"></i></a>
                                 </div>
                                 <div class="product-var__item">
                                     <div class="dynmiac_checkout--button">
                                         <input type="checkbox" id="buy-now-check" value="1" class="p-r-30">
-                                        <label for="buy-now-check" class="m-b-20">I agree with the terms and condition</label>
-                                        <a href="/cart" class="btn btn--block btn--long btn--radius-tiny btn--green btn--green-hover-black text-uppercase m-r-35">Buy It Now</a>
+{{--                                   <label for="buy-now-check" class="m-b-20">I agree with the terms and condition</label>--}}
+                                        <a href="/cart" class="btn btn--block btn--long btn--radius-tiny btn--green btn--green-hover-black text-uppercase m-r-35">Mua Ngay</a>
                                     </div>
                                 </div>
                                 <div class="product-var__item">
-                                    <span class="product-var__text">Guaranteed safe checkout </span>
+                                    <span class="product-var__text">Bảo Đảm Thanh TOán An Toàn </span>
                                     <ul class="payment-icon m-t-5">
                                         <li><img src="assets/img/icon/payment/paypal.svg" alt=""></li>
                                         <li><img src="assets/img/icon/payment/amex.svg" alt=""></li>
@@ -103,9 +103,9 @@
                                     </ul>
                                 </div>
                                 <div class="product-var__item d-flex align-items-center">
-                                    <span class="product-var__text">Share: </span>
+                                    <span class="product-var__text">Chia Sẻ: </span>
                                     <ul class="product-social m-l-20">
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
                                         <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                                         <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
                                     </ul>
@@ -126,27 +126,28 @@
                             <ul class="tablist tablist--style-black tablist--style-title tablist--style-gap-30 nav">
                                 <li><a class="nav-link active" data-toggle="tab" href="#product-desc">Description</a></li>
                                 <li><a class="nav-link" data-toggle="tab" href="#product-dis">Product Details</a></li>
-                                <li><a class="nav-link" data-toggle="tab" href="#product-review">Reviews</a></li>
+                                <li><a class="nav-link" data-toggle="tab" href="#product-review">Đánh Giá</a></li>
+                                <li><a class="nav-link active" data-toggle="tab" href="#product-desc">Miêu Tả</a></li>
+                                <li><a class="nav-link" data-toggle="tab" href="#product-dis">Chi Tiết Sản Phẩm</a></li>
+                                <li><a class="nav-link" data-toggle="tab" href="#product-review">Nhận Xét</a></li>
                             </ul>
                             <div class="product-details-tab-box">
                                 <div class="tab-content">
                                     <!-- Start Tab - Product Description -->
                                     <div class="tab-pane show active" id="product-desc">
                                         <div class="para__content">
-                                            <p class="para__text">Use the Canon VIXIA GX10 Camcorder to capture UHD 4K video at 60 fps, recording in MP4 to dual SD memory card slots. This camcorder packs several pro-style features into its compact form, including Dual-Pixel Autofocus (DPAF). The GX10's 1" 8.29MP CMOS sensor and dual DIGIC DV 6 image processors support Wide DR Gamma with high sensitivity and low noise. Slow and fast-motion recording up to 120 fps offers special looks for highlighting sports and other special events. Smooth, steady shooting is assisted by the GX10's five-axis optical image stabilization. For composing and viewing your footage, the VIXIA GX10 incorporates a flip-out 3.5" touchscreen LCD, and a 0.24" electronic viewfinder. </p>
-                                            <p class="para__text">Additional GX10 features include an HDMI 2.0 port for outputting your 4K UHD footage, assignable user buttons, and remote control using the included WL-D89 controller. Wi-Fi connectivity offers live streaming, FTP file sharing, and remote control via iOS and Android apps.</p>
-                                            <h6 class="para__title">Product Highlights:</h6>
+                                            <p class="para__text">Táo Xanh Nhập Khẩu</p>
+                                            <p class="para__text">quốc Gia:USA</p>
+                                            <h6 class="para__title">Tác Dụng Của Sản Phẩm:</h6>
                                             <ul class="para__list">
-                                                <li>UHD 4K Output up to 60 fps</li>
-                                                <li>8.29MP, 1" CMOS Sensor</li>
-                                                <li>Dual-Pixel CMOS Autofocus Feature</li>
-                                                <li>Integrated 15x Optical Zoom Lens</li>
-                                                <li>2 x DIGIC DV 6 Processors</li>
-                                                <li>5-Axis Optical Image Stabilization</li>
-                                                <li>Wide Dynamic Range Support</li>
-                                                <li>Records 4K UHD/HD to Dual SD Card Slots</li>
-                                                <li>3.5" Touchscreen LCD &amp; 0.24" EVF</li>
-                                                <li>Live Stream/FTP/Remote App via Wi-Fi</li>
+                                                <li>Giúp Giảm Cân </li>
+                                                <li>Bảo Vệ Da</li>
+                                                <li>Giàu Chất Oxi Hóa</li>
+                                                <li>Là Chất Khử Độc Tự Nhiên</li>
+                                                <li>Tốt Cho Phổi </li>
+                                                <li>Tốt Cho Mắt</li>
+                                                <li>Ngăn Ngừa Hen Xuyễn </li>
+                                                <li>Ngăn Ngừa Tiểu Đường</li>
                                             </ul>
                                         </div>
                                     </div>  <!-- End Tab - Product Description -->
@@ -188,7 +189,7 @@
                                             <li class="comment__list">
                                                 <div class="comment__wrapper">
                                                     <div class="comment__img">
-                                                        <img src="assets/img/user/image-1.png" alt="">
+                                                        <img src="assets/img/user/quynhaka.jpg" alt="">
                                                     </div>
                                                     <div class="comment__content">
                                                         <div class="comment__content-top">
@@ -208,40 +209,40 @@
                                                         </div>
 
                                                         <div class="para__content">
-                                                            <p class="para__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore dolorem a unde modi iste odio amet, fugit fuga aliquam, voluptatem maiores animi dolor nulla magnam ea! Dignissimos aspernatur cumque nam quod sint provident modi alias culpa, inventore deserunt accusantium amet earum soluta consequatur quasi eum eius laboriosam, maiores praesentium explicabo enim dolores quaerat! Voluptas ad ullam quia odio sint sunt. Ipsam officia, saepe repellat. </p>
+                                                            <p class="para__text">Sản phẩm okie, giao hàng nhanh dù trong mùa dịch, gói hàng kĩ,  táo nhìn ngon, ko bị dập…</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!-- Start - Review Comment Reply-->
-                                                <ul class="comment__reply">
-                                                    <li class="comment__reply-list">
-                                                        <div class="comment__wrapper">
-                                                            <div class="comment__img">
-                                                                <img src="assets/img/user/image-2.png" alt="">
-                                                            </div>
-                                                            <div class="comment__content">
-                                                                <div class="comment__content-top">
-                                                                    <div class="comment__content-left">
-                                                                        <h6 class="comment__name">Oaklee Odom</h6>
-                                                                    </div>
-                                                                    <div class="comment__content-right">
-                                                                        <a href="#" class="link--gray link--icon-left m-b-5"><i class="fas fa-reply"></i>Reply</a>
-                                                                    </div>
-                                                                </div>
+{{--                                                <ul class="comment__reply">--}}
+{{--                                                    <li class="comment__reply-list">--}}
+{{--                                                        <div class="comment__wrapper">--}}
+{{--                                                            <div class="comment__img">--}}
+{{--                                                                <img src="assets/img/user/image-2.png" alt="">--}}
+{{--                                                            </div>--}}
+{{--                                                            <div class="comment__content">--}}
+{{--                                                                <div class="comment__content-top">--}}
+{{--                                                                    <div class="comment__content-left">--}}
+{{--                                                                        <h6 class="comment__name">Oaklee Odom</h6>--}}
+{{--                                                                    </div>--}}
+{{--                                                                    <div class="comment__content-right">--}}
+{{--                                                                        <a href="#" class="link--gray link--icon-left m-b-5"><i class="fas fa-reply"></i>Reply</a>--}}
+{{--                                                                    </div>--}}
+{{--                                                                </div>--}}
 
-                                                                <div class="para__content">
-                                                                    <p class="para__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore dolorem a unde modi iste odio amet, fugit fuga aliquam, voluptatem maiores animi dolor nulla magnam ea! Dignissimos aspernatur cumque nam quod sint provident modi alias culpa, inventore deserunt accusantium amet earum soluta consequatur quasi eum eius laboriosam, maiores praesentium explicabo enim dolores quaerat! Voluptas ad ullam quia odio sint sunt. Ipsam officia, saepe repellat. </p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul> <!-- End - Review Comment Reply-->
+{{--                                                                <div class="para__content">--}}
+{{--                                                                    <p class="para__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore dolorem a unde modi iste odio amet, fugit fuga aliquam, voluptatem maiores animi dolor nulla magnam ea! Dignissimos aspernatur cumque nam quod sint provident modi alias culpa, inventore deserunt accusantium amet earum soluta consequatur quasi eum eius laboriosam, maiores praesentium explicabo enim dolores quaerat! Voluptas ad ullam quia odio sint sunt. Ipsam officia, saepe repellat. </p>--}}
+{{--                                                                </div>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+{{--                                                    </li>--}}
+{{--                                                </ul> <!-- End - Review Comment Reply-->--}}
                                             </li> <!-- End - Review Comment list-->
                                             <!-- Start - Review Comment list-->
                                             <li class="comment__list">
                                                 <div class="comment__wrapper">
                                                     <div class="comment__img">
-                                                        <img src="assets/img/user/image-3.png" alt="">
+                                                        <img src="assets/img/user/cai.jpg" alt="">
                                                     </div>
                                                     <div class="comment__content">
                                                         <div class="comment__content-top">
@@ -261,7 +262,7 @@
                                                         </div>
 
                                                         <div class="para__content">
-                                                            <p class="para__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore dolorem a unde modi iste odio amet, fugit fuga aliquam, voluptatem maiores animi dolor nulla magnam ea! Dignissimos aspernatur cumque nam quod sint provident modi alias culpa, inventore deserunt accusantium amet earum soluta consequatur quasi eum eius laboriosam, maiores praesentium explicabo enim dolores quaerat! Voluptas ad ullam quia odio sint sunt. Ipsam officia, saepe repellat. </p>
+                                                            <p class="para__text">Mua 2 lần rồi, táo tươi và giao nhanh lắm, cảm ơn shop nhiều. Shop nhiệt tình ạ</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -271,14 +272,14 @@
                                         <!-- Start Add Review Form-->
                                         <div class="review-form m-t-40">
                                             <div class="section-content">
-                                                <h6 class="font--bold text-uppercase">ADD A REVIEW</h6>
-                                                <p class="section-content__desc">Your email address will not be published. Required fields are marked *</p>
+                                                <h6 class="font--bold text-uppercase">Thêm đánh giá</h6>
+                                                <p class="section-content__desc">Địa chỉ email của bạn sẽ không được công bố. Các trường bắt buộc được đánh dấu *</p>
                                             </div>
                                             <form class="form-box" action="#" method="post">
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="form-box__single-group">
-                                                            <label for="form-name">Your Rating*</label>
+                                                            <label for="form-name">Xếp hạng của bạn *</label>
                                                             <ul class="product__review">
                                                                 <li class="product__review--fill"><i class="icon-star"></i></li>
                                                                 <li class="product__review--fill"><i class="icon-star"></i></li>
@@ -290,24 +291,24 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-box__single-group">
-                                                            <label for="form-name">Your Name*</label>
+                                                            <label for="form-name">Tên của bạn*</label>
                                                             <input type="text" id="form-name" placeholder="Enter your name">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-box__single-group">
-                                                            <label for="form-email">Your Email*</label>
+                                                            <label for="form-email">Email của bạn*</label>
                                                             <input type="email" id="form-email" placeholder="Enter your email" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="form-box__single-group">
-                                                            <label for="form-review">Your review*</label>
+                                                            <label for="form-review">Đánh giá của bạn*</label>
                                                             <textarea id="form-review" rows="8" placeholder="Write a review"></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
-                                                        <button class="btn btn--box btn--small btn--black btn--black-hover-green btn--uppercase font--bold m-t-30" type="submit">Submit</button>
+                                                        <button class="btn btn--box btn--small btn--black btn--black-hover-green btn--uppercase font--bold m-t-30" type="submit">Gửi</button>
                                                     </div>
                                                 </div>
                                             </form>

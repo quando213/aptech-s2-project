@@ -14,4 +14,7 @@ class Combo extends Model
         'description',
         'day'
     ];
+    public function comboDetail(){
+        return $this->hasMany(ComboDetail::class);
+    }
 }
