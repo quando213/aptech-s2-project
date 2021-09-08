@@ -15,7 +15,7 @@
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="/admin">Bảng điều khiển</a></li>
                             <li class="breadcrumb-item active" aria-current="page">{{$breadcrumb}}</li>
                         </ol>
                     </nav>
@@ -27,7 +27,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title"><a href="{{route('userList')}}">Quay lại</a></h4>
+                            <h4 class="card-title"><a href="{{route('userList')}}"><button class="btn btn-primary">Quay lại</button></a></h4>
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <ul>
@@ -55,7 +55,7 @@
                                                             <label for="first-name-column">Tên đầu</label>
                                                             <input type="text" id="first-name-column"
                                                                    class="form-control"
-                                                                   placeholder="First Name"
+                                                                   placeholder="Nhập tên đầu"
                                                                    value="{{$data ? $data->first_name:''}}"
                                                                    name="first_name">
                                                         </div>
@@ -65,7 +65,7 @@
                                                             <label for="last-name-column">Họ</label>
                                                             <input type="text" id="last-name-column"
                                                                    class="form-control"
-                                                                   placeholder="Last Name"
+                                                                   placeholder="Nhập họ"
                                                                    value="{{$data ? $data->last_name:''}}"
                                                                    name="last_name">
                                                         </div>
@@ -84,6 +84,7 @@
                                                         <div class="form-group">
                                                             <label for="company-Password">Mật khẩu</label>
                                                             <input type="password" id="company-Password"
+                                                                   placeholder="Nhập mật khẩu"
                                                                    class="form-control"
                                                                    name="password">
                                                         </div>
@@ -93,6 +94,7 @@
                                                             <label for="company-Password">Nhập lại mật khẩu</label>
                                                             <input type="password" id="company-Password"
                                                                    class="form-control"
+                                                                   placeholder="Nhập lại mật khẩu"
                                                                    name="company-Password">
                                                         </div>
                                                     </div>
@@ -103,6 +105,7 @@
                                                             <input type="text" id="Phone"
                                                                    value="{{ $data ? $data->phone : '' }}"
                                                                    class="form-control"
+                                                                   placeholder="Nhập số điện thoại"
                                                                    name="phone">
                                                         </div>
                                                     </div>
@@ -118,9 +121,9 @@
                                                 <div class="row">
                                                     <div class="col-md-6 col-12">
                                                         <div class="form-group">
-                                                            <label for="sel1">District</label>
+                                                            <label for="sel1">Quận</label>
                                                             <select class="form-control" id="sel1" name="district_id">
-                                                                <option selected disabled hidden>-</option>
+                                                                <option selected disabled hidden>Chọn quận nơi bạn sinh sống</option>
                                                                 @foreach($districts as $district )
                                                                     <option
                                                                         value="{{$district->maqh}}" {{ $data && number_format($data->district_id) == $district->maqh ? 'selected' :'' }} >{{$district->name}}</option>
@@ -131,9 +134,9 @@
 
                                                     <div class="col-md-6 col-12">
                                                         <div class="form-group">
-                                                            <label for="Ward">Ward</label>
+                                                            <label for="Ward">Phường</label>
                                                             <select class="form-control" id="Ward" name="ward_id">
-                                                                <option selected disabled hidden>-</option>
+                                                                <option selected disabled hidden>Chọn phường nơi bạn sinh sống</option>
                                                                 @if($data)
                                                                     <option selected
                                                                             value="{{$ward->xaid}}">{{$ward->name}}</option>
@@ -143,8 +146,9 @@
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="form-group">
-                                                            <label for="Street">Street</label>
+                                                            <label for="Street">Đường & phố</label>
                                                             <input type="text" id="Street" class="form-control"
+                                                                   placeholder="Nhập đường & phố"
                                                                    value="{{$data ? $data->street:''}}" name="street">
                                                         </div>
                                                     </div>
@@ -153,14 +157,15 @@
                                         </div>
                                         <div class="card">
                                             <div class="card-header p-0">
-                                                <h4 class="card-title">Role</h4>
+                                                <h4 class="card-title">Vai trò</h4>
                                             </div>
                                             <div class="card-body">
                                                 <div class="row">
                                                     <div class="col-md-6 col-12">
                                                         <div class="form-group">
-                                                            <label for="Role">Role</label>
+                                                            <label for="Role">Vai trò</label>
                                                             <select class="form-control" name="role" id="Role">
+                                                                <option selected disabled hidden>Chọn vai trò</option>
                                                                 @foreach(\App\Enums\UserRole::getValues() as $type)
                                                                     <option value="{{$type}}" {{$data && $data->role === $type ? 'selected' : ''}}>{{\App\Enums\UserRole::getDescription($type)}}</option>
                                                                 @endforeach
@@ -169,9 +174,9 @@
                                                     </div>
                                                     <div class="col-md-6 col-12">
                                                         <div class="form-group">
-                                                            <label for="Group">Group</label>
+                                                            <label for="Group">Nhóm</label>
                                                             <select class="form-control" name="group_id" id="Group">
-                                                                <option selected disabled hidden>-</option>
+                                                                <option selected disabled hidden>Chọn nhóm</option>
                                                                 @foreach($group as $item)
                                                                     <option
                                                                         {{ $data && number_format($data->group_id) == $item->id ? 'selected' :'' }} value="{{$item->id}}">{{$item->name}}</option>
@@ -181,9 +186,10 @@
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="form-group">
-                                                            <label for="position">Position</label>
+                                                            <label for="position">Chức vụ</label>
                                                             <input type="text" id="position" class="form-control"
                                                                    value="{{$data ? $data->position:''}}"
+                                                                   placeholder="Nhập chức vụ"
                                                                    name="position">
                                                         </div>
                                                     </div>
@@ -195,7 +201,7 @@
                                         <div class="col-12 d-flex justify-content-end">
                                             <button type="submit"
                                                     class="btn btn-primary me-1 mb-1">{{$data ? 'Save':'Submit'}}</button>
-                                            <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset
+                                            <button type="reset" class="btn btn-light-secondary me-1 mb-1">Tải lại trang
                                             </button>
                                         </div>
                                     </div>
