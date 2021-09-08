@@ -24,7 +24,7 @@
         </div>
         <section id="multiple-column-form">
             <div class="row match-height">
-                <div class="col-12">
+                <div class="col-6">
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title"><a href="{{route('categoryList')}}">Back to list Categories </a></h4>
@@ -59,8 +59,30 @@
                                             <button type="submit" class="btn btn-primary me-1 mb-1">{{$data ? 'Save':'Submit'}}</button>
                                             <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
                                         </div>
+                                        <input type="url" hidden id="thumbnail" name="thumbnail">
                                     </div>
                                 </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">File Input</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="year">Photo</label>
+                                    <div class="form-group d-flex flex-column align-items-center">
+                                        <button type="button" class="btn btn-primary btn-block" id="upload-photo"><i
+                                                class="fas fa-image"></i> Upload Photo
+                                        </button>
+                                        <img id="preview-photo" style="width: 300px" class="mt-4"
+                                             src="{{$data ? $data->thumbnail :''}}">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -69,3 +91,34 @@
         </section>
     </div>
 @endsection
+@section('script')
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js"type="text/javascript"></script>
+    <script>
+        const inputPhoto = $('#thumbnail');
+        cloudinary.setCloudName('nguy-n-ng-c-thu-n');
+        $('#upload-photo').click(function () {
+            cloudinary.openUploadWidget({
+                    uploadPreset: 'sem_2_project',
+                    sources: ['local', 'url', 'image_search', 'google_drive'],
+                    multiple: false,
+                    tags: ['browser_upload', 'insurer', 'insurer-photo'],
+                    resourceType: 'image',
+                    cropping: true,
+                    croppingAspectRatio: 1,
+                    thumbnails: false,
+                    autoMinimize: true
+                }, (error, result) => {
+                    if (!error && result && result.event === "success") {
+                        $('#preview-photo').attr('src', result.info.url);
+                        inputPhoto.val(result.info.url);
+                    } else {
+                        if (error && error.statusText) {
+                            alert(error.statusText);
+                        }
+                    }
+                }
+            )
+        })
+    </script>
+@endsection
+

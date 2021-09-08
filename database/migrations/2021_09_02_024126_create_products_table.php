@@ -25,6 +25,7 @@ class CreateProductsTable extends Migration
             $table->string('quantity');
             $table->string('origin');
             $table->string('brand');
+            $table->text('images');
             $table->timestamps();
             $table->softDeletes();
         });
