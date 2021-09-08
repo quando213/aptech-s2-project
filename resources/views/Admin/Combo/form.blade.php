@@ -75,10 +75,10 @@
                                                                    placeholder="Chọn ngày thêm mới">
                                                         </div>
                                                     </div>
+                                                    <input type="url" hidden id="thumbnail" name="thumbnail">
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                     <div class="col-12 d-flex justify-content-end">
                                         <button type="submit"
@@ -86,11 +86,11 @@
                                         <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset
                                         </button>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-6">
                         <div class="card">
                             <div class="card-body">
@@ -98,6 +98,75 @@
                                     <div data-repeater-list="option">
                                         @foreach($combo_detail as $option)
                                             <div data-repeater-item style>
+
+
+                    <div class="row col-6">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">File Input</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label for="year">Photo</label>
+                                            <div class="form-group d-flex flex-column align-items-center">
+                                                <button type="button" class="btn btn-primary btn-block" id="upload-photo"><i
+                                                        class="fas fa-image"></i> Upload Photo
+                                                </button>
+                                                <img id="preview-photo" style="width: 300px" class="mt-4"
+                                                     src="{{$data ? $data->thumbnail :''}}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    @if($combo_detail)
+                                        <div data-repeater-list="option">
+                                            @foreach($combo_detail as $option)
+                                                <div data-repeater-item style>
+                                                    <div class="row justify-content-between">
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label for="Group">Product</label>
+                                                                <select class="product_id  form-control" required
+                                                                        name="product_id">
+                                                                    <option selected disabled hidden>-</option>
+                                                                    @foreach($product as $item)
+                                                                        <option
+                                                                            value="{{$item->id}}" {{$option->product_id == $item->id ?'selected':''}}>{{$item->name}}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label for="quantity">Quantity</label>
+                                                                <input type="number" id="quantity"
+                                                                       value="{{$option->quantity}}" max="" required
+                                                                       name="quantity" class="quantity form-control square">
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="col-md-2 col-sm-12 form-group d-flex align-items-center pt-2">
+                                                            <button class="btn btn-danger" data-repeater-delete
+                                                                    type="button"><i class="bx bx-x"></i>
+                                                                Delete
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    @else
+                                        <div data-repeater-list="option">
+                                            <div data-repeater-item>
+
                                                 <div class="row justify-content-between">
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
@@ -107,17 +176,19 @@
                                                                 <option selected disabled hidden>Chọn sản phẩm</option>
                                                                 @foreach($product as $item)
                                                                     <option
-                                                                        value="{{$item->id}}" {{$option->product_id == $item->id ?'selected':''}}>{{$item->name}}</option>
+                                                                        value="{{$item->id}}">{{$item->name}}</option>
                                                                 @endforeach
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
+
                                                             <label for="quantity">Số lượng sản phẩm</label>
                                                             <input type="number" id="quantity"
                                                                    value="{{$option->quantity}}" max="" required
                                                                    name="quantity" class="quantity form-control square" placeholder="Nhập số lượng sản phẩm">
+
                                                         </div>
                                                     </div>
                                                     <div
@@ -166,9 +237,10 @@
                                             </div>
                                             <hr>
                                         </div>
-                                    </div>
-                                @endif
+                                    @endif
+                                </div>
                             </div>
+                           
                         </div>
                         <button class="btn btn-primary" data-repeater-create type="button"><i class="bx bx-plus"></i>
                             Thêm tùy chọn
@@ -180,7 +252,33 @@
     </div>
 @endsection
 @section('script')
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js"type="text/javascript"></script>
     <script>
+        const inputPhoto = $('#thumbnail');
+        cloudinary.setCloudName('nguy-n-ng-c-thu-n');
+        $('#upload-photo').click(function () {
+            cloudinary.openUploadWidget({
+                    uploadPreset: 'sem_2_project',
+                    sources: ['local', 'url', 'image_search', 'google_drive'],
+                    multiple: false,
+                    tags: ['browser_upload', 'insurer', 'insurer-photo'],
+                    resourceType: 'image',
+                    cropping: true,
+                    croppingAspectRatio: 1,
+                    thumbnails: false,
+                    autoMinimize: true
+                }, (error, result) => {
+                    if (!error && result && result.event === "success") {
+                        $('#preview-photo').attr('src', result.info.url);
+                        inputPhoto.val(result.info.url);
+                    } else {
+                        if (error && error.statusText) {
+                            alert(error.statusText);
+                        }
+                    }
+                }
+            )
+        })
         $('.repeater-default').repeater({
             show: function () {
                 $(this).slideDown();

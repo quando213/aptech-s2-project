@@ -80,8 +80,8 @@
                                                     <a type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$item->id}}">Xóa</a>
                                                 </td>
                                             </tr>
-                                        @endforeach
-                                        </tbody>
+                                            </tbody>
+                                        @endif
                                     </table>
                                 </div>
                             </div>
