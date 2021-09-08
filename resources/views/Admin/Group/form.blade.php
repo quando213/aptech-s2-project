@@ -15,7 +15,7 @@
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="/admin">Bảng điều khiển</a></li>
                             <li class="breadcrumb-item active" aria-current="page">{{$breadcrumb}}</li>
                         </ol>
                     </nav>
@@ -27,7 +27,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title"><a href="{{route('groupList')}}">Back to list Groups </a></h4>
+                            <h4 class="card-title"><a href="{{route('groupList')}}"><button class="btn btn-primary">Quay lại</button></a></h4>
                         </div>
                         <div class="card-content">
                             <div class="card-body">
@@ -36,16 +36,16 @@
                                     <div class="row">
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <label for="first-name-column">Name</label>
+                                                <label for="first-name-column">Tên nhóm</label>
                                                 <input type="text" id="first-name-column" class="form-control"
-                                                       name="name" value="{{$data ? $data->name:''}}">
+                                                       name="name" value="{{$data ? $data->name:''}}" placeholder="Nhập tên nhóm">
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <label for="Ward">Ward</label>
+                                                <label for="Ward">Vùng quản lý</label>
                                                 <select  class="form-control" name="ward_id" id="Ward">
-                                                    <option selected disabled hidden>-</option>
+                                                    <option selected disabled hidden>Chọn vùng quản lý</option>
                                                     @foreach($ward as $item)
                                                     <option value="{{$item->xaid}}" {{$data && number_format($data->ward_id) == $item->xaid? 'selected':'' }}>{{$item->name}}</option>
                                                     @endforeach
@@ -54,23 +54,23 @@
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <label for="Group">Type</label>
+                                                <label for="Group">Đơn vị</label>
                                                 <select  class="form-control" name="type" id="Group">
-                                                    <option selected disabled hidden>-</option>
+                                                    <option selected disabled hidden>Chọn đơn vị</option>
                                                     <option value="Quân đoàn"{{$data && $data->type == "Quân đoàn" ? 'selected':''}} >Quân đoàn</option>
                                                     <option value="Sư đoàn" {{$data && $data->type == "Sư đoàn" ? 'selected':''}}>Sư đoàn</option>
                                                     <option value="Lữ đoàn" {{$data && $data->type == "Lữ đoàn" ? 'selected':''}}>Lữ đoàn</option>
                                                     <option value="Trung đoàn" {{$data && $data->type == "Trung đoàn" ? 'selected':''}}>Trung đoàn</option>
-                                                    <option value="Tiểu đoàn" {{$data && $data->type == "Tiểu đoàn" ? 'selected':''}}>	Tiểu đoàn</option>
+                                                    <option value="Tiểu đoàn" {{$data && $data->type == "Tiểu đoàn" ? 'selected':''}}>Tiểu đoàn</option>
                                                     <option value="Đại đội" {{$data && $data->type == "Đại đội" ? 'selected':''}}>Đại đội</option>
-                                                    <option value="Trung đội" {{$data && $data->type == "Trung đội" ? 'selected':''}}>	Trung đội</option>
-                                                    <option value="Tiểu đội" {{$data && $data->type == "Tiểu đội" ? 'selected':''}}>	Tiểu đội</option>
+                                                    <option value="Trung đội" {{$data && $data->type == "Trung đội" ? 'selected':''}}>Trung đội</option>
+                                                    <option value="Tiểu đội" {{$data && $data->type == "Tiểu đội" ? 'selected':''}}>Tiểu đội</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-12 d-flex justify-content-end">
                                             <button type="submit" class="btn btn-primary me-1 mb-1">{{$data ? 'Save':'Submit'}}</button>
-                                            <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                                            <button type="reset" class="btn btn-light-secondary me-1 mb-1">Tải lại trang</button>
                                         </div>
                                     </div>
                                 </form>

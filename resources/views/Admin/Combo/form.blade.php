@@ -15,7 +15,7 @@
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="/admin">Bảng điều khiển</a></li>
                             <li class="breadcrumb-item active" aria-current="page">{{$breadcrumb}}</li>
                         </ol>
                     </nav>
@@ -29,7 +29,7 @@
                     <div class="col-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title"><a href="{{route('comboList')}}">Back to list Combos </a></h4>
+                                <h4 class="card-title"><a href="{{route('comboList')}}">Quay lại</a></h4>
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
                                         <ul>
@@ -45,21 +45,21 @@
                                     <div class="row">
                                         <div class="card mb-0">
                                             <div class="card-header ">
-                                                <h4 class="card-title">Information</h4>
+                                                <h4 class="card-title">Thông tin các gói sản phẩm</h4>
                                             </div>
                                             <div class="card-body">
                                                 <div class="row">
                                                     <div class=" col-12">
                                                         <div class="form-group">
-                                                            <label for="first-name-column">Name</label>
+                                                            <label for="first-name-column">Tên sản phẩm</label>
                                                             <input type="text" id="first-name-column"
                                                                    class="form-control"
-                                                                   name="name" value="{{$data ? $data->name:''}}">
+                                                                   name="name" value="{{$data ? $data->name:''}}" placeholder="Nhập tên sản phẩm">
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="form-group">
-                                                            <label for="last-name-column">Description</label>
+                                                            <label for="last-name-column">Mô tả sản phẩm</label>
                                                             <textarea name="description" id="" cols="30"
                                                                       class="form-control"
                                                                       rows="3">{{$data ? $data->description:''}}</textarea>
@@ -67,11 +67,12 @@
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="form-group">
-                                                            <label for="email-id-column">Day</label>
+                                                            <label for="email-id-column">Ngày thêm mới</label>
                                                             <input type="number" value="{{$data ? $data->day:''}}"
                                                                    id="email-id-column"
                                                                    class="form-control"
-                                                                   name="day">
+                                                                   name="day"
+                                                                   placeholder="Chọn ngày thêm mới">
                                                         </div>
                                                     </div>
                                                     <input type="url" hidden id="thumbnail" name="thumbnail">
@@ -89,6 +90,15 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-body">
+                                @if($combo_detail)
+                                    <div data-repeater-list="option">
+                                        @foreach($combo_detail as $option)
+                                            <div data-repeater-item style>
+
 
                     <div class="row col-6">
                         <div class="col-12">
@@ -156,13 +166,14 @@
                                     @else
                                         <div data-repeater-list="option">
                                             <div data-repeater-item>
+
                                                 <div class="row justify-content-between">
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
-                                                            <label for="Group">Product</label>
+                                                            <label for="Group">Sản phẩm</label>
                                                             <select class="product_id  form-control" required
                                                                     name="product_id">
-                                                                <option selected disabled hidden>-</option>
+                                                                <option selected disabled hidden>Chọn sản phẩm</option>
                                                                 @foreach($product as $item)
                                                                     <option
                                                                         value="{{$item->id}}">{{$item->name}}</option>
@@ -172,29 +183,68 @@
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
-                                                            <label for="quantity">Quantity</label>
-                                                            <input type="number" id="quantity" max="" required
-                                                                   name="quantity" class="quantity form-control square">
+
+                                                            <label for="quantity">Số lượng sản phẩm</label>
+                                                            <input type="number" id="quantity"
+                                                                   value="{{$option->quantity}}" max="" required
+                                                                   name="quantity" class="quantity form-control square" placeholder="Nhập số lượng sản phẩm">
+
                                                         </div>
                                                     </div>
                                                     <div
                                                         class="col-md-2 col-sm-12 form-group d-flex align-items-center pt-2">
-                                                        <button class="btn btn-danger" data-repeater-delete type="button"><i
-                                                                class="bx bx-x"></i>
-                                                            Delete
+                                                        <button class="btn btn-danger" data-repeater-delete
+                                                                type="button"><i class="bx bx-x"></i>
+                                                            Xóa
                                                         </button>
                                                     </div>
                                                 </div>
                                                 <hr>
                                             </div>
+                                        @endforeach
+                                    </div>
+                                @else
+                                    <div data-repeater-list="option">
+                                        <div data-repeater-item>
+                                            <div class="row justify-content-between">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="Group">Sản phẩm</label>
+                                                        <select class="product_id  form-control" required
+                                                                name="product_id">
+                                                            <option selected disabled hidden>Chọn sản phẩm</option>
+                                                            @foreach($product as $item)
+                                                                <option
+                                                                    value="{{$item->id}}">{{$item->name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="quantity">Nhập số lượng</label>
+                                                        <input type="number" id="quantity" max="" required
+                                                               name="quantity" class="quantity form-control square" placeholder="Nhập số lượng sản phẩm">
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="col-md-2 col-sm-12 form-group d-flex align-items-center pt-2">
+                                                    <button class="btn btn-danger" data-repeater-delete type="button"><i
+                                                            class="bx bx-x"></i>
+                                                        Xóa
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <hr>
                                         </div>
                                     @endif
                                 </div>
                             </div>
-                            <button class="btn btn-primary" data-repeater-create type="button"><i class="bx bx-plus"></i>
-                                Add Option
-                            </button>
+                           
                         </div>
+                        <button class="btn btn-primary" data-repeater-create type="button"><i class="bx bx-plus"></i>
+                            Thêm tùy chọn
+                        </button>
                     </div>
                 </div>
             </section>

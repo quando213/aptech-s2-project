@@ -19,8 +19,8 @@ class AdminUserController extends Controller
         $data = User::query()->with(['district','ward','group'])->orderBy('created_at','desc')->get();
         return view('Admin.User.list',[
             'data'=>$data,
-            'title'=>'Users',
-            'breadcrumb'=>'List Users'
+            'title'=>'Trang người dùng',
+            'breadcrumb'=>'Hiện thị người dùng'
         ]);
     }
     public function create(){
@@ -30,8 +30,8 @@ class AdminUserController extends Controller
             'districts'=>$district,
             'group'=>$group,
             'data'=>null,
-            'title'=>'Users',
-            'breadcrumb'=>'Create User'
+            'title'=>'Trang thêm mới người dùng',
+            'breadcrumb'=>'Tạo mới người dùng'
         ]);
     }
     public function store(AdminUserPostRequest $request){

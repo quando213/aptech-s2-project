@@ -48,24 +48,24 @@
                 <li class="sidebar-item  has-sub">
                     <a class='sidebar-link'>
                         <i class="bi bi-hexagon-fill"></i>
-                        <span>Combo Manager</span>
+                        <span>Quản lý các gói sản phẩm</span>
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item ">
                             <a href="{{route('comboList')}}" class='sidebar-link'>
                                 <i class="bi bi-cart-plus-fill"></i>
-                                <span>Combos</span>
+                                <span>Gói sản phẩm</span>
                             </a>
                         </li>
                         <li class="submenu-item">
                             <a href="{{route('comboDetail')}}" class='sidebar-link'>
                                 <i class="bi bi-card-checklist"></i>
-                                <span>Combo Detail</span>
+                                <span>Chi tiết các gói sản phẩm</span>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li class="sidebar-title">Forms &amp; Tables</li>
+                <li class="sidebar-title">Biểu mẫu &amp; Bảng</li>
 
                 <li class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>

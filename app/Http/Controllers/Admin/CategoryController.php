@@ -14,8 +14,8 @@ class CategoryController extends Controller
         $data = Category::query()->orderBy('created_at','desc')->get();
         return view('Admin.Category.list',[
             'data'=>$data,
-            'title'=>'Categories',
-            'breadcrumb'=>'List Categories'
+            'title'=>'Trang thể loại sản phẩm',
+            'breadcrumb'=>'Hiện thị thể loại sản phẩm'
         ]);
 
     }
@@ -23,8 +23,8 @@ class CategoryController extends Controller
     {
         return view('Admin.Category.form',[
             'data'=>null,
-            'title'=>'Category',
-            'breadcrumb'=>'Create Category'
+            'title'=>'Trang thêm mới thể loại sản phẩm',
+            'breadcrumb'=>'Tạo mới thể loại sản phẩm'
         ]);
     }
 

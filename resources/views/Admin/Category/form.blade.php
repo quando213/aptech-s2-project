@@ -15,7 +15,7 @@
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="/admin">Bảng điều khiển</a></li>
                             <li class="breadcrumb-item active" aria-current="page">{{$breadcrumb}}</li>
                         </ol>
                     </nav>
@@ -27,7 +27,7 @@
                 <div class="col-6">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title"><a href="{{route('categoryList')}}">Back to list Categories </a></h4>
+                            <h4 class="card-title"><a href="{{route('categoryList')}}"><button class="btn btn-primary">Quay lại</button></a></h4>
                         </div>
                         <div class="card-content">
                             <div class="card-body">
@@ -36,23 +36,23 @@
                                     <div class="row">
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <label for="name">Name</label>
+                                                <label for="name">Tên sản phẩm</label>
                                                 <input type="text" id="name" class="form-control"
-                                                       name="name" value="{{$data ? $data->name:''}}">
+                                                       name="name" value="{{$data ? $data->name:''}}" placeholder="Nhập tên sản phẩm">
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <label for="description">Description</label>
+                                                <label for="description">Miêu tả sản phẩm</label>
                                                 <input type="text" id="description" class="form-control"
-                                                       name="description" value="{{$data ? $data->description:''}}">
+                                                       name="description" value="{{$data ? $data->description:''}}" placeholder="Nhập miêu tả sản phẩm">
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <label for="sort_number">Sort number</label>
+                                                <label for="sort_number">Số thứ tự</label>
                                                 <input type="number" id="sort_number" class="form-control"
-                                                       name="sort_number" value="{{$data ? $data->sort_number:''}}">
+                                                       name="sort_number" value="{{$data ? $data->sort_number:''}}" placeholder="Nhập số thứ tự sản phẩm">
                                             </div>
                                         </div>
                                         <div class="col-12 d-flex justify-content-end">

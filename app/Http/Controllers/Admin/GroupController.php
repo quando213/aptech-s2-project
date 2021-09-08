@@ -17,8 +17,8 @@ class GroupController extends Controller
         $data = Group::query()->with('ward')->orderBy('created_at','desc')->get();
         return view('Admin.Group.list',[
             'data'=>$data,
-            'title'=>'Group',
-            'breadcrumb'=>'List Groups'
+            'title'=>'Trang nhóm',
+            'breadcrumb'=>'Hiểm thị các nhóm'
         ]);
     }
 
@@ -29,8 +29,8 @@ class GroupController extends Controller
         return view('Admin.Group.form',[
             'ward'=>$ward,
             'data'=>null,
-            'title'=>'Group',
-            'breadcrumb'=>'Create Group'
+            'title'=>'Trang thêm mới nhóm',
+            'breadcrumb'=>'Tạo mới các nhóm'
         ]);
     }
 

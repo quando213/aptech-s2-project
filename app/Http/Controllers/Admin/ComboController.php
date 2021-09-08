@@ -17,8 +17,8 @@ class ComboController extends Controller
     {
         $data = Combo::query()->with(['comboDetail'])->orderBy('created_at','desc')->get();
         return view('Admin.Combo.list', [
-            'title' => 'Combos',
-            'breadcrumb' => 'List Combos',
+            'title' => 'Trang các gói sản phẩm',
+            'breadcrumb' => 'Hiển thị các gói sản phẩm',
             'data' => $data,
 
         ]);
@@ -27,8 +27,8 @@ class ComboController extends Controller
     {
         $product = Product::query()->orderBy('name', 'asc')->get();
         return view('Admin.Combo.form', [
-            'title' => 'Combos',
-            'breadcrumb' => 'Create Combo',
+            'title' => 'Trang thêm mới các gói sản phẩm',
+            'breadcrumb' => 'Tạo mới các gói sản phẩm',
             'data' => null,
             'product' => $product,
             'combo_detail'=>null

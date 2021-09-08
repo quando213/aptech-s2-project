@@ -16,8 +16,8 @@ class ProductController extends Controller
         $data = Product::query()->with(['category'])->orderBy('created_at','desc')->get();
         return view('Admin.Product.list',[
             'data'=>$data,
-            'title'=>'Product',
-            'breadcrumb'=>'List Products'
+            'title'=>'Trang sản phẩm',
+            'breadcrumb'=>'Hiển thị các sản phẩm'
         ]);
     }
 
@@ -28,8 +28,8 @@ class ProductController extends Controller
         return view('Admin.Product.form',[
             'categories'=>$categories,
             'data'=>null,
-            'title'=>'Product',
-            'breadcrumb'=>'Create Product'
+            'title'=>'Trang thêm mới sản phẩm',
+            'breadcrumb'=>'Tạo mới sản phẩm'
         ]);
     }
 

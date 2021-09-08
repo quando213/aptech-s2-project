@@ -15,7 +15,7 @@
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="/admin">Bảng điều khiển</a></li>
                             <li class="breadcrumb-item active" aria-current="page">{{$breadcrumb}}</li>
                         </ol>
                     </nav>
@@ -27,7 +27,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title"><a href="{{route('userCreate')}}">Tạo mới người dùng</a></h4>
+                            <h4 class="card-title"><a href="{{route('userCreate')}}"><button class="btn btn-primary">Thêm mới người dùng</button></a></h4>
                         </div>
                         <div class="card-content">
                             <div class="card-body">
@@ -39,11 +39,11 @@
                                             <th>Họ & tên</th>
                                             <th>Email</th>
                                             <th>Địa chỉ</th>
-                                            <th>Tập đoàn</th>
+                                            <th>Nhóm</th>
                                             <th>Số điện thoại</th>
                                             <th>Vai trò</th>
                                             <th>Chức vụ</th>
-                                            <th>Trạng thái</th>
+                                            <th>Hoạt động</th>
 
                                         </tr>
                                         </thead>
@@ -57,12 +57,12 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <p>Are you sure you want to delete this User {{$item->first_name . ' '. $item->last_name}}?</p>
+                                                            <p>Bạn có chắc muốn xóa gói sản phẩm này không? {{$item->first_name . ' '. $item->last_name}}?</p>
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
                                                             <a href="{{route('userDelete', $item->id)}}"
-                                                               class="btn btn-primary">Delete</a>
+                                                               class="btn btn-primary">Xóa</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -76,8 +76,8 @@
                                                 <td class="text-bold-500">{{\App\Enums\UserRole::getDescription($item->role)}}</td>
                                                 <td class="text-bold-500">{{$item->position}}</td>
                                                 <td>
-                                                    <a href="{{route('userUpdate',$item->id)}}" type="button" class="btn btn-primary">Edit</a>
-                                                    <a type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$item->id}}">Delete</a>
+                                                    <a href="{{route('userUpdate',$item->id)}}" type="button" class="btn btn-primary">Sửa</a>
+                                                    <a type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$item->id}}">Xóa</a>
                                                 </td>
                                             </tr>
                                         @endforeach
