@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\CategoryController;
 
 use App\Http\Controllers\Admin\GroupController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\WardController;
 use App\Http\Controllers\TemplateAdminController;
@@ -35,11 +36,18 @@ Route::get('/api/ward/{id}', [WardController::class, 'api']);
 Route::get('/api/product/{id}', [ProductController::class, 'apiCheck']);
 
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/login', function () {
+    return view('Client.login');
 });
 // phân quản lý user trang admin
 
+
+Route::get('/test', [OrderController::class, 'test']);
+Route::get('/test/order', [OrderController::class, 'detail']);
+Route::get('addToCart/{id}', [OrderController::class, 'addToCart'])->name('addToCart');
+Route::get('remove/{id}', [OrderController::class, 'remove']);
+Route::post('/test/order', [OrderController::class, 'update'])->name('update');
+Route::get('/buy', [OrderController::class, 'buynow'])->name('buy');
 
 //template admin
 

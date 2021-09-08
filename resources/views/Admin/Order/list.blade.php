@@ -24,10 +24,10 @@
         </div>
         <section class="section">
             <div class="row" id="basic-table">
-                <div class="col-12 ">
+                <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title"><a href="{{route('productCreate')}}">Add Product</a></h4>
+                            <h4 class="card-title"><a href="{{route('comboCreate')}}">Add Combo</a></h4>
                         </div>
                         <div class="card-content">
                             <div class="card-body">
@@ -35,14 +35,9 @@
                                     <table id="myTable" class="table table-lg">
                                         <thead class="thead-dark">
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Price</th>
-                                            <th>Thumbnail</th>
-                                            <th>Category</th>
-                                            <th>Stock</th>
-                                            <th>Mass</th>
-                                            <th>Origin</th>
-                                            <th>Brand</th>
+                                            <th>NAME</th>
+                                            <th>Description</th>
+                                            <th>Day</th>
                                             <th>Action</th>
                                         </tr>
                                         </thead>
@@ -96,7 +91,7 @@
                                         @else
                                             <tbody>
                                             <tr class="odd">
-                                                <td colspan="3" class="dataTables_empty">Không có dư liệu nào
+                                                <td colspan="4" class="dataTables_empty">Không có dư liệu nào
                                                 </td>
                                             </tr>
                                             </tbody>

@@ -12,7 +12,8 @@ class Combo extends Model
     protected $fillable = [
         'name',
         'description',
-        'day'
+        'day',
+        'thumbnail'
     ];
     public function comboDetail(){
         return $this->hasMany(ComboDetail::class);

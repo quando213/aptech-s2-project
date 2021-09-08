@@ -18,6 +18,7 @@ class CreateCombosTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('day');
+            $table->string('thumbnail');
             $table->timestamps();
             $table->softDeletes();
         });

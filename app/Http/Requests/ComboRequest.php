@@ -25,6 +25,7 @@ class ComboRequest extends FormRequest
     {
         return [
             'name'=>['required','min:2'],
+            'thumbnail'=>['required','min:2'],
             'description'=>['required','min:2'],
             'day'=>['required','numeric'],
         ];

@@ -22,6 +22,7 @@ class CategoryPostRequest extends FormRequest
         return [
             'name'=>['required'],
             'description'=>['required'],
+            'thumbnail'=>['required'],
             'sort_number'=>['required','numeric']
         ];
     }
