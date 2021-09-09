@@ -65,6 +65,12 @@
                                         <span class="menu-label menu-label--red">Mới</span>
                                         <!-- Megamenu Menu-->
                                         <ul class="mega-menu pos-absolute">
+{{--                                            <li>--}}
+{{--                                                @foreach($category as $item)--}}
+{{--                                                    <span>{{$item->name}}</span>--}}
+{{--                                                @endforeach--}}
+
+{{--                                            </li>--}}
                                             <li class="mega-menu__box">
                                                 <!--Single Megamenu Item Menu-->
                                                 <div class="mega-menu__item-box">
@@ -72,21 +78,7 @@
                                                     <ul class="mega-menu__item">
                                                         <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
                                                                                        class="mega-menu__link">Các Loại Thịt Gà</a></li>
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Hải Sản</a></li>
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Thịt Vịt</a></li>
-                                                        {{--                                                        <li class="mega-menu__list pos-relative">--}}
-                                                        {{--                                                            <a href="/shop-layout/shop-sidebar-full-width" class="mega-menu__link">Grid Right Sidebar</a>--}}
-                                                        {{--                                                            <span class="menu-label menu-label--red">New</span>--}}
-                                                        {{--                                                        </li>--}}
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Thịt Lợn</a></li>
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Thịt Bò</a></li>
 
-                                                        {{--                                                        <li class="mega-menu__list"><a href="shop-sidebar-left-list-view.html" class="mega-menu__link">List Left Sidebar</a></li>--}}
-                                                        {{--                                                        <li class="mega-menu__list"><a href="shop-sidebar-right-list-view.html" class="mega-menu__link">List Right Sidebar</a></li>--}}
                                                     </ul>
                                                 </div>
                                                 <!--Single Megamenu Item Menu-->

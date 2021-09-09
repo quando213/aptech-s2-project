@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class TemplateClientController extends Controller
@@ -13,7 +15,8 @@ class TemplateClientController extends Controller
 
     public function home()
     {
-        return view('.Client.home');
+        $category = Category::all();
+        return view('.Client.home', ["category" => $category]);
     }
 
 
@@ -27,9 +30,10 @@ class TemplateClientController extends Controller
         return view('.Client.contact');
     }
 
-    public function product_default()
+    public function product_default($id)
     {
-        return view('.Client.product-single-default');
+        $product = Product::findOrFail($id);
+        return view('Client.product-single-default', ["product" => $product]);
     }
 
     public function product_left()
@@ -39,7 +43,8 @@ class TemplateClientController extends Controller
 
     public function shop_layout_with()
     {
-        return view('.Client.shop-sidebar-full-width');
+        $data = Product::all();
+        return view('.Client.shop-sidebar-full-width', compact('data'));
     }
 
     public function shop_layout_left()
@@ -96,6 +101,7 @@ class TemplateClientController extends Controller
     {
         return view('.Client.compare');
     }
+
     public function blog2()
     {
         return view('.Client.blog-list-sidebar-left');

@@ -24,7 +24,7 @@
                     <div class="col-md-5">
                         <div class="product-gallery-box product-gallery-box--default m-b-60">
                             <div class="product-image--large product-image--large-horizontal">
-                                <img class="img-fluid" id="img-zoom" src="assets/img/product/gallery/gallery-large/product-gallery-large-1.jpg" data-zoom-image="assets/img/product/gallery/gallery-large/product-gallery-large-1.jpg" alt="">
+                                <img class="img-fluid" id="img-zoom" src="{{$product->thumbnail}}" data-zoom-image="{{$product->thumbnail}}" width="500px" >
                             </div>
                             <div id="gallery-zoom" class="product-image--thumb product-image--thumb-horizontal pos-relative">
                                 <a class="zoom-active" data-image="assets/img/product/gallery/gallery-large/product-gallery-large-1.jpg" data-zoom-image="assets/img/product/gallery/gallery-large/product-gallery-large-1.jpg">
@@ -44,21 +44,14 @@
                     </div>
                     <div class="col-md-7">
                         <div class="product-details-box m-b-60">
-                            <h4 class="font--regular m-b-20">Táo Xanh</h4>
-                            <ul class="product__review">
-                                <li class="product__review--fill"><i class="icon-star"></i></li>
-                                <li class="product__review--fill"><i class="icon-star"></i></li>
-                                <li class="product__review--fill"><i class="icon-star"></i></li>
-                                <li class="product__review--fill"><i class="icon-star"></i></li>
-                                <li class="product__review--blank"><i class="icon-star"></i></li>
-                            </ul>
+                            <h4 class="font--regular m-b-20">{{$product->name}}</h4>
+
                             <div class="product__price m-t-5">
-                                <span class="product__price product__price--large">$19.00 <del>$29.00</del></span>
+                                <span class="product__price product__price--large">{{number_format($product->price)}}VND</span>
                                 <span class="product__tag m-l-15 btn--tiny btn--green">-34%</span>
                             </div>
-
                             <div class="product__desc m-t-25 m-b-30">
-                                <p>Táo Xanh nhập khẩu</p>
+                                <p>{{$product->description}}</p>
                             </div>
                             <div class="product-var p-tb-30">
                                 <div class="product__stock m-b-20">
@@ -136,19 +129,8 @@
                                     <!-- Start Tab - Product Description -->
                                     <div class="tab-pane show active" id="product-desc">
                                         <div class="para__content">
-                                            <p class="para__text">Táo Xanh Nhập Khẩu</p>
-                                            <p class="para__text">quốc Gia:USA</p>
-                                            <h6 class="para__title">Tác Dụng Của Sản Phẩm:</h6>
-                                            <ul class="para__list">
-                                                <li>Giúp Giảm Cân </li>
-                                                <li>Bảo Vệ Da</li>
-                                                <li>Giàu Chất Oxi Hóa</li>
-                                                <li>Là Chất Khử Độc Tự Nhiên</li>
-                                                <li>Tốt Cho Phổi </li>
-                                                <li>Tốt Cho Mắt</li>
-                                                <li>Ngăn Ngừa Hen Xuyễn </li>
-                                                <li>Ngăn Ngừa Tiểu Đường</li>
-                                            </ul>
+                                            <p class="para__text">{{$product->description}}</p>
+                                            <p class="para__text">quốc Gia:Viet Nam</p>
                                         </div>
                                     </div>  <!-- End Tab - Product Description -->
 
