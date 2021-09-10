@@ -15,12 +15,15 @@
                             {{--                                    <a class="user-set-role__button" href="#" data-toggle="dropdown"--}}
                             {{--                                       aria-expanded="false">Select Language<i class="fal fa-chevron-down"></i></a>--}}
                             {{--                                    <ul class="expand-dropdown-menu dropdown-menu">--}}
-                            {{--                                        <li><a href="https://translate.google.com/"><img src="assets/img/icon/flag/icon_usa.png" alt="">English</a>--}}
+                            {{--                                        <li><a href="https://translate.google.com/"><img--}}
+                            {{--                                                    src="assets/img/icon/flag/icon_usa.png" alt="">English</a>--}}
                             {{--                                        </li>--}}
-                            {{--                                        <li><a href="https://translate.google.com/"><img src="assets/img/icon/flag/icon_france.png"--}}
-                            {{--                                                             alt="">French</a></li>--}}
-                            {{--                                        <li><a href="https://translate.google.com/"><img src="https://cdn.countryflags.com/thumbs/vietnam/flag-400.png"--}}
-                            {{--                                                             alt="" style="width: 20px">Việt Nam</a></li>--}}
+                            {{--                                        <li><a href="https://translate.google.com/"><img--}}
+                            {{--                                                    src="assets/img/icon/flag/icon_france.png"--}}
+                            {{--                                                    alt="">French</a></li>--}}
+                            {{--                                        <li><a href="https://translate.google.com/"><img--}}
+                            {{--                                                    src="https://cdn.countryflags.com/thumbs/vietnam/flag-400.png"--}}
+                            {{--                                                    alt="" style="width: 20px">Việt Nam</a></li>--}}
                             {{--                                    </ul>--}}
                             {{--                                </li>--}}
                             {{--                                <li class="user-info pos-relative">--}}
@@ -71,19 +74,24 @@
                                                     <span class="mega-menu__title">Sản Phẩm Thịt</span>
                                                     <ul class="mega-menu__item">
                                                         <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Thịt Gà</a></li>
+                                                                                       class="mega-menu__link">Các Loại
+                                                                Thịt Gà</a></li>
                                                         <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Hải Sản</a></li>
+                                                                                       class="mega-menu__link">Hải
+                                                                Sản</a></li>
                                                         <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Thịt Vịt</a></li>
+                                                                                       class="mega-menu__link">Các Loại
+                                                                Thịt Vịt</a></li>
                                                         {{--                                                        <li class="mega-menu__list pos-relative">--}}
                                                         {{--                                                            <a href="/shop-layout/shop-sidebar-full-width" class="mega-menu__link">Grid Right Sidebar</a>--}}
                                                         {{--                                                            <span class="menu-label menu-label--red">New</span>--}}
                                                         {{--                                                        </li>--}}
                                                         <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Thịt Lợn</a></li>
+                                                                                       class="mega-menu__link">Các Loại
+                                                                Thịt Lợn</a></li>
                                                         <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Thịt Bò</a></li>
+                                                                                       class="mega-menu__link">Các Loại
+                                                                Thịt Bò</a></li>
 
                                                         {{--                                                        <li class="mega-menu__list"><a href="shop-sidebar-left-list-view.html" class="mega-menu__link">List Left Sidebar</a></li>--}}
                                                         {{--                                                        <li class="mega-menu__list"><a href="shop-sidebar-right-list-view.html" class="mega-menu__link">List Right Sidebar</a></li>--}}
@@ -94,18 +102,22 @@
                                                     <span class="mega-menu__title">Sản Phẩm Đóng Hộp</span>
                                                     <ul class="mega-menu__item">
                                                         <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Thịt</a></li>
+                                                                                       class="mega-menu__link">Các Loại
+                                                                Thịt</a></li>
                                                         <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Cá</a></li>
+                                                                                       class="mega-menu__link">Các Loại
+                                                                Cá</a></li>
                                                         <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Xúc Xích</a></li>
+                                                                                       class="mega-menu__link">Các Loại
+                                                                Xúc Xích</a></li>
                                                         <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Khác</a></li>
-{{--                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"--}}
-{{--                                                                                       class="mega-menu__link">Các Loại gia vị</a></li>--}}
-{{--                                                        <li class="mega-menu__list"><a--}}
-{{--                                                                href="shop-sidebar-right-list-view.html"--}}
-{{--                                                                class="mega-menu__link">List Right Sidebar</a></li>--}}
+                                                                                       class="mega-menu__link">Các Loại
+                                                                Khác</a></li>
+                                                        {{--                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"--}}
+                                                        {{--                                                                                       class="mega-menu__link">Các Loại gia vị</a></li>--}}
+                                                        {{--                                                        <li class="mega-menu__list"><a--}}
+                                                        {{--                                                                href="shop-sidebar-right-list-view.html"--}}
+                                                        {{--                                                                class="mega-menu__link">List Right Sidebar</a></li>--}}
 
                                                     </ul>
                                                 </div>
@@ -113,13 +125,17 @@
                                                     <span class="mega-menu__title">Sản Phẩm Rau Củ</span>
                                                     <ul class="mega-menu__item">
                                                         <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Rau Xanh</a></li>
+                                                                                       class="mega-menu__link">Các Loại
+                                                                Rau Xanh</a></li>
                                                         <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Trái Cây</a></li>
+                                                                                       class="mega-menu__link">Các Loại
+                                                                Trái Cây</a></li>
                                                         <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Củ</a></li>
+                                                                                       class="mega-menu__link">Các Loại
+                                                                Củ</a></li>
                                                         <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Đồ Khô</a></li>
+                                                                                       class="mega-menu__link">Các Loại
+                                                                Đồ Khô</a></li>
                                                         {{--                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"--}}
                                                         {{--                                                                                       class="mega-menu__link">Các Loại gia vị</a></li>--}}
                                                         {{--                                                        <li class="mega-menu__list"><a--}}
@@ -133,46 +149,55 @@
                                                     <span class="mega-menu__title">Giỏ Hàng</span>
                                                     <ul class="mega-menu__item">
                                                         <li class="mega-menu__list"><a href="/cart"
-                                                                                       class="mega-menu__link">Giỏ Hàng</a>
+                                                                                       class="mega-menu__link">Giỏ
+                                                                Hàng</a>
                                                         </li>
                                                         <li class="mega-menu__list"><a href="/checkout"
-                                                                                       class="mega-menu__link">Thanh Toán</a>
+                                                                                       class="mega-menu__link">Thanh
+                                                                Toán</a>
                                                         </li>
                                                         {{--                                                        <li class="mega-menu__list"><a href="compare.html" class="mega-menu__link">Compare</a></li>--}}
                                                         <li class="mega-menu__list pos-relative">
-                                                            <a href="/emply-cart" class="mega-menu__link">Giỏ Hàng Rỗng</a>
+                                                            <a href="/emply-cart" class="mega-menu__link">Giỏ Hàng
+                                                                Rỗng</a>
                                                             <span class="menu-label menu-label--blue">Mới</span>
                                                         </li>
                                                         {{--                                                        <li class="mega-menu__list"><a href="wishlist.html" class="mega-menu__link">Wishlist</a></li>--}}
                                                         <li class="mega-menu__list"><a href="/my-account"
-                                                                                       class="mega-menu__link">Tài Khoản Người Dùng </a></li>
+                                                                                       class="mega-menu__link">Tài Khoản
+                                                                Người Dùng </a></li>
                                                         <li class="mega-menu__list"><a href="/login"
-                                                                                       class="mega-menu__link">Đăng Nhập</a>
+                                                                                       class="mega-menu__link">Đăng
+                                                                Nhập</a>
+                                                        </li>
+                                                        <li class="mega-menu__list"><a href="/sign-up"
+                                                                                       class="mega-menu__link">Đăng
+                                                                Ký</a>
                                                         </li>
                                                     </ul>
                                                 </div>
                                                 <!--Single Megamenu Item Menu-->
 
                                                 <!--Single Megamenu Item Menu-->
-{{--                                                <div class="mega-menu__item-box">--}}
-{{--                                                    <span class="mega-menu__title">Chi Tiết Sản Phẩm</span>--}}
-{{--                                                    <ul class="mega-menu__item">--}}
-{{--                                                        <li class="mega-menu__list"><a href="/product-single-default"--}}
-{{--                                                                                       class="mega-menu__link">Simple</a>--}}
-{{--                                                        </li>--}}
-{{--                                                        --}}{{--                                                        <li class="mega-menu__list"><a href="product-single-affiliate.html" class="mega-menu__link">Affiliate</a></li>--}}
-{{--                                                        --}}{{--                                                        <li class="mega-menu__list pos-relative">--}}
-{{--                                                        --}}{{--                                                            <a href="product-single-group.html" class="mega-menu__link">Grouped</a>--}}
-{{--                                                        --}}{{--                                                            <span class="menu-label menu-label--red">New</span>--}}
-{{--                                                        --}}{{--                                                        </li>--}}
-{{--                                                        --}}{{--                                                        <li class="mega-menu__list"><a href="product-single-variable.html" class="mega-menu__link">Variable</a></li>--}}
-{{--                                                        <li class="mega-menu__list"><a href="/product-single-tab-left"--}}
-{{--                                                                                       class="mega-menu__link">Left--}}
-{{--                                                                Tab</a></li>--}}
-{{--                                                        --}}{{--                                                        <li class="mega-menu__list"><a href="product-single-tab-right.html" class="mega-menu__link">Right Tab</a></li>--}}
-{{--                                                    </ul>--}}
-{{--                                                </div>--}}
-                                                <!--Single Megamenu Item Menu-->
+                                            {{--                                                <div class="mega-menu__item-box">--}}
+                                            {{--                                                    <span class="mega-menu__title">Chi Tiết Sản Phẩm</span>--}}
+                                            {{--                                                    <ul class="mega-menu__item">--}}
+                                            {{--                                                        <li class="mega-menu__list"><a href="/product-single-default"--}}
+                                            {{--                                                                                       class="mega-menu__link">Simple</a>--}}
+                                            {{--                                                        </li>--}}
+                                            {{--                                                        --}}{{--                                                        <li class="mega-menu__list"><a href="product-single-affiliate.html" class="mega-menu__link">Affiliate</a></li>--}}
+                                            {{--                                                        --}}{{--                                                        <li class="mega-menu__list pos-relative">--}}
+                                            {{--                                                        --}}{{--                                                            <a href="product-single-group.html" class="mega-menu__link">Grouped</a>--}}
+                                            {{--                                                        --}}{{--                                                            <span class="menu-label menu-label--red">New</span>--}}
+                                            {{--                                                        --}}{{--                                                        </li>--}}
+                                            {{--                                                        --}}{{--                                                        <li class="mega-menu__list"><a href="product-single-variable.html" class="mega-menu__link">Variable</a></li>--}}
+                                            {{--                                                        <li class="mega-menu__list"><a href="/product-single-tab-left"--}}
+                                            {{--                                                                                       class="mega-menu__link">Left--}}
+                                            {{--                                                                Tab</a></li>--}}
+                                            {{--                                                        --}}{{--                                                        <li class="mega-menu__list"><a href="product-single-tab-right.html" class="mega-menu__link">Right Tab</a></li>--}}
+                                            {{--                                                    </ul>--}}
+                                            {{--                                                </div>--}}
+                                            <!--Single Megamenu Item Menu-->
 
                                                 <!--Single Megamenu Item Menu-->
                                             {{--                                                <div class="mega-menu__item-box">--}}
@@ -277,27 +302,27 @@
                                             {{--                                            </li>--}}
                                             <li class="dropdown__list">
                                                 <a href="#"
-                                                   class="dropdown__link d-flex justify-content-between align-items-center">Blog
-                                                    List <i class="far fa-chevron-right"></i></a>
-                                                <ul class="dropdown__submenu pos-absolute">
-                                                    <li class="dropdown__submenu-list"><a href="/blog-list-sidebar-left"
-                                                                                          class="dropdown__submenu-link">
-                                                            Blog List Left Sidebar</a></li>
-                                                    {{--                                                                                                <li class="dropdown__submenu-list"><a href="blog-list-sidebar-right.html" class="dropdown__submenu-link"> Blog List Right Sidebar</a></li>--}}
-                                                </ul>
+                                                   class="dropdown__link d-flex justify-content-between align-items-center"><a
+                                                        href="/blog-list-sidebar-left"
+                                                        class="dropdown__submenu-link">
+                                                        Phản Hồi</a></a>
+                                                {{--                                                <ul class="dropdown__submenu pos-absolute">--}}
+                                                {{--                                                    <li class="dropdown__submenu-list"></li>--}}
+                                                {{--                                                    --}}{{--                                                                                                <li class="dropdown__submenu-list"><a href="blog-list-sidebar-right.html" class="dropdown__submenu-link"> Blog List Right Sidebar</a></li>--}}
+                                                {{--                                                </ul>--}}
                                             </li>
-                                            <li class="dropdown__list">
-                                                <a href="#"
-                                                   class="dropdown__link d-flex justify-content-between align-items-center">Blog
-                                                    Single <i class="far fa-chevron-right"></i></a>
-                                                <ul class="dropdown__submenu pos-absolute">
-                                                    <li class="dropdown__submenu-list"><a
-                                                            href="/blog-simple-sidebar-left"
-                                                            class="dropdown__submenu-link"> Blog Single Left Sidebar</a>
-                                                    </li>
-                                                    {{--                                                    <li class="dropdown__submenu-list"><a href="blog-single-sidebar-right.html" class="dropdown__submenu-link"> Blog Single Right Sidebar</a></li>--}}
-                                                </ul>
-                                            </li>
+                                            {{--                                            <li class="dropdown__list">--}}
+                                            {{--                                                <a href="#"--}}
+                                            {{--                                                   class="dropdown__link d-flex justify-content-between align-items-center">Blog--}}
+                                            {{--                                                    Single <i class="far fa-chevron-right"></i></a>--}}
+                                            {{--                                                <ul class="dropdown__submenu pos-absolute">--}}
+                                            {{--                                                    <li class="dropdown__submenu-list"><a--}}
+                                            {{--                                                            href="/blog-simple-sidebar-left"--}}
+                                            {{--                                                            class="dropdown__submenu-link"> Blog Single Left Sidebar</a>--}}
+                                            {{--                                                    </li>--}}
+                                            {{--                                                    --}}{{--                                                    <li class="dropdown__submenu-list"><a href="blog-single-sidebar-right.html" class="dropdown__submenu-link"> Blog Single Right Sidebar</a></li>--}}
+                                            {{--                                                </ul>--}}
+                                            {{--                                            </li>--}}
                                         </ul>
                                         <!--Single Dropdown Menu-->
                                     </li> <!-- End Single Nav link-->
@@ -449,24 +474,24 @@
         </div>
 
         <div class="offcanvas-inner">
-{{--            <ul class="user-set-role d-flex justify-content-between m-tb-15">--}}
-{{--                <li class="user-currency pos-relative">--}}
-{{--                    <a class="user-set-role__button" href="#" data-toggle="dropdown" aria-expanded="false">Select--}}
-{{--                        Language<i class="fal fa-chevron-down"></i></a>--}}
-{{--                    <ul class="expand-dropdown-menu dropdown-menu">--}}
-{{--                        <li><a href="#"><img src="assets/img/icon/flag/icon_usa.png" alt="">English</a></li>--}}
-{{--                        <li><a href="#"><img src="assets/img/icon/flag/icon_france.png" alt="">French</a></li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
-{{--                <li class="user-info pos-relative">--}}
-{{--                    <a class="user-set-role__button" href="#" data-toggle="dropdown" aria-expanded="false">Select--}}
-{{--                        Currency <i class="fal fa-chevron-down"></i></a>--}}
-{{--                    <ul class="expand-dropdown-menu dropdown-menu">--}}
-{{--                        <li><a href="#">USD</a></li>--}}
-{{--                        <li><a href="#">POUND</a></li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
-{{--            </ul>--}}
+            {{--            <ul class="user-set-role d-flex justify-content-between m-tb-15">--}}
+            {{--                <li class="user-currency pos-relative">--}}
+            {{--                    <a class="user-set-role__button" href="#" data-toggle="dropdown" aria-expanded="false">Select--}}
+            {{--                        Language<i class="fal fa-chevron-down"></i></a>--}}
+            {{--                    <ul class="expand-dropdown-menu dropdown-menu">--}}
+            {{--                        <li><a href="#"><img src="assets/img/icon/flag/icon_usa.png" alt="">English</a></li>--}}
+            {{--                        <li><a href="#"><img src="assets/img/icon/flag/icon_france.png" alt="">French</a></li>--}}
+            {{--                    </ul>--}}
+            {{--                </li>--}}
+            {{--                <li class="user-info pos-relative">--}}
+            {{--                    <a class="user-set-role__button" href="#" data-toggle="dropdown" aria-expanded="false">Select--}}
+            {{--                        Currency <i class="fal fa-chevron-down"></i></a>--}}
+            {{--                    <ul class="expand-dropdown-menu dropdown-menu">--}}
+            {{--                        <li><a href="#">USD</a></li>--}}
+            {{--                        <li><a href="#">POUND</a></li>--}}
+            {{--                    </ul>--}}
+            {{--                </li>--}}
+            {{--            </ul>--}}
             <form class="header-search m-tb-15" action="#" method="post">
                 <div class="header-search__content pos-relative">
                     <input type="search" name="header-search" placeholder="Search our store" required>
@@ -503,11 +528,29 @@
                         <a href="#"><span>Sản Phẩm</span></a>
                         <ul class="sub-menu">
                             <li>
-                                <a href="#">Shop Layout</a>
+                                <a href="#">Sản Phẩm Thịt</a>
                                 <ul class="sub-menu">
-                                    <li><a href="/shop-sidebar-full-width">Grid Left Sidebar</a></li>
+                                    <li><a href="/shop-sidebar-full-width">Các Loại Thịt Gà</a></li>
                                     {{--                                    <li><a href="shop-sidebar-grid-right.html">Grid Right Sidebar</a></li>--}}
-                                    <li><a href="/shop-sidebar-full-width">Full Width</a></li>
+                                    <li><a href="/shop-sidebar-full-width">Các Loại Thịt Heo</a></li>
+                                    <li><a href="/shop-sidebar-full-width">Các Loại Thịt Bò</a></li>
+                                    <li><a href="/shop-sidebar-full-width">Các Loại Thịt Vịt</a></li>
+                                    <li><a href="/shop-sidebar-full-width">Hải Sản</a></li>
+                                    {{--                                    <li><a href="shop-sidebar-left-list-view.html">List Left Sidebar</a></li>--}}
+                                    {{--                                    <li><a href="shop-sidebar-right-list-view.html">List Right Sidebar</a></li>--}}
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#">Sản Phẩm Đóng Hộp</a>
+                                <ul class="sub-menu">
+                                    <li><a href="/shop-sidebar-full-width">Các Loại Thịt </a></li>
+                                    {{--                                    <li><a href="shop-sidebar-grid-right.html">Grid Right Sidebar</a></li>--}}
+                                    <li><a href="/shop-sidebar-full-width">Các Loại Cá</a></li>
+                                    <li><a href="/shop-sidebar-full-width">Các Loại Xúc Xích</a></li>
+                                    <li><a href="/shop-sidebar-full-width">Các Loại Khác</a></li>
                                     {{--                                    <li><a href="shop-sidebar-left-list-view.html">List Left Sidebar</a></li>--}}
                                     {{--                                    <li><a href="shop-sidebar-right-list-view.html">List Right Sidebar</a></li>--}}
                                 </ul>
@@ -515,7 +558,21 @@
                         </ul>
                         <ul class="sub-menu">
                             <li>
-                                <a href="#">Shop Pages</a>
+                                <a href="#">Sản Phẩm Rau</a>
+                                <ul class="sub-menu">
+                                    <li><a href="/shop-sidebar-full-width">Các Loại Rau Xanh</a></li>
+                                    {{--                                    <li><a href="shop-sidebar-grid-right.html">Grid Right Sidebar</a></li>--}}
+                                    <li><a href="/shop-sidebar-full-width">Các Loại Trái cây</a></li>
+                                    <li><a href="/shop-sidebar-full-width">Các Loại Củ</a></li>
+                                    <li><a href="/shop-sidebar-full-width">Các LoạiĐồ Khô</a></li>
+                                    {{--                                    <li><a href="shop-sidebar-left-list-view.html">List Left Sidebar</a></li>--}}
+                                    {{--                                    <li><a href="shop-sidebar-right-list-view.html">List Right Sidebar</a></li>--}}
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#">Giỏ Hàng</a>
                                 <ul class="sub-menu">
                                     <li><a href="/cart">Giỏ Hàng</a></li>
                                     <li><a href="/checkout">Thanh Toán</a></li>
@@ -528,24 +585,24 @@
                                 </ul>
                             </li>
                         </ul>
-{{--                        <ul class="sub-menu">--}}
-{{--                            <li>--}}
-{{--                                <a href="#">Product Single</a>--}}
-{{--                                <ul class="sub-menu">--}}
-{{--                                    <li><a href="/product-single-default">Simple</a></li>--}}
-{{--                                    --}}{{--                                    <li><a href="product-single-affiliate.html">Affiliate</a></li>--}}
-{{--                                    --}}{{--                                    <li><a href="product-single-group.html">Grouped</a></li>--}}
-{{--                                    --}}{{--                                    <li><a href="product-single-variable.html">Variable</a></li>--}}
-{{--                                    <li><a href="/product-single-tab-left">Left Tab</a></li>--}}
-{{--                                    --}}{{--                                    <li><a href="product-single-tab-right.html">Right Tab</a></li>--}}
-{{--                                    --}}{{--                                    <li><a href="product-single-slider.html">Single Slider</a></li>--}}
-{{--                                    --}}{{--                                    <li><a href="product-single-gallery-left.html">Gallery Left</a></li>--}}
-{{--                                    --}}{{--                                    <li><a href="product-single-gallery-right.html">Gallery Right</a></li>--}}
-{{--                                    --}}{{--                                    <li><a href="product-single-sticky-left.html">Sticky Left</a></li>--}}
-{{--                                    --}}{{--                                    <li><a href="product-single-sticky-right.html">Sticky Right</a></li>--}}
-{{--                                </ul>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
+                        {{--                        <ul class="sub-menu">--}}
+                        {{--                            <li>--}}
+                        {{--                                <a href="#">Product Single</a>--}}
+                        {{--                                <ul class="sub-menu">--}}
+                        {{--                                    <li><a href="/product-single-default">Simple</a></li>--}}
+                        {{--                                    --}}{{--                                    <li><a href="product-single-affiliate.html">Affiliate</a></li>--}}
+                        {{--                                    --}}{{--                                    <li><a href="product-single-group.html">Grouped</a></li>--}}
+                        {{--                                    --}}{{--                                    <li><a href="product-single-variable.html">Variable</a></li>--}}
+                        {{--                                    <li><a href="/product-single-tab-left">Left Tab</a></li>--}}
+                        {{--                                    --}}{{--                                    <li><a href="product-single-tab-right.html">Right Tab</a></li>--}}
+                        {{--                                    --}}{{--                                    <li><a href="product-single-slider.html">Single Slider</a></li>--}}
+                        {{--                                    --}}{{--                                    <li><a href="product-single-gallery-left.html">Gallery Left</a></li>--}}
+                        {{--                                    --}}{{--                                    <li><a href="product-single-gallery-right.html">Gallery Right</a></li>--}}
+                        {{--                                    --}}{{--                                    <li><a href="product-single-sticky-left.html">Sticky Left</a></li>--}}
+                        {{--                                    --}}{{--                                    <li><a href="product-single-sticky-right.html">Sticky Right</a></li>--}}
+                        {{--                                </ul>--}}
+                        {{--                            </li>--}}
+                        {{--                        </ul>--}}
                     </li>
                     <li>
                         <a href="#"><span>Blogs</span></a>
@@ -558,19 +615,19 @@
                             {{--                                </ul>--}}
                             {{--                            </li>--}}
                             <li>
-                                <a href="#">Blog List</a>
-                                <ul class="sub-menu">
-                                    <li><a href="/blog-list-sidebar-left"> Blog List Left Sidebar</a></li>
-                                    {{--                                                                <li><a href="blog-list-sidebar-right.html"> Blog List Right Sidebar</a></li>--}}
-                                </ul>
+                                <a href="/blog-list-sidebar-left">Phản Hồi</a>
+                                {{--                                <ul class="sub-menu">--}}
+                                {{--                                    <li><a href="/blog-list-sidebar-left"> Blog List Left Sidebar</a></li>--}}
+                                {{--                                    --}}{{--                                                                <li><a href="blog-list-sidebar-right.html"> Blog List Right Sidebar</a></li>--}}
+                                {{--                                </ul>--}}
                             </li>
-                            <li>
-                                <a href="#">Blog Single</a>
-                                <ul class="sub-menu">
-                                    <li><a href="/blog-simple-sidebar-left"> Blog Single Left Sidebar</a></li>
-                                    {{--                                    <li><a href="blog-single-sidebar-right.html"> Blog Single Right Sidebar</a></li>--}}
-                                </ul>
-                            </li>
+                            {{--                            <li>--}}
+                            {{--                                <a href="#">Blog Single</a>--}}
+                            {{--                                <ul class="sub-menu">--}}
+                            {{--                                    <li><a href="/blog-simple-sidebar-left"> Blog Single Left Sidebar</a></li>--}}
+                            {{--                                    --}}{{--                                    <li><a href="blog-single-sidebar-right.html"> Blog Single Right Sidebar</a></li>--}}
+                            {{--                                </ul>--}}
+                            {{--                            </li>--}}
                         </ul>
                     </li>
                     <li>

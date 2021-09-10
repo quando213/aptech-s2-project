@@ -1,14 +1,15 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminUserController;
-use App\Http\Controllers\Admin\CategoryController;
-
-use App\Http\Controllers\Admin\GroupController;
-use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\WardController;
-use App\Http\Controllers\TemplateAdminController;
-use App\Http\Controllers\TemplateClientController;
-use App\Http\Controllers\Admin\ComboController;
+use App\Http\Controllers\{Admin\AdminUserController,
+    Admin\CategoryController,
+    Admin\GroupController,
+    Admin\ProductController,
+    Admin\WardController,
+    Client\LoginRegisterController,
+    Client\LoginController,
+    TemplateAdminController,
+    TemplateClientController,
+    Admin\ComboController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -76,3 +77,15 @@ Route::get('/checkout', [TemplateClientController::class, 'checkout']);
 Route::get('/compare', [TemplateClientController::class, 'compare']);
 
 
+
+
+//trang login cho client
+Route::get('/login', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'login']);
+//Route::get('/login', [LoginController::class, 'save']);
+
+//trang sign-up cho client
+Route::get('/sign-up', [LoginRegisterController::class, 'signUp']);
+Route::post('/sign-up', [LoginRegisterController::class, 'save']);
+//Route::post('/sign-up', [LoginRegisterController::class, 'store']);
+//Route::get('/save', [SignUpController::class, 'save']);

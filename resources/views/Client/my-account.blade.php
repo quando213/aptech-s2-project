@@ -56,7 +56,10 @@
                                               Chi Tiết Người Dùng</a>
                                         </li>
                                         <li>
-                                            <a class="link--icon-left" href="/login"><i class="fas fa-sign-out-alt"></i> Đăng Xuất</a>
+                                            <a class="link--icon-left" href="/login"><i class="fas fa-sign-out-alt"></i> Đăng Nhập</a>
+                                        </li>
+                                        <li>
+                                            <a class="link--icon-left" href="/sign-up"><i class="fa fa-user-plus" aria-hidden="true"></i> Đăng Ký</a>
                                         </li>
                                     </ul>
                                 </div>
