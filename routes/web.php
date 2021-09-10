@@ -7,6 +7,11 @@ use App\Http\Controllers\Admin\GroupController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\WardController;
+use App\Http\Controllers\Client\ClientComboController;
+use App\Http\Controllers\Client\ClientComboDetailController;
+use App\Http\Controllers\Client\ClientHomeComboController;
+use App\Http\Controllers\Client\ClientHomeController;
+use App\Http\Controllers\Client\ClientProductController;
 use App\Http\Controllers\TemplateAdminController;
 use App\Http\Controllers\TemplateClientController;
 use App\Http\Controllers\Admin\ComboController;
@@ -68,6 +73,12 @@ Route::get('/', [TemplateClientController::class, 'home']);
 Route::get('/blog-simple-sidebar-left', [TemplateClientController::class, 'blog']);
 Route::get('/blog-list-sidebar-left', [TemplateClientController::class, 'blog2']);
 Route::get('/contact', [TemplateClientController::class, 'contact']);
+
+
+
+
+
+
 Route::get('/product-single-default', [TemplateClientController::class, 'product_default']);
 Route::get('/product-single-tab-left', [TemplateClientController::class, 'product_left']);
 Route::get('/shop-sidebar-grid-left', [TemplateClientController::class, 'shop_layout_left']);
@@ -84,3 +95,7 @@ Route::get('/checkout', [TemplateClientController::class, 'checkout']);
 Route::get('/compare', [TemplateClientController::class, 'compare']);
 
 
+Route::get('/product/detail/{id}', [ClientProductController::class, 'detail']);
+Route::get('/combo', [ClientComboController::class, 'combo']);
+Route::get('/combo/detail/{id}', [ClientComboDetailController::class, 'detail']);
+Route::get('/home', [ClientHomeController::class, 'list']);

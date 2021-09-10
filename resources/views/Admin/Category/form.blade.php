@@ -57,7 +57,7 @@
                                         </div>
                                         <div class="col-12 d-flex justify-content-end">
                                             <button type="submit" class="btn btn-primary me-1 mb-1">{{$data ? 'Save':'Submit'}}</button>
-                                            <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                                            <button type="reset" class="btn btn-light-secondary me-1 mb-1">Tải lại trang</button>
                                         </div>
                                         <input type="url" hidden id="thumbnail" name="thumbnail">
                                     </div>
@@ -69,15 +69,15 @@
                 <div class="col-6">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">File Input</h4>
+                            <h4 class="card-title">Tệp đầu vào</h4>
                         </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="form-group">
-                                    <label for="year">Photo</label>
+                                    <label for="year">Ảnh</label>
                                     <div class="form-group d-flex flex-column align-items-center">
                                         <button type="button" class="btn btn-primary btn-block" id="upload-photo"><i
-                                                class="fas fa-image"></i> Upload Photo
+                                                class="fas fa-image"></i>Tải ảnh lên
                                         </button>
                                         <img id="preview-photo" style="width: 300px" class="mt-4"
                                              src="{{$data ? $data->thumbnail :''}}">

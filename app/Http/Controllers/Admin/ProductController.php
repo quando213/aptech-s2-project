@@ -43,6 +43,7 @@ class ProductController extends Controller
 
         if ($check[$size] == 'jpg' || $check[$size] == 'png'|| $check[$size] == 'jpeg') {
             $product->fill($request->validated());
+            $product->images='';
             $product->save();
             return redirect()->route('productList')->with('message','Tao mới thành công sản phẩm dùng '.$product->name);
         }
