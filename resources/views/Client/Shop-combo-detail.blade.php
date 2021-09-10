@@ -7,7 +7,7 @@
                 <div class="col-12">
                     <ul class="page-breadcrumb__menu">
                         <li class="page-breadcrumb__nav"><a href="/">Trang Chủ</a></li>
-                        <li class="page-breadcrumb__nav active">CHi Tiết Sản Phẩm</li>
+                        <li class="page-breadcrumb__nav active">CHi Tiết Gói Sản Phẩm</li>
                     </ul>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                                 <li class="product__review--blank"><i class="icon-star"></i></li>
                             </ul>
                             <div class="product__price m-t-5">
-                                <span class="product__price product__price--large">{{number_format($data->price)}}₫</span>
+                                <span class="product__price product__price--large">Giảm giá</span>
                                 <span class="product__tag m-l-15 btn--tiny btn--green">-34%</span>
                             </div>
 
@@ -62,7 +62,7 @@
                             </div>
                             <div class="product-var p-tb-30">
                                 <div class="product__stock m-b-20">
-                                    <span class="product__stock--in"><i class="fas fa-check-circle"></i>Hàng có trong kho: {{$data -> stock}}</span>
+                                    <span class="product__stock--in"><i class="fas fa-check-circle"></i>Hàng có trong kho: 1000</span>
                                 </div>
                                 <div class="product-quantity product-var__item">
                                     <ul class="product-modal-group">
@@ -75,7 +75,7 @@
                                     <span class="product-var__text"></span>
                                     <form class="quantity-scale m-l-20">
                                         <div class="value-button" id="decrease" onclick="decreaseValue()">-</div>
-                                        <input type="number" id="number" value="{{$data -> quantity}}" />
+                                        <input type="number" id="number" value="1" />
                                         <div class="value-button" id="increase" onclick="increaseValue()">+</div>
                                     </form>
                                 </div>
@@ -86,7 +86,7 @@
                                 <div class="product-var__item">
                                     <div class="dynmiac_checkout--button">
                                         <input type="checkbox" id="buy-now-check" value="1" class="p-r-30">
-{{--                                   <label for="buy-now-check" class="m-b-20">I agree with the terms and condition</label>--}}
+                                        {{--                                   <label for="buy-now-check" class="m-b-20">I agree with the terms and condition</label>--}}
                                         <a href="/cart" class="btn btn--block btn--long btn--radius-tiny btn--green btn--green-hover-black text-uppercase m-r-35">Mua Ngay</a>
                                     </div>
                                 </div>
@@ -134,18 +134,18 @@
                                     <div class="tab-pane show active" id="product-desc">
                                         <div class="para__content">
                                             <p class="para__text">{{$data -> description}}</p>
-{{--                                            <p class="para__text">quốc Gia:USA</p>--}}
-{{--                                            <h6 class="para__title">Tác Dụng Của Sản Phẩm:</h6>--}}
-{{--                                            <ul class="para__list">--}}
-{{--                                                <li>Giúp Giảm Cân </li>--}}
-{{--                                                <li>Bảo Vệ Da</li>--}}
-{{--                                                <li>Giàu Chất Oxi Hóa</li>--}}
-{{--                                                <li>Là Chất Khử Độc Tự Nhiên</li>--}}
-{{--                                                <li>Tốt Cho Phổi </li>--}}
-{{--                                                <li>Tốt Cho Mắt</li>--}}
-{{--                                                <li>Ngăn Ngừa Hen Xuyễn </li>--}}
-{{--                                                <li>Ngăn Ngừa Tiểu Đường</li>--}}
-{{--                                            </ul>--}}
+                                            {{--                                            <p class="para__text">quốc Gia:USA</p>--}}
+                                            {{--                                            <h6 class="para__title">Tác Dụng Của Sản Phẩm:</h6>--}}
+                                            {{--                                            <ul class="para__list">--}}
+                                            {{--                                                <li>Giúp Giảm Cân </li>--}}
+                                            {{--                                                <li>Bảo Vệ Da</li>--}}
+                                            {{--                                                <li>Giàu Chất Oxi Hóa</li>--}}
+                                            {{--                                                <li>Là Chất Khử Độc Tự Nhiên</li>--}}
+                                            {{--                                                <li>Tốt Cho Phổi </li>--}}
+                                            {{--                                                <li>Tốt Cho Mắt</li>--}}
+                                            {{--                                                <li>Ngăn Ngừa Hen Xuyễn </li>--}}
+                                            {{--                                                <li>Ngăn Ngừa Tiểu Đường</li>--}}
+                                            {{--                                            </ul>--}}
                                         </div>
                                     </div>  <!-- End Tab - Product Description -->
 
@@ -160,10 +160,10 @@
                                                         <td class="product-dis__title">Khối lượng</td>
                                                         <td class="product-dis__text">{{$data -> quantity}}</td>
                                                     </tr>
-{{--                                                    <tr>--}}
-{{--                                                        <td class="product-dis__title">Materials</td>--}}
-{{--                                                        <td class="product-dis__text">60% cotton, 40% polyester</td>--}}
-{{--                                                    </tr>--}}
+                                                    {{--                                                    <tr>--}}
+                                                    {{--                                                        <td class="product-dis__title">Materials</td>--}}
+                                                    {{--                                                        <td class="product-dis__text">60% cotton, 40% polyester</td>--}}
+                                                    {{--                                                    </tr>--}}
                                                     <tr>
                                                         <td class="product-dis__title">Thương hiệu</td>
                                                         <td class="product-dis__text">{{$data -> brand}}</td>
@@ -211,29 +211,29 @@
                                                     </div>
                                                 </div>
                                                 <!-- Start - Review Comment Reply-->
-{{--                                                <ul class="comment__reply">--}}
-{{--                                                    <li class="comment__reply-list">--}}
-{{--                                                        <div class="comment__wrapper">--}}
-{{--                                                            <div class="comment__img">--}}
-{{--                                                                <img src="assets/img/user/image-2.png" alt="">--}}
-{{--                                                            </div>--}}
-{{--                                                            <div class="comment__content">--}}
-{{--                                                                <div class="comment__content-top">--}}
-{{--                                                                    <div class="comment__content-left">--}}
-{{--                                                                        <h6 class="comment__name">Oaklee Odom</h6>--}}
-{{--                                                                    </div>--}}
-{{--                                                                    <div class="comment__content-right">--}}
-{{--                                                                        <a href="#" class="link--gray link--icon-left m-b-5"><i class="fas fa-reply"></i>Reply</a>--}}
-{{--                                                                    </div>--}}
-{{--                                                                </div>--}}
+                                                {{--                                                <ul class="comment__reply">--}}
+                                                {{--                                                    <li class="comment__reply-list">--}}
+                                                {{--                                                        <div class="comment__wrapper">--}}
+                                                {{--                                                            <div class="comment__img">--}}
+                                                {{--                                                                <img src="assets/img/user/image-2.png" alt="">--}}
+                                                {{--                                                            </div>--}}
+                                                {{--                                                            <div class="comment__content">--}}
+                                                {{--                                                                <div class="comment__content-top">--}}
+                                                {{--                                                                    <div class="comment__content-left">--}}
+                                                {{--                                                                        <h6 class="comment__name">Oaklee Odom</h6>--}}
+                                                {{--                                                                    </div>--}}
+                                                {{--                                                                    <div class="comment__content-right">--}}
+                                                {{--                                                                        <a href="#" class="link--gray link--icon-left m-b-5"><i class="fas fa-reply"></i>Reply</a>--}}
+                                                {{--                                                                    </div>--}}
+                                                {{--                                                                </div>--}}
 
-{{--                                                                <div class="para__content">--}}
-{{--                                                                    <p class="para__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore dolorem a unde modi iste odio amet, fugit fuga aliquam, voluptatem maiores animi dolor nulla magnam ea! Dignissimos aspernatur cumque nam quod sint provident modi alias culpa, inventore deserunt accusantium amet earum soluta consequatur quasi eum eius laboriosam, maiores praesentium explicabo enim dolores quaerat! Voluptas ad ullam quia odio sint sunt. Ipsam officia, saepe repellat. </p>--}}
-{{--                                                                </div>--}}
-{{--                                                            </div>--}}
-{{--                                                        </div>--}}
-{{--                                                    </li>--}}
-{{--                                                </ul> <!-- End - Review Comment Reply-->--}}
+                                                {{--                                                                <div class="para__content">--}}
+                                                {{--                                                                    <p class="para__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore dolorem a unde modi iste odio amet, fugit fuga aliquam, voluptatem maiores animi dolor nulla magnam ea! Dignissimos aspernatur cumque nam quod sint provident modi alias culpa, inventore deserunt accusantium amet earum soluta consequatur quasi eum eius laboriosam, maiores praesentium explicabo enim dolores quaerat! Voluptas ad ullam quia odio sint sunt. Ipsam officia, saepe repellat. </p>--}}
+                                                {{--                                                                </div>--}}
+                                                {{--                                                            </div>--}}
+                                                {{--                                                        </div>--}}
+                                                {{--                                                    </li>--}}
+                                                {{--                                                </ul> <!-- End - Review Comment Reply-->--}}
                                             </li> <!-- End - Review Comment list-->
                                             <!-- Start - Review Comment list-->
                                             <li class="comment__list">
@@ -482,313 +482,313 @@
 
 
 
-{{--                                <!-- Start Single Default Product -->--}}
-{{--                                <div class="product__box product__default--single text-center">--}}
-{{--                                    <!-- Start Product Image -->--}}
-{{--                                    <div class="product__img-box  pos-relative">--}}
-{{--                                        <a href="/product-single-default" class="product__img--link">--}}
-{{--                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-2.jpg" alt="">--}}
-{{--                                        </a>--}}
-{{--                                        <!-- Start Product Action Link-->--}}
-{{--                                        <ul class="product__action--link pos-absolute">--}}
-{{--                                            <li><a href="#modalAddCart" data-toggle="modal"><i class="icon-shopping-cart"></i></a></li>--}}
-{{--                                            <li><a href="/compare"><i class="icon-sliders"></i></a></li>--}}
-{{--                                            <li><a href="/wishlist"><i class="icon-heart"></i></a></li>--}}
-{{--                                            <li><a href="#modalQuickView" data-toggle="modal"><i class="icon-eye"></i></a></li>--}}
-{{--                                        </ul> <!-- End Product Action Link -->--}}
-{{--                                    </div> <!-- End Product Image -->--}}
-{{--                                    <!-- Start Product Content -->--}}
-{{--                                    <div class="product__content m-t-20">--}}
-{{--                                        <ul class="product__review">--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--blank"><i class="icon-star"></i></li>--}}
-{{--                                        </ul>--}}
-{{--                                        <a href="/product-single-default" class="product__link">Fresh river fish</a>--}}
-{{--                                        <div class="product__price m-t-5">--}}
-{{--                                            <span class="product__price">$25.00</span>--}}
-{{--                                        </div>--}}
-{{--                                    </div> <!-- End Product Content -->--}}
-{{--                                </div> <!-- End Single Default Product -->--}}
+                                {{--                                <!-- Start Single Default Product -->--}}
+                                {{--                                <div class="product__box product__default--single text-center">--}}
+                                {{--                                    <!-- Start Product Image -->--}}
+                                {{--                                    <div class="product__img-box  pos-relative">--}}
+                                {{--                                        <a href="/product-single-default" class="product__img--link">--}}
+                                {{--                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-2.jpg" alt="">--}}
+                                {{--                                        </a>--}}
+                                {{--                                        <!-- Start Product Action Link-->--}}
+                                {{--                                        <ul class="product__action--link pos-absolute">--}}
+                                {{--                                            <li><a href="#modalAddCart" data-toggle="modal"><i class="icon-shopping-cart"></i></a></li>--}}
+                                {{--                                            <li><a href="/compare"><i class="icon-sliders"></i></a></li>--}}
+                                {{--                                            <li><a href="/wishlist"><i class="icon-heart"></i></a></li>--}}
+                                {{--                                            <li><a href="#modalQuickView" data-toggle="modal"><i class="icon-eye"></i></a></li>--}}
+                                {{--                                        </ul> <!-- End Product Action Link -->--}}
+                                {{--                                    </div> <!-- End Product Image -->--}}
+                                {{--                                    <!-- Start Product Content -->--}}
+                                {{--                                    <div class="product__content m-t-20">--}}
+                                {{--                                        <ul class="product__review">--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--blank"><i class="icon-star"></i></li>--}}
+                                {{--                                        </ul>--}}
+                                {{--                                        <a href="/product-single-default" class="product__link">Fresh river fish</a>--}}
+                                {{--                                        <div class="product__price m-t-5">--}}
+                                {{--                                            <span class="product__price">$25.00</span>--}}
+                                {{--                                        </div>--}}
+                                {{--                                    </div> <!-- End Product Content -->--}}
+                                {{--                                </div> <!-- End Single Default Product -->--}}
 
-{{--                                <!-- Start Single Default Product -->--}}
-{{--                                <div class="product__box product__default--single text-center">--}}
-{{--                                    <!-- Start Product Image -->--}}
-{{--                                    <div class="product__img-box  pos-relative">--}}
-{{--                                        <a href="/product-single-default" class="product__img--link">--}}
-{{--                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-3.jpg" alt="">--}}
-{{--                                        </a>--}}
-{{--                                        <!-- Start Procuct Label -->--}}
-{{--                                        <span class="product__label product__label--sale-dis">-10%</span>--}}
-{{--                                        <!-- End Procuct Label -->--}}
-{{--                                        <!-- Start Product Countdown -->--}}
-{{--                                        <div class="product__counter-box">--}}
-{{--                                            <div class="product__counter-item" data-countdown="2023/09/27"></div>--}}
-{{--                                        </div> <!-- End Product Countdown -->--}}
-{{--                                        <!-- Start Product Action Link-->--}}
-{{--                                        <ul class="product__action--link pos-absolute">--}}
-{{--                                            <li><a href="#modalAddCart" data-toggle="modal"><i class="icon-shopping-cart"></i></a></li>--}}
-{{--                                            <li><a href="/compare"><i class="icon-sliders"></i></a></li>--}}
-{{--                                            <li><a href="/wishlist"><i class="icon-heart"></i></a></li>--}}
-{{--                                            <li><a href="#modalQuickView" data-toggle="modal"><i class="icon-eye"></i></a></li>--}}
-{{--                                        </ul> <!-- End Product Action Link -->--}}
-{{--                                    </div> <!-- End Product Image -->--}}
-{{--                                    <!-- Start Product Content -->--}}
-{{--                                    <div class="product__content m-t-20">--}}
-{{--                                        <ul class="product__review">--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--blank"><i class="icon-star"></i></li>--}}
-{{--                                        </ul>--}}
-{{--                                        <a href="/product-single-default" class="product__link">Fresh pomegranate</a>--}}
-{{--                                        <div class="product__price m-t-5">--}}
-{{--                                            <span class="product__price">$19.00 <del>$21.00</del></span>--}}
-{{--                                        </div>--}}
-{{--                                    </div> <!-- End Product Content -->--}}
-{{--                                </div> <!-- End Single Default Product -->--}}
+                                {{--                                <!-- Start Single Default Product -->--}}
+                                {{--                                <div class="product__box product__default--single text-center">--}}
+                                {{--                                    <!-- Start Product Image -->--}}
+                                {{--                                    <div class="product__img-box  pos-relative">--}}
+                                {{--                                        <a href="/product-single-default" class="product__img--link">--}}
+                                {{--                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-3.jpg" alt="">--}}
+                                {{--                                        </a>--}}
+                                {{--                                        <!-- Start Procuct Label -->--}}
+                                {{--                                        <span class="product__label product__label--sale-dis">-10%</span>--}}
+                                {{--                                        <!-- End Procuct Label -->--}}
+                                {{--                                        <!-- Start Product Countdown -->--}}
+                                {{--                                        <div class="product__counter-box">--}}
+                                {{--                                            <div class="product__counter-item" data-countdown="2023/09/27"></div>--}}
+                                {{--                                        </div> <!-- End Product Countdown -->--}}
+                                {{--                                        <!-- Start Product Action Link-->--}}
+                                {{--                                        <ul class="product__action--link pos-absolute">--}}
+                                {{--                                            <li><a href="#modalAddCart" data-toggle="modal"><i class="icon-shopping-cart"></i></a></li>--}}
+                                {{--                                            <li><a href="/compare"><i class="icon-sliders"></i></a></li>--}}
+                                {{--                                            <li><a href="/wishlist"><i class="icon-heart"></i></a></li>--}}
+                                {{--                                            <li><a href="#modalQuickView" data-toggle="modal"><i class="icon-eye"></i></a></li>--}}
+                                {{--                                        </ul> <!-- End Product Action Link -->--}}
+                                {{--                                    </div> <!-- End Product Image -->--}}
+                                {{--                                    <!-- Start Product Content -->--}}
+                                {{--                                    <div class="product__content m-t-20">--}}
+                                {{--                                        <ul class="product__review">--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--blank"><i class="icon-star"></i></li>--}}
+                                {{--                                        </ul>--}}
+                                {{--                                        <a href="/product-single-default" class="product__link">Fresh pomegranate</a>--}}
+                                {{--                                        <div class="product__price m-t-5">--}}
+                                {{--                                            <span class="product__price">$19.00 <del>$21.00</del></span>--}}
+                                {{--                                        </div>--}}
+                                {{--                                    </div> <!-- End Product Content -->--}}
+                                {{--                                </div> <!-- End Single Default Product -->--}}
 
-{{--                                <!-- Start Single Default Product -->--}}
-{{--                                <div class="product__box product__default--single text-center">--}}
-{{--                                    <!-- Start Product Image -->--}}
-{{--                                    <div class="product__img-box  pos-relative">--}}
-{{--                                        <a href="/product-single-default" class="product__img--link">--}}
-{{--                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-4.jpg" alt="">--}}
-{{--                                        </a>--}}
-{{--                                        <!-- Start Product Action Link-->--}}
-{{--                                        <ul class="product__action--link pos-absolute">--}}
-{{--                                            <li><a href="#modalAddCart" data-toggle="modal"><i class="icon-shopping-cart"></i></a></li>--}}
-{{--                                            <li><a href="/compare"><i class="icon-sliders"></i></a></li>--}}
-{{--                                            <li><a href="/wishlist"><i class="icon-heart"></i></a></li>--}}
-{{--                                            <li><a href="#modalQuickView" data-toggle="modal"><i class="icon-eye"></i></a></li>--}}
-{{--                                        </ul> <!-- End Product Action Link -->--}}
-{{--                                    </div> <!-- End Product Image -->--}}
-{{--                                    <!-- Start Product Content -->--}}
-{{--                                    <div class="product__content m-t-20">--}}
-{{--                                        <ul class="product__review">--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--blank"><i class="icon-star"></i></li>--}}
-{{--                                        </ul>--}}
-{{--                                        <a href="/product-single-default" class="product__link">Cabbage vegetables</a>--}}
-{{--                                        <div class="product__price m-t-5">--}}
-{{--                                            <span class="product__price">$50.00</span>--}}
-{{--                                        </div>--}}
-{{--                                    </div> <!-- End Product Content -->--}}
-{{--                                </div> <!-- End Single Default Product -->--}}
+                                {{--                                <!-- Start Single Default Product -->--}}
+                                {{--                                <div class="product__box product__default--single text-center">--}}
+                                {{--                                    <!-- Start Product Image -->--}}
+                                {{--                                    <div class="product__img-box  pos-relative">--}}
+                                {{--                                        <a href="/product-single-default" class="product__img--link">--}}
+                                {{--                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-4.jpg" alt="">--}}
+                                {{--                                        </a>--}}
+                                {{--                                        <!-- Start Product Action Link-->--}}
+                                {{--                                        <ul class="product__action--link pos-absolute">--}}
+                                {{--                                            <li><a href="#modalAddCart" data-toggle="modal"><i class="icon-shopping-cart"></i></a></li>--}}
+                                {{--                                            <li><a href="/compare"><i class="icon-sliders"></i></a></li>--}}
+                                {{--                                            <li><a href="/wishlist"><i class="icon-heart"></i></a></li>--}}
+                                {{--                                            <li><a href="#modalQuickView" data-toggle="modal"><i class="icon-eye"></i></a></li>--}}
+                                {{--                                        </ul> <!-- End Product Action Link -->--}}
+                                {{--                                    </div> <!-- End Product Image -->--}}
+                                {{--                                    <!-- Start Product Content -->--}}
+                                {{--                                    <div class="product__content m-t-20">--}}
+                                {{--                                        <ul class="product__review">--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--blank"><i class="icon-star"></i></li>--}}
+                                {{--                                        </ul>--}}
+                                {{--                                        <a href="/product-single-default" class="product__link">Cabbage vegetables</a>--}}
+                                {{--                                        <div class="product__price m-t-5">--}}
+                                {{--                                            <span class="product__price">$50.00</span>--}}
+                                {{--                                        </div>--}}
+                                {{--                                    </div> <!-- End Product Content -->--}}
+                                {{--                                </div> <!-- End Single Default Product -->--}}
 
-{{--                                <!-- Start Single Default Product -->--}}
-{{--                                <div class="product__box product__default--single text-center">--}}
-{{--                                    <!-- Start Product Image -->--}}
-{{--                                    <div class="product__img-box  pos-relative">--}}
-{{--                                        <a href="/product-single-default" class="product__img--link">--}}
-{{--                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-5.jpg" alt="">--}}
-{{--                                        </a>--}}
-{{--                                        <!-- Start Procuct Label -->--}}
-{{--                                        <span class="product__label product__label--sale-dis">-31%</span>--}}
-{{--                                        <!-- End Procuct Label -->--}}
-{{--                                        <!-- Start Product Action Link-->--}}
-{{--                                        <ul class="product__action--link pos-absolute">--}}
-{{--                                            <li><a href="#modalAddCart" data-toggle="modal"><i class="icon-shopping-cart"></i></a></li>--}}
-{{--                                            <li><a href="/compare"><i class="icon-sliders"></i></a></li>--}}
-{{--                                            <li><a href="/wishlist"><i class="icon-heart"></i></a></li>--}}
-{{--                                            <li><a href="#modalQuickView" data-toggle="modal"><i class="icon-eye"></i></a></li>--}}
-{{--                                        </ul> <!-- End Product Action Link -->--}}
-{{--                                    </div> <!-- End Product Image -->--}}
-{{--                                    <!-- Start Product Content -->--}}
-{{--                                    <div class="product__content m-t-20">--}}
-{{--                                        <ul class="product__review">--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--blank"><i class="icon-star"></i></li>--}}
-{{--                                        </ul>--}}
-{{--                                        <a href="/product-single-default" class="product__link">Best red meat</a>--}}
-{{--                                        <div class="product__price m-t-5">--}}
-{{--                                            <span class="product__price">$55.00 <del>$80.00</del></span>--}}
-{{--                                        </div>--}}
-{{--                                    </div> <!-- End Product Content -->--}}
-{{--                                </div> <!-- End Single Default Product -->--}}
+                                {{--                                <!-- Start Single Default Product -->--}}
+                                {{--                                <div class="product__box product__default--single text-center">--}}
+                                {{--                                    <!-- Start Product Image -->--}}
+                                {{--                                    <div class="product__img-box  pos-relative">--}}
+                                {{--                                        <a href="/product-single-default" class="product__img--link">--}}
+                                {{--                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-5.jpg" alt="">--}}
+                                {{--                                        </a>--}}
+                                {{--                                        <!-- Start Procuct Label -->--}}
+                                {{--                                        <span class="product__label product__label--sale-dis">-31%</span>--}}
+                                {{--                                        <!-- End Procuct Label -->--}}
+                                {{--                                        <!-- Start Product Action Link-->--}}
+                                {{--                                        <ul class="product__action--link pos-absolute">--}}
+                                {{--                                            <li><a href="#modalAddCart" data-toggle="modal"><i class="icon-shopping-cart"></i></a></li>--}}
+                                {{--                                            <li><a href="/compare"><i class="icon-sliders"></i></a></li>--}}
+                                {{--                                            <li><a href="/wishlist"><i class="icon-heart"></i></a></li>--}}
+                                {{--                                            <li><a href="#modalQuickView" data-toggle="modal"><i class="icon-eye"></i></a></li>--}}
+                                {{--                                        </ul> <!-- End Product Action Link -->--}}
+                                {{--                                    </div> <!-- End Product Image -->--}}
+                                {{--                                    <!-- Start Product Content -->--}}
+                                {{--                                    <div class="product__content m-t-20">--}}
+                                {{--                                        <ul class="product__review">--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--blank"><i class="icon-star"></i></li>--}}
+                                {{--                                        </ul>--}}
+                                {{--                                        <a href="/product-single-default" class="product__link">Best red meat</a>--}}
+                                {{--                                        <div class="product__price m-t-5">--}}
+                                {{--                                            <span class="product__price">$55.00 <del>$80.00</del></span>--}}
+                                {{--                                        </div>--}}
+                                {{--                                    </div> <!-- End Product Content -->--}}
+                                {{--                                </div> <!-- End Single Default Product -->--}}
 
-{{--                                <!-- Start Single Default Product -->--}}
-{{--                                <div class="product__box product__default--single text-center">--}}
-{{--                                    <!-- Start Product Image -->--}}
-{{--                                    <div class="product__img-box  pos-relative">--}}
-{{--                                        <a href="/product-single-default" class="product__img--link">--}}
-{{--                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-6.jpg" alt="">--}}
-{{--                                        </a>--}}
-{{--                                        <!-- Start Procuct Label -->--}}
-{{--                                        <span class="product__label product__label--sale-dis">-34%</span>--}}
-{{--                                        <!-- End Procuct Label -->--}}
-{{--                                        <!-- Start Product Action Link-->--}}
-{{--                                        <ul class="product__action--link pos-absolute">--}}
-{{--                                            <li><a href="#modalAddCart" data-toggle="modal"><i class="icon-shopping-cart"></i></a></li>--}}
-{{--                                            <li><a href="/compare"><i class="icon-sliders"></i></a></li>--}}
-{{--                                            <li><a href="/wishlist"><i class="icon-heart"></i></a></li>--}}
-{{--                                            <li><a href="#modalQuickView" data-toggle="modal"><i class="icon-eye"></i></a></li>--}}
-{{--                                        </ul> <!-- End Product Action Link -->--}}
-{{--                                    </div> <!-- End Product Image -->--}}
-{{--                                    <!-- Start Product Content -->--}}
-{{--                                    <div class="product__content m-t-20">--}}
-{{--                                        <ul class="product__review">--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--blank"><i class="icon-star"></i></li>--}}
-{{--                                        </ul>--}}
-{{--                                        <a href="/product-single-default" class="product__link">Fresh green apple</a>--}}
-{{--                                        <div class="product__price m-t-5">--}}
-{{--                                            <span class="product__price">$19.00 <del>$29.00</del></span>--}}
-{{--                                        </div>--}}
-{{--                                    </div> <!-- End Product Content -->--}}
-{{--                                </div> <!-- End Single Default Product -->--}}
+                                {{--                                <!-- Start Single Default Product -->--}}
+                                {{--                                <div class="product__box product__default--single text-center">--}}
+                                {{--                                    <!-- Start Product Image -->--}}
+                                {{--                                    <div class="product__img-box  pos-relative">--}}
+                                {{--                                        <a href="/product-single-default" class="product__img--link">--}}
+                                {{--                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-6.jpg" alt="">--}}
+                                {{--                                        </a>--}}
+                                {{--                                        <!-- Start Procuct Label -->--}}
+                                {{--                                        <span class="product__label product__label--sale-dis">-34%</span>--}}
+                                {{--                                        <!-- End Procuct Label -->--}}
+                                {{--                                        <!-- Start Product Action Link-->--}}
+                                {{--                                        <ul class="product__action--link pos-absolute">--}}
+                                {{--                                            <li><a href="#modalAddCart" data-toggle="modal"><i class="icon-shopping-cart"></i></a></li>--}}
+                                {{--                                            <li><a href="/compare"><i class="icon-sliders"></i></a></li>--}}
+                                {{--                                            <li><a href="/wishlist"><i class="icon-heart"></i></a></li>--}}
+                                {{--                                            <li><a href="#modalQuickView" data-toggle="modal"><i class="icon-eye"></i></a></li>--}}
+                                {{--                                        </ul> <!-- End Product Action Link -->--}}
+                                {{--                                    </div> <!-- End Product Image -->--}}
+                                {{--                                    <!-- Start Product Content -->--}}
+                                {{--                                    <div class="product__content m-t-20">--}}
+                                {{--                                        <ul class="product__review">--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--blank"><i class="icon-star"></i></li>--}}
+                                {{--                                        </ul>--}}
+                                {{--                                        <a href="/product-single-default" class="product__link">Fresh green apple</a>--}}
+                                {{--                                        <div class="product__price m-t-5">--}}
+                                {{--                                            <span class="product__price">$19.00 <del>$29.00</del></span>--}}
+                                {{--                                        </div>--}}
+                                {{--                                    </div> <!-- End Product Content -->--}}
+                                {{--                                </div> <!-- End Single Default Product -->--}}
 
-{{--                                <!-- Start Single Default Product -->--}}
-{{--                                <div class="product__box product__default--single text-center">--}}
-{{--                                    <!-- Start Product Image -->--}}
-{{--                                    <div class="product__img-box  pos-relative">--}}
-{{--                                        <a href="/product-single-default" class="product__img--link">--}}
-{{--                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-7.jpg" alt="">--}}
-{{--                                        </a>--}}
-{{--                                        <!-- Start Procuct Label -->--}}
-{{--                                        <span class="product__label product__label--sale-dis">-34%</span>--}}
-{{--                                        <!-- End Procuct Label -->--}}
-{{--                                        <!-- Start Product Action Link-->--}}
-{{--                                        <ul class="product__action--link pos-absolute">--}}
-{{--                                            <li><a href="#modalAddCart" data-toggle="modal"><i class="icon-shopping-cart"></i></a></li>--}}
-{{--                                            <li><a href="/compare"><i class="icon-sliders"></i></a></li>--}}
-{{--                                            <li><a href="/wishlist"><i class="icon-heart"></i></a></li>--}}
-{{--                                            <li><a href="#modalQuickView" data-toggle="modal"><i class="icon-eye"></i></a></li>--}}
-{{--                                        </ul> <!-- End Product Action Link -->--}}
-{{--                                    </div> <!-- End Product Image -->--}}
-{{--                                    <!-- Start Product Content -->--}}
-{{--                                    <div class="product__content m-t-20">--}}
-{{--                                        <ul class="product__review">--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--blank"><i class="icon-star"></i></li>--}}
-{{--                                        </ul>--}}
-{{--                                        <a href="/product-single-default" class="product__link">Juice fresh orange</a>--}}
-{{--                                        <div class="product__price m-t-5">--}}
-{{--                                            <span class="product__price">$19.00 <del>$29.00</del></span>--}}
-{{--                                        </div>--}}
-{{--                                    </div> <!-- End Product Content -->--}}
-{{--                                </div> <!-- End Single Default Product -->--}}
+                                {{--                                <!-- Start Single Default Product -->--}}
+                                {{--                                <div class="product__box product__default--single text-center">--}}
+                                {{--                                    <!-- Start Product Image -->--}}
+                                {{--                                    <div class="product__img-box  pos-relative">--}}
+                                {{--                                        <a href="/product-single-default" class="product__img--link">--}}
+                                {{--                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-7.jpg" alt="">--}}
+                                {{--                                        </a>--}}
+                                {{--                                        <!-- Start Procuct Label -->--}}
+                                {{--                                        <span class="product__label product__label--sale-dis">-34%</span>--}}
+                                {{--                                        <!-- End Procuct Label -->--}}
+                                {{--                                        <!-- Start Product Action Link-->--}}
+                                {{--                                        <ul class="product__action--link pos-absolute">--}}
+                                {{--                                            <li><a href="#modalAddCart" data-toggle="modal"><i class="icon-shopping-cart"></i></a></li>--}}
+                                {{--                                            <li><a href="/compare"><i class="icon-sliders"></i></a></li>--}}
+                                {{--                                            <li><a href="/wishlist"><i class="icon-heart"></i></a></li>--}}
+                                {{--                                            <li><a href="#modalQuickView" data-toggle="modal"><i class="icon-eye"></i></a></li>--}}
+                                {{--                                        </ul> <!-- End Product Action Link -->--}}
+                                {{--                                    </div> <!-- End Product Image -->--}}
+                                {{--                                    <!-- Start Product Content -->--}}
+                                {{--                                    <div class="product__content m-t-20">--}}
+                                {{--                                        <ul class="product__review">--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--blank"><i class="icon-star"></i></li>--}}
+                                {{--                                        </ul>--}}
+                                {{--                                        <a href="/product-single-default" class="product__link">Juice fresh orange</a>--}}
+                                {{--                                        <div class="product__price m-t-5">--}}
+                                {{--                                            <span class="product__price">$19.00 <del>$29.00</del></span>--}}
+                                {{--                                        </div>--}}
+                                {{--                                    </div> <!-- End Product Content -->--}}
+                                {{--                                </div> <!-- End Single Default Product -->--}}
 
-{{--                                <!-- Start Single Default Product -->--}}
-{{--                                <div class="product__box product__default--single text-center">--}}
-{{--                                    <!-- Start Product Image -->--}}
-{{--                                    <div class="product__img-box  pos-relative">--}}
-{{--                                        <a href="/product-single-default" class="product__img--link">--}}
-{{--                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-8.jpg" alt="">--}}
-{{--                                        </a>--}}
-{{--                                        <!-- Start Procuct Label -->--}}
-{{--                                        <span class="product__label product__label--sale-dis">-35%</span>--}}
-{{--                                        <!-- End Procuct Label -->--}}
-{{--                                        <!-- Start Product Countdown -->--}}
-{{--                                        <div class="product__counter-box">--}}
-{{--                                            <div class="product__counter-item" data-countdown="2021/03/01"></div>--}}
-{{--                                        </div> <!-- End Product Countdown -->--}}
-{{--                                        <!-- Start Product Action Link-->--}}
-{{--                                        <ul class="product__action--link pos-absolute">--}}
-{{--                                            <li><a href="#modalAddCart" data-toggle="modal"><i class="icon-shopping-cart"></i></a></li>--}}
-{{--                                            <li><a href="/compare"><i class="icon-sliders"></i></a></li>--}}
-{{--                                            <li><a href="/wishlist"><i class="icon-heart"></i></a></li>--}}
-{{--                                            <li><a href="#modalQuickView" data-toggle="modal"><i class="icon-eye"></i></a></li>--}}
-{{--                                        </ul> <!-- End Product Action Link -->--}}
-{{--                                    </div> <!-- End Product Image -->--}}
-{{--                                    <!-- Start Product Content -->--}}
-{{--                                    <div class="product__content m-t-20">--}}
-{{--                                        <ul class="product__review">--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--blank"><i class="icon-star"></i></li>--}}
-{{--                                        </ul>--}}
-{{--                                        <a href="/product-single-default" class="product__link">Best ripe grapes</a>--}}
-{{--                                        <div class="product__price m-t-5">--}}
-{{--                                            <span class="product__price">$39.00 <del>$60.00</del></span>--}}
-{{--                                        </div>--}}
-{{--                                    </div> <!-- End Product Content -->--}}
-{{--                                </div> <!-- End Single Default Product -->--}}
+                                {{--                                <!-- Start Single Default Product -->--}}
+                                {{--                                <div class="product__box product__default--single text-center">--}}
+                                {{--                                    <!-- Start Product Image -->--}}
+                                {{--                                    <div class="product__img-box  pos-relative">--}}
+                                {{--                                        <a href="/product-single-default" class="product__img--link">--}}
+                                {{--                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-8.jpg" alt="">--}}
+                                {{--                                        </a>--}}
+                                {{--                                        <!-- Start Procuct Label -->--}}
+                                {{--                                        <span class="product__label product__label--sale-dis">-35%</span>--}}
+                                {{--                                        <!-- End Procuct Label -->--}}
+                                {{--                                        <!-- Start Product Countdown -->--}}
+                                {{--                                        <div class="product__counter-box">--}}
+                                {{--                                            <div class="product__counter-item" data-countdown="2021/03/01"></div>--}}
+                                {{--                                        </div> <!-- End Product Countdown -->--}}
+                                {{--                                        <!-- Start Product Action Link-->--}}
+                                {{--                                        <ul class="product__action--link pos-absolute">--}}
+                                {{--                                            <li><a href="#modalAddCart" data-toggle="modal"><i class="icon-shopping-cart"></i></a></li>--}}
+                                {{--                                            <li><a href="/compare"><i class="icon-sliders"></i></a></li>--}}
+                                {{--                                            <li><a href="/wishlist"><i class="icon-heart"></i></a></li>--}}
+                                {{--                                            <li><a href="#modalQuickView" data-toggle="modal"><i class="icon-eye"></i></a></li>--}}
+                                {{--                                        </ul> <!-- End Product Action Link -->--}}
+                                {{--                                    </div> <!-- End Product Image -->--}}
+                                {{--                                    <!-- Start Product Content -->--}}
+                                {{--                                    <div class="product__content m-t-20">--}}
+                                {{--                                        <ul class="product__review">--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--blank"><i class="icon-star"></i></li>--}}
+                                {{--                                        </ul>--}}
+                                {{--                                        <a href="/product-single-default" class="product__link">Best ripe grapes</a>--}}
+                                {{--                                        <div class="product__price m-t-5">--}}
+                                {{--                                            <span class="product__price">$39.00 <del>$60.00</del></span>--}}
+                                {{--                                        </div>--}}
+                                {{--                                    </div> <!-- End Product Content -->--}}
+                                {{--                                </div> <!-- End Single Default Product -->--}}
 
-{{--                                <!-- Start Single Default Product -->--}}
-{{--                                <div class="product__box product__default--single text-center">--}}
-{{--                                    <!-- Start Product Image -->--}}
-{{--                                    <div class="product__img-box  pos-relative">--}}
-{{--                                        <a href="/product-single-default" class="product__img--link">--}}
-{{--                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-9.jpg" alt="">--}}
-{{--                                        </a>--}}
-{{--                                        <!-- Start Procuct Label -->--}}
-{{--                                        <span class="product__label product__label--sale-out">Soldout</span>--}}
-{{--                                        <!-- End Procuct Label -->--}}
-{{--                                        <!-- Start Product Action Link-->--}}
-{{--                                        <ul class="product__action--link pos-absolute">--}}
-{{--                                            <li><a href="#modalAddCart" data-toggle="modal"><i class="icon-shopping-cart"></i></a></li>--}}
-{{--                                            <li><a href="/compare"><i class="icon-sliders"></i></a></li>--}}
-{{--                                            <li><a href="/wishlist"><i class="icon-heart"></i></a></li>--}}
-{{--                                            <li><a href="#modalQuickView" data-toggle="modal"><i class="icon-eye"></i></a></li>--}}
-{{--                                        </ul> <!-- End Product Action Link -->--}}
-{{--                                    </div> <!-- End Product Image -->--}}
-{{--                                    <!-- Start Product Content -->--}}
-{{--                                    <div class="product__content m-t-20">--}}
-{{--                                        <ul class="product__review">--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--blank"><i class="icon-star"></i></li>--}}
-{{--                                        </ul>--}}
-{{--                                        <a href="/product-single-default" class="product__link">Cow fresh milk</a>--}}
-{{--                                        <div class="product__price m-t-5">--}}
-{{--                                            <span class="product__price">$55.00 <del>$75.00</del></span>--}}
-{{--                                        </div>--}}
-{{--                                    </div> <!-- End Product Content -->--}}
-{{--                                </div> <!-- End Single Default Product -->--}}
+                                {{--                                <!-- Start Single Default Product -->--}}
+                                {{--                                <div class="product__box product__default--single text-center">--}}
+                                {{--                                    <!-- Start Product Image -->--}}
+                                {{--                                    <div class="product__img-box  pos-relative">--}}
+                                {{--                                        <a href="/product-single-default" class="product__img--link">--}}
+                                {{--                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-9.jpg" alt="">--}}
+                                {{--                                        </a>--}}
+                                {{--                                        <!-- Start Procuct Label -->--}}
+                                {{--                                        <span class="product__label product__label--sale-out">Soldout</span>--}}
+                                {{--                                        <!-- End Procuct Label -->--}}
+                                {{--                                        <!-- Start Product Action Link-->--}}
+                                {{--                                        <ul class="product__action--link pos-absolute">--}}
+                                {{--                                            <li><a href="#modalAddCart" data-toggle="modal"><i class="icon-shopping-cart"></i></a></li>--}}
+                                {{--                                            <li><a href="/compare"><i class="icon-sliders"></i></a></li>--}}
+                                {{--                                            <li><a href="/wishlist"><i class="icon-heart"></i></a></li>--}}
+                                {{--                                            <li><a href="#modalQuickView" data-toggle="modal"><i class="icon-eye"></i></a></li>--}}
+                                {{--                                        </ul> <!-- End Product Action Link -->--}}
+                                {{--                                    </div> <!-- End Product Image -->--}}
+                                {{--                                    <!-- Start Product Content -->--}}
+                                {{--                                    <div class="product__content m-t-20">--}}
+                                {{--                                        <ul class="product__review">--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--blank"><i class="icon-star"></i></li>--}}
+                                {{--                                        </ul>--}}
+                                {{--                                        <a href="/product-single-default" class="product__link">Cow fresh milk</a>--}}
+                                {{--                                        <div class="product__price m-t-5">--}}
+                                {{--                                            <span class="product__price">$55.00 <del>$75.00</del></span>--}}
+                                {{--                                        </div>--}}
+                                {{--                                    </div> <!-- End Product Content -->--}}
+                                {{--                                </div> <!-- End Single Default Product -->--}}
 
-{{--                                <!-- Start Single Default Product -->--}}
-{{--                                <div class="product__box product__default--single text-center">--}}
-{{--                                    <!-- Start Product Image -->--}}
-{{--                                    <div class="product__img-box  pos-relative">--}}
-{{--                                        <a href="/product-single-default" class="product__img--link">--}}
-{{--                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-10.jpg" alt="">--}}
-{{--                                        </a>--}}
-{{--                                        <!-- Start Procuct Label -->--}}
-{{--                                        <span class="product__label product__label--sale-out">Soldout</span>--}}
-{{--                                        <!-- End Procuct Label -->--}}
-{{--                                        <!-- Start Product Action Link-->--}}
-{{--                                        <ul class="product__action--link pos-absolute">--}}
-{{--                                            <li><a href="#modalAddCart" data-toggle="modal"><i class="icon-shopping-cart"></i></a></li>--}}
-{{--                                            <li><a href="/compare"><i class="icon-sliders"></i></a></li>--}}
-{{--                                            <li><a href="/wishlist"><i class="icon-heart"></i></a></li>--}}
-{{--                                            <li><a href="#modalQuickView" data-toggle="modal"><i class="icon-eye"></i></a></li>--}}
-{{--                                        </ul> <!-- End Product Action Link -->--}}
-{{--                                    </div> <!-- End Product Image -->--}}
-{{--                                    <!-- Start Product Content -->--}}
-{{--                                    <div class="product__content m-t-20">--}}
-{{--                                        <ul class="product__review">--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
-{{--                                            <li class="product__review--blank"><i class="icon-star"></i></li>--}}
-{{--                                        </ul>--}}
-{{--                                        <a href="/product-single-default" class="product__link">Fresh Red Tomato</a>--}}
-{{--                                        <div class="product__price m-t-5">--}}
-{{--                                            <span class="product__price">$10.00</span>--}}
-{{--                                        </div>--}}
-{{--                                    </div> <!-- End Product Content -->--}}
-{{--                                </div> <!-- End Single Default Product -->--}}
+                                {{--                                <!-- Start Single Default Product -->--}}
+                                {{--                                <div class="product__box product__default--single text-center">--}}
+                                {{--                                    <!-- Start Product Image -->--}}
+                                {{--                                    <div class="product__img-box  pos-relative">--}}
+                                {{--                                        <a href="/product-single-default" class="product__img--link">--}}
+                                {{--                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-10.jpg" alt="">--}}
+                                {{--                                        </a>--}}
+                                {{--                                        <!-- Start Procuct Label -->--}}
+                                {{--                                        <span class="product__label product__label--sale-out">Soldout</span>--}}
+                                {{--                                        <!-- End Procuct Label -->--}}
+                                {{--                                        <!-- Start Product Action Link-->--}}
+                                {{--                                        <ul class="product__action--link pos-absolute">--}}
+                                {{--                                            <li><a href="#modalAddCart" data-toggle="modal"><i class="icon-shopping-cart"></i></a></li>--}}
+                                {{--                                            <li><a href="/compare"><i class="icon-sliders"></i></a></li>--}}
+                                {{--                                            <li><a href="/wishlist"><i class="icon-heart"></i></a></li>--}}
+                                {{--                                            <li><a href="#modalQuickView" data-toggle="modal"><i class="icon-eye"></i></a></li>--}}
+                                {{--                                        </ul> <!-- End Product Action Link -->--}}
+                                {{--                                    </div> <!-- End Product Image -->--}}
+                                {{--                                    <!-- Start Product Content -->--}}
+                                {{--                                    <div class="product__content m-t-20">--}}
+                                {{--                                        <ul class="product__review">--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--fill"><i class="icon-star"></i></li>--}}
+                                {{--                                            <li class="product__review--blank"><i class="icon-star"></i></li>--}}
+                                {{--                                        </ul>--}}
+                                {{--                                        <a href="/product-single-default" class="product__link">Fresh Red Tomato</a>--}}
+                                {{--                                        <div class="product__price m-t-5">--}}
+                                {{--                                            <span class="product__price">$10.00</span>--}}
+                                {{--                                        </div>--}}
+                                {{--                                    </div> <!-- End Product Content -->--}}
+                                {{--                                </div> <!-- End Single Default Product -->--}}
                             </div>
                         </div>
                     </div>

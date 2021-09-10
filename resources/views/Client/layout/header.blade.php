@@ -70,20 +70,26 @@
                                                 <div class="mega-menu__item-box">
                                                     <span class="mega-menu__title">Sản Phẩm Thịt</span>
                                                     <ul class="mega-menu__item">
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Thịt Gà</a></li>
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Hải Sản</a></li>
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Thịt Vịt</a></li>
-                                                        {{--                                                        <li class="mega-menu__list pos-relative">--}}
-                                                        {{--                                                            <a href="/shop-layout/shop-sidebar-full-width" class="mega-menu__link">Grid Right Sidebar</a>--}}
-                                                        {{--                                                            <span class="menu-label menu-label--red">New</span>--}}
-                                                        {{--                                                        </li>--}}
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Thịt Lợn</a></li>
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Thịt Bò</a></li>
+                                                        @foreach($list as $category)
+                                                            <li class="mega-menu__list">
+                                                                <a href="/shop-sidebar-full-width" class="mega-menu__link">
+                                                                    {{$category -> name}}
+                                                                </a>
+                                                            </li>
+                                                        @endforeach
+
+{{--                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"--}}
+{{--                                                                                       class="mega-menu__link">Hải Sản</a></li>--}}
+{{--                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"--}}
+{{--                                                                                       class="mega-menu__link">Các Loại Thịt Vịt</a></li>--}}
+{{--                                                        --}}{{--                                                        <li class="mega-menu__list pos-relative">--}}
+{{--                                                        --}}{{--                                                            <a href="/shop-layout/shop-sidebar-full-width" class="mega-menu__link">Grid Right Sidebar</a>--}}
+{{--                                                        --}}{{--                                                            <span class="menu-label menu-label--red">New</span>--}}
+{{--                                                        --}}{{--                                                        </li>--}}
+{{--                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"--}}
+{{--                                                                                       class="mega-menu__link">Các Loại Thịt Lợn</a></li>--}}
+{{--                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"--}}
+{{--                                                                                       class="mega-menu__link">Các Loại Thịt Bò</a></li>--}}
 
                                                         {{--                                                        <li class="mega-menu__list"><a href="shop-sidebar-left-list-view.html" class="mega-menu__link">List Left Sidebar</a></li>--}}
                                                         {{--                                                        <li class="mega-menu__list"><a href="shop-sidebar-right-list-view.html" class="mega-menu__link">List Right Sidebar</a></li>--}}
