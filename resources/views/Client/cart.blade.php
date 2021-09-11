@@ -1,6 +1,6 @@
 @extends('Client.layout.index')
 @section('contact')
-    !-- ::::::  Start  Breadcrumb Section  ::::::  -->
+{{--    !-- ::::::  Start  Breadcrumb Section  ::::::  -->--}}
     <div class="page-breadcrumb">
         <div class="container">
             <div class="row">

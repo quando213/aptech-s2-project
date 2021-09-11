@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             ComboSeeder::class,
             GroupSeeder::class,
             ProductSeeder::class,
+            Accountafsassedg::class,
         ]);
     }
 }

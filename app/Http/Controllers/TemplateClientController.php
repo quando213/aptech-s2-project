@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+
 
 class TemplateClientController extends Controller
 {
@@ -54,7 +56,12 @@ class TemplateClientController extends Controller
 
     public function cart()
     {
-        return view('.Client.cart');
+        if (Session::has('accountLogin')){
+            if (Session::get('accountLogin')){
+                return view('.Client.cart');
+            }
+        }
+        return redirect('/login');
     }
 
     public function login()

@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\WardController;
 use App\Http\Controllers\Client\ClientProductController;
+use App\Http\Controllers\Login\CheckLoginController;
 use App\Http\Controllers\TemplateAdminController;
 use App\Http\Controllers\TemplateClientController;
 use App\Http\Controllers\Admin\ComboController;
@@ -57,7 +58,14 @@ Route::get('/input', [TemplateAdminController::class, 'input']);
 Route::get('/table', [TemplateAdminController::class, 'table']);
 Route::get('/datatable', [TemplateAdminController::class, 'datatable']);
 Route::get('/email', [TemplateAdminController::class, 'email']);
-Route::get('/login', [TemplateAdminController::class, 'login']);
+
+
+
+Route::get('/login', [CheckLoginController::class, 'loginView']);
+Route::post('/login', [CheckLoginController::class, 'checkLogin']);
+
+
+
 Route::get('/sign-up', [TemplateAdminController::class, 'sign_in']);
 Route::get('/forgot', [TemplateAdminController::class, 'forgot']);
 Route::get('/product/create', [TemplateAdminController::class, 'createProduct']);

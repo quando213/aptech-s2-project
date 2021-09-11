@@ -29,17 +29,24 @@
                     <div class="login-form-container">
                         <h5 class="sidebar__title">Đăng Nhập</h5>
                         <div class="login-register-form">
-                            <form action="#" method="post">
+                            <form action="/login" method="post">
+                                @csrf
                                 <div class="form-box__single-group">
                                     <label for="form-username">Tên Người Dùng hoặc Địa Chỉ Email*</label>
-                                    <input type="text" id="form-username" placeholder="Tên" required>
+                                    <input name="email" type="text" id="form-username" placeholder="Tên" required>
+                                    @error('email')
+                                    <div class="text-danger"> *{{$message}}</div>
+                                    @enderror
                                 </div>
                                 <div class="form-box__single-group">
                                     <label for="form-username-password">Mật Khẩu *</label>
                                     <div class="password__toggle">
-                                        <input type="password" id="form-username-password" placeholder="Enter password" required>
+                                        <input name="password" type="password" id="form-username-password" placeholder="Enter password" required>
                                         <span data-toggle="#form-username-password" class="password__toggle--btn fa fa-fw fa-eye"></span>
                                     </div>
+                                    @error('password')
+                                    <div class="text-danger"> *{{$message}}</div>
+                                    @enderror
                                 </div>
                                 <div class="d-flex justify-content-between flex-wrap m-tb-20">
                                     <label for="account-remember">
