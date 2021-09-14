@@ -139,7 +139,7 @@
                                                                 <option selected disabled hidden>Chọn phường nơi bạn sinh sống</option>
                                                                 @if($data)
                                                                     <option selected
-                                                                            value="{{$ward->xaid}}">{{$ward->name}}</option>
+                                                                            value="{{$data->ward->xaid}}">{{$data->$ward->name}}</option>
                                                                 @endif
                                                             </select>
                                                         </div>

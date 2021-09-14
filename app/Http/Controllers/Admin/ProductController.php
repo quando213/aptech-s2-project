@@ -37,18 +37,19 @@ class ProductController extends Controller
     public function store(ProductPostRequest $request)
     {
         $product = new Product();
-        $img = $request['thumbnail'];
-        $check = explode('.', $img);
-        $size = sizeof($check) - 1;
+//        $img = $request['thumbnail'];
+//        $check = explode('.', $img);
+//        $size = sizeof($check) - 1;
 
-        if ($check[$size] == 'jpg' || $check[$size] == 'png'|| $check[$size] == 'jpeg') {
+//        if ($check[$size] == 'jpg' || $check[$size] == 'png'|| $check[$size] == 'jpeg') {
             $product->fill($request->validated());
+            $product->images = "";
             $product->save();
             return redirect()->route('productList')->with('message','Tao mới thành công sản phẩm dùng '.$product->name);
-        }
-        else{
-            return redirect()->route('productCreate')->with('error','image format error, accepted formats .jpg .png .jpeg');
-        }
+//        }
+//        else{
+//            return redirect()->route('productCreate')->with('error','image format error, accepted formats .jpg .png .jpeg');
+//        }
 
     }
     public function save(ProductPostRequest $request, $id)

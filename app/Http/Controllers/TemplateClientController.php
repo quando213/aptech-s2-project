@@ -16,7 +16,6 @@ class TemplateClientController extends Controller
         return view('.Client.home');
     }
 
-
     public function blog()
     {
         return view('.Client.blog-simple-sidebar-left');
@@ -29,7 +28,7 @@ class TemplateClientController extends Controller
 
     public function product_default()
     {
-        return view('.Client.product-single-default');
+        return view('.Client.product-detail');
     }
 
     public function product_left()
@@ -85,11 +84,6 @@ class TemplateClientController extends Controller
     public function emply_cart()
     {
         return view('.Client.emply-cart');
-    }
-
-    public function checkout()
-    {
-        return view('.Client.checkout');
     }
 
     public function compare()

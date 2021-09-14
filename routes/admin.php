@@ -73,7 +73,8 @@ Route::prefix('/combos')->group(function () {
     Route::get('delete/{id}', [ComboController::class, 'destroy'])->name('comboDelete');
 });
 Route::prefix('/orders')->group(function () {
-    Route::get('', [OrderController::class, 'index']);
+    Route::get('', [OrderController::class, 'list']);
+    Route::get('/{id}', [OrderController::class, 'orderDetail'])->name('orderDetail');
 });
 
 

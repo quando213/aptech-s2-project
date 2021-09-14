@@ -24,27 +24,27 @@
                     <div class="col-md-5">
                         <div class="product-gallery-box product-gallery-box--default m-b-60">
                             <div class="product-image--large product-image--large-horizontal">
-                                <img class="img-fluid" id="img-zoom" src="assets/img/product/gallery/gallery-large/product-gallery-large-1.jpg" data-zoom-image="assets/img/product/gallery/gallery-large/product-gallery-large-1.jpg" alt="">
+                                <img class="img-fluid" id="img-zoom" src="{{$product->thumbnail}}" data-zoom-image="{{$product->thumbnail}}" alt="">
                             </div>
-                            <div id="gallery-zoom" class="product-image--thumb product-image--thumb-horizontal pos-relative">
-                                <a class="zoom-active" data-image="assets/img/product/gallery/gallery-large/product-gallery-large-1.jpg" data-zoom-image="assets/img/product/gallery/gallery-large/product-gallery-large-1.jpg">
-                                    <img class="img-fluid" src="assets/img/product/gallery/gallery-large/product-gallery-large-1.jpg" alt="">
-                                </a>
-                                <a data-image="assets/img/product/gallery/gallery-large/product-gallery-large-2.jpg" data-zoom-image="assets/img/product/gallery/gallery-large/product-gallery-large-2.jpg">
-                                    <img class="img-fluid" src="assets/img/product/gallery/gallery-large/product-gallery-large-2.jpg" alt="">
-                                </a>
-                                <a data-image="assets/img/product/gallery/gallery-large/product-gallery-large-3.jpg" data-zoom-image="assets/img/product/gallery/gallery-large/product-gallery-large-3.jpg">
-                                    <img class="img-fluid" src="assets/img/product/gallery/gallery-large/product-gallery-large-3.jpg" alt="">
-                                </a>
-                                <a data-image="assets/img/product/gallery/gallery-large/product-gallery-large-4.jpg" data-zoom-image="assets/img/product/gallery/gallery-large/product-gallery-large-4.jpg">
-                                    <img class="img-fluid" src="assets/img/product/gallery/gallery-large/product-gallery-large-4.jpg" alt="">
-                                </a>
-                            </div>
+{{--                            <div id="gallery-zoom" class="product-image--thumb product-image--thumb-horizontal pos-relative">--}}
+{{--                                <a class="zoom-active" data-image="/assets/img/product/gallery/gallery-large/product-gallery-large-1.jpg" data-zoom-image="/assets/img/product/gallery/gallery-large/product-gallery-large-1.jpg">--}}
+{{--                                    <img class="img-fluid" src="/assets/img/product/gallery/gallery-large/product-gallery-large-1.jpg" alt="">--}}
+{{--                                </a>--}}
+{{--                                <a data-image="/assets/img/product/gallery/gallery-large/product-gallery-large-2.jpg" data-zoom-image="/assets/img/product/gallery/gallery-large/product-gallery-large-2.jpg">--}}
+{{--                                    <img class="img-fluid" src="/assets/img/product/gallery/gallery-large/product-gallery-large-2.jpg" alt="">--}}
+{{--                                </a>--}}
+{{--                                <a data-image="/assets/img/product/gallery/gallery-large/product-gallery-large-3.jpg" data-zoom-image="/assets/img/product/gallery/gallery-large/product-gallery-large-3.jpg">--}}
+{{--                                    <img class="img-fluid" src="/assets/img/product/gallery/gallery-large/product-gallery-large-3.jpg" alt="">--}}
+{{--                                </a>--}}
+{{--                                <a data-image="/assets/img/product/gallery/gallery-large/product-gallery-large-4.jpg" data-zoom-image="/assets/img/product/gallery/gallery-large/product-gallery-large-4.jpg">--}}
+{{--                                    <img class="img-fluid" src="/assets/img/product/gallery/gallery-large/product-gallery-large-4.jpg" alt="">--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                     <div class="col-md-7">
                         <div class="product-details-box m-b-60">
-                            <h4 class="font--regular m-b-20">Táo Xanh</h4>
+                            <h4 class="font--regular m-b-20">{{$product->name}}</h4>
                             <ul class="product__review">
                                 <li class="product__review--fill"><i class="icon-star"></i></li>
                                 <li class="product__review--fill"><i class="icon-star"></i></li>
@@ -53,20 +53,24 @@
                                 <li class="product__review--blank"><i class="icon-star"></i></li>
                             </ul>
                             <div class="product__price m-t-5">
-                                <span class="product__price product__price--large">$19.00 <del>$29.00</del></span>
-                                <span class="product__tag m-l-15 btn--tiny btn--green">-34%</span>
+                                <span class="product__price product__price--large">{{number_format($product->price)}} ₫</span>
+{{--                                <span class="product__tag m-l-15 btn--tiny btn--green">-34%</span><del>$29.00</del> --}}
                             </div>
 
                             <div class="product__desc m-t-25 m-b-30">
-                                <p>Táo Xanh nhập khẩu</p>
+                                <p>{{$product->description}}</p>
                             </div>
+
+
                             <div class="product-var p-tb-30">
                                 <div class="product__stock m-b-20">
-                                    <span class="product__stock--in"><i class="fas fa-check-circle"></i> 199 CÓ HÀNG</span>
+                                    <span class="product__stock--in"><i class="fas fa-check-circle"></i> {{$product->stock}} {{$product->stock > 0 ?"Còn hàng":"Hết Hàng"}}</span>
+                                </div>
+                                <div class="product__stock m-b-20">
+                                    <span class="product__stock--in">Khối lượng: {{$product->quantity ."  ".\App\Enums\ProductUnit::getDescription($product->unit)}} </span>
                                 </div>
                                 <div class="product-quantity product-var__item">
                                     <ul class="product-modal-group">
-                                        <li><a href="#modalSizeGuide" data-toggle="modal"  class="link--gray link--icon-left"><i class="fal fa-money-check-edit"></i>Khối Lượng</a></li>
                                         <li><a href="#modalShippinginfo" data-toggle="modal"  class="link--gray link--icon-left"><i class="fal fa-truck-container"></i>Vận Chuyển</a></li>
                                         <li><a href="#modalProductAsk" data-toggle="modal"  class="link--gray link--icon-left"><i class="fal fa-envelope"></i>Hỏi Đáp về Sanr Phẩm</a></li>
                                     </ul>
@@ -75,31 +79,31 @@
                                     <span class="product-var__text">Số Lượng: </span>
                                     <form class="quantity-scale m-l-20">
                                         <div class="value-button" id="decrease" onclick="decreaseValue()">-</div>
-                                        <input type="number" id="number" value="1" />
+                                        <input type="number" min="1" max="{{$product->stock}}" id="number" value="1"/>
                                         <div class="value-button" id="increase" onclick="increaseValue()">+</div>
                                     </form>
                                 </div>
                                 <div class="product-var__item">
-                                    <a href="#modalAddCart" data-toggle="modal" data-dismiss="modal" class="btn btn--long btn--radius-tiny btn--green btn--green-hover-black btn--uppercase btn--weight m-r-20">Thêm Vào Giỏ Hàng</a>
-                                    <a href="/wishlist" class="btn btn--round btn--round-size-small btn--green btn--green-hover-black"><i class="fas fa-heart"></i></a>
+                                    <a href="#modalAddCart" id="btnaddtocar" data-toggle="modal" data-dismiss="modal" class="btn {{$product->stock > 0 ?"":"disabled"}} btn--long btn--radius-tiny btn--green btn--green-hover-black btn--uppercase btn--weight m-r-20">Thêm Vào Giỏ Hàng</a>
                                 </div>
                                 <div class="product-var__item">
                                     <div class="dynmiac_checkout--button">
-                                        <input type="checkbox" id="buy-now-check" value="1" class="p-r-30">
+{{--                                        <input type="checkbox" id="buy-now-check" value="1" class="p-r-30">--}}
 {{--                                   <label for="buy-now-check" class="m-b-20">I agree with the terms and condition</label>--}}
-                                        <a href="/cart" class="btn btn--block btn--long btn--radius-tiny btn--green btn--green-hover-black text-uppercase m-r-35">Mua Ngay</a>
+                                        <a href="/cart"  class="btn {{$product->stock > 0 ?"":"disabled"}} btn--block btn--long btn--radius-tiny btn--green btn--green-hover-black text-uppercase m-r-35">Mua Ngay</a>
                                     </div>
                                 </div>
+
                                 <div class="product-var__item">
                                     <span class="product-var__text">Bảo Đảm Thanh TOán An Toàn </span>
                                     <ul class="payment-icon m-t-5">
-                                        <li><img src="assets/img/icon/payment/paypal.svg" alt=""></li>
-                                        <li><img src="assets/img/icon/payment/amex.svg" alt=""></li>
-                                        <li><img src="assets/img/icon/payment/ipay.svg" alt=""></li>
-                                        <li><img src="assets/img/icon/payment/visa.svg" alt=""></li>
-                                        <li><img src="assets/img/icon/payment/shoify.svg" alt=""></li>
-                                        <li><img src="assets/img/icon/payment/mastercard.svg" alt=""></li>
-                                        <li><img src="assets/img/icon/payment/gpay.svg" alt=""></li>
+                                        <li><img src="//assets/img/icon/payment/paypal.svg" alt=""></li>
+                                        <li><img src="//assets/img/icon/payment/amex.svg" alt=""></li>
+                                        <li><img src="//assets/img/icon/payment/ipay.svg" alt=""></li>
+                                        <li><img src="//assets/img/icon/payment/visa.svg" alt=""></li>
+                                        <li><img src="//assets/img/icon/payment/shoify.svg" alt=""></li>
+                                        <li><img src="//assets/img/icon/payment/mastercard.svg" alt=""></li>
+                                        <li><img src="//assets/img/icon/payment/gpay.svg" alt=""></li>
                                     </ul>
                                 </div>
                                 <div class="product-var__item d-flex align-items-center">
@@ -124,12 +128,12 @@
                     <div class="col-12">
                         <div class="product-details-content">
                             <ul class="tablist tablist--style-black tablist--style-title tablist--style-gap-30 nav">
-                                <li><a class="nav-link active" data-toggle="tab" href="#product-desc">Description</a></li>
-                                <li><a class="nav-link" data-toggle="tab" href="#product-dis">Product Details</a></li>
-                                <li><a class="nav-link" data-toggle="tab" href="#product-review">Đánh Giá</a></li>
-                                <li><a class="nav-link active" data-toggle="tab" href="#product-desc">Miêu Tả</a></li>
+{{--                                <li><a class="nav-link active" data-toggle="tab" href="#product-desc">Description</a></li>--}}
+{{--                                <li><a class="nav-link" data-toggle="tab" href="#product-dis">Product Details</a></li>--}}
+{{--                                <li><a class="nav-link" data-toggle="tab" href="#product-review">Đánh Giá</a></li>--}}
+{{--                                <li><a class="nav-link active" data-toggle="tab" href="#product-desc">Miêu Tả</a></li>--}}
                                 <li><a class="nav-link" data-toggle="tab" href="#product-dis">Chi Tiết Sản Phẩm</a></li>
-                                <li><a class="nav-link" data-toggle="tab" href="#product-review">Nhận Xét</a></li>
+{{--                                <li><a class="nav-link" data-toggle="tab" href="#product-review">Nhận Xét</a></li>--}}
                             </ul>
                             <div class="product-details-tab-box">
                                 <div class="tab-content">
@@ -155,7 +159,7 @@
                                     <!-- Start Tab - Product Details -->
                                     <div class="tab-pane" id="product-dis">
                                         <div class="product-dis__content">
-                                            <a href="#" class="product-dis__img m-b-30"><img src="assets/img/logo/another-logo.jpg" alt=""></a>
+                                            <a href="#" class="product-dis__img m-b-30"><img src="/assets/img/logo/another-logo.jpg" alt=""></a>
                                             <div class="table-responsive-md">
                                                 <table class="product-dis__list table table-bordered">
                                                     <tbody>
@@ -189,7 +193,7 @@
                                             <li class="comment__list">
                                                 <div class="comment__wrapper">
                                                     <div class="comment__img">
-                                                        <img src="assets/img/user/quynhaka.jpg" alt="">
+                                                        <img src="/assets/img/user/quynhaka.jpg" alt="">
                                                     </div>
                                                     <div class="comment__content">
                                                         <div class="comment__content-top">
@@ -218,7 +222,7 @@
 {{--                                                    <li class="comment__reply-list">--}}
 {{--                                                        <div class="comment__wrapper">--}}
 {{--                                                            <div class="comment__img">--}}
-{{--                                                                <img src="assets/img/user/image-2.png" alt="">--}}
+{{--                                                                <img src="/assets/img/user/image-2.png" alt="">--}}
 {{--                                                            </div>--}}
 {{--                                                            <div class="comment__content">--}}
 {{--                                                                <div class="comment__content-top">--}}
@@ -242,7 +246,7 @@
                                             <li class="comment__list">
                                                 <div class="comment__wrapper">
                                                     <div class="comment__img">
-                                                        <img src="assets/img/user/cai.jpg" alt="">
+                                                        <img src="/assets/img/user/cai.jpg" alt="">
                                                     </div>
                                                     <div class="comment__content">
                                                         <div class="comment__content-top">
@@ -345,7 +349,7 @@
                                     <!-- Start Product Image -->
                                     <div class="product__img-box  pos-relative">
                                         <a href="/product-single-default" class="product__img--link">
-                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-1.jpg" alt="">
+                                            <img class="product__img img-fluid" src="/assets/img/product/size-normal/product-home-1-img-1.jpg" alt="">
                                         </a>
                                         <!-- Start Procuct Label -->
                                         <span class="product__label product__label--sale-dis">-34%</span>
@@ -379,7 +383,7 @@
                                     <!-- Start Product Image -->
                                     <div class="product__img-box  pos-relative">
                                         <a href="/product-single-default" class="product__img--link">
-                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-2.jpg" alt="">
+                                            <img class="product__img img-fluid" src="/assets/img/product/size-normal/product-home-1-img-2.jpg" alt="">
                                         </a>
                                         <!-- Start Product Action Link-->
                                         <ul class="product__action--link pos-absolute">
@@ -410,7 +414,7 @@
                                     <!-- Start Product Image -->
                                     <div class="product__img-box  pos-relative">
                                         <a href="/product-single-default" class="product__img--link">
-                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-3.jpg" alt="">
+                                            <img class="product__img img-fluid" src="/assets/img/product/size-normal/product-home-1-img-3.jpg" alt="">
                                         </a>
                                         <!-- Start Procuct Label -->
                                         <span class="product__label product__label--sale-dis">-10%</span>
@@ -448,7 +452,7 @@
                                     <!-- Start Product Image -->
                                     <div class="product__img-box  pos-relative">
                                         <a href="/product-single-default" class="product__img--link">
-                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-4.jpg" alt="">
+                                            <img class="product__img img-fluid" src="/assets/img/product/size-normal/product-home-1-img-4.jpg" alt="">
                                         </a>
                                         <!-- Start Product Action Link-->
                                         <ul class="product__action--link pos-absolute">
@@ -479,7 +483,7 @@
                                     <!-- Start Product Image -->
                                     <div class="product__img-box  pos-relative">
                                         <a href="/product-single-default" class="product__img--link">
-                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-5.jpg" alt="">
+                                            <img class="product__img img-fluid" src="/assets/img/product/size-normal/product-home-1-img-5.jpg" alt="">
                                         </a>
                                         <!-- Start Procuct Label -->
                                         <span class="product__label product__label--sale-dis">-31%</span>
@@ -513,7 +517,7 @@
                                     <!-- Start Product Image -->
                                     <div class="product__img-box  pos-relative">
                                         <a href="/product-single-default" class="product__img--link">
-                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-6.jpg" alt="">
+                                            <img class="product__img img-fluid" src="/assets/img/product/size-normal/product-home-1-img-6.jpg" alt="">
                                         </a>
                                         <!-- Start Procuct Label -->
                                         <span class="product__label product__label--sale-dis">-34%</span>
@@ -547,7 +551,7 @@
                                     <!-- Start Product Image -->
                                     <div class="product__img-box  pos-relative">
                                         <a href="/product-single-default" class="product__img--link">
-                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-7.jpg" alt="">
+                                            <img class="product__img img-fluid" src="/assets/img/product/size-normal/product-home-1-img-7.jpg" alt="">
                                         </a>
                                         <!-- Start Procuct Label -->
                                         <span class="product__label product__label--sale-dis">-34%</span>
@@ -581,7 +585,7 @@
                                     <!-- Start Product Image -->
                                     <div class="product__img-box  pos-relative">
                                         <a href="/product-single-default" class="product__img--link">
-                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-8.jpg" alt="">
+                                            <img class="product__img img-fluid" src="/assets/img/product/size-normal/product-home-1-img-8.jpg" alt="">
                                         </a>
                                         <!-- Start Procuct Label -->
                                         <span class="product__label product__label--sale-dis">-35%</span>
@@ -619,7 +623,7 @@
                                     <!-- Start Product Image -->
                                     <div class="product__img-box  pos-relative">
                                         <a href="/product-single-default" class="product__img--link">
-                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-9.jpg" alt="">
+                                            <img class="product__img img-fluid" src="/assets/img/product/size-normal/product-home-1-img-9.jpg" alt="">
                                         </a>
                                         <!-- Start Procuct Label -->
                                         <span class="product__label product__label--sale-out">Soldout</span>
@@ -653,7 +657,7 @@
                                     <!-- Start Product Image -->
                                     <div class="product__img-box  pos-relative">
                                         <a href="/product-single-default" class="product__img--link">
-                                            <img class="product__img img-fluid" src="assets/img/product/size-normal/product-home-1-img-10.jpg" alt="">
+                                            <img class="product__img img-fluid" src="/assets/img/product/size-normal/product-home-1-img-10.jpg" alt="">
                                         </a>
                                         <!-- Start Procuct Label -->
                                         <span class="product__label product__label--sale-out">Soldout</span>
@@ -698,43 +702,43 @@
                             <!-- Start Single Company Logo Item -->
                             <div class="company-logo__item">
                                 <a href="#" class="company-logo__link">
-                                    <img src="assets/img/company-logo/company-logo-1.png" alt="" class="company-logo__img">
+                                    <img src="/assets/img/company-logo/company-logo-1.png" alt="" class="company-logo__img">
                                 </a>
                             </div> <!-- End Single Company Logo Item -->
                             <!-- Start Single Company Logo Item -->
                             <div class="company-logo__item">
                                 <a href="#" class="company-logo__link">
-                                    <img src="assets/img/company-logo/company-logo-2.png" alt="" class="company-logo__img">
+                                    <img src="/assets/img/company-logo/company-logo-2.png" alt="" class="company-logo__img">
                                 </a>
                             </div> <!-- End Single Company Logo Item -->
                             <!-- Start Single Company Logo Item -->
                             <div class="company-logo__item">
                                 <a href="#" class="company-logo__link">
-                                    <img src="assets/img/company-logo/company-logo-3.png" alt="" class="company-logo__img">
+                                    <img src="/assets/img/company-logo/company-logo-3.png" alt="" class="company-logo__img">
                                 </a>
                             </div> <!-- End Single Company Logo Item -->
                             <!-- Start Single Company Logo Item -->
                             <div class="company-logo__item">
                                 <a href="#" class="company-logo__link">
-                                    <img src="assets/img/company-logo/company-logo-4.png" alt="" class="company-logo__img">
+                                    <img src="/assets/img/company-logo/company-logo-4.png" alt="" class="company-logo__img">
                                 </a>
                             </div> <!-- End Single Company Logo Item -->
                             <!-- Start Single Company Logo Item -->
                             <div class="company-logo__item">
                                 <a href="#" class="company-logo__link">
-                                    <img src="assets/img/company-logo/company-logo-5.png" alt="" class="company-logo__img">
+                                    <img src="/assets/img/company-logo/company-logo-5.png" alt="" class="company-logo__img">
                                 </a>
                             </div> <!-- End Single Company Logo Item -->
                             <!-- Start Single Company Logo Item -->
                             <div class="company-logo__item">
                                 <a href="#" class="company-logo__link">
-                                    <img src="assets/img/company-logo/company-logo-6.png" alt="" class="company-logo__img">
+                                    <img src="/assets/img/company-logo/company-logo-6.png" alt="" class="company-logo__img">
                                 </a>
                             </div> <!-- End Single Company Logo Item -->
                             <!-- Start Single Company Logo Item -->
                             <div class="company-logo__item">
                                 <a href="#" class="company-logo__link">
-                                    <img src="assets/img/company-logo/company-logo-7.png" alt="" class="company-logo__img">
+                                    <img src="/assets/img/company-logo/company-logo-7.png" alt="" class="company-logo__img">
                                 </a>
                             </div> <!-- End Single Company Logo Item -->
                         </div>
@@ -765,7 +769,7 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="modal__product-img">
-                                            <img class="img-fluid" src="assets/img/product/size-normal/product-home-1-img-1.jpg" alt="">
+                                            <img class="img-fluid" src="{{$product->thumbnail}}" alt="">
                                         </div>
                                     </div>
                                     <div class="col-md-8">
@@ -779,8 +783,8 @@
                             </div>
                             <div class="col-md-5 modal__border">
                                 <ul class="modal__product-shipping-info">
-                                    <li class="link--icon-left"><i class="icon-shopping-cart"></i> There Are 5 Items In Your Cart.</li>
-                                    <li>TOTAL PRICE: <span>$187.00</span></li>
+                                    <li class="link--icon-left" id="text"><i class="icon-shopping-cart"></i></li>
+                                    <li>TOTAL PRICE: <span id="TOTAL">  </span></li>
                                     <li><a href="#" class="btn text-underline color-green" data-dismiss="modal">CONTINUE SHOPPING</a></li>
                                 </ul>
                             </div>
@@ -808,7 +812,7 @@
                             <div class="col-md-6">
                                 <div class="product-gallery-box m-b-60">
                                     <div class="modal-product-image--large">
-                                        <img class="img-fluid" src="assets/img/product/gallery/gallery-large/product-gallery-large-1.jpg" alt="">
+                                        <img class="img-fluid" src="/assets/img/product/gallery/gallery-large/product-gallery-large-1.jpg" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -859,140 +863,8 @@
                 </div>
             </div>
         </div>
-    </div> <!-- End Modal Quickview cart -->
+    </div>
 
-    <!-- Start Modal Size guide -->
-    <div class="modal fade" id="modalSizeGuide" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col text-right">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true"> <i class="fal fa-times"></i></span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="table-responsive size-guide-table m-t-30">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                        <tr>
-                                            <th scope="col">INTERNATIONAL</th>
-                                            <th scope="col">X</th>
-                                            <th scope="col">S</th>
-                                            <th scope="col">M</th>
-                                            <th scope="col">L</th>
-                                            <th scope="col">XL</th>
-                                            <th scope="col">XXL</th>
-                                            <th scope="col">XXXL</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <th scope="row">EUROPE</th>
-                                            <td>32</td>
-                                            <td>34</td>
-                                            <td>36</td>
-                                            <td>38</td>
-                                            <td>40</td>
-                                            <td>42</td>
-                                            <td>44</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">US</th>
-                                            <td>0</td>
-                                            <td>2</td>
-                                            <td>4</td>
-                                            <td>6</td>
-                                            <td>8</td>
-                                            <td>10</td>
-                                            <td>12</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">CHEST FIT (INCHES)</th>
-                                            <td>28"</td>
-                                            <td>30"</td>
-                                            <td>32"</td>
-                                            <td>34"</td>
-                                            <td>36"</td>
-                                            <td>38"</td>
-                                            <td>40"	</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">CHEST FIT (CM)</th>
-                                            <td>716</td>
-                                            <td>76</td>
-                                            <td>81</td>
-                                            <td>86</td>
-                                            <td>91.5</td>
-                                            <td>96.5</td>
-                                            <td>101.1</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">WAIST FIR (INCHES)</th>
-                                            <td>21"</td>
-                                            <td>23"</td>
-                                            <td>25"</td>
-                                            <td>27"</td>
-                                            <td>29"</td>
-                                            <td>31"</td>
-                                            <td>33"</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">WAIST FIR (CM)</th>
-                                            <td>53.5</td>
-                                            <td>58.5</td>
-                                            <td>63.5</td>
-                                            <td>68.5</td>
-                                            <td>74</td>
-                                            <td>79</td>
-                                            <td>84</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">HIPS FIR (INCHES)</th>
-                                            <td>33"</td>
-                                            <td>34"</td>
-                                            <td>36"</td>
-                                            <td>38"</td>
-                                            <td>40"</td>
-                                            <td>42"</td>
-                                            <td>44"</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">HIPS FIR (CM)</th>
-                                            <td>81.5</td>
-                                            <td>86.5</td>
-                                            <td>91.5</td>
-                                            <td>96.5</td>
-                                            <td>101</td>
-                                            <td>106.5</td>
-                                            <td>111.5</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">SKORT LENGTHS (SM)</th>
-                                            <td>36.5</td>
-                                            <td>38</td>
-                                            <td>39.5</td>
-                                            <td>41</td>
-                                            <td>42.5</td>
-                                            <td>44</td>
-                                            <td>45.5</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End Modal Size Guide -->
-
-    <!-- Start Modal Shipping Info -->
     <div class="modal fade" id="modalShippinginfo" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog  modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -1084,6 +956,28 @@
         </div>
     </div> <!-- End Modal Product Ask -->
 
+@endsection
+@section('script')
+    <script>
+        $('#btnaddtocar').click(function (){
+            $('#text').text(`There Are ${$('#number').val()} Items In Your Cart.`)
+            $('#TOTAL').text(`${$('#number').val() * {{$product->price}}} ₫`)
+            $.ajax({
+                type: "get",
+                url: "/addToCart/{{$product->id}}",
+                data:{
+                    quantity:$('#number').val(),
+                },
+                success: function (data) {
+                    alert('thanh cong');
+                    $('input').val('');
+                },
+                error: function (){
+                    alert('ngu');
+                }
+            });
+        })
+    </script>
 @endsection
 
 

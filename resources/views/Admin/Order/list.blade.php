@@ -35,10 +35,14 @@
                                     <table id="myTable" class="table table-lg">
                                         <thead class="thead-dark">
                                         <tr>
-                                            <th>NAME</th>
-                                            <th>Description</th>
-                                            <th>Day</th>
-                                            <th>Action</th>
+                                            <th>Người đặt</th>
+                                            <th>Người nhận</th>
+                                            <th>Địa Điểm</th>
+                                            <th>Số điên thoai người nhận</th>
+                                            <th>Gía đơn hàng</th>
+                                            <th>Trạng thái thanh toán</th>
+                                            <th>Hành động</th>
+
                                         </tr>
                                         </thead>
                                         @if($data && sizeof($data) > 0)
@@ -70,20 +74,15 @@
                                                     </div>
                                                 </div>
                                                 <tr>
-                                                    <td class="text-bold-500">{{$item->name}}</td>
-                                                    <td>{{number_format($item->price)}}</td>
-                                                    <td class="text-bold-500"><img src="{{$item->thumbnail}}" alt=""
-                                                                                   width="100" height="100"></td>
-                                                    <td class="text-bold-500">{{$item->category->name}}</td>
-                                                    <td class="text-bold-500">{{$item->stock}}</td>
-                                                    <td class="text-bold-500">{{$item->quantity." \ ". \App\Enums\ProductUnit::getDescription($item->unit)}}</td>
-                                                    <td class="text-bold-500">{{$item->origin}}</td>
-                                                    <td class="text-bold-500">{{$item->brand}}</td>
+                                                    <td class="text-bold-500">{{$item->user->first_name .' '.$item->user->last_name}}</td>
+                                                    <td>{{$item->shipping_name}}</td>
+                                                    <td class="text-bold-500">{{$item->district->name .' '.$item->ward->name.' '. $item->shipping_street}}</td>
+                                                    <td class="text-bold-500">{{$item->shipping_phone}}</td>
+                                                    <td class="text-bold-500">{{$item->total_price}}</td>
+                                                    <td class="text-bold-500">{{$item->payment_method}}</td>
                                                     <td>
-                                                        <a href="{{route('productUpdate',$item->id)}}" type="button"
-                                                           class="btn btn-primary">Edit</a>
-                                                        <a type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                                           data-bs-target="#delete{{$item->id}}">Delete</a>
+                                                        <a href="{{route('orderDetail',$item->id)}}" type="button"
+                                                           class="btn btn-primary">Detail</a>
                                                     </td>
                                                 </tr>
                                             @endforeach

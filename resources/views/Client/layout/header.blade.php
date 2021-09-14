@@ -333,25 +333,37 @@
                         <!-- Start Wishlist-AddCart -->
                         <ul class="header__user-action-icon">
                             <!-- Start Header Wishlist Box -->
+
+
+                            @if(!\Illuminate\Support\Facades\Auth::check())
                             <li>
-                                <a href="/my-account">
-                                    <i class="icon-users"></i>
-                                </a>
-                            </li> <!-- End Header Wishlist Box -->
-                            <!-- Start Header Wishlist Box -->
-                            <li>
-                                <a href="/wishlist">
-                                    <i class="icon-heart"></i>
-                                    <span class="item-count pos-absolute">3</span>
-                                </a>
-                            </li> <!-- End Header Wishlist Box -->
-                            <!-- Start Header Add Cart Box -->
+                                <li class="header__nav-item pos-relative">
+                                    <a href="{{route('register')}}" style="font-size: 13px" class="header__nav-link"> <i class="fa-fw fas fa-user" aria-hidden="true"></i>Đăng nhập</a>
+                                </li>
+                            </li>
+                            @else
+
+                                <li class="header__nav-item pos-relative">
+                                    <a style="font-size: 13px" class="header__nav-link"> <i class="fa-fw fas fa-user" aria-hidden="true"></i> {{\Illuminate\Support\Facades\Auth::user()->first_name . ' ' .\Illuminate\Support\Facades\Auth::user()->last_name}}</a>
+                                    <ul class="dropdown__menu pos-absolute">
+                                        <li class="dropdown__list"><a href="/about" class="dropdown__link">Thông tin của bạn</a></li>
+                                        <li class="dropdown__list pos-relative">
+                                            <a href="/frequently-questions" class="dropdown__link">Đơn hàng của bạn</a>
+                                        </li>
+                                        <li class="dropdown__list"><a href="{{route('logout')}}" class="dropdown__link">Đăng xuất</a></li>
+                                        {{--                                            <li class="dropdown__list"><a href="404.html" class="dropdown__link">404 Page</a></li>--}}
+                                    </ul>
+                                    <!--Single Dropdown Menu-->
+                                </li>
+                            @endif
+
+
                             <li>
                                 <a href="#offcanvas-add-cart__box" class="offcanvas-toggle">
                                     <i class="icon-shopping-cart"></i>
-                                    <span class="wishlist-item-count pos-absolute">3</span>
+                                    <span class="wishlist-item-count pos-absolute">{{\Gloudemans\Shoppingcart\Facades\Cart::content()->count()}}</span>
                                 </a>
-                            </li> <!-- End Header Add Cart Box -->
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -413,7 +425,7 @@
                         <li>
                             <a href="#offcanvas-add-cart__box" class="offcanvas-toggle">
                                 <i class="icon-shopping-cart"></i>
-                                <span class="wishlist-item-count pos-absolute">3</span>
+                                <span class="wishlist-item-count pos-absolute">{{\Gloudemans\Shoppingcart\Facades\Cart::content()->count()}}</span>
                             </a>
                         </li> <!-- End Header Add Cart Box -->
                         <li><a href="#offcanvas-mobile-menu" class="offcanvas-toggle"><i class="far fa-bars"></i></a>
@@ -476,26 +488,33 @@
             <!-- Start Mobile User Action -->
             <ul class="header__user-action-icon m-tb-15 text-center">
                 <!-- Start Header Wishlist Box -->
-                <li>
-                    <a href="/my-account">
-                        <i class="icon-users"></i>
-                    </a>
-                </li> <!-- End Header Wishlist Box -->
-                <!-- Start Header Wishlist Box -->
-                <li>
-                    <a href="/wishlist">
-                        <i class="icon-heart"></i>
-                        <span class="item-count pos-absolute">3</span>
-                    </a>
-                </li> <!-- End Header Wishlist Box -->
-                <!-- Start Header Add Cart Box -->
+                @if(!\Illuminate\Support\Facades\Auth::check())
+                    <li>
+                    <li class="header__nav-item pos-relative">
+                        <a href="{{route('register')}}" style="font-size: 13px" class="header__nav-link"> <i class="fa-fw fas fa-user" aria-hidden="true"></i>Đăng nhập</a>
+                    </li>
+                    </li>
+                @else
+                    <li class="header__nav-item pos-relative">
+                        <a style="font-size: 13px" class="header__nav-link"> <i class="fa-fw fas fa-user" aria-hidden="true"></i> {{\Illuminate\Support\Facades\Auth::user()->first_name . ' ' .\Illuminate\Support\Facades\Auth::user()->last_name}}</a>
+                        <ul class="dropdown__menu pos-absolute">
+                            <li class="dropdown__list"><a href="/about" class="dropdown__link">Thông tin của bạn</a></li>
+                            <li class="dropdown__list pos-relative">
+                                <a href="/frequently-questions" class="dropdown__link">Đơn hàng của bạn</a>
+                            </li>
+                            <li class="dropdown__list"><a href="{{route('logout')}}" class="dropdown__link">Đăng xuất</a></li>
+                            {{--                                            <li class="dropdown__list"><a href="404.html" class="dropdown__link">404 Page</a></li>--}}
+                        </ul>
+                        <!--Single Dropdown Menu-->
+                    </li>
+                @endif
                 <li>
                     <a href="/cart">
                         <i class="icon-shopping-cart"></i>
                         <span class="wishlist-item-count pos-absolute">3</span>
                     </a>
-                </li> <!-- End Header Add Cart Box -->
-            </ul>  <!-- End Mobile User Action -->
+                </li>
+            </ul>
             <div class="offcanvas-menu">
                 <ul>
                     <li><a href="/"><span>Trang Chủ</span></a></li>
@@ -601,7 +620,8 @@
     </div> <!--  End Mobile-offcanvas Menu Section   -->
 
     <!--  Start Popup Add Cart  -->
-    <div id="offcanvas-add-cart__box" class="offcanvas offcanvas-cart offcanvas-add-cart">
+{{--    offcanvas-open--}}
+    <div id="offcanvas-add-cart__box"  class="offcanvas offcanvas-cart offcanvas-add-cart ">
         <div class="offcanvas__top">
             <span class="offcanvas__top-text"><i class="icon-shopping-cart"></i>Giỏ Hàng</span>
             <button class="offcanvas-close"><i class="fal fa-times"></i></button>
@@ -676,6 +696,10 @@
         </div> <!-- End Add Cart Checkout Box-->
     </div> <!-- End Popup Add Cart -->
 
-    <div class="offcanvas-overlay"></div>
+
+
+
+{{--    style="display: block"--}}
+    <div class="offcanvas-overlay"  ></div>
 </header>
 
