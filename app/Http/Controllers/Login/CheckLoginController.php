@@ -39,5 +39,4 @@ class CheckLoginController extends Controller
                 return redirect('/login');
             }
         }
-//    }
 }
