@@ -107,7 +107,7 @@
                                         </div>
                                         <div class=" col-12">
                                             <div class="form-group">
-                                                <label>Cổ phẩn sản phẩm</label>
+                                                <label>Hàng có trong Kho</label>
                                                 <input type="text" id="thumbnail" class="form-control"
                                                        value=" {{$data ? $data->stock :''}}"  placeholder="Nhập cổ phần sản phẩm" name="stock">
                                             </div>

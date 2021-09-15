@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\WardController;
 use App\Http\Controllers\Client\ClientProductController;
+use App\Http\Controllers\Client\ClientProductDetailController;
 use App\Http\Controllers\Client\EntryController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\TemplateAdminController;
@@ -62,23 +63,9 @@ Route::post('/cart', [OrderController::class, 'update']);
 
 
 Route::prefix('product')->group(function () {
-    Route::get('/', [ClientProductController::class, 'list']);
-    Route::get('detail/{id}', [ClientProductController::class, 'detail'])->name('detailProduct');
+    Route::get('/', [ClientProductDetailController::class, 'list']);
+    Route::get('detail/{id}', [ClientProductDetailController::class, 'detail'])->name('detailProduct');
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 Route::get('/form-layout', [TemplateAdminController::class, 'form_layout']);
@@ -106,5 +93,9 @@ Route::get('/wishlist', [TemplateClientController::class, 'wishlist']);
 Route::get('/emply-cart', [TemplateClientController::class, 'emply_cart']);
 
 Route::get('/compare', [TemplateClientController::class, 'compare']);
+
+
+// Link list category vs product ra trang all sản phẩm
+Route::get('/product', [ClientProductController::class, 'list']);
 
 
