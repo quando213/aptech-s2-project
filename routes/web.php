@@ -51,8 +51,10 @@ Route::get('/', [HomeController::class, 'home']);
 
 Route::get('/login', [EntryController::class, 'register'])->name('register');
 Route::get('/register', [EntryController::class, 'register']);
+Route::post('/editProfile', [EntryController::class, 'editProfile']);
 Route::post('/login', [EntryController::class, 'processLogin'])->name('processLogin');
 Route::post('/register', [EntryController::class, 'processRegister'])->name('processRegister');
+Route::get('/my-account', [EntryController::class, 'profile']);
 Route::get('/logout', [EntryController::class, 'logout'])->name('logout');
 Route::get('/checkout', [OrderController::class, 'checkout']);
 Route::post('/checkout', [OrderController::class, 'buynow'])->name('buy');
@@ -85,7 +87,7 @@ Route::get('/product-single-tab-left', [TemplateClientController::class, 'produc
 Route::get('/shop-sidebar-grid-left', [TemplateClientController::class, 'shop_layout_left']);
 Route::get('/shop-sidebar-full-width', [TemplateClientController::class, 'shop_layout_with']);
 
-Route::get('/my-account', [TemplateClientController::class, 'account']);
+
 Route::get('/about', [TemplateClientController::class, 'about']);
 Route::get('/frequently-questions', [TemplateClientController::class, 'frequently']);
 Route::get('/privacy-policy', [TemplateClientController::class, 'privacy_policy']);

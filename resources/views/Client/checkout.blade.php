@@ -48,7 +48,7 @@
                                 <div class=" form-box__single-group">
                                     <label for="Ward">Phường</label>
                                     <select class="form-control" id="Ward" name="shipping_ward_id">
-                                        <option selected disabled hidden>Chọn</option>ư
+                                        <option selected disabled hidden>Chọn</option>
                                         @if($data)
                                             <option selected
                                                     value="{{$data->ward->xaid}}">{{$data->ward->name}}</option>

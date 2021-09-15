@@ -56,10 +56,6 @@ class TemplateClientController extends Controller
         return view('.Client.login');
     }
 
-    public function account()
-    {
-        return view('.Client.my-account');
-    }
 
     public function about()
     {

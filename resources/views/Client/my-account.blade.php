@@ -56,7 +56,7 @@
                                               Chi Tiết Người Dùng</a>
                                         </li>
                                         <li>
-                                            <a class="link--icon-left" href="/login"><i class="fas fa-sign-out-alt"></i> Đăng Xuất</a>
+                                            <a class="link--icon-left" href="/logout"><i class="fas fa-sign-out-alt"></i> Đăng Xuất</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -163,60 +163,75 @@
                                     <div class="tab-pane fade" id="pills-address" role="tabpanel"
                                          aria-labelledby="pills-address-tab">
                                         <div class="my-account-address account-wrapper">
-                                            <h4 class="account-title">Phương Thức thang Toán</h4>
+                                            <h4 class="account-title">Phương Thức Thanh Toán</h4>
+
                                             <div class="account-address m-t-30">
-                                                <h6 class="name">Dương CHinh</h6>
-                                                <p>1355 Market St, Suite 900 <br> San Francisco, CA 94103</p>
-                                                <p>SĐT: 0987654321</p>
+                                                <h6 class="name">{{$data->first_name.' '.$data->last_name}}</h6>
+                                                <p>{{$data->district->name.' - '.$data->ward->name.' - '.$data->street}}</p>
+                                                <p>{{$data->phone}}</p>
                                                 <a class="box-btn m-t-25 " href="#"><i class="far fa-edit"></i> Sửa Địa Chỉ</a>
                                             </div>
                                         </div>
+
                                     </div>
                                     <div class="tab-pane fade" id="pills-account" role="tabpanel"
                                          aria-labelledby="pills-account-tab">
                                         <div class="my-account-details account-wrapper">
-                                            <h4 class="account-title">Chi Tiết Tài Khoản</h4>
-
+                                            <h4 class="account-title">Chi Tiết Tài Khoản </h4>
+                                        <form action="/editProfile" method="post">
+                                            @csrf
                                             <div class="account-details">
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-box__single-group">
-                                                            <input type="text" placeholder="Họ">
+                                                            <input name="first_name" value="{{$data->first_name}}" type="text" placeholder="Họ">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-box__single-group">
-                                                            <input type="text" placeholder="Tên">
+                                                            <input name="last_name" value="{{$data->last_name}}"  type="text" placeholder="Tên">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <div class="form-box__single-group">
-                                                            <input type="text" placeholder="Tên Đệm">
-                                                        </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="form-box__single-group">
-                                                            <input type="text" placeholder="Email">
+                                                            <input name="password" type="password" placeholder="Mật Khẩu Hiện Tại">
                                                         </div>
+
                                                     </div>
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-6">
                                                         <div class="form-box__single-group">
-                                                            <h5 class="title">Đổi Mật Khẩu</h5>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-box__single-group">
-                                                            <input type="password" placeholder="Mật Khẩu Hiện Tại ">
+                                                            <input name="newPassword" type="password" placeholder="Mật Khẩu Mới">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-box__single-group">
-                                                            <input type="password" placeholder="Mật Khẩu Mới">
+                                                            <input name="confirmPassword" type="password" placeholder="Xác Nhận Lại Mật Khẩu">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-12">
                                                         <div class="form-box__single-group">
-                                                            <input type="password" placeholder="Xác Nhận Lại Mật Khẩu">
+                                                            <input type="text" id="Phone"
+                                                                   class="form-control"
+                                                                   name="phone" placeholder="Số Điện Thoại">
+                                                        </div>
+                                                    </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-box__single-group">
+                                                                <input type="text" id="sel1" name="district_id" placeholder="Quận" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-box__single-group">
+                                                                <input type="text" id="Ward" name="ward_id" placeholder="Phường">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-box__single-group">
+                                                            <input type="text" id="Street" class="form-control"
+                                                                   name="street" placeholder="Đường & Phố">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -225,7 +240,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                        </form>
                                         </div>
                                     </div>
                                 </div>
@@ -236,7 +251,15 @@
             </div>
         </div>
     </main> <!-- ::::::  End  Main Container Section  ::::::  -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    var pass =$('input[name = "newPassword"]');
+    $('input[name = "confirmPassword"]').on('change',function (){
+        if (this.value != pass.val()){
+            alert('Nhập mật khẩu không đúng.');
+        }
+    });
+</script>
 @endsection
 
 

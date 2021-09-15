@@ -344,7 +344,7 @@
                             @else
 
                                 <li class="header__nav-item pos-relative">
-                                    <a style="font-size: 13px" class="header__nav-link"> <i class="fa-fw fas fa-user" aria-hidden="true"></i> {{\Illuminate\Support\Facades\Auth::user()->first_name . ' ' .\Illuminate\Support\Facades\Auth::user()->last_name}}</a>
+                                    <a href="/my-account" style="font-size: 13px" class="header__nav-link"> <i class="fa-fw fas fa-user" aria-hidden="true"></i> {{\Illuminate\Support\Facades\Auth::user()->first_name . ' ' .\Illuminate\Support\Facades\Auth::user()->last_name}}</a>
                                     <ul class="dropdown__menu pos-absolute">
                                         <li class="dropdown__list"><a href="/about" class="dropdown__link">Thông tin của bạn</a></li>
                                         <li class="dropdown__list pos-relative">

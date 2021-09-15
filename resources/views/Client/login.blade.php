@@ -60,7 +60,7 @@
                                 </div>
                                 <button
                                     class="btn btn--box btn--medium btn--radius btn--black btn--black-hover-green btn--uppercase font--semi-bold"
-                                    type="submit">LOGIN
+                                    type="submit">Đăng Nhập
                                 </button>
                             </form>
                         </div>
