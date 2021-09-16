@@ -10,8 +10,11 @@ use Illuminate\Http\Request;
 class ClientProductController extends Controller
 {
     public function list() {
-        $product = Product::all();
-        $categori = Category::all();
-        return view('Client/shop-sidebar-grid-left', ['list' => $product], ['categori' => $categori]);
+        $product = Product::query()->paginate(21);
+        $category = Category::all();
+        return view('Client/shop-sidebar-grid-left',
+            ['list' => $product],
+            ['categories' => $category]
+);
     }
 }

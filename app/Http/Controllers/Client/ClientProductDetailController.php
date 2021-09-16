@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -19,5 +20,11 @@ class ClientProductDetailController extends Controller
             'product' => $product
         ]);
     }
+//    public function  getProductCategory($id){
+//        $categoryId = $id;
+//        return view('Client/home',['products'=>Product::all()->where('category_id', $categoryId)]);
+//
+//
+//    }
 
 }

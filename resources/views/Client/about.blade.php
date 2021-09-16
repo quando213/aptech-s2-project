@@ -9,8 +9,6 @@
                     <ul class="page-breadcrumb__menu">
                         <li class="page-breadcrumb__nav"><a href="/">Trang chủ</a></li>
                         <li class="page-breadcrumb__nav active">Chúng tôi</li>
-                        <li class="page-breadcrumb__nav"><a href="/">Trang Chủ</a></li>
-                        <li class="page-breadcrumb__nav active">Chúng Tôi</li>
                     </ul>
                 </div>
             </div>
