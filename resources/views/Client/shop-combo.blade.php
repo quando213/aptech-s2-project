@@ -7,7 +7,7 @@
                 <div class="col-12">
                     <ul class="page-breadcrumb__menu">
                         <li class="page-breadcrumb__nav"><a href="/">Trang Chủ</a></li>
-                        <li class="page-breadcrumb__nav active">Sản phẩm</li>
+                        <li class="page-breadcrumb__nav active">Các gói sản phẩm</li>
                     </ul>
                 </div>
             </div>
@@ -179,14 +179,14 @@
                         <div class="tab-content tab-animate-zoom">
                             <div class="tab-pane show active shop-grid" id="sort-grid">
                                 <div class="row">
-                                    @foreach($list as $product)
+                                    @foreach($list as $combo)
                                         <div class="col-md-4 col-12">
                                             <!-- Start Single Default Product -->
                                             <div class="product__box product__default--single text-center">
                                                 <!-- Start Product Image -->
                                                 <div class="product__img-box  pos-relative">
                                                     <a href="/product-single-default" class="product__img--link">
-                                                        <img class="product__img img-fluid" src="{{$product -> thumbnail}}" alt="">
+                                                        <img class="product__img img-fluid" src="{{$combo -> thumbnail}}" alt="">
                                                     </a>
                                                     <!-- Start Procuct Label -->
                                                     <span class="product__label product__label--sale-dis">-34%</span>
@@ -208,9 +208,9 @@
                                                         <li class="product__review--fill"><i class="icon-star"></i></li>
                                                         <li class="product__review--blank"><i class="icon-star"></i></li>
                                                     </ul>
-                                                    <a href="/product-single-default" class="product__link">{{$product -> name}}</a>
+                                                    <a href="/product-single-default" class="product__link">{{$combo -> name}}</a>
                                                     <div class="product__price m-t-5">
-                                                        <span class="product__price">{{number_format($product -> price)}} ₫</span>
+                                                        <span class="product__price">Giảm giá ₫</span>
                                                     </div>
                                                 </div> <!-- End Product Content -->
                                             </div> <!-- End Single Default Product -->
@@ -503,14 +503,14 @@
                             </div>
                             <div class="tab-pane shop-list" id="sort-list">
                                 <div class="row">
-                                    @foreach($list as $product)
+                                    @foreach($list as $combo)
                                         <!-- Start Single List Product -->
                                             <div class="col-12">
                                                 <div class="product__box product__box--list">
                                                     <!-- Start Product Image -->
                                                     <div class="product__img-box  pos-relative text-center">
                                                         <a href="/product-single-default" class="product__img--link">
-                                                            <img class="product__img img-fluid" src="{{$product -> thumbnail}}" alt="">
+                                                            <img class="product__img img-fluid" src="{{$combo -> thumbnail}}" alt="">
                                                         </a>
                                                         <!-- Start Procuct Label -->
                                                         <span class="product__label product__label--sale-dis">-31%</span>
@@ -525,9 +525,9 @@
                                                             <li class="product__review--fill"><i class="icon-star"></i></li>
                                                             <li class="product__review--blank"><i class="icon-star"></i></li>
                                                         </ul>
-                                                        <a href="/product-single-default" class="product__link"><h5 class="font--regular">{{$product -> name}}}</h5></a>
+                                                        <a href="/product-single-default" class="product__link"><h5 class="font--regular">{{$combo -> name}}}</h5></a>
                                                         <div class="product__price m-t-5">
-                                                            <span class="product__price">{{number_format($product -> price)}} ₫</span>
+                                                            <span class="product__price">{{number_format($combo -> price)}} ₫</span>
                                                         </div>
                                                         <!-- Start Product Action Link-->
                                                         <ul class="product__action--link-list m-t-30">
