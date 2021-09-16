@@ -33,10 +33,6 @@ Route::prefix('admin')->group(function () {
 });
 
 
-
-
-
-
 Route::get('/api/ward/{id}', [WardController::class, 'api']);
 Route::get('/api/product/{id}', [ProductController::class, 'apiCheck']);
 
@@ -84,6 +80,7 @@ Route::get('/contact', [TemplateClientController::class, 'contact']);
 
 Route::get('/product-single-tab-left', [TemplateClientController::class, 'product_left']);
 Route::get('/shop-sidebar-grid-left', [TemplateClientController::class, 'shop_layout_left']);
+Route::get('/category', [ClientProductController::class, 'list']);
 Route::get('/shop-sidebar-full-width', [TemplateClientController::class, 'shop_layout_with']);
 
 Route::get('/my-account', [TemplateClientController::class, 'account']);
@@ -96,6 +93,8 @@ Route::get('/emply-cart', [TemplateClientController::class, 'emply_cart']);
 Route::get('/compare', [TemplateClientController::class, 'compare']);
 
 // Link list category vs product ra trang all sản phẩm
+
+Route::get('/product/{id}', [ClientProductController::class, 'list']);
 Route::prefix('product')->group(function () {
     Route::get('/', [ClientProductDetailController::class, 'list']);
     Route::get('detail/{id}', [ClientProductDetailController::class, 'detail'])->name('detailProduct');
@@ -104,5 +103,6 @@ Route::prefix('product')->group(function () {
 });
 
 Route::get('/combo', [ClientComboController::class, 'list']);
+
 
 

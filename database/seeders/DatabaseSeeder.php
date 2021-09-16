@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             CategoriSeeder::class,
             ComboSeeder::class,
             GroupSeeder::class,
+            ProductSeeder::class,
         ]);
     }
 }
