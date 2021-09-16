@@ -17,4 +17,10 @@ class ClientProductController extends Controller
             ['categories' => $category]
 );
     }
+
+    public function optionCategori($id) {
+        $product = Product::query()->where('category_id', $id)->get();
+        $categori = Category::all();
+        return view('Client/shop-sidebar-grid-left', ['list' => $product], ['categori' => $categori]);
+    }
 }

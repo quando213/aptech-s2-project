@@ -26,6 +26,7 @@
                             <div class="sidebar__box">
                                 <h5 class="sidebar__title">DANH MỤC SẢN PHẨM</h5>
                             </div>
+
                            @foreach($categories as $category)
                                  <ul class="sidebar__menu">
                                     <li class="mega-menu__list">
@@ -34,6 +35,19 @@
                                     </li>
                                 </ul>
                             @endforeach
+                            <ul class="sidebar__menu">
+                                @foreach($categori as $data)
+                                    <li ><a href="{{route('option', $data->id)}}">{{$data -> name}}</a></li>
+                                @endforeach
+
+{{--                                <li ><a href="#"> Men's</a></li>--}}
+{{--                                <li ><a href="#"> Portable Audio</a></li>--}}
+{{--                                <li ><a href="#"> Smart Watches</a></li>--}}
+{{--                                <li ><a href="#">Tennis</a></li>--}}
+{{--                                <li ><a href="#"> Uncategorized</a></li>--}}
+{{--                                <li ><a href="#"> Video Games</a></li>--}}
+{{--                                <li ><a href="#">Women's</a></li>--}}
+                            </ul>
                         </div>  <!-- End SSingle Sidebar Widget - Filter [Catagory] -->
 
                         <!-- Start Single Sidebar Widget - Filter [Price] -->
@@ -123,15 +137,23 @@
                         </div> <!-- Start Sort Left Side -->
 
                         <div class="sort-box-item d-flex align-items-center flex-warp">
-                            <span>Sort By:</span>
+                            <span>Sắp xếp theo:</span>
                             <div class="sort-box__option">
                                 <label class="select-sort__arrow">
                                     <select name="select-sort" class="select-sort">
+
                                         <option value="1">Relevance</option>
                                         <option value="2">Name, A to Z</option>
                                         <option value="3"> Name, Z to A</option>
                                         <option value="4"> Price, low to high</option>
                                         <option value="5">Price, high to low</option>
+
+                                        <option value="1">Mặc định</option>
+                                        <option value="2">Tên, A -> Z</option>
+                                        <option value="3">Tên, Z -> A</option>
+                                        <option value="4">Giá tăng dần</option>
+                                        <option value="5">Giá giảm dần</option>
+
                                     </select>
                                 </label>
                             </div>
