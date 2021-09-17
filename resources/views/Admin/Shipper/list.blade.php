@@ -41,7 +41,6 @@
                                             <th>Số điên thoai người nhận</th>
                                             <th>Gía đơn hàng</th>
                                             <th>Trạng thái thanh toán</th>
-                                            <th>Trạng thái</th>
                                             <th>Hành động</th>
 
                                         </tr>
@@ -80,31 +79,7 @@
                                                     <td class="text-bold-500">{{$item->district->name .' '.$item->ward->name.' '. $item->shipping_street}}</td>
                                                     <td class="text-bold-500">{{$item->shipping_phone}}</td>
                                                     <td class="text-bold-500">{{$item->total_price}}</td>
-                                                    <td class="text-bold-500">{{\App\Enums\OrderPaymentMethod::getDescription($item->payment_method) }}</td>
-                                                    <td class="text-bold-500">
-                                                        @switch($item->status)
-                                                            @case(1)
-                                                            <span
-                                                                class="badge bg-primary">{{\App\Enums\OrderStatus::getDescription($item->status) }}</span>
-                                                            @break
-                                                            @case(2)
-                                                            <span
-                                                                class="badge bg-info">{{\App\Enums\OrderStatus::getDescription($item->status) }}</span>
-                                                            @break
-                                                            @case(3)
-                                                            <span
-                                                                class="badge bg-warning">{{\App\Enums\OrderStatus::getDescription($item->status) }}</span>
-                                                            @break
-                                                            @case(4)
-                                                            <span
-                                                                class="badge bg-success">{{\App\Enums\OrderStatus::getDescription($item->status) }}</span>
-                                                            @break
-                                                            @case(5)
-                                                            <span
-                                                                class="badge bg-danger">{{\App\Enums\OrderStatus::getDescription($item->status) }}</span>
-                                                            @break
-                                                        @endswitch
-                                                    </td>
+                                                    <td class="text-bold-500">{{$item->payment_method}}</td>
                                                     <td>
                                                         <a href="{{route('orderDetail',$item->id)}}" type="button"
                                                            class="btn btn-primary">Detail</a>

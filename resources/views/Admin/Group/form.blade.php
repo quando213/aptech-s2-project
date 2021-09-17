@@ -55,17 +55,8 @@
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
                                                 <label for="Group">Đơn vị</label>
-                                                <select  class="form-control" name="type" id="Group">
-                                                    <option selected disabled hidden>Chọn đơn vị</option>
-                                                    <option value="Quân đoàn"{{$data && $data->type == "Quân đoàn" ? 'selected':''}} >Quân đoàn</option>
-                                                    <option value="Sư đoàn" {{$data && $data->type == "Sư đoàn" ? 'selected':''}}>Sư đoàn</option>
-                                                    <option value="Lữ đoàn" {{$data && $data->type == "Lữ đoàn" ? 'selected':''}}>Lữ đoàn</option>
-                                                    <option value="Trung đoàn" {{$data && $data->type == "Trung đoàn" ? 'selected':''}}>Trung đoàn</option>
-                                                    <option value="Tiểu đoàn" {{$data && $data->type == "Tiểu đoàn" ? 'selected':''}}>Tiểu đoàn</option>
-                                                    <option value="Đại đội" {{$data && $data->type == "Đại đội" ? 'selected':''}}>Đại đội</option>
-                                                    <option value="Trung đội" {{$data && $data->type == "Trung đội" ? 'selected':''}}>Trung đội</option>
-                                                    <option value="Tiểu đội" {{$data && $data->type == "Tiểu đội" ? 'selected':''}}>Tiểu đội</option>
-                                                </select>
+                                                <input type="text" id="first-name-column" class="form-control"
+                                                       name="type" value="{{$data ? $data->type:''}}" placeholder="Nhập loại đơn vị">
                                             </div>
                                         </div>
                                         <div class="col-12 d-flex justify-content-end">

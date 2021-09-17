@@ -21,7 +21,7 @@ class CreateOrdersTable extends Migration
             $table->integer('shipping_district_id');
             $table->string('shipping_street');
             $table->string('shipping_phone');
-            $table->integer('shipper_id');
+            $table->integer('shipper_id')->nullable();
             $table->string('total_price');
             $table->integer('status');
             $table->integer('payment_method');

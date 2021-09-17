@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Models;
-
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -41,6 +39,11 @@ class User extends Authenticatable
     public function ward(){
         return $this->belongsTo(Ward::class,'ward_id');
     }
+    public function notifications(){
+        return $this->hasMany(Notifiable::class);
+    }
+
+
     public function district(){
         return $this->belongsTo(District::class,'district_id');
     }

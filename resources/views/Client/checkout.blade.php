@@ -292,8 +292,8 @@
 @endsection
 @section('script')
     <script>
-        const selectDistrict = $('select[name="district_id"]');
-        const selectWard = $('select[name="ward_id"]');
+        const selectDistrict = $('select[name="shipping_district_id"]');
+        const selectWard = $('select[name="shipping_ward_id"]');
         selectDistrict.change(function () {
             $.ajax({
                 type: 'GET',

@@ -13,6 +13,7 @@ use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\TemplateAdminController;
 use App\Http\Controllers\TemplateClientController;
 use App\Http\Controllers\Admin\ComboController;
+use App\Http\Middleware\checkShipper;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,16 +30,8 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('admin')->group(function () {
     require_once __DIR__ . '/admin.php';
 });
-
-
-
-
-
-
 Route::get('/api/ward/{id}', [WardController::class, 'api']);
 Route::get('/api/product/{id}', [ProductController::class, 'apiCheck']);
-
-
 Route::get('/test', [OrderController::class, 'test']);
 Route::get('/test/order', [OrderController::class, 'detail']);
 Route::get('addToCart/{id}', [OrderController::class, 'addToCart'])->name('addToCart');
@@ -46,7 +39,13 @@ Route::get('addToCart/{id}', [OrderController::class, 'addToCart'])->name('addTo
 //Route::post('/test/order', [OrderController::class, 'update'])->name('update');
 Route::get('/buy', [OrderController::class, 'buynow'])->name('buy');
 
-Route::get('/', [HomeController::class, 'home']);
+Route::get('/', [HomeController::class, 'home'])->name("home");
+
+
+Route::prefix('/shipper')->middleware(['auth', checkShipper::class])->group(function () {
+    Route::get('/', [WardController::class, 'api']);
+});
+
 
 Route::get('/login', [EntryController::class, 'register'])->name('register');
 Route::get('/register', [EntryController::class, 'register']);
@@ -65,22 +64,6 @@ Route::prefix('product')->group(function () {
     Route::get('/', [ClientProductController::class, 'list']);
     Route::get('detail/{id}', [ClientProductController::class, 'detail'])->name('detailProduct');
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Route::get('/form-layout', [TemplateAdminController::class, 'form_layout']);
 Route::get('/input', [TemplateAdminController::class, 'input']);
 Route::get('/table', [TemplateAdminController::class, 'table']);
