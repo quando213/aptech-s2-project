@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Enums\OrderStatus;
 use App\Http\Controllers\Controller;
 use App\Models\District;
+use App\Models\Group;
+use App\Models\Notification;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Product;
@@ -91,11 +94,16 @@ class  OrderController extends Controller
         $order->shipping_ward_id = $request->shipping_ward_id;
         $order->shipping_street = $request->shipping_street;
         $order->shipping_phone = $request->shipping_phone;
-        $order->shipper_id = 1;
+        $order->shipper_id = null;
         $order->payment_method = false;
-        $order->status = 1;
+        $order->status = OrderStatus::Create;
         $order->save();
         foreach (Cart::content() as $item) {
+            $product = Product::find($item->id);
+            $product->update([
+                'stock'=> $product->stock - $item->qty
+            ]);
+            $product->save();
             $order_detail = new Orderdetail();
             $order_detail->order_id = $order->id;
             $order_detail->product_id = $item->id;
@@ -103,6 +111,26 @@ class  OrderController extends Controller
             $order_detail->quantity = $item->qty;
             $order_detail->save();
         }
+        $notification = new Notification();
+        $notification->sender_id = Auth::id();
+        $notification->link = "/myorder/".$order->id;
+        $notification->message = "Chúng tôi đã ghi nhân đặt hàng của bạn với giá trị: ".Cart::total() ."<br> đơn hàng đang đươc xủ lý xin cảm ơn";
+        $notification->save();
+
+
+        $group = Group::query()->where('ward_id',$order->shipping_ward_id)->first();
+
+       if ($group != null){
+           $shippers = User::query()->where(['group_id'=>$group->id,'role'=>3])->get();
+           foreach ($shippers as $shipper){
+               $notification = new Notification();
+               $notification->sender_id = $shipper->id;
+               $notification->link = "/admin/orders/".$order->id;
+               $notification->message = "đơ vị của bạn vưa nhân đươc 1 đơn hàng mới";
+               $notification->save();
+           }
+       }
+
         Cart::destroy();
         $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
         $vnp_Returnurl = "https://sem2-project.herokuapp.com/response";
@@ -157,8 +185,9 @@ class  OrderController extends Controller
 
     public function response(Request $request)
     {
-        return $request;
+
     }
+
 
     public function ipnResponse(Request $request)
     {
@@ -199,6 +228,11 @@ class  OrderController extends Controller
                             if ($request->vnp_ResponseCode == '00' || $request->vnp_TransactionStatus == '00') {
                                 $order->update(['payment_method' => true]);
                                 $order->save();
+                                $notification = new Notification();
+                                $notification->sender_id = $order->user_id;
+                                $notification->link = "/myorder/".$order->id;
+                                $notification->message = "Đơn hàng của bạn đã được xác nhân thanh toán với giá trị: ".$order->total_price."đơn hàng sẽ được giao trong thời gian sớm nhất";
+                                $notification->save();
                                 $returnData['RspCode'] = '00';
                                 $returnData['Message'] = 'Confirm Success';
                                 return $returnData;
@@ -253,6 +287,13 @@ class  OrderController extends Controller
             'orderDetails'=>$orderDetails,
             'order'=>$order
         ]);
+    }
+    public function save(Request $request,$id){
+        $order = Order::find($id);
+        $order->status = $request->status;
+        $order->payment_method = $request->payment_method;
+        $order->save();
+        return redirect()->route('orderList');
     }
 
 

@@ -78,28 +78,38 @@
                             </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <div class="card-body">
-                                    <form action="">
+                                    <form action="" method="post">
+                                        @csrf
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
                                                 <label for="sel1">Trang thái</label>
-                                                <select class="form-select" aria-label="Default select example">
-                                                    <option selected>Open this select menu</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
+                                                <select class="form-select" name="status" aria-label="Default select example">
+                                                    <option selected disabled hidden>Open this select menu</option>
+                                                    @foreach(\App\Enums\OrderStatus::getValues() as $type)
+                                                        <option value="{{$type}}" {{$order && $order->status === $type ? 'selected' : ''}}>{{\App\Enums\OrderStatus::getDescription($type)}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
-                                                <label for="sel1">Người gửi</label>
-                                                <select class="form-select" aria-label="Default select example">
-                                                    <option selected>Open this select menu</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
+                                                <label for="sel1">Trạng thái thanh toán</label>
+                                                <select class="form-select" name="payment_method" aria-label="Default select example">
+                                                    <option selected disabled hidden>Open this select menu</option>
+                                                    @foreach(\App\Enums\OrderPaymentMethod::getValues() as $type)
+                                                        <option value="{{$type}}" {{$order && $order->payment_method === $type ? 'selected' : ''}}>{{\App\Enums\OrderPaymentMethod::getDescription($type)}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
+                                        </div>
+                                        <div class="col-md-6 col-12" >
+                                            <div class="form-group">
+                                                <label for="company-Password">Người nhận đơn</label>
+                                                <input type="text" disabled value="{{$order->shipper_id && $order->shipper_id != null ? $order->user->name: "chưa có người nhân đơn"}}" id="company-Password" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-primary"> Save</button>
                                         </div>
                                     </form>
                                 </div>
@@ -127,6 +137,13 @@
                                                 <th scope="col">{{$orderDetail->unit_price}}</th>
                                             </tr>
                                         @endforeach
+                                        </tbody>
+                                        <tbody>
+                                        <tr>
+                                            <td colspan="3">&nbsp;</td>
+                                            <td>Tổng giá trị</td>
+                                            <td>{{$order->total_price}} ₫ ₫</td>
+                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>

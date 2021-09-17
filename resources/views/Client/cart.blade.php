@@ -64,7 +64,7 @@
                                 @endforeach
                                 <tr>
                                     <td colspan="4">&nbsp;</td>
-                                    <td>Total</td>
+                                    <td>Tổng giá trị</td>
                                     <td>{{\Gloudemans\Shoppingcart\Facades\Cart::total(0)}} ₫</td>
                                 </tr>
                                 </tbody>
