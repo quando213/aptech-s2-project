@@ -37,7 +37,7 @@ Template URL: https://hasthemes.com/
 24 - Page - Blog
 25 - Page - Cart
 26 - Page - Checkout
-27 - Page - 404 
+27 - Page - 404
 28 - Page - My Account
 29 - Page - Login
 30 - Page - Contact
@@ -96,7 +96,27 @@ span {
   outline: none;
   border: none;
 }
+.product__catagory--single{
+    height: 50px;
+    width: 40px;
+    overflow: hidden;
+}
+.product__catagory--single .product__img-box img {
+    /*height: 70px;*/
+    /*width: 100px;*/
+    padding-top: 70px;
+    padding-bottom: 2px;
+}
 
+.product__img-box {
+    height: 270px;
+    width: 270px;
+    overflow: hidden;
+}
+.product__img-box img {
+    height: auto;
+    width: 270px;
+}
 *:focus {
   outline: none !important;
 }
