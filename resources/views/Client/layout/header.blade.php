@@ -62,117 +62,128 @@
                                     <li class="header__nav-item pos-relative">
                                         <a href="#" class="header__nav-link">Sản Phẩm <i
                                                 class="fal fa-chevron-down"></i></a>
-                                        <span class="menu-label menu-label--red">Mới</span>
                                         <!-- Megamenu Menu-->
-                                        <ul class="mega-menu pos-absolute">
-                                            <li class="mega-menu__box">
+                                        <ul class="dropdown__menu pos-absolute">
+                                            <li class="dropdown__list">
                                                 <!--Single Megamenu Item Menu-->
                                                 <div class="mega-menu__item-box">
-                                                    <span class="mega-menu__title">Sản Phẩm Thịt</span>
-                                                    <ul class="mega-menu__item">
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Thịt Gà</a></li>
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Hải Sản</a></li>
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Thịt Vịt</a></li>
-                                                        {{--                                                        <li class="mega-menu__list pos-relative">--}}
-                                                        {{--                                                            <a href="/shop-layout/shop-sidebar-full-width" class="mega-menu__link">Grid Right Sidebar</a>--}}
-                                                        {{--                                                            <span class="menu-label menu-label--red">New</span>--}}
-                                                        {{--                                                        </li>--}}
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Thịt Lợn</a></li>
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Thịt Bò</a></li>
+                                                    <span class="mega-menu__title">Danh Sách Sản Phẩm</span>
+                                                    @foreach($categories as $category)
+                                                        <ul class="mega-menu__item">
+                                                            <li class="mega-menu__list">
+                                                                <a href="/category{{$category->id}}" class="mega-menu__link">{{$category->name}}</a>
+                                                            </li>
+                                                        </ul>
+                                                    @endforeach
+                                                    {{--                                                        <li class="mega-menu__list"><a href="/category"--}}
+                                                    {{--                                                                                       class="mega-menu__link">Rau-Củ-Quả</a>--}}
+                                                    {{--                                                        </li>--}}
+                                                    {{--                                                        <li class="mega-menu__list"><a href="/category"--}}
+                                                    {{--                                                                                       class="mega-menu__link">Trái--}}
+                                                    {{--                                                                Cây</a>--}}
+                                                    {{--                                                        </li>--}}
+                                                    {{--                                                        <li class="mega-menu__list"><a href="/category"--}}
+                                                    {{--                                                                                       class="mega-menu__link">Đồ--}}
+                                                    {{--                                                                uống</a>--}}
+                                                    {{--                                                        </li>--}}
+                                                    {{--                                                        <li class="mega-menu__list"><a href="/category"--}}
+                                                    {{--                                                                                       class="mega-menu__link">Bánh--}}
+                                                    {{--                                                                Kẹo</a>--}}
+                                                    {{--                                                        </li>--}}
+                                                    {{--                                                        <li class="mega-menu__list"><a href="/category"--}}
+                                                    {{--                                                                                       class="mega-menu__link">Các Sản--}}
+                                                    {{--                                                                Phẩm--}}
+                                                    {{--                                                                Từ Sữa</a></li>--}}
+                                                    {{--                                                        <li class="mega-menu__list"><a href="/category"--}}
+                                                    {{--                                                                                       class="mega-menu__link">đồ Khô--}}
+                                                    {{--                                                                Gia--}}
+                                                    {{--                                                                Vị</a></li>--}}
 
-                                                        {{--                                                        <li class="mega-menu__list"><a href="shop-sidebar-left-list-view.html" class="mega-menu__link">List Left Sidebar</a></li>--}}
-                                                        {{--                                                        <li class="mega-menu__list"><a href="shop-sidebar-right-list-view.html" class="mega-menu__link">List Right Sidebar</a></li>--}}
-                                                    </ul>
                                                 </div>
                                                 <!--Single Megamenu Item Menu-->
-                                                <div class="mega-menu__item-box">
-                                                    <span class="mega-menu__title">Sản Phẩm Đóng Hộp</span>
-                                                    <ul class="mega-menu__item">
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Thịt</a></li>
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Cá</a></li>
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Xúc Xích</a></li>
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Khác</a></li>
-{{--                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"--}}
-{{--                                                                                       class="mega-menu__link">Các Loại gia vị</a></li>--}}
-{{--                                                        <li class="mega-menu__list"><a--}}
-{{--                                                                href="shop-sidebar-right-list-view.html"--}}
-{{--                                                                class="mega-menu__link">List Right Sidebar</a></li>--}}
+                                            {{--                                                <div class="mega-menu__item-box">--}}
+                                            {{--                                                    <span class="mega-menu__title">Sản Phẩm Đóng Hộp</span>--}}
+                                            {{--                                                    <ul class="mega-menu__item">--}}
+                                            {{--                                                        <li class="mega-menu__list"><a href="/category"--}}
+                                            {{--                                                                                       class="mega-menu__link">Các Loại Thịt</a></li>--}}
+                                            {{--                                                        <li class="mega-menu__list"><a href="/category"--}}
+                                            {{--                                                                                       class="mega-menu__link">Các Loại Cá</a></li>--}}
+                                            {{--                                                        <li class="mega-menu__list"><a href="/category"--}}
+                                            {{--                                                                                       class="mega-menu__link">Các Loại Xúc Xích</a></li>--}}
+                                            {{--                                                        <li class="mega-menu__list"><a href="/category"--}}
+                                            {{--                                                                                       class="mega-menu__link">Các Loại Khác</a></li>--}}
+                                            {{--                                                        <li class="mega-menu__list"><a href="/category"--}}
+                                            {{--                                                                                       class="mega-menu__link">Các Loại gia vị</a></li>--}}
+                                            {{--                                                        <li class="mega-menu__list"><a--}}
+                                            {{--                                                                href="shop-sidebar-right-list-view.html"--}}
+                                            {{--                                                                class="mega-menu__link">List Right Sidebar</a></li>--}}
 
-                                                    </ul>
-                                                </div>
-                                                <div class="mega-menu__item-box">
-                                                    <span class="mega-menu__title">Sản Phẩm Rau Củ</span>
-                                                    <ul class="mega-menu__item">
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Rau Xanh</a></li>
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Trái Cây</a></li>
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Củ</a></li>
-                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"
-                                                                                       class="mega-menu__link">Các Loại Đồ Khô</a></li>
-                                                        {{--                                                        <li class="mega-menu__list"><a href="/shop-sidebar-full-width"--}}
-                                                        {{--                                                                                       class="mega-menu__link">Các Loại gia vị</a></li>--}}
-                                                        {{--                                                        <li class="mega-menu__list"><a--}}
-                                                        {{--                                                                href="shop-sidebar-right-list-view.html"--}}
-                                                        {{--                                                                class="mega-menu__link">List Right Sidebar</a></li>--}}
+                                            {{--                                                    </ul>--}}
+                                            {{--                                                </div>--}}
+                                            {{--                                                <div class="mega-menu__item-box">--}}
+                                            {{--                                                    <span class="mega-menu__title">Sản Phẩm Rau Củ</span>--}}
+                                            {{--                                                    <ul class="mega-menu__item">--}}
+                                            {{--                                                        <li class="mega-menu__list"><a href="/category"--}}
+                                            {{--                                                                                       class="mega-menu__link">Các Loại Rau Xanh</a></li>--}}
+                                            {{--                                                        <li class="mega-menu__list"><a href="/category"--}}
+                                            {{--                                                                                       class="mega-menu__link">Các Loại Trái Cây</a></li>--}}
+                                            {{--                                                        <li class="mega-menu__list"><a href="/category"--}}
+                                            {{--                                                                                       class="mega-menu__link">Các Loại Củ</a></li>--}}
+                                            {{--                                                        <li class="mega-menu__list"><a href="/category"--}}
+                                            {{--                                                                                       class="mega-menu__link">Các Loại Đồ Khô</a></li>--}}
+                                            {{--                                                        --}}{{--                                                        <li class="mega-menu__list"><a href="/category"--}}
+                                            {{--                                                        --}}{{--                                                                                       class="mega-menu__link">Các Loại gia vị</a></li>--}}
+                                            {{--                                                        --}}{{--                                                        <li class="mega-menu__list"><a--}}
+                                            {{--                                                        --}}{{--                                                                href="shop-sidebar-right-list-view.html"--}}
+                                            {{--                                                        --}}{{--                                                                class="mega-menu__link">List Right Sidebar</a></li>--}}
 
-                                                    </ul>
-                                                </div>
-                                                <!--Single Megamenu Item Menu-->
-                                                <div class="mega-menu__item-box">
-                                                    <span class="mega-menu__title">Giỏ Hàng</span>
-                                                    <ul class="mega-menu__item">
-                                                        <li class="mega-menu__list"><a href="/cart"
-                                                                                       class="mega-menu__link">Giỏ Hàng</a>
-                                                        </li>
-                                                        <li class="mega-menu__list"><a href="/checkout"
-                                                                                       class="mega-menu__link">Thanh Toán</a>
-                                                        </li>
-                                                        {{--                                                        <li class="mega-menu__list"><a href="compare.html" class="mega-menu__link">Compare</a></li>--}}
-                                                        <li class="mega-menu__list pos-relative">
-                                                            <a href="/emply-cart" class="mega-menu__link">Giỏ Hàng Rỗng</a>
-                                                            <span class="menu-label menu-label--blue">Mới</span>
-                                                        </li>
-                                                        {{--                                                        <li class="mega-menu__list"><a href="wishlist.html" class="mega-menu__link">Wishlist</a></li>--}}
-                                                        <li class="mega-menu__list"><a href="/my-account"
-                                                                                       class="mega-menu__link">Tài Khoản Người Dùng </a></li>
-                                                        <li class="mega-menu__list"><a href="/login"
-                                                                                       class="mega-menu__link">Đăng Nhập</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <!--Single Megamenu Item Menu-->
+                                            {{--                                                    </ul>--}}
+                                            {{--                                                </div>--}}
+                                            {{--                                                <!--Single Megamenu Item Menu-->--}}
+                                            {{--                                                <div class="mega-menu__item-box">--}}
+                                            {{--                                                    <span class="mega-menu__title">Giỏ Hàng</span>--}}
+                                            {{--                                                    <ul class="mega-menu__item">--}}
+                                            {{--                                                        <li class="mega-menu__list"><a href="/cart"--}}
+                                            {{--                                                                                       class="mega-menu__link">Giỏ Hàng</a>--}}
+                                            {{--                                                        </li>--}}
+                                            {{--                                                        <li class="mega-menu__list"><a href="/checkout"--}}
+                                            {{--                                                                                       class="mega-menu__link">Thanh Toán</a>--}}
+                                            {{--                                                        </li>--}}
+                                            {{--                                                        --}}{{--                                                        <li class="mega-menu__list"><a href="compare.html" class="mega-menu__link">Compare</a></li>--}}
+                                            {{--                                                        <li class="mega-menu__list pos-relative">--}}
+                                            {{--                                                            <a href="/emply-cart" class="mega-menu__link">Giỏ Hàng Rỗng</a>--}}
+                                            {{--                                                            <span class="menu-label menu-label--blue">Mới</span>--}}
+                                            {{--                                                        </li>--}}
+                                            {{--                                                        --}}{{--                                                        <li class="mega-menu__list"><a href="wishlist.html" class="mega-menu__link">Wishlist</a></li>--}}
+                                            {{--                                                        <li class="mega-menu__list"><a href="/my-account"--}}
+                                            {{--                                                                                       class="mega-menu__link">Tài Khoản Người Dùng </a></li>--}}
+                                            {{--                                                        <li class="mega-menu__list"><a href="/login"--}}
+                                            {{--                                                                                       class="mega-menu__link">Đăng Nhập</a>--}}
+                                            {{--                                                        </li>--}}
+                                            {{--                                                    </ul>--}}
+                                            {{--                                                </div>--}}
+                                            <!--Single Megamenu Item Menu-->
 
                                                 <!--Single Megamenu Item Menu-->
-{{--                                                <div class="mega-menu__item-box">--}}
-{{--                                                    <span class="mega-menu__title">Chi Tiết Sản Phẩm</span>--}}
-{{--                                                    <ul class="mega-menu__item">--}}
-{{--                                                        <li class="mega-menu__list"><a href="/product-single-default"--}}
-{{--                                                                                       class="mega-menu__link">Simple</a>--}}
-{{--                                                        </li>--}}
-{{--                                                        --}}{{--                                                        <li class="mega-menu__list"><a href="product-single-affiliate.html" class="mega-menu__link">Affiliate</a></li>--}}
-{{--                                                        --}}{{--                                                        <li class="mega-menu__list pos-relative">--}}
-{{--                                                        --}}{{--                                                            <a href="product-single-group.html" class="mega-menu__link">Grouped</a>--}}
-{{--                                                        --}}{{--                                                            <span class="menu-label menu-label--red">New</span>--}}
-{{--                                                        --}}{{--                                                        </li>--}}
-{{--                                                        --}}{{--                                                        <li class="mega-menu__list"><a href="product-single-variable.html" class="mega-menu__link">Variable</a></li>--}}
-{{--                                                        <li class="mega-menu__list"><a href="/product-single-tab-left"--}}
-{{--                                                                                       class="mega-menu__link">Left--}}
-{{--                                                                Tab</a></li>--}}
-{{--                                                        --}}{{--                                                        <li class="mega-menu__list"><a href="product-single-tab-right.html" class="mega-menu__link">Right Tab</a></li>--}}
-{{--                                                    </ul>--}}
-{{--                                                </div>--}}
-                                                <!--Single Megamenu Item Menu-->
+                                            {{--                                                <div class="mega-menu__item-box">--}}
+                                            {{--                                                    <span class="mega-menu__title">Chi Tiết Sản Phẩm</span>--}}
+                                            {{--                                                    <ul class="mega-menu__item">--}}
+                                            {{--                                                        <li class="mega-menu__list"><a href="/product-single-default"--}}
+                                            {{--                                                                                       class="mega-menu__link">Simple</a>--}}
+                                            {{--                                                        </li>--}}
+                                            {{--                                                        --}}{{--                                                        <li class="mega-menu__list"><a href="product-single-affiliate.html" class="mega-menu__link">Affiliate</a></li>--}}
+                                            {{--                                                        --}}{{--                                                        <li class="mega-menu__list pos-relative">--}}
+                                            {{--                                                        --}}{{--                                                            <a href="product-single-group.html" class="mega-menu__link">Grouped</a>--}}
+                                            {{--                                                        --}}{{--                                                            <span class="menu-label menu-label--red">New</span>--}}
+                                            {{--                                                        --}}{{--                                                        </li>--}}
+                                            {{--                                                        --}}{{--                                                        <li class="mega-menu__list"><a href="product-single-variable.html" class="mega-menu__link">Variable</a></li>--}}
+                                            {{--                                                        <li class="mega-menu__list"><a href="/product-single-tab-left"--}}
+                                            {{--                                                                                       class="mega-menu__link">Left--}}
+                                            {{--                                                                Tab</a></li>--}}
+                                            {{--                                                        --}}{{--                                                        <li class="mega-menu__list"><a href="product-single-tab-right.html" class="mega-menu__link">Right Tab</a></li>--}}
+                                            {{--                                                    </ul>--}}
+                                            {{--                                                </div>--}}
+                                            <!--Single Megamenu Item Menu-->
 
                                                 <!--Single Megamenu Item Menu-->
                                             {{--                                                <div class="mega-menu__item-box">--}}
@@ -191,20 +202,20 @@
                                             <!--Single Megamenu Item Menu-->
 
                                                 <!--Single Megamenu Item Menu-->
-                                                <div class="mega-menu__item-box">
-                                                    <ul class="mega-menu__item">
-                                                        <!--Megamenu Item Banner-->
-                                                        <li class="mega-menu__banner ">
-                                                            <a href="/product-single-default"
-                                                               class="mega-menu__banner-link">
-                                                                <img src="assets/img/banner/menu-banner.jpg" alt=""
-                                                                     class="mega-menu__banner-img mega-menu__banner-img--vertical">
-                                                            </a>
-                                                        </li>
-                                                        <!--Megamenu Item Banner-->
-                                                    </ul>
-                                                </div>
-                                                <!--Single Megamenu Item Menu-->
+                                            {{--                                                <div class="mega-menu__item-box">--}}
+                                            {{--                                                    <ul class="mega-menu__item">--}}
+                                            {{--                                                        <!--Megamenu Item Banner-->--}}
+                                            {{--                                                        <li class="mega-menu__banner ">--}}
+                                            {{--                                                            <a href="/product-single-default"--}}
+                                            {{--                                                               class="mega-menu__banner-link">--}}
+                                            {{--                                                                <img src="assets/img/banner/menu-banner.jpg" alt=""--}}
+                                            {{--                                                                     class="mega-menu__banner-img mega-menu__banner-img--vertical">--}}
+                                            {{--                                                            </a>--}}
+                                            {{--                                                        </li>--}}
+                                            {{--                                                        <!--Megamenu Item Banner-->--}}
+                                            {{--                                                    </ul>--}}
+                                            {{--                                                </div>--}}
+                                            <!--Single Megamenu Item Menu-->
                                             </li>
 
                                         </ul>
@@ -212,121 +223,121 @@
                                     </li> <!-- Start Single Nav link-->
 
                                     <!--Start Single Nav link-->
-                                    <li class="header__nav-item pos-relative">
-                                        <a href="#" class="header__nav-link">Chất lượng thực phẩm <i
-                                                class="fal fa-chevron-down"></i></a>
-                                        <!-- Megamenu Menu-->
-                                        <ul class="mega-menu pos-absolute">
-                                            <li class="mega-menu__box">
-                                                <!--Single Megamenu Item Menu-->
-                                                <div class="mega-menu__item-box">
-                                                    <span class="mega-menu__title">Sức Khỏe</span>
-                                                    <ul class="mega-menu__item">
-                                                        <li><p>100% các sản phẩm đều là thực phẩm tươi sống, không có
-                                                                chất bảo quản hay thuốc trừ sâu.</p>
-                                                            <p>đảm bảo các sản phẩm đều tốt cho sức khỏe của con
-                                                                người</p></li>
-                                                    </ul>
-                                                </div>
-                                                <!--Single Megamenu Item Menu-->
+                                {{--                                    <li class="header__nav-item pos-relative">--}}
+                                {{--                                        <a href="#" class="header__nav-link">Chất lượng thực phẩm <i--}}
+                                {{--                                                class="fal fa-chevron-down"></i></a>--}}
+                                {{--                                        <!-- Megamenu Menu-->--}}
+                                {{--                                        <ul class="mega-menu pos-absolute">--}}
+                                {{--                                            <li class="mega-menu__box">--}}
+                                {{--                                                <!--Single Megamenu Item Menu-->--}}
+                                {{--                                                <div class="mega-menu__item-box">--}}
+                                {{--                                                    <span class="mega-menu__title">Sức Khỏe</span>--}}
+                                {{--                                                    <ul class="mega-menu__item">--}}
+                                {{--                                                        <li><p>100% các sản phẩm đều là thực phẩm tươi sống, không có--}}
+                                {{--                                                                chất bảo quản hay thuốc trừ sâu.</p>--}}
+                                {{--                                                            <p>đảm bảo các sản phẩm đều tốt cho sức khỏe của con--}}
+                                {{--                                                                người</p></li>--}}
+                                {{--                                                    </ul>--}}
+                                {{--                                                </div>--}}
+                                {{--                                                <!--Single Megamenu Item Menu-->--}}
 
-                                                <!--Single Megamenu Item Menu-->
-                                                <div class="mega-menu__item-box">
-                                                    <span class="mega-menu__title">Chất Lượng Thực Phẩm</span>
-                                                    <ul class="mega-menu__item">
-                                                        <li><p>Tất cả các sản phẩm đều được kiểm định an toàn thực
-                                                                phẩm.</p></li>
-                                                    </ul>
-                                                </div>
-                                                <!--Single Megamenu Item Menu-->
+                                {{--                                                <!--Single Megamenu Item Menu-->--}}
+                                {{--                                                <div class="mega-menu__item-box">--}}
+                                {{--                                                    <span class="mega-menu__title">Chất Lượng Thực Phẩm</span>--}}
+                                {{--                                                    <ul class="mega-menu__item">--}}
+                                {{--                                                        <li><p>Tất cả các sản phẩm đều được kiểm định an toàn thực--}}
+                                {{--                                                                phẩm.</p></li>--}}
+                                {{--                                                    </ul>--}}
+                                {{--                                                </div>--}}
+                                {{--                                                <!--Single Megamenu Item Menu-->--}}
 
-                                                <!--Single Megamenu Item Menu-->
-                                                <div class="mega-menu__item-box">
-                                                    <span class="mega-menu__title">Chất lượng dinh dưỡng</span>
-                                                    <ul class="mega-menu__item">
-                                                        <li><p>Đảm bảo các sản phẩm đều mang lại các chất dinh dưỡng tốt
-                                                                cho cơ thể của con người.</p></li>
-                                                    </ul>
-                                                </div>
-                                                <!--Single Megamenu Item Menu-->
+                                {{--                                                <!--Single Megamenu Item Menu-->--}}
+                                {{--                                                <div class="mega-menu__item-box">--}}
+                                {{--                                                    <span class="mega-menu__title">Chất lượng dinh dưỡng</span>--}}
+                                {{--                                                    <ul class="mega-menu__item">--}}
+                                {{--                                                        <li><p>Đảm bảo các sản phẩm đều mang lại các chất dinh dưỡng tốt--}}
+                                {{--                                                                cho cơ thể của con người.</p></li>--}}
+                                {{--                                                    </ul>--}}
+                                {{--                                                </div>--}}
+                                {{--                                                <!--Single Megamenu Item Menu-->--}}
 
-                                            </li>
-                                            <!--Megamenu Item Banner-->
-                                            <li class="mega-menu__banner m-t-30">
-                                                <a href="/product-single-default" class="mega-menu__banner-link">
-                                                </a>
-                                                <img src="assets/img/banner/menu-banner-2.png" alt=""
-                                                     class="mega-menu__banner-img mega-menu__banner-img--horaizontal">
-                                            </li>
-                                            <!--Megamenu Item Banner-->
-                                        </ul>
-                                        <!-- Megamenu Menu-->
-                                    </li> <!-- Start Single Nav link-->
+                                {{--                                            </li>--}}
+                                {{--                                            <!--Megamenu Item Banner-->--}}
+                                {{--                                            <li class="mega-menu__banner m-t-30">--}}
+                                {{--                                                <a href="/product-single-default" class="mega-menu__banner-link">--}}
+                                {{--                                                </a>--}}
+                                {{--                                                <img src="assets/img/banner/menu-banner-2.png" alt=""--}}
+                                {{--                                                     class="mega-menu__banner-img mega-menu__banner-img--horaizontal">--}}
+                                {{--                                            </li>--}}
+                                {{--                                            <!--Megamenu Item Banner-->--}}
+                                {{--                                        </ul>--}}
+                                {{--                                        <!-- Megamenu Menu-->--}}
+                                {{--                                    </li> <!-- Start Single Nav link-->--}}
 
-                                    <!--Start Single Nav link-->
-                                    <li class="header__nav-item pos-relative">
-                                        <a href="#" class="header__nav-link">Blog<i class="fal fa-chevron-down"></i></a>
-                                        <!--Single Dropdown Menu-->
-                                        <ul class="dropdown__menu pos-absolute">
-                                            {{--                                            <li class="dropdown__list">--}}
-                                            {{--                                                <a href="#" class="dropdown__link d-flex justify-content-between align-items-center">Blog Grid <i class="far fa-chevron-right"></i></a>--}}
-                                            {{--                                                <ul class="dropdown__submenu pos-absolute">--}}
-                                            {{--                                                    <li class="dropdown__submenu-list"><a href="/blog-simple-sidebar-left" class="dropdown__submenu-link"> Blog Grid Left Sidebar</a></li>--}}
-                                            {{--                                                    <li class="dropdown__submenu-list"><a href="blog-grid-sidebar-right.html" class="dropdown__submenu-link"> Blog Grid Right Sidebar</a></li>--}}
-                                            {{--                                                </ul>--}}
-                                            {{--                                            </li>--}}
-                                            <li class="dropdown__list">
-                                                <a href="#"
-                                                   class="dropdown__link d-flex justify-content-between align-items-center">Blog
-                                                    List <i class="far fa-chevron-right"></i></a>
-                                                <ul class="dropdown__submenu pos-absolute">
-                                                    <li class="dropdown__submenu-list"><a href="/blog-list-sidebar-left"
-                                                                                          class="dropdown__submenu-link">
-                                                            Blog List Left Sidebar</a></li>
-                                                    {{--                                                                                                <li class="dropdown__submenu-list"><a href="blog-list-sidebar-right.html" class="dropdown__submenu-link"> Blog List Right Sidebar</a></li>--}}
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown__list">
-                                                <a href="#"
-                                                   class="dropdown__link d-flex justify-content-between align-items-center">Blog
-                                                    Single <i class="far fa-chevron-right"></i></a>
-                                                <ul class="dropdown__submenu pos-absolute">
-                                                    <li class="dropdown__submenu-list"><a
-                                                            href="/blog-simple-sidebar-left"
-                                                            class="dropdown__submenu-link"> Blog Single Left Sidebar</a>
-                                                    </li>
-                                                    {{--                                                    <li class="dropdown__submenu-list"><a href="blog-single-sidebar-right.html" class="dropdown__submenu-link"> Blog Single Right Sidebar</a></li>--}}
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                        <!--Single Dropdown Menu-->
-                                    </li> <!-- End Single Nav link-->
+                                {{--                                    <!--Start Single Nav link-->--}}
+                                {{--                                    <li class="header__nav-item pos-relative">--}}
+                                {{--                                        <a href="#" class="header__nav-link">Blog<i class="fal fa-chevron-down"></i></a>--}}
+                                {{--                                        <!--Single Dropdown Menu-->--}}
+                                {{--                                        <ul class="dropdown__menu pos-absolute">--}}
+                                {{--                                            --}}{{--                                            <li class="dropdown__list">--}}
+                                {{--                                            --}}{{--                                                <a href="#" class="dropdown__link d-flex justify-content-between align-items-center">Blog Grid <i class="far fa-chevron-right"></i></a>--}}
+                                {{--                                            --}}{{--                                                <ul class="dropdown__submenu pos-absolute">--}}
+                                {{--                                            --}}{{--                                                    <li class="dropdown__submenu-list"><a href="/blog-simple-sidebar-left" class="dropdown__submenu-link"> Blog Grid Left Sidebar</a></li>--}}
+                                {{--                                            --}}{{--                                                    <li class="dropdown__submenu-list"><a href="blog-grid-sidebar-right.html" class="dropdown__submenu-link"> Blog Grid Right Sidebar</a></li>--}}
+                                {{--                                            --}}{{--                                                </ul>--}}
+                                {{--                                            --}}{{--                                            </li>--}}
+                                {{--                                            <li class="dropdown__list">--}}
+                                {{--                                                <a href="#"--}}
+                                {{--                                                   class="dropdown__link d-flex justify-content-between align-items-center">Blog--}}
+                                {{--                                                    List <i class="far fa-chevron-right"></i></a>--}}
+                                {{--                                                <ul class="dropdown__submenu pos-absolute">--}}
+                                {{--                                                    <li class="dropdown__submenu-list"><a href="/blog-list-sidebar-left"--}}
+                                {{--                                                                                          class="dropdown__submenu-link">--}}
+                                {{--                                                            Blog List Left Sidebar</a></li>--}}
+                                {{--                                                    --}}{{--                                                                                                <li class="dropdown__submenu-list"><a href="blog-list-sidebar-right.html" class="dropdown__submenu-link"> Blog List Right Sidebar</a></li>--}}
+                                {{--                                                </ul>--}}
+                                {{--                                            </li>--}}
+                                {{--                                            <li class="dropdown__list">--}}
+                                {{--                                                <a href="#"--}}
+                                {{--                                                   class="dropdown__link d-flex justify-content-between align-items-center">Blog--}}
+                                {{--                                                    Single <i class="far fa-chevron-right"></i></a>--}}
+                                {{--                                                <ul class="dropdown__submenu pos-absolute">--}}
+                                {{--                                                    <li class="dropdown__submenu-list"><a--}}
+                                {{--                                                            href="/blog-simple-sidebar-left"--}}
+                                {{--                                                            class="dropdown__submenu-link"> Blog Single Left Sidebar</a>--}}
+                                {{--                                                    </li>--}}
+                                {{--                                                    --}}{{--                                                    <li class="dropdown__submenu-list"><a href="blog-single-sidebar-right.html" class="dropdown__submenu-link"> Blog Single Right Sidebar</a></li>--}}
+                                {{--                                                </ul>--}}
+                                {{--                                            </li>--}}
+                                {{--                                        </ul>--}}
+                                {{--                                        <!--Single Dropdown Menu-->--}}
+                                {{--                                    </li> <!-- End Single Nav link-->--}}
 
-                                    <!--Start Single Nav link-->
-                                    <li class="header__nav-item pos-relative">
-                                        <a href="#" class="header__nav-link">Liên Quan <i
-                                                class="fal fa-chevron-down"></i></a>
-                                        <span class="menu-label menu-label--blue">Mới</span>
-                                        <!--Single Dropdown Menu-->
-                                        <ul class="dropdown__menu pos-absolute">
-                                            <li class="dropdown__list"><a href="/about" class="dropdown__link">Chúng
-                                                    tôi</a></li>
-                                            <li class="dropdown__list pos-relative">
-                                                <a href="/frequently-questions" class="dropdown__link">Câu Hỏi Thường
-                                                    Gặp</a>
-                                                <span class="menu-label menu-label--blue">Mới</span>
-                                            </li>
-                                            <li class="dropdown__list"><a href="/privacy-policy" class="dropdown__link">Chính
-                                                    Sách bảo Mật</a></li>
-                                            {{--                                            <li class="dropdown__list"><a href="404.html" class="dropdown__link">404 Page</a></li>--}}
-                                        </ul>
-                                        <!--Single Dropdown Menu-->
-                                    </li> <!-- End Single Nav link-->
+                                <!--Start Single Nav link-->
+                                    {{--                                    <li class="header__nav-item pos-relative">--}}
+                                    {{--                                        <a href="#" class="header__nav-link">Liên Quan <i--}}
+                                    {{--                                                class="fal fa-chevron-down"></i></a>--}}
+                                    {{--                                        <span class="menu-label menu-label--blue">Mới</span>--}}
+                                    {{--                                        <!--Single Dropdown Menu-->--}}
+                                    {{--                                        <ul class="dropdown__menu pos-absolute">--}}
+                                    {{--                                            <li class="dropdown__list"><a href="/about" class="dropdown__link">Chúng--}}
+                                    {{--                                                    tôi</a></li>--}}
+                                    {{--                                            <li class="dropdown__list pos-relative">--}}
+                                    {{--                                                <a href="/frequently-questions" class="dropdown__link">Câu Hỏi Thường--}}
+                                    {{--                                                    Gặp</a>--}}
+                                    {{--                                                <span class="menu-label menu-label--blue">Mới</span>--}}
+                                    {{--                                            </li>--}}
+                                    {{--                                            <li class="dropdown__list"><a href="/privacy-policy" class="dropdown__link">Chính--}}
+                                    {{--                                                    Sách bảo Mật</a></li>--}}
+                                    {{--                                            --}}{{--                                            <li class="dropdown__list"><a href="404.html" class="dropdown__link">404 Page</a></li>--}}
+                                    {{--                                        </ul>--}}
+                                    {{--                                        <!--Single Dropdown Menu-->--}}
+                                    {{--                                    </li> <!-- End Single Nav link-->--}}
 
-                                    <!--Start Single Nav link-->
-                                    <li class="header__nav-item pos-relative">
-                                        <a href="/contact" class="header__nav-link">Liên Hệ </a>
-                                    </li> <!-- End Single Nav link-->
+                                    {{--                                    <!--Start Single Nav link-->--}}
+                                    {{--                                    <li class="header__nav-item pos-relative">--}}
+                                    {{--                                        <a href="/contact" class="header__nav-link">Liên Hệ </a>--}}
+                                    {{--                                    </li> <!-- End Single Nav link-->--}}
                                 </ul>
                             </nav>
                         </div> <!-- End Header Menu -->
@@ -336,21 +347,26 @@
 
 
                             @if(!\Illuminate\Support\Facades\Auth::check())
-                            <li>
+                                <li>
                                 <li class="header__nav-item pos-relative">
-                                    <a href="{{route('register')}}" style="font-size: 13px" class="header__nav-link"> <i class="fa-fw fas fa-user" aria-hidden="true"></i>Đăng nhập</a>
+                                    <a href="{{route('register')}}" style="font-size: 13px" class="header__nav-link"> <i
+                                            class="fa-fw fas fa-user" aria-hidden="true"></i>Đăng nhập</a>
                                 </li>
-                            </li>
+                                </li>
                             @else
 
                                 <li class="header__nav-item pos-relative">
-                                    <a style="font-size: 13px" class="header__nav-link"> <i class="fa-fw fas fa-user" aria-hidden="true"></i> {{\Illuminate\Support\Facades\Auth::user()->first_name . ' ' .\Illuminate\Support\Facades\Auth::user()->last_name}}</a>
+                                    <a style="font-size: 13px" class="header__nav-link"> <i class="fa-fw fas fa-user"
+                                                                                            aria-hidden="true"></i> {{\Illuminate\Support\Facades\Auth::user()->first_name . ' ' .\Illuminate\Support\Facades\Auth::user()->last_name}}
+                                    </a>
                                     <ul class="dropdown__menu pos-absolute">
-                                        <li class="dropdown__list"><a href="/about" class="dropdown__link">Thông tin của bạn</a></li>
+                                        <li class="dropdown__list"><a href="/about" class="dropdown__link">Thông tin của
+                                                bạn</a></li>
                                         <li class="dropdown__list pos-relative">
                                             <a href="/frequently-questions" class="dropdown__link">Đơn hàng của bạn</a>
                                         </li>
-                                        <li class="dropdown__list"><a href="{{route('logout')}}" class="dropdown__link">Đăng xuất</a></li>
+                                        <li class="dropdown__list"><a href="{{route('logout')}}" class="dropdown__link">Đăng
+                                                xuất</a></li>
                                         {{--                                            <li class="dropdown__list"><a href="404.html" class="dropdown__link">404 Page</a></li>--}}
                                     </ul>
                                     <!--Single Dropdown Menu-->
@@ -361,7 +377,8 @@
                             <li>
                                 <a href="#offcanvas-add-cart__box" class="offcanvas-toggle">
                                     <i class="icon-shopping-cart"></i>
-                                    <span class="wishlist-item-count pos-absolute">{{\Gloudemans\Shoppingcart\Facades\Cart::content()->count()}}</span>
+                                    <span
+                                        class="wishlist-item-count pos-absolute">{{\Gloudemans\Shoppingcart\Facades\Cart::content()->count()}}</span>
                                 </a>
                             </li>
                         </ul>
@@ -425,7 +442,8 @@
                         <li>
                             <a href="#offcanvas-add-cart__box" class="offcanvas-toggle">
                                 <i class="icon-shopping-cart"></i>
-                                <span class="wishlist-item-count pos-absolute">{{\Gloudemans\Shoppingcart\Facades\Cart::content()->count()}}</span>
+                                <span
+                                    class="wishlist-item-count pos-absolute">{{\Gloudemans\Shoppingcart\Facades\Cart::content()->count()}}</span>
                             </a>
                         </li> <!-- End Header Add Cart Box -->
                         <li><a href="#offcanvas-mobile-menu" class="offcanvas-toggle"><i class="far fa-bars"></i></a>
@@ -461,27 +479,27 @@
         </div>
 
         <div class="offcanvas-inner">
-{{--            <ul class="user-set-role d-flex justify-content-between m-tb-15">--}}
-{{--                <li class="user-currency pos-relative">--}}
-{{--                    <a class="user-set-role__button" href="#" data-toggle="dropdown" aria-expanded="false">Select--}}
-{{--                        Language<i class="fal fa-chevron-down"></i></a>--}}
-{{--                    <ul class="expand-dropdown-menu dropdown-menu">--}}
-{{--                        <li><a href="#"><img src="assets/img/icon/flag/icon_usa.png" alt="">English</a></li>--}}
-{{--                        <li><a href="#"><img src="assets/img/icon/flag/icon_france.png" alt="">French</a></li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
-{{--                <li class="user-info pos-relative">--}}
-{{--                    <a class="user-set-role__button" href="#" data-toggle="dropdown" aria-expanded="false">Select--}}
-{{--                        Currency <i class="fal fa-chevron-down"></i></a>--}}
-{{--                    <ul class="expand-dropdown-menu dropdown-menu">--}}
-{{--                        <li><a href="#">USD</a></li>--}}
-{{--                        <li><a href="#">POUND</a></li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
-{{--            </ul>--}}
+            {{--            <ul class="user-set-role d-flex justify-content-between m-tb-15">--}}
+            {{--                <li class="user-currency pos-relative">--}}
+            {{--                    <a class="user-set-role__button" href="#" data-toggle="dropdown" aria-expanded="false">Select--}}
+            {{--                        Language<i class="fal fa-chevron-down"></i></a>--}}
+            {{--                    <ul class="expand-dropdown-menu dropdown-menu">--}}
+            {{--                        <li><a href="#"><img src="assets/img/icon/flag/icon_usa.png" alt="">English</a></li>--}}
+            {{--                        <li><a href="#"><img src="assets/img/icon/flag/icon_france.png" alt="">French</a></li>--}}
+            {{--                    </ul>--}}
+            {{--                </li>--}}
+            {{--                <li class="user-info pos-relative">--}}
+            {{--                    <a class="user-set-role__button" href="#" data-toggle="dropdown" aria-expanded="false">Select--}}
+            {{--                        Currency <i class="fal fa-chevron-down"></i></a>--}}
+            {{--                    <ul class="expand-dropdown-menu dropdown-menu">--}}
+            {{--                        <li><a href="#">USD</a></li>--}}
+            {{--                        <li><a href="#">POUND</a></li>--}}
+            {{--                    </ul>--}}
+            {{--                </li>--}}
+            {{--            </ul>--}}
             <form class="header-search m-tb-15" action="#" method="post">
                 <div class="header-search__content pos-relative">
-                    <input type="search" name="header-search" placeholder="Search our store" required>
+                    <input type="search" name="header-search" placeholder="Tìm Kiếm" required>
                     <button class="pos-absolute" type="submit"><i class="icon-search"></i></button>
                 </div>
             </form>
@@ -491,18 +509,23 @@
                 @if(!\Illuminate\Support\Facades\Auth::check())
                     <li>
                     <li class="header__nav-item pos-relative">
-                        <a href="{{route('register')}}" style="font-size: 13px" class="header__nav-link"> <i class="fa-fw fas fa-user" aria-hidden="true"></i>Đăng nhập</a>
+                        <a href="{{route('register')}}" style="font-size: 13px" class="header__nav-link"> <i
+                                class="fa-fw fas fa-user" aria-hidden="true"></i>Đăng nhập</a>
                     </li>
                     </li>
                 @else
                     <li class="header__nav-item pos-relative">
-                        <a style="font-size: 13px" class="header__nav-link"> <i class="fa-fw fas fa-user" aria-hidden="true"></i> {{\Illuminate\Support\Facades\Auth::user()->first_name . ' ' .\Illuminate\Support\Facades\Auth::user()->last_name}}</a>
+                        <a style="font-size: 13px" class="header__nav-link"> <i class="fa-fw fas fa-user">
+                                aria-hidden="true"></i> {{\Illuminate\Support\Facades\Auth::user()->first_name . ' ' .\Illuminate\Support\Facades\Auth::user()->last_name}}
+                        </a>
                         <ul class="dropdown__menu pos-absolute">
-                            <li class="dropdown__list"><a href="/about" class="dropdown__link">Thông tin của bạn</a></li>
+                            <li class="dropdown__list"><a href="/about" class="dropdown__link">Thông tin của bạn</a>
+                            </li>
                             <li class="dropdown__list pos-relative">
                                 <a href="/frequently-questions" class="dropdown__link">Đơn hàng của bạn</a>
                             </li>
-                            <li class="dropdown__list"><a href="{{route('logout')}}" class="dropdown__link">Đăng xuất</a></li>
+                            <li class="dropdown__list"><a href="{{route('logout')}}" class="dropdown__link">Đăng
+                                    xuất</a></li>
                             {{--                                            <li class="dropdown__list"><a href="404.html" class="dropdown__link">404 Page</a></li>--}}
                         </ul>
                         <!--Single Dropdown Menu-->
@@ -521,107 +544,112 @@
                     <li>
                         <a href="#"><span>Sản Phẩm</span></a>
                         <ul class="sub-menu">
-                            <li>
-                                <a href="#">Shop Layout</a>
-                                <ul class="sub-menu">
-                                    <li><a href="/shop-sidebar-full-width">Grid Left Sidebar</a></li>
-                                    {{--                                    <li><a href="shop-sidebar-grid-right.html">Grid Right Sidebar</a></li>--}}
-                                    <li><a href="/shop-sidebar-full-width">Full Width</a></li>
-                                    {{--                                    <li><a href="shop-sidebar-left-list-view.html">List Left Sidebar</a></li>--}}
-                                    {{--                                    <li><a href="shop-sidebar-right-list-view.html">List Right Sidebar</a></li>--}}
-                                </ul>
-                            </li>
+                            @foreach($categories as $category)
+                                <li>
+                                    <a href="/category{{$category->id}}">{{$category->name }}</a>
+                                </li>
+                            @endforeach
                         </ul>
-                        <ul class="sub-menu">
-                            <li>
-                                <a href="#">Shop Pages</a>
-                                <ul class="sub-menu">
-                                    <li><a href="/cart">Giỏ Hàng</a></li>
-                                    <li><a href="/checkout">Thanh Toán</a></li>
-                                    {{--                                    <li><a href="compare.html">Compare</a></li>--}}
-                                    <li><a href="/emply-cart">Giỏ Hàng Rỗng</a></li>
-                                    {{--                                    <li><a href="wishlist.html">Wishlist</a></li>--}}
-                                    <li><a href="/my-accoun">Tài Khoản Người Dùng</a></li>
-                                    <li><a href="/loginl">Đăng Nhập</a></li>
+                        {{--                        <span class="mega-menu__title">Danh Sách Sản Phẩm</span>--}}
+                        {{--                        @foreach($categories as $category)--}}
+                        {{--                            <ul class="mega-menu__item">--}}
+                        {{--                                <li class="mega-menu__list">--}}
+                        {{--                                    <a href="/category {{ $category->id }}"--}}
+                        {{--                                       class="mega-menu__link">{{ $category->name }}</a>--}}
+                        {{--                                </li>--}}
+                        {{--                            </ul>--}}
+                        {{--                        @endforeach--}}
+                        {{--                        <ul class="sub-menu">--}}
+                        {{--                            <li>--}}
+                        {{--                                <a href="#">Shop Pages</a>--}}
+                        {{--                                <ul class="sub-menu">--}}
+                        {{--                                    <li><a href="/cart">Giỏ Hàng</a></li>--}}
+                        {{--                                    <li><a href="/checkout">Thanh Toán</a></li>--}}
+                        {{--                                    --}}{{--                                    <li><a href="compare.html">Compare</a></li>--}}
+                        {{--                                    <li><a href="/emply-cart">Giỏ Hàng Rỗng</a></li>--}}
+                        {{--                                    --}}{{--                                    <li><a href="wishlist.html">Wishlist</a></li>--}}
+                        {{--                                    <li><a href="/my-accoun">Tài Khoản Người Dùng</a></li>--}}
+                        {{--                                    <li><a href="/loginl">Đăng Nhập</a></li>--}}
 
-                                </ul>
-                            </li>
-                        </ul>
-{{--                        <ul class="sub-menu">--}}
-{{--                            <li>--}}
-{{--                                <a href="#">Product Single</a>--}}
-{{--                                <ul class="sub-menu">--}}
-{{--                                    <li><a href="/product-single-default">Simple</a></li>--}}
-{{--                                    --}}{{--                                    <li><a href="product-single-affiliate.html">Affiliate</a></li>--}}
-{{--                                    --}}{{--                                    <li><a href="product-single-group.html">Grouped</a></li>--}}
-{{--                                    --}}{{--                                    <li><a href="product-single-variable.html">Variable</a></li>--}}
-{{--                                    <li><a href="/product-single-tab-left">Left Tab</a></li>--}}
-{{--                                    --}}{{--                                    <li><a href="product-single-tab-right.html">Right Tab</a></li>--}}
-{{--                                    --}}{{--                                    <li><a href="product-single-slider.html">Single Slider</a></li>--}}
-{{--                                    --}}{{--                                    <li><a href="product-single-gallery-left.html">Gallery Left</a></li>--}}
-{{--                                    --}}{{--                                    <li><a href="product-single-gallery-right.html">Gallery Right</a></li>--}}
-{{--                                    --}}{{--                                    <li><a href="product-single-sticky-left.html">Sticky Left</a></li>--}}
-{{--                                    --}}{{--                                    <li><a href="product-single-sticky-right.html">Sticky Right</a></li>--}}
-{{--                                </ul>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
+                        {{--                                </ul>--}}
+                        {{--                            </li>--}}
+                        {{--                        </ul>--}}
+                        {{--                        <ul class="sub-menu">--}}
+                        {{--                            <li>--}}
+                        {{--                                <a href="#">Product Single</a>--}}
+                        {{--                                <ul class="sub-menu">--}}
+                        {{--                                    <li><a href="/product-single-default">Simple</a></li>--}}
+                        {{--                                    --}}{{--                                    <li><a href="product-single-affiliate.html">Affiliate</a></li>--}}
+                        {{--                                    --}}{{--                                    <li><a href="product-single-group.html">Grouped</a></li>--}}
+                        {{--                                    --}}{{--                                    <li><a href="product-single-variable.html">Variable</a></li>--}}
+                        {{--                                    <li><a href="/product-single-tab-left">Left Tab</a></li>--}}
+                        {{--                                    --}}{{--                                    <li><a href="product-single-tab-right.html">Right Tab</a></li>--}}
+                        {{--                                    --}}{{--                                    <li><a href="product-single-slider.html">Single Slider</a></li>--}}
+                        {{--                                    --}}{{--                                    <li><a href="product-single-gallery-left.html">Gallery Left</a></li>--}}
+                        {{--                                    --}}{{--                                    <li><a href="product-single-gallery-right.html">Gallery Right</a></li>--}}
+                        {{--                                    --}}{{--                                    <li><a href="product-single-sticky-left.html">Sticky Left</a></li>--}}
+                        {{--                                    --}}{{--                                    <li><a href="product-single-sticky-right.html">Sticky Right</a></li>--}}
+                        {{--                                </ul>--}}
+                        {{--                            </li>--}}
+                        {{--                        </ul>--}}
                     </li>
-                    <li>
-                        <a href="#"><span>Blogs</span></a>
-                        <ul class="sub-menu">
-                            {{--                            <li>--}}
-                            {{--                                <a href="#">Blog Grid</a>--}}
-                            {{--                                <ul class="sub-menu">--}}
-                            {{--                                    <li><a href="/blog-simple-sidebar-left"> Blog Grid Left Sidebar</a></li>--}}
-                            {{--                                    <li><a href="blog-grid-sidebar-right.html"> Blog Grid Right Sidebar</a></li>--}}
-                            {{--                                </ul>--}}
-                            {{--                            </li>--}}
-                            <li>
-                                <a href="#">Blog List</a>
-                                <ul class="sub-menu">
-                                    <li><a href="/blog-list-sidebar-left"> Blog List Left Sidebar</a></li>
-                                    {{--                                                                <li><a href="blog-list-sidebar-right.html"> Blog List Right Sidebar</a></li>--}}
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Blog Single</a>
-                                <ul class="sub-menu">
-                                    <li><a href="/blog-simple-sidebar-left"> Blog Single Left Sidebar</a></li>
-                                    {{--                                    <li><a href="blog-single-sidebar-right.html"> Blog Single Right Sidebar</a></li>--}}
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><span>Pages</span></a>
-                        <ul class="sub-menu">
-                            <li><a href="/about">CHúng Tôi</a></li>
-                            <li><a href="/frequently-questions">Câu Hỏi Thường Gặp</a></li>
-                            <li><a href="/privacy-policy">Chính Sách Bảo Mật</a></li>
-                            {{--                            <li><a href="404.html">404 Page</a></li>--}}
-                        </ul>
-                    </li>
-                    <li><a href="/contact">Liên Hệ </a></li>
+                    {{--                    <li>--}}
+                    {{--                        <a href="#"><span>Blogs</span></a>--}}
+                    {{--                        <ul class="sub-menu">--}}
+                    {{--                            --}}{{--                            <li>--}}
+                    {{--                            --}}{{--                                <a href="#">Blog Grid</a>--}}
+                    {{--                            --}}{{--                                <ul class="sub-menu">--}}
+                    {{--                            --}}{{--                                    <li><a href="/blog-simple-sidebar-left"> Blog Grid Left Sidebar</a></li>--}}
+                    {{--                            --}}{{--                                    <li><a href="blog-grid-sidebar-right.html"> Blog Grid Right Sidebar</a></li>--}}
+                    {{--                            --}}{{--                                </ul>--}}
+                    {{--                            --}}{{--                            </li>--}}
+                    {{--                            <li>--}}
+                    {{--                                <a href="#">Blog List</a>--}}
+                    {{--                                <ul class="sub-menu">--}}
+                    {{--                                    <li><a href="/blog-list-sidebar-left"> Blog List Left Sidebar</a></li>--}}
+                    {{--                                    --}}{{--                                                                <li><a href="blog-list-sidebar-right.html"> Blog List Right Sidebar</a></li>--}}
+                    {{--                                </ul>--}}
+                    {{--                            </li>--}}
+                    {{--                            <li>--}}
+                    {{--                                <a href="#">Blog Single</a>--}}
+                    {{--                                <ul class="sub-menu">--}}
+                    {{--                                    <li><a href="/blog-simple-sidebar-left"> Blog Single Left Sidebar</a></li>--}}
+                    {{--                                    --}}{{--                                    <li><a href="blog-single-sidebar-right.html"> Blog Single Right Sidebar</a></li>--}}
+                    {{--                                </ul>--}}
+                    {{--                            </li>--}}
+                    {{--                        </ul>--}}
+                    {{--                    </li>--}}
+                    {{--                    <li>--}}
+                    {{--                        <a href="#"><span>Pages</span></a>--}}
+                    {{--                        <ul class="sub-menu">--}}
+                    {{--                            <li><a href="/about">CHúng Tôi</a></li>--}}
+                    {{--                            <li><a href="/frequently-questions">Câu Hỏi Thường Gặp</a></li>--}}
+                    {{--                            <li><a href="/privacy-policy">Chính Sách Bảo Mật</a></li>--}}
+                    {{--                            --}}{{--                            <li><a href="404.html">404 Page</a></li>--}}
+                    {{--                        </ul>--}}
+                    {{--                    </li>--}}
+                    {{--                    <li><a href="/contact">Liên Hệ </a></li>--}}
                 </ul>
             </div>
         </div>
         <ul class="offcanvas__social-nav m-t-50">
-            <li class="offcanvas__social-list"><a href="#" class="offcanvas__social-link"><i
+            <li class="offcanvas__social-list"><a href="https://www.facebook.com/" class="offcanvas__social-link"><i
                         class="fab fa-facebook-f"></i></a></li>
-            <li class="offcanvas__social-list"><a href="#" class="offcanvas__social-link"><i class="fab fa-twitter"></i></a>
-            </li>
-            <li class="offcanvas__social-list"><a href="#" class="offcanvas__social-link"><i class="fab fa-youtube"></i></a>
-            </li>
-            <li class="offcanvas__social-list"><a href="#" class="offcanvas__social-link"><i
+            <li class="offcanvas__social-list"><a href="https://twitter.com/?lang=vi" class="offcanvas__social-link"><i
+                        class="fab fa-twitter"></i></a></li>
+            <li class="offcanvas__social-list"><a href="https://www.youtube.com/" class="offcanvas__social-link"><i
+                        class="fab fa-youtube"></i></a></li>
+            <li class="offcanvas__social-list"><a href="https://www.google.com.vn/?hl=vi"
+                                                  class="offcanvas__social-link"><i
                         class="fab fa-google-plus-g"></i></a></li>
-            <li class="offcanvas__social-list"><a href="#" class="offcanvas__social-link"><i
+            <li class="offcanvas__social-list"><a href="https://www.instagram.com/" class="offcanvas__social-link"><i
                         class="fab fa-instagram"></i></a></li>
         </ul>
     </div> <!--  End Mobile-offcanvas Menu Section   -->
 
     <!--  Start Popup Add Cart  -->
-{{--    offcanvas-open--}}
-    <div id="offcanvas-add-cart__box"  class="offcanvas offcanvas-cart offcanvas-add-cart ">
+    {{--    offcanvas-open--}}
+    <div id="offcanvas-add-cart__box" class="offcanvas offcanvas-cart offcanvas-add-cart ">
         <div class="offcanvas__top">
             <span class="offcanvas__top-text"><i class="icon-shopping-cart"></i>Giỏ Hàng</span>
             <button class="offcanvas-close"><i class="fal fa-times"></i></button>
@@ -638,7 +666,7 @@
                         <span class="offcanvas-add-cart__item-count pos-absolute">2x</span>
                     </div>
                     <div class="offcanvas-add-cart__detail">
-                        <a href="/product-single-default" class="offcanvas-add-cart__link">Lucky Wooden Elephant</a>
+                        <a href="/product-single-default" class="offcanvas-add-cart__link">Trứng</a>
                         <span class="offcanvas-add-cart__price">$29.00</span>
                         <span class="offcanvas-add-cart__info">Dimension: 40x60cm</span>
                     </div>
@@ -655,7 +683,7 @@
                         <span class="offcanvas-add-cart__item-count pos-absolute">2x</span>
                     </div>
                     <div class="offcanvas-add-cart__detail">
-                        <a href="/product-single-default" class="offcanvas-add-cart__link">Lucky Wooden Elephant</a>
+                        <a href="/product-single-default" class="offcanvas-add-cart__link">Rau Củ</a>
                         <span class="offcanvas-add-cart__price">$29.00</span>
                         <span class="offcanvas-add-cart__info">Dimension: 40x60cm</span>
                     </div>
@@ -669,37 +697,36 @@
             <ul class="offcanvas-add-cart__checkout-info">
                 <!-- Start Single Add Cart Checkout Info-->
                 <li class="offcanvas-add-cart__checkout-list">
-                    <span class="offcanvas-add-cart__checkout-left-info">Subtotal</span>
+                    <span class="offcanvas-add-cart__checkout-left-info">Tổng Giá Sản Phẩm</span>
                     <span class="offcanvas-add-cart__checkout-right-info">$60.59</span>
                 </li> <!-- End Single Add Cart Checkout Info-->
                 <!-- Start Single Add Cart Checkout Info-->
                 <li class="offcanvas-add-cart__checkout-list">
-                    <span class="offcanvas-add-cart__checkout-left-info">Shipping</span>
+                    <span class="offcanvas-add-cart__checkout-left-info">Phí Vận Chuyển</span>
                     <span class="offcanvas-add-cart__checkout-right-info">$7.00</span>
                 </li> <!-- End Single Add Cart Checkout Info-->
                 <!-- Start Single Add Cart Checkout Info-->
+            {{--                <li class="offcanvas-add-cart__checkout-list">--}}
+            {{--                    <span class="offcanvas-add-cart__checkout-left-info">Taxes</span>--}}
+            {{--                    <span class="offcanvas-add-cart__checkout-right-info">$0.00</span>--}}
+            {{--                </li> <!-- End Single Add Cart Checkout Info-->--}}
+            <!-- Start Single Add Cart Checkout Info-->
                 <li class="offcanvas-add-cart__checkout-list">
-                    <span class="offcanvas-add-cart__checkout-left-info">Taxes</span>
-                    <span class="offcanvas-add-cart__checkout-right-info">$0.00</span>
-                </li> <!-- End Single Add Cart Checkout Info-->
-                <!-- Start Single Add Cart Checkout Info-->
-                <li class="offcanvas-add-cart__checkout-list">
-                    <span class="offcanvas-add-cart__checkout-left-info">Total</span>
+                    <span class="offcanvas-add-cart__checkout-left-info">Tổng</span>
                     <span class="offcanvas-add-cart__checkout-right-info">$67.59</span>
                 </li> <!-- End Single Add Cart Checkout Info-->
             </ul> <!-- End offcanvas Add Cart Checkout Info-->
 
             <div class="offcanvas-add-cart__btn-checkout">
                 <a href="/checkout"
-                   class="btn btn--block btn--radius btn--box btn--black btn--black-hover-green btn--large btn--uppercase font--bold">Checkout</a>
+                   class="btn btn--block btn--radius btn--box btn--black btn--black-hover-green btn--large btn--uppercase font--bold">Tiến
+                    Hành Thanh Toán</a>
             </div>
         </div> <!-- End Add Cart Checkout Box-->
     </div> <!-- End Popup Add Cart -->
 
 
-
-
-{{--    style="display: block"--}}
-    <div class="offcanvas-overlay"  ></div>
+    {{--    style="display: block"--}}
+    <div class="offcanvas-overlay"></div>
 </header>
 

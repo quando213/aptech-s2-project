@@ -4,7 +4,9 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\WardController;
+use App\Http\Controllers\Client\ClientComboController;
 use App\Http\Controllers\Client\ClientProductController;
+use App\Http\Controllers\Client\ClientProductDetailController;
 use App\Http\Controllers\Client\EntryController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\TemplateAdminController;
@@ -27,9 +29,13 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('admin')->middleware(['auth', CheckAdmin::class])->group(function () {
     require_once __DIR__ . '/admin.php';
 });
+
 Route::prefix('shipper')->middleware(['auth', checkShipper::class])->group(function () {
     require_once __DIR__ . '/shipper.php';
 });
+
+
+
 Route::get('/api/ward/{id}', [WardController::class, 'api']);
 Route::get('/api/ward/check/{id}', [WardController::class, 'check']);
 Route::get('/api/product/{id}', [ProductController::class, 'apiCheck']);
@@ -58,10 +64,19 @@ Route::get('/cart', [TemplateClientController::class, 'cart']);
 Route::post('/cart', [OrderController::class, 'update']);
 
 
+
 Route::prefix('product')->group(function () {
     Route::get('/', [ClientProductController::class, 'list']);
     Route::get('detail/{id}', [ClientProductController::class, 'detail'])->name('detailProduct');
 });
+
+//Route::prefix('product')->group(function () {
+//    Route::get('/', [ClientProductDetailController::class, 'list']);
+//    Route::get('detail/{id}', [ClientProductDetailController::class, 'detail'])->name('detailProduct');
+//});
+
+
+
 Route::get('/form-layout', [TemplateAdminController::class, 'form_layout']);
 Route::get('/input', [TemplateAdminController::class, 'input']);
 Route::get('/table', [TemplateAdminController::class, 'table']);
@@ -77,6 +92,7 @@ Route::get('/contact', [TemplateClientController::class, 'contact']);
 
 Route::get('/product-single-tab-left', [TemplateClientController::class, 'product_left']);
 Route::get('/shop-sidebar-grid-left', [TemplateClientController::class, 'shop_layout_left']);
+Route::get('/category', [ClientProductController::class, 'list']);
 Route::get('/shop-sidebar-full-width', [TemplateClientController::class, 'shop_layout_with']);
 
 Route::get('/my-account', [TemplateClientController::class, 'account']);
@@ -87,5 +103,18 @@ Route::get('/wishlist', [TemplateClientController::class, 'wishlist']);
 Route::get('/emply-cart', [TemplateClientController::class, 'emply_cart']);
 
 Route::get('/compare', [TemplateClientController::class, 'compare']);
+
+// Link list category vs product ra trang all sản phẩm
+
+Route::get('/product/{id}', [ClientProductController::class, 'list']);
+Route::prefix('product')->group(function () {
+    Route::get('/', [ClientProductDetailController::class, 'list']);
+    Route::get('detail/{id}', [ClientProductDetailController::class, 'detail'])->name('detailProduct');
+    Route::get('/', [ClientProductController::class, 'list']);
+    Route::get('/category/{id}', [ClientProductController::class, 'optionCategori'])->name('option');
+});
+
+Route::get('/combo', [ClientComboController::class, 'list']);
+
 
 
