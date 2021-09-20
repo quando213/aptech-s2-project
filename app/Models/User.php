@@ -42,8 +42,6 @@ class User extends Authenticatable
     public function notifications(){
         return $this->hasMany(Notifiable::class);
     }
-
-
     public function district(){
         return $this->belongsTo(District::class,'district_id');
     }

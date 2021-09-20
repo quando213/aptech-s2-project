@@ -1,9 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\CategoryController;
-
-use App\Http\Controllers\Admin\GroupController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\WardController;
@@ -14,7 +11,7 @@ use App\Http\Controllers\Client\EntryController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\TemplateAdminController;
 use App\Http\Controllers\TemplateClientController;
-use App\Http\Controllers\Admin\ComboController;
+use App\Http\Middleware\checkAdmin;
 use App\Http\Middleware\checkShipper;
 use Illuminate\Support\Facades\Route;
 
@@ -29,11 +26,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware(['auth', CheckAdmin::class])->group(function () {
     require_once __DIR__ . '/admin.php';
 });
 
+Route::prefix('shipper')->middleware(['auth', checkShipper::class])->group(function () {
+    require_once __DIR__ . '/shipper.php';
+});
+
+
+
 Route::get('/api/ward/{id}', [WardController::class, 'api']);
+Route::get('/api/ward/check/{id}', [WardController::class, 'check']);
 Route::get('/api/product/{id}', [ProductController::class, 'apiCheck']);
 Route::get('/test', [OrderController::class, 'test']);
 Route::get('/test/order', [OrderController::class, 'detail']);
@@ -45,9 +49,6 @@ Route::get('/buy', [OrderController::class, 'buynow'])->name('buy');
 Route::get('/', [HomeController::class, 'home'])->name("home");
 
 
-Route::prefix('/shipper')->middleware(['auth', checkShipper::class])->group(function () {
-    Route::get('/', [WardController::class, 'api']);
-});
 
 
 Route::get('/login', [EntryController::class, 'register'])->name('register');
