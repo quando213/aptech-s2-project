@@ -7,7 +7,7 @@
                 <div class="col-12">
                     <ul class="page-breadcrumb__menu">
                         <li class="page-breadcrumb__nav"><a href="/">Trang Chủ</a></li>
-                        <li class="page-breadcrumb__nav active">Single Product - Tab Left</li>
+                        <li class="page-breadcrumb__nav active">Chi Tiết Sản Phẩm</li>
                     </ul>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="col-md-7">
                         <div class="product-details-box m-b-60">
-                            <h4 class="font--regular m-b-20">Fresh Green Apple</h4>
+                            <h4 class="font--regular m-b-20">Táo Xanh</h4>
                             <ul class="product__review">
                                 <li class="product__review--fill"><i class="icon-star"></i></li>
                                 <li class="product__review--fill"><i class="icon-star"></i></li>

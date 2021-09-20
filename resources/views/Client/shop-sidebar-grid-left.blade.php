@@ -30,15 +30,15 @@
                            @foreach($categories as $category)
                                  <ul class="sidebar__menu">
                                     <li class="mega-menu__list">
-                                        <a href="/shop-sidebar-grid-left {{ $category->id }}"
+                                        <a href="/product{{ $category->id }}"
                                            class="mega-menu__link">{{ $category->name }}</a>
                                     </li>
                                 </ul>
                             @endforeach
-                            <ul class="sidebar__menu">
-                                @foreach($categori as $data)
-                                    <li ><a href="{{route('option', $data->id)}}">{{$data -> name}}</a></li>
-                                @endforeach
+{{--                            <ul class="sidebar__menu">--}}
+{{--                                @foreach($categori as $data)--}}
+{{--                                    <li ><a href="{{route('option', $data->id)}}">{{$data -> name}}</a></li>--}}
+{{--                                @endforeach--}}
 
 {{--                                <li ><a href="#"> Men's</a></li>--}}
 {{--                                <li ><a href="#"> Portable Audio</a></li>--}}
@@ -47,7 +47,7 @@
 {{--                                <li ><a href="#"> Uncategorized</a></li>--}}
 {{--                                <li ><a href="#"> Video Games</a></li>--}}
 {{--                                <li ><a href="#">Women's</a></li>--}}
-                            </ul>
+{{--                            </ul>--}}
                         </div>  <!-- End SSingle Sidebar Widget - Filter [Catagory] -->
 
                         <!-- Start Single Sidebar Widget - Filter [Price] -->
@@ -104,7 +104,7 @@
                                     </a>
                                     <!-- Start Product Content -->
                                     <div class="product__content">
-                                        <a href="/product-single-default" class="product__link"></a>
+                                        <a href="/product-single-default" class="product__link">Sữa</a>
                                         <div class="product__price">
                                             <span class="product__price">$25.00</span>
                                         </div>

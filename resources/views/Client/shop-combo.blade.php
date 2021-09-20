@@ -668,10 +668,10 @@
 
                     <div class="page-pagination">
                         <ul class="page-pagination__list">
-                            <li class="page-pagination__item"><a class="page-pagination__link"  href="#">Prev</a>
+                            <li class="page-pagination__item"><a class="page-pagination__link"  href="#">quay Lại</a>
                             <li class="page-pagination__item"><a class="page-pagination__link active"  href="#">1</a></li>
                             <li class="page-pagination__item"><a class="page-pagination__link"  href="#">2</a></li>
-                            <li class="page-pagination__item"><a class="page-pagination__link"  href="#">Next</a>
+                            <li class="page-pagination__item"><a class="page-pagination__link"  href="#">Tiếp Theo</a>
                             </li>
                         </ul>
                     </div>
@@ -706,19 +706,19 @@
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <div class="link--green link--icon-left"><i class="fal fa-check-square"></i>Added to cart successfully!</div>
+                                        <div class="link--green link--icon-left"><i class="fal fa-check-square"></i>Thêm Vào Giỏ Hàng Thành Công!</div>
                                         <div class="modal__product-cart-buttons m-tb-15">
-                                            <a href="/cart" class="btn btn--box  btn--tiny btn--green btn--green-hover-black btn--uppercase">View Cart</a>
-                                            <a href="/checkout" class="btn btn--box  btn--tiny btn--green btn--green-hover-black btn--uppercaset">Checkout</a>
+                                            <a href="/cart" class="btn btn--box  btn--tiny btn--green btn--green-hover-black btn--uppercase">Xem Giỏ Hàng</a>
+                                            <a href="/checkout" class="btn btn--box  btn--tiny btn--green btn--green-hover-black btn--uppercaset">Thanh Toán</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-5 modal__border">
                                 <ul class="modal__product-shipping-info">
-                                    <li class="link--icon-left"><i class="icon-shopping-cart"></i> There Are 5 Items In Your Cart.</li>
-                                    <li>TOTAL PRICE: <span>$187.00</span></li>
-                                    <li><a href="#" class="btn text-underline color-green" data-dismiss="modal">CONTINUE SHOPPING</a></li>
+                                    <li class="link--icon-left"><i class="icon-shopping-cart"></i>Bạn Có 5 Sản Phẩm Trong Giỏ Hàng.</li>
+                                    <li>Tổng Giá: <span>$187.00</span></li>
+                                    <li><a href="#" class="btn text-underline color-green" data-dismiss="modal">Tiếp Tục Mua Sắm</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -745,13 +745,15 @@
                             <div class="col-md-6">
                                 <div class="product-gallery-box m-b-60">
                                     <div class="modal-product-image--large">
-                                        <img class="img-fluid" src="assets/img/product/gallery/gallery-large/product-gallery-large-1.jpg" alt="">
+                                        <img class="img-fluid"
+                                             src="assets/img/product/gallery/gallery-large/product-gallery-large-1.jpg"
+                                             alt="">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="product-details-box">
-                                    <h5 class="title title--normal m-b-20">Aliquam lobortis</h5>
+                                    <h5 class="title title--normal m-b-20">Táo Xanh</h5>
                                     <div class="product__price">
                                         <span class="product__price-del">$35.90</span>
                                         <span class="product__price-reg">$31.69</span>
@@ -764,23 +766,33 @@
                                         <li class="product__review--blank"><i class="icon-star"></i></li>
                                     </ul>
                                     <div class="product__desc m-t-25 m-b-30">
-                                        <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will</p>
+                                        <p>Táo xanh có hàm lượng chất xơ cao giúp tăng cường quá trình trao đổi chất
+                                            của cơ thể. Bên cạnh đó, hàm lượng chất xơ này còn giúp hỗ trợ quá trình
+                                            giải độc, giúp gan và hệ tiêu hóa tránh xa các chất độc hại.
+                                            <br>
+                                            Khi ăn táo xanh, nên để nguyên vỏ để có thể nạp vào cơ thể lượng chất
+                                            xơ cao hơn. Ngoài ra, có thể chế biến táo xanh thành nước ép để dễ tiêu hóa.</p>
                                     </div>
 
                                     <div class="product-var p-t-30">
-                                        <div class="product-quantity product-var__item d-flex align-items-center flex-wrap">
-                                            <span class="product-var__text">Quantity: </span>
+                                        <div
+                                            class="product-quantity product-var__item d-flex align-items-center flex-wrap">
+                                            <span class="product-var__text">Số Lượng: </span>
                                             <form class="modal-quantity-scale m-l-20">
-                                                <div class="value-button" id="modal-decrease" onclick="decreaseValueModal()" >-</div>
-                                                <input type="number" id="modal-number" value="1" />
-                                                <div class="value-button" id="modal-increase" onclick="increaseValueModal()" >+</div>
+                                                <div class="value-button" id="modal-decrease"
+                                                     onclick="decreaseValueModal()">-
+                                                </div>
+                                                <input type="number" id="modal-number" value="1"/>
+                                                <div class="value-button" id="modal-increase"
+                                                     onclick="increaseValueModal()">+
+                                                </div>
                                             </form>
                                         </div>
                                     </div>
 
                                     <div class="product-links">
                                         <div class="product-social m-tb-30">
-                                            <span>SHARE THIS PRODUCT</span>
+                                            <span>Chia Sẻ Sản Phẩm</span>
                                             <ul class="product-social-link">
                                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -796,7 +808,8 @@
                 </div>
             </div>
         </div>
-    </div> <!-- End Modal Quickview cart -->
+    </div>
+    <!-- End Modal Quickview cart -->
 
 @endsection
 

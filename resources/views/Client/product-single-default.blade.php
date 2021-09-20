@@ -764,8 +764,6 @@
             </div>
         </div>
     </div> <!-- End Modal Add cart -->
-
-    <!-- Start Modal Quickview cart -->
     <div class="modal fade" id="modalQuickView" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog  modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -782,42 +780,54 @@
                             <div class="col-md-6">
                                 <div class="product-gallery-box m-b-60">
                                     <div class="modal-product-image--large">
-                                        <img class="img-fluid" src="assets/img/product/gallery/gallery-large/product-gallery-large-1.jpg" alt="">
+                                        <img class="img-fluid"
+                                             src="assets/img/product/gallery/gallery-large/product-gallery-large-1.jpg"
+                                             alt="">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="product-details-box">
-                                    <h5 class="title title--normal m-b-20">Aliquam lobortis</h5>
+                                    <h5 class="title title--normal m-b-20">Táo Xanh</h5>
                                     <div class="product__price">
                                         <span class="product__price-del">$35.90</span>
                                         <span class="product__price-reg">$31.69</span>
                                     </div>
                                     <ul class="product__review m-t-15">
-                                        <li class="product__review--fill"></li>
-                                        <li class="product__review--fill"></li>
-                                        <li class="product__review--fill"></li>
-                                        <li class="product__review--fill"></li>
-                                        <li class="product__review--blank"></li>
+                                        <li class="product__review--fill"><i class="icon-star"></i></li>
+                                        <li class="product__review--fill"><i class="icon-star"></i></li>
+                                        <li class="product__review--fill"><i class="icon-star"></i></li>
+                                        <li class="product__review--fill"><i class="icon-star"></i></li>
+                                        <li class="product__review--blank"><i class="icon-star"></i></li>
                                     </ul>
                                     <div class="product__desc m-t-25 m-b-30">
-                                        <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will</p>
+                                        <p>Táo xanh có hàm lượng chất xơ cao giúp tăng cường quá trình trao đổi chất
+                                            của cơ thể. Bên cạnh đó, hàm lượng chất xơ này còn giúp hỗ trợ quá trình
+                                            giải độc, giúp gan và hệ tiêu hóa tránh xa các chất độc hại.
+                                            <br>
+                                            Khi ăn táo xanh, nên để nguyên vỏ để có thể nạp vào cơ thể lượng chất
+                                            xơ cao hơn. Ngoài ra, có thể chế biến táo xanh thành nước ép để dễ tiêu hóa.</p>
                                     </div>
 
                                     <div class="product-var p-t-30">
-                                        <div class="product-quantity product-var__item d-flex align-items-center flex-wrap">
-                                            <span class="product-var__text">Quantity: </span>
+                                        <div
+                                            class="product-quantity product-var__item d-flex align-items-center flex-wrap">
+                                            <span class="product-var__text">Số Lượng: </span>
                                             <form class="modal-quantity-scale m-l-20">
-                                                <div class="value-button" id="modal-decrease" onclick="decreaseValueModal()" >-</div>
-                                                <input type="number" id="modal-number" value="1" />
-                                                <div class="value-button" id="modal-increase" onclick="increaseValueModal()" >+</div>
+                                                <div class="value-button" id="modal-decrease"
+                                                     onclick="decreaseValueModal()">-
+                                                </div>
+                                                <input type="number" id="modal-number" value="1"/>
+                                                <div class="value-button" id="modal-increase"
+                                                     onclick="increaseValueModal()">+
+                                                </div>
                                             </form>
                                         </div>
                                     </div>
 
                                     <div class="product-links">
                                         <div class="product-social m-tb-30">
-                                            <span>SHARE THIS PRODUCT</span>
+                                            <span>Chia Sẻ Sản Phẩm</span>
                                             <ul class="product-social-link">
                                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -833,140 +843,8 @@
                 </div>
             </div>
         </div>
-    </div> <!-- End Modal Quickview cart -->
+    </div>
 
-    <!-- Start Modal Size guide -->
-    <div class="modal fade" id="modalSizeGuide" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col text-right">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true"> <i class="fal fa-times"></i></span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="table-responsive size-guide-table m-t-30">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                        <tr>
-                                            <th scope="col">INTERNATIONAL</th>
-                                            <th scope="col">X</th>
-                                            <th scope="col">S</th>
-                                            <th scope="col">M</th>
-                                            <th scope="col">L</th>
-                                            <th scope="col">XL</th>
-                                            <th scope="col">XXL</th>
-                                            <th scope="col">XXXL</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <th scope="row">EUROPE</th>
-                                            <td>32</td>
-                                            <td>34</td>
-                                            <td>36</td>
-                                            <td>38</td>
-                                            <td>40</td>
-                                            <td>42</td>
-                                            <td>44</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">US</th>
-                                            <td>0</td>
-                                            <td>2</td>
-                                            <td>4</td>
-                                            <td>6</td>
-                                            <td>8</td>
-                                            <td>10</td>
-                                            <td>12</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">CHEST FIT (INCHES)</th>
-                                            <td>28"</td>
-                                            <td>30"</td>
-                                            <td>32"</td>
-                                            <td>34"</td>
-                                            <td>36"</td>
-                                            <td>38"</td>
-                                            <td>40"	</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">CHEST FIT (CM)</th>
-                                            <td>716</td>
-                                            <td>76</td>
-                                            <td>81</td>
-                                            <td>86</td>
-                                            <td>91.5</td>
-                                            <td>96.5</td>
-                                            <td>101.1</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">WAIST FIR (INCHES)</th>
-                                            <td>21"</td>
-                                            <td>23"</td>
-                                            <td>25"</td>
-                                            <td>27"</td>
-                                            <td>29"</td>
-                                            <td>31"</td>
-                                            <td>33"</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">WAIST FIR (CM)</th>
-                                            <td>53.5</td>
-                                            <td>58.5</td>
-                                            <td>63.5</td>
-                                            <td>68.5</td>
-                                            <td>74</td>
-                                            <td>79</td>
-                                            <td>84</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">HIPS FIR (INCHES)</th>
-                                            <td>33"</td>
-                                            <td>34"</td>
-                                            <td>36"</td>
-                                            <td>38"</td>
-                                            <td>40"</td>
-                                            <td>42"</td>
-                                            <td>44"</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">HIPS FIR (CM)</th>
-                                            <td>81.5</td>
-                                            <td>86.5</td>
-                                            <td>91.5</td>
-                                            <td>96.5</td>
-                                            <td>101</td>
-                                            <td>106.5</td>
-                                            <td>111.5</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">SKORT LENGTHS (SM)</th>
-                                            <td>36.5</td>
-                                            <td>38</td>
-                                            <td>39.5</td>
-                                            <td>41</td>
-                                            <td>42.5</td>
-                                            <td>44</td>
-                                            <td>45.5</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End Modal Size Guide -->
-
-    <!-- Start Modal Shipping Info -->
     <div class="modal fade" id="modalShippinginfo" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog  modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -982,16 +860,14 @@
                         <div class="row">
                             <div class="col-12">
                                 <ul class="shipping-info-list m-tb-30">
-                                    <li><strong>Shipping</strong></li>
-                                    <li>In-store collection available within 1 to 7 business days</li>
-                                    <li>Next-day and Express delivery options also available</li>
-                                    <li>Purchases are delivered in an orange box tied with a Bolduc ribbon, with the exception of certain items</li>
-                                    <li>See the delivery FAQs for details on shipping methods, costs and delivery times</li>
+                                    <li><strong>Vận Chuyển</strong></li>
+                                    <li>Vận chuyển nhanh chóng </li>
+                                    <li>Thực hiện vận chuyển ngay trong ngày</li>
                                 </ul>
                                 <ul class="shipping-info-list">
-                                    <li><strong>Returns And Exchanges</strong></li>
-                                    <li>Easy and complimentary, within 14 days</li>
-                                    <li>See conditions and procedure in our return FAQs</li>
+                                    <li><strong>Trả Hàng và Trao Đổi</strong></li>
+                                    <li>Có thể kiểm tra và đổi trả ngay trong ngày</li>
+                                    <li>Xem các điều kiện và quy trình trong Câu hỏi thường gặp về trả lại của chúng tôi</li>
                                 </ul>
                             </div>
                         </div>
@@ -999,65 +875,7 @@
                 </div>
             </div>
         </div>
-    </div> <!-- End Modal Shipping Info -->
-
-    <!-- Start Modal Product Ask -->
-    <div class="modal fade" id="modalProductAsk" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col text-right">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true"> <i class="fal fa-times"></i></span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <!-- Start Add Review Form-->
-                                <div class="review-form m-t-30">
-                                    <div class="section-content">
-                                        <h6 class="font--bold text-uppercase">Have a question?</h6>
-                                        <p class="section-content__desc">Your email address will not be published. Required fields are marked *</p>
-                                    </div>
-                                    <form class="form-box" action="#" method="post">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-box__single-group">
-                                                    <input type="text" id="modal-ask-name" placeholder="Your name">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-box__single-group">
-                                                    <input type="email" id="modal-ask-email" placeholder="Your email" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-box__single-group">
-                                                    <input type="text" id="modal-ask-phone" placeholder="Your phone number" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="form-box__single-group">
-                                                    <textarea id="modal-ask-message" rows="8" placeholder="Your message"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <button class="btn btn--box btn--small btn--black btn--black-hover-green btn--uppercase font--bold m-t-30" type="submit">Submit</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div> <!-- End Add Review Form- -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End Modal Product Ask -->
-
+    </div>
 @endsection
 
 

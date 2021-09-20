@@ -71,7 +71,7 @@
                                                     @foreach($categories as $category)
                                                         <ul class="mega-menu__item">
                                                             <li class="mega-menu__list">
-                                                                <a href="/category{{$category->id}}" class="mega-menu__link">{{$category->name}}</a>
+                                                                <a href="/product/category{{$category->id}}" class="mega-menu__link">{{$category->name}}</a>
                                                             </li>
                                                         </ul>
                                                     @endforeach
@@ -546,7 +546,7 @@
                         <ul class="sub-menu">
                             @foreach($categories as $category)
                                 <li>
-                                    <a href="/category{{$category->id}}">{{$category->name }}</a>
+                                    <a href="/product/category{{$category->id}}">{{$category->name }}</a>
                                 </li>
                             @endforeach
                         </ul>

@@ -106,7 +106,7 @@
                                     <div class="form-box__single-group">
                                         <textarea rows="10" placeholder="Lời Nhắn" required></textarea>
                                     </div>
-                                    <button class="btn btn--box btn--medium btn--radius-tiny btn--black btn--black-hover-green btn--uppercase font--bold m-t-30" type="submit">Send</button>
+                                    <button class="btn btn--box btn--medium btn--radius-tiny btn--black btn--black-hover-green btn--uppercase font--bold m-t-30" type="submit">Gửi</button>
                                 </div>
                             </div>
                         </form>
