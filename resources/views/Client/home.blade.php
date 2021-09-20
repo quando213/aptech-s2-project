@@ -19,7 +19,7 @@
                                         Cơ</h1>
                                     <h4 class="title__hero title__hero--small font--regular">Một Thay Đổi Nhỏ Sự Khác
                                         Biệt Lớn</h4>
-                                    <a href="/product-single-tab-left"
+                                    <a href="/product/category-single-tab-left"
                                        class="btn btn--large btn--radius btn--black btn--black-hover-green font--bold text-uppercase">Hiển
                                         Thị</a>
                                 </div>
@@ -42,7 +42,7 @@
                                         Cơ</h1>
                                     <h4 class="title__hero title__hero--small font--regular">Một Thay Đổi Nhỏ Sự Khác
                                         Biệt Lớn</h4>
-                                    <a href="/product-single-tab-left"
+                                    <a href="/product/category-single-tab-left"
                                        class="btn btn--large btn--radius btn--black btn--black-hover-green font--bold text-uppercase">Hiển
                                         Thị</a>
                                 </div>
@@ -61,7 +61,7 @@
                         <div class="banner__box">
                             <!-- Start Single Banner Item -->
                             <div class="banner__box--single banner__box--single-text-style-1 pos-relative">
-                                <a href="/product-single-tab-left" class="banner__link">
+                                <a href="/product/category-single-tab-left" class="banner__link">
                                     <img src="assets/img/banner/size-wide/banner-home-1-img-1-wide.jpg" alt=""
                                          class="banner__img">
                                 </a>
@@ -73,7 +73,7 @@
                                     <h6 class="banner__title font--regular letter-spacing--4  text-center m-b-20">
                                         Dinh Dưỡng Có Lợi Cho Sức Khỏe</h6>
                                     <div class="text-center">
-                                        <a href="/product-single-tab-left"
+                                        <a href="/product/category-single-tab-left"
                                            class="btn btn--medium btn--radius btn--transparent btn--border-black btn--border-black-hover-green font--light text-uppercase">Mua
                                             Ngay</a>
                                     </div>
@@ -85,7 +85,7 @@
                         <div class="banner__box">
                             <!-- Start Single Banner Item -->
                             <div class="banner__box--single banner__box--single-text-style-1 pos-relative">
-                                <a href="/product-single-tab-left" class="banner__link">
+                                <a href="/product/category-single-tab-left" class="banner__link">
                                     <img src="assets/img/banner/size-wide/banner-home-1-img-2-wide.jpg" alt=""
                                          class="banner__img">
                                 </a>
@@ -97,7 +97,7 @@
                                     <h6 class="banner__title letter-spacing--4 font--regular text-center m-b-20">Đồ Ăn
                                         Lành Mạnh</h6>
                                     <div class="text-center">
-                                        <a href="/product-single-tab-left"
+                                        <a href="/product/category-single-tab-left"
                                            class="btn btn--medium btn--radius btn--transparent btn--border-black btn--border-black-hover-green font--light text-uppercase">
                                             Mua Ngay</a>
                                     </div>
@@ -117,9 +117,9 @@
                         <!-- Start Section Title -->
                         <div class="section-content section-content--border m-b-35">
                             <h5 class="section-content__title">Các Loại Sản Phẩm</h5>
-                            <a href="/shop-sidebar-grid-left"
-                               class="btn btn--icon-left btn--small btn--radius btn--transparent btn--border-green btn--border-green-hover-green font--regular text-capitalize">Các
-                                Sản Phẩm Khác <i class="fal fa-angle-right"></i></a>
+{{--                            <a href="/product/category"--}}
+{{--                               class="btn btn--icon-left btn--small btn--radius btn--transparent btn--border-green btn--border-green-hover-green font--regular text-capitalize">Các--}}
+{{--                                Sản Phẩm Khác <i class="fal fa-angle-right"></i></a>--}}
                         </div>  <!-- End Section Title -->
                     </div>
                 </div>
@@ -131,12 +131,12 @@
                             <div class="product__catagory--single">
                                 <!-- Start Product Content -->
                                 <div class="product__content product__content--catagory">
-                                    <a href="/product-single-tab-left" class="product__link">{{$category->name}}</a>
+                                    <a href="/product/category{{$category->id}}" class="product__link">{{$category->name}}</a>
                                     <span class="product__items--text">{{$category->sort_number}}Sản Phẩm</span>
                                 </div> <!-- End Product Content -->
                                 <!-- Start Product Image -->
                                 <div class="product__img-box product__img-box--catagory">
-                                    <a href="/product-single-tab-left" class="product__img--link">
+                                    <a href="/product/category" class="product__img--link">
                                         <img class="product__img img-fluid"
                                              src="{{$category->thumbnail}}" alt="" width="50%"  height="50%">
                                     </a>
@@ -149,14 +149,14 @@
 {{--                            <div class="product__catagory--single">--}}
 {{--                                <!-- Start Product Content -->--}}
 {{--                                <div class="product__content product__content--catagory">--}}
-{{--                                    <a href="/product-single-tab-left" class="product__link">Rau Hữu Cơ</a>--}}
+{{--                                    <a href="/product/category-single-tab-left" class="product__link">Rau Hữu Cơ</a>--}}
 {{--                                    <span class="product__items--text">2 Sản Phẩm</span>--}}
 {{--                                </div> <!-- End Product Content -->--}}
 {{--                                <!-- Start Product Image -->--}}
 {{--                                <div class="product__img-box product__img-box--catagory">--}}
-{{--                                    <a href="/product-single-tab-left" class="product__img--link">--}}
+{{--                                    <a href="/product/category-single-tab-left" class="product__img--link">--}}
 {{--                                        <img class="product__img img-fluid"--}}
-{{--                                             src="assets/img/product/category/category-home-1-img-2.jpg" alt="">--}}
+{{--                                             src="assets/img/product/category/category/category-home-1-img-2.jpg" alt="">--}}
 {{--                                    </a>--}}
 {{--                                </div> <!-- End Product Image -->--}}
 {{--                            </div> <!-- End Single Default Product -->--}}
@@ -165,14 +165,14 @@
 {{--                            <div class="product__catagory--single">--}}
 {{--                                <!-- Start Product Content -->--}}
 {{--                                <div class="product__content product__content--catagory">--}}
-{{--                                    <a href="/product-single-tab-left" class="product__link">Sữa Tươi</a>--}}
+{{--                                    <a href="/product/category-single-tab-left" class="product__link">Sữa Tươi</a>--}}
 {{--                                    <span class="product__items--text">3 Sản Phẩm</span>--}}
 {{--                                </div> <!-- End Product Content -->--}}
 {{--                                <!-- Start Product Image -->--}}
 {{--                                <div class="product__img-box product__img-box--catagory">--}}
-{{--                                    <a href="/product-single-tab-left" class="product__img--link">--}}
+{{--                                    <a href="/product/category-single-tab-left" class="product__img--link">--}}
 {{--                                        <img class="product__img img-fluid"--}}
-{{--                                             src="assets/img/product/category/category-home-1-img-3.jpg" alt="">--}}
+{{--                                             src="assets/img/product/category/category/category-home-1-img-3.jpg" alt="">--}}
 {{--                                    </a>--}}
 {{--                                </div> <!-- End Product Image -->--}}
 {{--                            </div> <!-- End Single Default Product -->--}}
@@ -181,14 +181,14 @@
 {{--                            <div class="product__catagory--single">--}}
 {{--                                <!-- Start Product Content -->--}}
 {{--                                <div class="product__content product__content--catagory">--}}
-{{--                                    <a href="/product-single-tab-left" class="product__link">Vegetable Collection</a>--}}
+{{--                                    <a href="/product/category-single-tab-left" class="product__link">Vegetable Collection</a>--}}
 {{--                                    <span class="product__items--text">0 Sản Phẩm</span>--}}
 {{--                                </div> <!-- End Product Content -->--}}
 {{--                                <!-- Start Product Image -->--}}
 {{--                                <div class="product__img-box product__img-box--catagory">--}}
-{{--                                    <a href="/product-single-tab-left" class="product__img--link">--}}
+{{--                                    <a href="/product/category-single-tab-left" class="product__img--link">--}}
 {{--                                        <img class="product__img img-fluid"--}}
-{{--                                             src="assets/img/product/category/category-home-1-img-4.jpg" alt="">--}}
+{{--                                             src="assets/img/product/category/category/category-home-1-img-4.jpg" alt="">--}}
 {{--                                    </a>--}}
 {{--                                </div> <!-- End Product Image -->--}}
 {{--                            </div> <!-- End Single Default Product -->--}}
@@ -197,14 +197,14 @@
 {{--                            <div class="product__catagory--single">--}}
 {{--                                <!-- Start Product Content -->--}}
 {{--                                <div class="product__content product__content--catagory">--}}
-{{--                                    <a href="/product-single-tab-left" class="product__link">Thịt Bò Ta</a>--}}
+{{--                                    <a href="/product/category-single-tab-left" class="product__link">Thịt Bò Ta</a>--}}
 {{--                                    <span class="product__items--text">3 Sản Phẩm</span>--}}
 {{--                                </div> <!-- End Product Content -->--}}
 {{--                                <!-- Start Product Image -->--}}
 {{--                                <div class="product__img-box product__img-box--catagory">--}}
-{{--                                    <a href="/product-single-tab-left" class="product__img--link">--}}
+{{--                                    <a href="/product/category-single-tab-left" class="product__img--link">--}}
 {{--                                        <img class="product__img img-fluid"--}}
-{{--                                             src="assets/img/product/category/category-home-1-img-5.jpg" alt="">--}}
+{{--                                             src="assets/img/product/category/category/category-home-1-img-5.jpg" alt="">--}}
 {{--                                    </a>--}}
 {{--                                </div> <!-- End Product Image -->--}}
 {{--                            </div> <!-- End Single Default Product -->--}}
@@ -213,14 +213,14 @@
 {{--                            <div class="product__catagory--single">--}}
 {{--                                <!-- Start Product Content -->--}}
 {{--                                <div class="product__content product__content--catagory">--}}
-{{--                                    <a href="/product-single-tab-left" class="product__link">Đậu Ván</a>--}}
+{{--                                    <a href="/product/category-single-tab-left" class="product__link">Đậu Ván</a>--}}
 {{--                                    <span class="product__items--text">0 Sản Phẩm</span>--}}
 {{--                                </div> <!-- End Product Content -->--}}
 {{--                                <!-- Start Product Image -->--}}
 {{--                                <div class="product__img-box product__img-box--catagory">--}}
-{{--                                    <a href="/product-single-tab-left" class="product__img--link">--}}
+{{--                                    <a href="/product/category-single-tab-left" class="product__img--link">--}}
 {{--                                        <img class="product__img img-fluid"--}}
-{{--                                             src="assets/img/product/category/category-home-1-img-6.jpg" alt="">--}}
+{{--                                             src="assets/img/product/category/category/category-home-1-img-6.jpg" alt="">--}}
 {{--                                    </a>--}}
 {{--                                </div> <!-- End Product Image -->--}}
 {{--                            </div> <!-- End Single Default Product -->--}}
@@ -229,14 +229,14 @@
 {{--                            <div class="product__catagory--single">--}}
 {{--                                <!-- Start Product Content -->--}}
 {{--                                <div class="product__content product__content--catagory">--}}
-{{--                                    <a href="/product-single-tab-left" class="product__link">CocaCola</a>--}}
+{{--                                    <a href="/product/category-single-tab-left" class="product__link">CocaCola</a>--}}
 {{--                                    <span class="product__items--text">3 Sản Phẩm</span>--}}
 {{--                                </div> <!-- End Product Content -->--}}
 {{--                                <!-- Start Product Image -->--}}
 {{--                                <div class="product__img-box product__img-box--catagory">--}}
-{{--                                    <a href="/product-single-tab-left" class="product__img--link">--}}
+{{--                                    <a href="/product/category-single-tab-left" class="product__img--link">--}}
 {{--                                        <img class="product__img img-fluid"--}}
-{{--                                             src="assets/img/product/category/category-home-1-img-7.jpg" alt="">--}}
+{{--                                             src="assets/img/product/category/category/category-home-1-img-7.jpg" alt="">--}}
 {{--                                    </a>--}}
 {{--                                </div> <!-- End Product Image -->--}}
 {{--                            </div> <!-- End Single Default Product -->--}}
@@ -245,14 +245,14 @@
 {{--                            <div class="product__catagory--single">--}}
 {{--                                <!-- Start Product Content -->--}}
 {{--                                <div class="product__content product__content--catagory">--}}
-{{--                                    <a href="/product-single-tab-left" class="product__link">Cà Rốt</a>--}}
+{{--                                    <a href="/product/category-single-tab-left" class="product__link">Cà Rốt</a>--}}
 {{--                                    <span class="product__items--text">0 Sản Phẩm</span>--}}
 {{--                                </div> <!-- End Product Content -->--}}
 {{--                                <!-- Start Product Image -->--}}
 {{--                                <div class="product__img-box product__img-box--catagory">--}}
-{{--                                    <a href="/product-single-tab-left" class="product__img--link">--}}
+{{--                                    <a href="/product/category-single-tab-left" class="product__img--link">--}}
 {{--                                        <img class="product__img img-fluid"--}}
-{{--                                             src="assets/img/product/category/category-home-1-img-8.jpg" alt="">--}}
+{{--                                             src="assets/img/product/category/category/category-home-1-img-8.jpg" alt="">--}}
 {{--                                    </a>--}}
 {{--                                </div> <!-- End Product Image -->--}}
 {{--                            </div> <!-- End Single Default Product -->--}}
@@ -261,14 +261,14 @@
 {{--                            <div class="product__catagory--single">--}}
 {{--                                <!-- Start Product Content -->--}}
 {{--                                <div class="product__content product__content--catagory">--}}
-{{--                                    <a href="/product-single-tab-left" class="product__link">Nấm Khô</a>--}}
+{{--                                    <a href="/product/category-single-tab-left" class="product__link">Nấm Khô</a>--}}
 {{--                                    <span class="product__items--text">2 Sản Phẩm</span>--}}
 {{--                                </div> <!-- End Product Content -->--}}
 {{--                                <!-- Start Product Image -->--}}
 {{--                                <div class="product__img-box product__img-box--catagory">--}}
-{{--                                    <a href="/product-single-tab-left" class="product__img--link">--}}
+{{--                                    <a href="/product/category-single-tab-left" class="product__img--link">--}}
 {{--                                        <img class="product__img img-fluid"--}}
-{{--                                             src="assets/img/product/category/category-home-1-img-9.jpg" alt="">--}}
+{{--                                             src="assets/img/product/category/category/category-home-1-img-9.jpg" alt="">--}}
 {{--                                    </a>--}}
 {{--                                </div> <!-- End Product Image -->--}}
 {{--                            </div> <!-- End Single Default Product -->--}}
@@ -277,14 +277,14 @@
 {{--                            <div class="product__catagory--single">--}}
 {{--                                <!-- Start Product Content -->--}}
 {{--                                <div class="product__content product__content--catagory">--}}
-{{--                                    <a href="/product-single-tab-left" class="product__link">Nấm Tươi</a>--}}
+{{--                                    <a href="/product/category-single-tab-left" class="product__link">Nấm Tươi</a>--}}
 {{--                                    <span class="product__items--text">2 Sản Phẩm</span>--}}
 {{--                                </div> <!-- End Product Content -->--}}
 {{--                                <!-- Start Product Image -->--}}
 {{--                                <div class="product__img-box product__img-box--catagory">--}}
-{{--                                    <a href="/product-single-tab-left" class="product__img--link">--}}
+{{--                                    <a href="/product/category-single-tab-left" class="product__img--link">--}}
 {{--                                        <img class="product__img img-fluid"--}}
-{{--                                             src="assets/img/product/category/category-home-1-img-10.jpg" alt="">--}}
+{{--                                             src="assets/img/product/category/category/category-home-1-img-10.jpg" alt="">--}}
 {{--                                    </a>--}}
 {{--                                </div> <!-- End Product Image -->--}}
 {{--                            </div> <!-- End Single Default Product -->--}}
@@ -323,9 +323,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-1.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-1.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -350,7 +350,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Đậu Bắp</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Đậu Bắp</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$19.00 <del>$29.00</del></span>--}}
     {{--                                                </div>--}}
@@ -361,9 +361,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-2.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-2.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Product Action Link-->--}}
@@ -385,7 +385,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Cá Sông Tươi</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Cá Sông Tươi</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$25.00</span>--}}
     {{--                                                </div>--}}
@@ -396,9 +396,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-3.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-3.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -428,7 +428,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Lựu Tươi</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Lựu Tươi</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$19.00 <del>$21.00</del></span>--}}
     {{--                                                </div>--}}
@@ -439,9 +439,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-4.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-4.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Product Action Link-->--}}
@@ -463,7 +463,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Rau Bắp Cải</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Rau Bắp Cải</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$50.00</span>--}}
     {{--                                                </div>--}}
@@ -474,9 +474,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-5.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-5.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -501,7 +501,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Thịt Bò Mĩ</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Thịt Bò Mĩ</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$55.00 <del>$80.00</del></span>--}}
     {{--                                                </div>--}}
@@ -512,9 +512,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-6.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-6.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -539,7 +539,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Táo Xanh</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Táo Xanh</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$19.00 <del>$29.00</del></span>--}}
     {{--                                                </div>--}}
@@ -550,9 +550,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-7.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-7.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -577,7 +577,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Cam Tươi</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Cam Tươi</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$19.00 <del>$29.00</del></span>--}}
     {{--                                                </div>--}}
@@ -588,9 +588,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-8.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-8.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -620,7 +620,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Nho Ninh Thuận</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Nho Ninh Thuận</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$39.00 <del>$60.00</del></span>--}}
     {{--                                                </div>--}}
@@ -631,9 +631,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-9.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-9.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -658,7 +658,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Cow fresh--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Cow fresh--}}
     {{--                                                    milk</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$55.00 <del>$75.00</del></span>--}}
@@ -670,9 +670,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-10.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-10.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -697,7 +697,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Fresh Red--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Fresh Red--}}
     {{--                                                    Tomato</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$10.00</span>--}}
@@ -717,9 +717,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-6.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-6.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -744,7 +744,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Táo Xanh</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Táo Xanh</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$19.00 <del>$29.00</del></span>--}}
     {{--                                                </div>--}}
@@ -755,9 +755,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-7.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-7.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -782,7 +782,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Cam Tươi</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Cam Tươi</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$19.00 <del>$29.00</del></span>--}}
     {{--                                                </div>--}}
@@ -793,9 +793,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-8.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-8.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -825,7 +825,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Nho Ninh Thuận</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Nho Ninh Thuận</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$39.00 <del>$60.00</del></span>--}}
     {{--                                                </div>--}}
@@ -836,9 +836,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-9.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-9.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -863,7 +863,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Sữa Tươi</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Sữa Tươi</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$55.00 <del>$75.00</del></span>--}}
     {{--                                                </div>--}}
@@ -874,9 +874,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-10.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-10.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -901,7 +901,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Cà Chua</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Cà Chua</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$10.00</span>--}}
     {{--                                                </div>--}}
@@ -912,9 +912,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-1.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-1.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -939,7 +939,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Rau Xanh</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Rau Xanh</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$19.00 <del>$29.00</del></span>--}}
     {{--                                                </div>--}}
@@ -950,9 +950,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-2.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-2.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Product Action Link-->--}}
@@ -974,7 +974,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Cá Sông</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Cá Sông</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$25.00</span>--}}
     {{--                                                </div>--}}
@@ -985,9 +985,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-3.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-3.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -1017,7 +1017,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Lựu Tươi</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Lựu Tươi</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$19.00 <del>$21.00</del></span>--}}
     {{--                                                </div>--}}
@@ -1028,9 +1028,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-4.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-4.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Product Action Link-->--}}
@@ -1052,7 +1052,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Rau Bắp Cải</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Rau Bắp Cải</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$50.00</span>--}}
     {{--                                                </div>--}}
@@ -1063,9 +1063,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-5.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-5.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -1090,7 +1090,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Ba Chỉ Heo</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Ba Chỉ Heo</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$55.00 <del>$80.00</del></span>--}}
     {{--                                                </div>--}}
@@ -1108,9 +1108,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-8.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-8.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -1140,7 +1140,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Nho Đỏ</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Nho Đỏ</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$39.00 <del>$60.00</del></span>--}}
     {{--                                                </div>--}}
@@ -1151,9 +1151,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-9.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-9.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -1178,7 +1178,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Sữa Bò</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Sữa Bò</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$55.00 <del>$75.00</del></span>--}}
     {{--                                                </div>--}}
@@ -1189,9 +1189,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-10.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-10.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -1216,7 +1216,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Cà Chua Bi</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Cà Chua Bi</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$10.00</span>--}}
     {{--                                                </div>--}}
@@ -1227,9 +1227,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-3.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-3.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -1259,7 +1259,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Lựu Tươi</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Lựu Tươi</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$19.00 <del>$21.00</del></span>--}}
     {{--                                                </div>--}}
@@ -1270,9 +1270,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-4.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-4.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Product Action Link-->--}}
@@ -1294,7 +1294,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Rau Bắp Cải Tím</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Rau Bắp Cải Tím</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$50.00</span>--}}
     {{--                                                </div>--}}
@@ -1305,9 +1305,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-1.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-1.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -1332,7 +1332,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Fresh green--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Fresh green--}}
     {{--                                                    vegetable</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$19.00 <del>$29.00</del></span>--}}
@@ -1344,9 +1344,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-2.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-2.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Product Action Link-->--}}
@@ -1368,7 +1368,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Cá hồi</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Cá hồi</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$25.00</span>--}}
     {{--                                                </div>--}}
@@ -1379,9 +1379,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-5.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-5.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -1406,7 +1406,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Tôm</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Tôm</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$55.00 <del>$80.00</del></span>--}}
     {{--                                                </div>--}}
@@ -1417,9 +1417,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-6.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-6.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -1444,7 +1444,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Táo Đỏ</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Táo Đỏ</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$19.00 <del>$29.00</del></span>--}}
     {{--                                                </div>--}}
@@ -1455,9 +1455,9 @@
     {{--                                        <div class="product__box product__default--single text-center">--}}
     {{--                                            <!-- Start Product Image -->--}}
     {{--                                            <div class="product__img-box  pos-relative">--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__img--link">--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__img--link">--}}
     {{--                                                    <img class="product__img img-fluid"--}}
-    {{--                                                         src="assets/img/product/size-normal/product-home-1-img-7.jpg"--}}
+    {{--                                                         src="assets/img/product/category/size-normal/product/category-home-1-img-7.jpg"--}}
     {{--                                                         alt="">--}}
     {{--                                                </a>--}}
     {{--                                                <!-- Start Procuct Label -->--}}
@@ -1482,7 +1482,7 @@
     {{--                                                    <li class="product__review--fill"></li>--}}
     {{--                                                    <li class="product__review--blank"></li>--}}
     {{--                                                </ul>--}}
-    {{--                                                <a href="/product-single-tab-left" class="product__link">Cam Sành</a>--}}
+    {{--                                                <a href="/product/category-single-tab-left" class="product__link">Cam Sành</a>--}}
     {{--                                                <div class="product__price m-t-5">--}}
     {{--                                                    <span class="product__price">$19.00 <del>$29.00</del></span>--}}
     {{--                                                </div>--}}
@@ -1513,7 +1513,7 @@
                                     Sản phẩm <br>tạp hóa</h1>
                                 <h6 class="banner__title font--medium m-b-40">Giảm ngay 20% cho tất cả cửa hàng tạp hóa
                                     sản phẩm.</h6>
-                                <a href="/product-single-tab-left"
+                                <a href="/product/category-single-tab-left"
                                    class="btn btn--large btn--radius btn--black btn--black-hover-green font--bold text-uppercase">Hiển
                                     Thị</a>
                             </div>
@@ -1530,7 +1530,7 @@
                         <!-- Start Section Title -->
                         <div class="section-content section-content--border m-b-35">
                             <h5 class="section-content__title">Thịt-cá-Trứng</h5>
-                            <a href="/shop-sidebar-grid-left"
+                            <a href="/product/category"
                                class="btn btn--icon-left btn--small btn--radius btn--transparent btn--border-green btn--border-green-hover-green font--regular text-capitalize">Các
                                 Sản Phẩm Khác<i class="fal fa-angle-right"></i></a>
                         </div>  <!-- End Section Title -->
@@ -1577,7 +1577,7 @@
                         <div class="section-content section-content--border m-b-35">
                             <h5 class="section-content__title">Rau-Củ-Quả</h5>
 
-                            <a href="/shop-sidebar-grid-left"
+                            <a href="/product/category"
                                class="btn btn--icon-left btn--small btn--radius btn--transparent btn--border-green btn--border-green-hover-green font--regular text-capitalize">Các
                                 Sản Phẩm Khác<i class="fal fa-angle-right"></i></a>
                         </div>  <!-- End Section Title -->
@@ -1628,7 +1628,7 @@
                         <div class="section-content section-content--border m-b-35">
                             <h5 class="section-content__title">Trái Cây</h5>
 
-                            <a href="/shop-sidebar-grid-left"
+                            <a href="/product/category"
                                class="btn btn--icon-left btn--small btn--radius btn--transparent btn--border-green btn--border-green-hover-green font--regular text-capitalize">Các
                                 Sản Phẩm Khác<i class="fal fa-angle-right"></i></a>
                         </div>  <!-- End Section Title -->
@@ -2006,7 +2006,7 @@
                                     <div class="col-md-4">
                                         <div class="modal__product-img">
                                             <img class="img-fluid"
-                                                 src="assets/img/product/size-normal/product-home-1-img-1.jpg" alt="">
+                                                 src="assets/img/product/category/size-normal/product/category-home-1-img-1.jpg" alt="">
                                         </div>
                                     </div>
                                     <div class="col-md-8">
@@ -2059,7 +2059,7 @@
                                 <div class="product-gallery-box m-b-60">
                                     <div class="modal-product-image--large">
                                         <img class="img-fluid"
-                                             src="assets/img/product/gallery/gallery-large/product-gallery-large-1.jpg"
+                                             src="assets/img/product/category/gallery/gallery-large/product/category-gallery-large-1.jpg"
                                              alt="">
                                     </div>
                                 </div>

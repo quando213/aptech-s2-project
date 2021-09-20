@@ -84,28 +84,28 @@
                                         <option value="UPI">UPI</option>
                                         <option value="VIB">VIB</option>
                                         <option value="VIETCAPITALBANK">VIETCAPITALBANK</option>
-                                        <option value="SCB">Ngan hang SCB</option>
-                                        <option value="NCB">Ngan hang NCB</option>
-                                        <option value="SACOMBANK">Ngan hang SacomBank  </option>
-                                        <option value="EXIMBANK">Ngan hang EximBank </option>
-                                        <option value="MSBANK">Ngan hang MSBANK </option>
-                                        <option value="NAMABANK">Ngan hang NamABank </option>
+                                        <option value="SCB">Ngân hàng SCB</option>
+                                        <option value="NCB">Ngân hàng NCB</option>
+                                        <option value="SACOMBANK">Ngân hàng SacomBank  </option>
+                                        <option value="EXIMBANK">Ngân hàng EximBank </option>
+                                        <option value="MSBANK">Ngân hàng MSBANK </option>
+                                        <option value="NAMABANK">Ngân hàng NamABank </option>
                                         <option value="VNMART"> Vi dien tu VnMart</option>
-                                        <option value="VIETINBANK">Ngan hang Vietinbank  </option>
-                                        <option value="VIETCOMBANK">Ngan hang VCB </option>
-                                        <option value="HDBANK">Ngan hang HDBank</option>
-                                        <option value="DONGABANK">Ngan hang Dong A</option>
+                                        <option value="VIETINBANK">Ngân hàng Vietinbank  </option>
+                                        <option value="VIETCOMBANK">Ngân hàng VCB </option>
+                                        <option value="HDBANK">Ngân hàng HDBank</option>
+                                        <option value="DONGABANK">Ngân hàng Dong A</option>
                                         <option value="TPBANK">Ngân hàng TPBank </option>
                                         <option value="OJB">Ngân hàng OceanBank</option>
                                         <option value="BIDV">Ngân hàng BIDV </option>
                                         <option value="TECHCOMBANK">Ngân hàng Techcombank </option>
-                                        <option value="VPBANK">Ngan hang VPBank </option>
-                                        <option value="AGRIBANK">Ngan hang Agribank </option>
-                                        <option value="MBBANK">Ngan hang MBBank </option>
-                                        <option value="ACB">Ngan hang ACB </option>
-                                        <option value="OCB">Ngan hang OCB </option>
-                                        <option value="IVB">Ngan hang IVB </option>
-                                        <option value="SHB">Ngan hang SHB </option>
+                                        <option value="VPBANK">Ngân hàng VPBank </option>
+                                        <option value="AGRIBANK">Ngân hàng Agribank </option>
+                                        <option value="MBBANK">Ngân hàng MBBank </option>
+                                        <option value="ACB">Ngân hàng ACB </option>
+                                        <option value="OCB">Ngân hàng OCB </option>
+                                        <option value="IVB">Ngân hàng IVB </option>
+                                        <option value="SHB">Ngân hàng SHB </option>
                                     </select>
                                 </div>
                             </div>
@@ -200,13 +200,13 @@
                 <div class="col-lg-5">
                     <div class="your-order-section">
                         <div class="section-content">
-                            <h5 class="section-content__title">Dơn Hàng Của Bạn</h5>
+                            <h5 class="section-content__title">Đơn Hàng Của Bạn</h5>
                         </div>
                         <div class="your-order-box gray-bg m-t-40 m-b-30">
                             <div class="your-order-product-info">
                                 <div class="your-order-top d-flex justify-content-between">
                                     <h6 class="your-order-top-left font--bold">Sản Phẩm</h6>
-                                    <h6 class="your-order-top-right font--bold">tổng</h6>
+                                    <h6 class="your-order-top-right font--bold">Tổng</h6>
                                 </div>
                                 <ul class="your-order-middle">
                                     @foreach(\Gloudemans\Shoppingcart\Facades\Cart::content() as $item)

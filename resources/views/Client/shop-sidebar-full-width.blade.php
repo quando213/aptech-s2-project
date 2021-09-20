@@ -515,10 +515,10 @@
 
                     <div class="page-pagination">
                         <ul class="page-pagination__list">
-                            <li class="page-pagination__item"><a class="page-pagination__link"  href="#">Prev</a>
+                            <li class="page-pagination__item"><a class="page-pagination__link"  href="#">Quay Lại</a>
                             <li class="page-pagination__item"><a class="page-pagination__link active"  href="#">1</a></li>
                             <li class="page-pagination__item"><a class="page-pagination__link"  href="#">2</a></li>
-                            <li class="page-pagination__item"><a class="page-pagination__link"  href="#">Next</a>
+                            <li class="page-pagination__item"><a class="page-pagination__link"  href="#">Tiếp Theo</a>
                             </li>
                         </ul>
                     </div>

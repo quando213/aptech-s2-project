@@ -95,7 +95,7 @@
                                 </div>
 
                                 <div class="product-var__item">
-                                    <span class="product-var__text">Bảo Đảm Thanh TOán An Toàn </span>
+                                    <span class="product-var__text">Bảo Đảm Thanh Toán An Toàn </span>
                                     <ul class="payment-icon m-t-5">
                                         <li><img src="//assets/img/icon/payment/paypal.svg" alt=""></li>
                                         <li><img src="//assets/img/icon/payment/amex.svg" alt=""></li>
@@ -157,66 +157,66 @@
                                     </div>  <!-- End Tab - Product Description -->
 
                                     <!-- Start Tab - Product Details -->
-                                    <div class="tab-pane" id="product-dis">
-                                        <div class="product-dis__content">
-                                            <a href="#" class="product-dis__img m-b-30"><img src="/assets/img/logo/another-logo.jpg" alt=""></a>
-                                            <div class="table-responsive-md">
-                                                <table class="product-dis__list table table-bordered">
-                                                    <tbody>
-                                                    <tr>
-                                                        <td class="product-dis__title">Weight</td>
-                                                        <td class="product-dis__text">400 g</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="product-dis__title">Materials</td>
-                                                        <td class="product-dis__text">60% cotton, 40% polyester</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="product-dis__title">Dimensions</td>
-                                                        <td class="product-dis__text">10 x 10 x 15 cm</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="product-dis__title">Other Info</td>
-                                                        <td class="product-dis__text">American heirloom jean shorts pug seitan letterpress</td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>  <!-- End Tab - Product Details -->
+{{--                                    <div class="tab-pane" id="product-dis">--}}
+{{--                                        <div class="product-dis__content">--}}
+{{--                                            <a href="#" class="product-dis__img m-b-30"><img src="/assets/img/logo/another-logo.jpg" alt=""></a>--}}
+{{--                                            <div class="table-responsive-md">--}}
+{{--                                                <table class="product-dis__list table table-bordered">--}}
+{{--                                                    <tbody>--}}
+{{--                                                    <tr>--}}
+{{--                                                        <td class="product-dis__title">Weight</td>--}}
+{{--                                                        <td class="product-dis__text">400 g</td>--}}
+{{--                                                    </tr>--}}
+{{--                                                    <tr>--}}
+{{--                                                        <td class="product-dis__title">Materials</td>--}}
+{{--                                                        <td class="product-dis__text">60% cotton, 40% polyester</td>--}}
+{{--                                                    </tr>--}}
+{{--                                                    <tr>--}}
+{{--                                                        <td class="product-dis__title">Dimensions</td>--}}
+{{--                                                        <td class="product-dis__text">10 x 10 x 15 cm</td>--}}
+{{--                                                    </tr>--}}
+{{--                                                    <tr>--}}
+{{--                                                        <td class="product-dis__title">Other Info</td>--}}
+{{--                                                        <td class="product-dis__text">American heirloom jean shorts pug seitan letterpress</td>--}}
+{{--                                                    </tr>--}}
+{{--                                                    </tbody>--}}
+{{--                                                </table>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>  <!-- End Tab - Product Details -->--}}
 
                                     <!-- Start Tab - Product Review -->
-                                    <div class="tab-pane " id="product-review">
-                                        <!-- Start - Review Comment -->
-                                        <ul class="comment">
-                                            <!-- Start - Review Comment list-->
-                                            <li class="comment__list">
-                                                <div class="comment__wrapper">
-                                                    <div class="comment__img">
-                                                        <img src="/assets/img/user/quynhaka.jpg" alt="">
-                                                    </div>
-                                                    <div class="comment__content">
-                                                        <div class="comment__content-top">
-                                                            <div class="comment__content-left">
-                                                                <h6 class="comment__name">Kaedyn Fraser</h6>
-                                                                <ul class="product__review">
-                                                                    <li class="product__review--fill"></li>
-                                                                    <li class="product__review--fill"></li>
-                                                                    <li class="product__review--fill"></li>
-                                                                    <li class="product__review--fill"></li>
-                                                                    <li class="product__review--blank"></li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="comment__content-right">
-                                                                <a href="#" class="link--gray link--icon-left m-b-5"><i class="fas fa-reply"></i>Reply</a>
-                                                            </div>
-                                                        </div>
+{{--                                    <div class="tab-pane " id="product-review">--}}
+{{--                                        <!-- Start - Review Comment -->--}}
+{{--                                        <ul class="comment">--}}
+{{--                                            <!-- Start - Review Comment list-->--}}
+{{--                                    <li class="comment__list">--}}
+{{--                                                <div class="comment__wrapper">--}}
+{{--                                                    <div class="comment__img">--}}
+{{--                                                        <img src="/assets/img/user/quynhaka.jpg" alt="">--}}
+{{--                                                    </div>--}}
+{{--                                                    <div class="comment__content">--}}
+{{--                                                        <div class="comment__content-top">--}}
+{{--                                                            <div class="comment__content-left">--}}
+{{--                                                                <h6 class="comment__name">Kaedyn Fraser</h6>--}}
+{{--                                                                <ul class="product__review">--}}
+{{--                                                                    <li class="product__review--fill"></li>--}}
+{{--                                                                    <li class="product__review--fill"></li>--}}
+{{--                                                                    <li class="product__review--fill"></li>--}}
+{{--                                                                    <li class="product__review--fill"></li>--}}
+{{--                                                                    <li class="product__review--blank"></li>--}}
+{{--                                                                </ul>--}}
+{{--                                                            </div>--}}
+{{--                                                            <div class="comment__content-right">--}}
+{{--                                                                <a href="#" class="link--gray link--icon-left m-b-5"><i class="fas fa-reply"></i>Reply</a>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
 
-                                                        <div class="para__content">
-                                                            <p class="para__text">Sản phẩm okie, giao hàng nhanh dù trong mùa dịch, gói hàng kĩ,  táo nhìn ngon, ko bị dập…</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+{{--                                                        <div class="para__content">--}}
+{{--                                                            <p class="para__text">Sản phẩm okie, giao hàng nhanh dù trong mùa dịch, gói hàng kĩ,  táo nhìn ngon, ko bị dập…</p>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
                                                 <!-- Start - Review Comment Reply-->
 {{--                                                <ul class="comment__reply">--}}
 {{--                                                    <li class="comment__reply-list">--}}
@@ -241,37 +241,37 @@
 {{--                                                        </div>--}}
 {{--                                                    </li>--}}
 {{--                                                </ul> <!-- End - Review Comment Reply-->--}}
-                                            </li> <!-- End - Review Comment list-->
+{{--                                            </li> <!-- End - Review Comment list-->--}}
                                             <!-- Start - Review Comment list-->
-                                            <li class="comment__list">
-                                                <div class="comment__wrapper">
-                                                    <div class="comment__img">
-                                                        <img src="/assets/img/user/cai.jpg" alt="">
-                                                    </div>
-                                                    <div class="comment__content">
-                                                        <div class="comment__content-top">
-                                                            <div class="comment__content-left">
-                                                                <h6 class="comment__name">Jaydin Jones</h6>
-                                                                <ul class="product__review">
-                                                                    <li class="product__review--fill"></li>
-                                                                    <li class="product__review--fill"></li>
-                                                                    <li class="product__review--fill"></li>
-                                                                    <li class="product__review--fill"></li>
-                                                                    <li class="product__review--blank"></li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="comment__content-right">
-                                                                <a href="#" class="link--gray link--icon-left m-b-5"><i class="fas fa-reply"></i>Reply</a>
-                                                            </div>
-                                                        </div>
+{{--                                            <li class="comment__list">--}}
+{{--                                                <div class="comment__wrapper">--}}
+{{--                                                    <div class="comment__img">--}}
+{{--                                                        <img src="/assets/img/user/cai.jpg" alt="">--}}
+{{--                                                    </div>--}}
+{{--                                                    <div class="comment__content">--}}
+{{--                                                        <div class="comment__content-top">--}}
+{{--                                                            <div class="comment__content-left">--}}
+{{--                                                                <h6 class="comment__name">Jaydin Jones</h6>--}}
+{{--                                                                <ul class="product__review">--}}
+{{--                                                                    <li class="product__review--fill"></li>--}}
+{{--                                                                    <li class="product__review--fill"></li>--}}
+{{--                                                                    <li class="product__review--fill"></li>--}}
+{{--                                                                    <li class="product__review--fill"></li>--}}
+{{--                                                                    <li class="product__review--blank"></li>--}}
+{{--                                                                </ul>--}}
+{{--                                                            </div>--}}
+{{--                                                            <div class="comment__content-right">--}}
+{{--                                                                <a href="#" class="link--gray link--icon-left m-b-5"><i class="fas fa-reply"></i>Reply</a>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
 
-                                                        <div class="para__content">
-                                                            <p class="para__text">Mua 2 lần rồi, táo tươi và giao nhanh lắm, cảm ơn shop nhiều. Shop nhiệt tình ạ</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li> <!-- End - Review Comment list-->
-                                        </ul>  <!-- End - Review Comment -->
+{{--                                                        <div class="para__content">--}}
+{{--                                                            <p class="para__text">Mua 2 lần rồi, táo tươi và giao nhanh lắm, cảm ơn shop nhiều. Shop nhiệt tình ạ</p>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </li> <!-- End - Review Comment list-->--}}
+{{--                                        </ul>  <!-- End - Review Comment -->--}}
 
                                         <!-- Start Add Review Form-->
                                         <div class="review-form m-t-40">
@@ -296,19 +296,19 @@
                                                     <div class="col-md-6">
                                                         <div class="form-box__single-group">
                                                             <label for="form-name">Tên của bạn*</label>
-                                                            <input type="text" id="form-name" placeholder="Enter your name">
+                                                            <input type="text" id="form-name" placeholder="Tên">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-box__single-group">
                                                             <label for="form-email">Email của bạn*</label>
-                                                            <input type="email" id="form-email" placeholder="Enter your email" required>
+                                                            <input type="email" id="form-email" placeholder="Email" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="form-box__single-group">
                                                             <label for="form-review">Đánh giá của bạn*</label>
-                                                            <textarea id="form-review" rows="8" placeholder="Write a review"></textarea>
+                                                            <textarea id="form-review" rows="8" placeholder="Viết Nhận Xét"></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
@@ -333,9 +333,9 @@
                     <div class="col-12">
                         <!-- Start Section Title -->
                         <div class="section-content section-content--border m-b-35">
-                            <h5 class="section-content__title">Related Product
+                            <h5 class="section-content__title">Sản Phẩm Liên Quan
                             </h5>
-                            <a href="/7shop-sidebar-grid-left" class="btn btn--icon-left btn--small btn--radius btn--transparent btn--border-green btn--border-green-hover-green font--regular text-capitalize">More Products<i class="fal fa-angle-right"></i></a>
+                            <a href="/7shop-sidebar-grid-left" class="btn btn--icon-left btn--small btn--radius btn--transparent btn--border-green btn--border-green-hover-green font--regular text-capitalize">các Sản Phẩm Khác <i class="fal fa-angle-right"></i></a>
                         </div>  <!-- End Section Title -->
                     </div>
                 </div>
@@ -364,14 +364,7 @@
                                     </div> <!-- End Product Image -->
                                     <!-- Start Product Content -->
                                     <div class="product__content m-t-20">
-                                        <ul class="product__review">
-                                            <li class="product__review--fill"></li>
-                                            <li class="product__review--fill"></li>
-                                            <li class="product__review--fill"></li>
-                                            <li class="product__review--fill"></li>
-                                            <li class="product__review--blank"></li>
-                                        </ul>
-                                        <a href="/product-single-default" class="product__link">Fresh green vegetable</a>
+                                        <a href="/product-single-default" class="product__link">Dậu Khế</a>
                                         <div class="product__price m-t-5">
                                             <span class="product__price">$19.00 <del>$29.00</del></span>
                                         </div>
@@ -395,14 +388,7 @@
                                     </div> <!-- End Product Image -->
                                     <!-- Start Product Content -->
                                     <div class="product__content m-t-20">
-                                        <ul class="product__review">
-                                            <li class="product__review--fill"></li>
-                                            <li class="product__review--fill"></li>
-                                            <li class="product__review--fill"></li>
-                                            <li class="product__review--fill"></li>
-                                            <li class="product__review--blank"></li>
-                                        </ul>
-                                        <a href="/product-single-default" class="product__link">Fresh river fish</a>
+                                        <a href="/product-single-default" class="product__link">Cá</a>
                                         <div class="product__price m-t-5">
                                             <span class="product__price">$25.00</span>
                                         </div>
@@ -433,14 +419,7 @@
                                     </div> <!-- End Product Image -->
                                     <!-- Start Product Content -->
                                     <div class="product__content m-t-20">
-                                        <ul class="product__review">
-                                            <li class="product__review--fill"></li>
-                                            <li class="product__review--fill"></li>
-                                            <li class="product__review--fill"></li>
-                                            <li class="product__review--fill"></li>
-                                            <li class="product__review--blank"></li>
-                                        </ul>
-                                        <a href="/product-single-default" class="product__link">Fresh pomegranate</a>
+                                        <a href="/product-single-default" class="product__link">Lựu</a>
                                         <div class="product__price m-t-5">
                                             <span class="product__price">$19.00 <del>$21.00</del></span>
                                         </div>
@@ -464,14 +443,7 @@
                                     </div> <!-- End Product Image -->
                                     <!-- Start Product Content -->
                                     <div class="product__content m-t-20">
-                                        <ul class="product__review">
-                                            <li class="product__review--fill"></li>
-                                            <li class="product__review--fill"></li>
-                                            <li class="product__review--fill"></li>
-                                            <li class="product__review--fill"></li>
-                                            <li class="product__review--blank"></li>
-                                        </ul>
-                                        <a href="/product-single-default" class="product__link">Cabbage vegetables</a>
+                                        <a href="/product-single-default" class="product__link">Bắp Cải</a>
                                         <div class="product__price m-t-5">
                                             <span class="product__price">$50.00</span>
                                         </div>
@@ -498,13 +470,6 @@
                                     </div> <!-- End Product Image -->
                                     <!-- Start Product Content -->
                                     <div class="product__content m-t-20">
-                                        <ul class="product__review">
-                                            <li class="product__review--fill"></li>
-                                            <li class="product__review--fill"></li>
-                                            <li class="product__review--fill"></li>
-                                            <li class="product__review--fill"></li>
-                                            <li class="product__review--blank"></li>
-                                        </ul>
                                         <a href="/product-single-default" class="product__link">Best red meat</a>
                                         <div class="product__price m-t-5">
                                             <span class="product__price">$55.00 <del>$80.00</del></span>
@@ -773,10 +738,10 @@
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <div class="link--green link--icon-left"><i class="fal fa-check-square"></i>Added to cart successfully!</div>
+                                        <div class="link--green link--icon-left"><i class="fal fa-check-square"></i>Thêm Vào Giỏ Hàng Thành Công!</div>
                                         <div class="modal__product-cart-buttons m-tb-15">
-                                            <a href="/cart" class="btn btn--box  btn--tiny btn--green btn--green-hover-black btn--uppercase">View Cart</a>
-                                            <a href="/checkout" class="btn btn--box  btn--tiny btn--green btn--green-hover-black btn--uppercaset">Checkout</a>
+                                            <a href="/cart" class="btn btn--box  btn--tiny btn--green btn--green-hover-black btn--uppercase">Xem Giỏ Hàng</a>
+                                            <a href="/checkout" class="btn btn--box  btn--tiny btn--green btn--green-hover-black btn--uppercaset">Thanh Toán</a>
                                         </div>
                                     </div>
                                 </div>
@@ -784,8 +749,52 @@
                             <div class="col-md-5 modal__border">
                                 <ul class="modal__product-shipping-info">
                                     <li class="link--icon-left" id="text"><i class="icon-shopping-cart"></i></li>
-                                    <li>TOTAL PRICE: <span id="TOTAL">  </span></li>
-                                    <li><a href="#" class="btn text-underline color-green" data-dismiss="modal">CONTINUE SHOPPING</a></li>
+                                    <li>Tổng : <span id="TOTAL">  </span></li>
+                                    <li><a href="#" class="btn text-underline color-green" data-dismiss="modal">Tiếp Tục Mua Sắm</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Modal Add cart -->
+
+    <!-- Start Modal Quickview cart -->
+    <div class="modal fade" id="modalAddCart" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col text-right">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true"> <i class="fal fa-times"></i></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="modal__product-img">
+                                            <img class="img-fluid" src="assets/img/product/size-normal/product-home-1-img-1.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="link--green link--icon-left"><i class="fal fa-check-square"></i>Thêm Vào Giỏ Hàng Thành Công!</div>
+                                        <div class="modal__product-cart-buttons m-tb-15">
+                                            <a href="/cart" class="btn btn--box  btn--tiny btn--green btn--green-hover-black btn--uppercase">Xem Giỏ Hàng</a>
+                                            <a href="/checkout" class="btn btn--box  btn--tiny btn--green btn--green-hover-black btn--uppercaset">Thanh Toán</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 modal__border">
+                                <ul class="modal__product-shipping-info">
+                                    <li class="link--icon-left"><i class="icon-shopping-cart"></i> Bạn Có 5 Sản Phẩm Trong Giỏ Hàng.</li>
+                                    <li>Tổng Giá: <span>$187.00</span></li>
+                                    <li><a href="#" class="btn text-underline color-green" data-dismiss="modal">Tiếp Tục Mua Sắm</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -812,42 +821,54 @@
                             <div class="col-md-6">
                                 <div class="product-gallery-box m-b-60">
                                     <div class="modal-product-image--large">
-                                        <img class="img-fluid" src="/assets/img/product/gallery/gallery-large/product-gallery-large-1.jpg" alt="">
+                                        <img class="img-fluid"
+                                             src="assets/img/product/gallery/gallery-large/product-gallery-large-1.jpg"
+                                             alt="">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="product-details-box">
-                                    <h5 class="title title--normal m-b-20">Aliquam lobortis</h5>
+                                    <h5 class="title title--normal m-b-20">Táo Xanh</h5>
                                     <div class="product__price">
                                         <span class="product__price-del">$35.90</span>
                                         <span class="product__price-reg">$31.69</span>
                                     </div>
                                     <ul class="product__review m-t-15">
-                                        <li class="product__review--fill"></li>
-                                        <li class="product__review--fill"></li>
-                                        <li class="product__review--fill"></li>
-                                        <li class="product__review--fill"></li>
-                                        <li class="product__review--blank"></li>
+                                        <li class="product__review--fill"><i class="icon-star"></i></li>
+                                        <li class="product__review--fill"><i class="icon-star"></i></li>
+                                        <li class="product__review--fill"><i class="icon-star"></i></li>
+                                        <li class="product__review--fill"><i class="icon-star"></i></li>
+                                        <li class="product__review--blank"><i class="icon-star"></i></li>
                                     </ul>
                                     <div class="product__desc m-t-25 m-b-30">
-                                        <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will</p>
+                                        <p>Táo xanh có hàm lượng chất xơ cao giúp tăng cường quá trình trao đổi chất
+                                            của cơ thể. Bên cạnh đó, hàm lượng chất xơ này còn giúp hỗ trợ quá trình
+                                            giải độc, giúp gan và hệ tiêu hóa tránh xa các chất độc hại.
+                                            <br>
+                                            Khi ăn táo xanh, nên để nguyên vỏ để có thể nạp vào cơ thể lượng chất
+                                            xơ cao hơn. Ngoài ra, có thể chế biến táo xanh thành nước ép để dễ tiêu hóa.</p>
                                     </div>
 
                                     <div class="product-var p-t-30">
-                                        <div class="product-quantity product-var__item d-flex align-items-center flex-wrap">
-                                            <span class="product-var__text">Quantity: </span>
+                                        <div
+                                            class="product-quantity product-var__item d-flex align-items-center flex-wrap">
+                                            <span class="product-var__text">Số Lượng: </span>
                                             <form class="modal-quantity-scale m-l-20">
-                                                <div class="value-button" id="modal-decrease" onclick="decreaseValueModal()" >-</div>
-                                                <input type="number" id="modal-number" value="1" />
-                                                <div class="value-button" id="modal-increase" onclick="increaseValueModal()" >+</div>
+                                                <div class="value-button" id="modal-decrease"
+                                                     onclick="decreaseValueModal()">-
+                                                </div>
+                                                <input type="number" id="modal-number" value="1"/>
+                                                <div class="value-button" id="modal-increase"
+                                                     onclick="increaseValueModal()">+
+                                                </div>
                                             </form>
                                         </div>
                                     </div>
 
                                     <div class="product-links">
                                         <div class="product-social m-tb-30">
-                                            <span>SHARE THIS PRODUCT</span>
+                                            <span>Chia Sẻ Sản Phẩm</span>
                                             <ul class="product-social-link">
                                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -880,16 +901,14 @@
                         <div class="row">
                             <div class="col-12">
                                 <ul class="shipping-info-list m-tb-30">
-                                    <li><strong>Shipping</strong></li>
-                                    <li>In-store collection available within 1 to 7 business days</li>
-                                    <li>Next-day and Express delivery options also available</li>
-                                    <li>Purchases are delivered in an orange box tied with a Bolduc ribbon, with the exception of certain items</li>
-                                    <li>See the delivery FAQs for details on shipping methods, costs and delivery times</li>
+                                    <li><strong>Vận Chuyển</strong></li>
+                                    <li>Vận chuyển nhanh chóng </li>
+                                    <li>Thực hiện vận chuyển ngay trong ngày</li>
                                 </ul>
                                 <ul class="shipping-info-list">
-                                    <li><strong>Returns And Exchanges</strong></li>
-                                    <li>Easy and complimentary, within 14 days</li>
-                                    <li>See conditions and procedure in our return FAQs</li>
+                                    <li><strong>Trả Hàng và Trao Đổi</strong></li>
+                                    <li>Có thể kiểm tra và đổi trả ngay trong ngày</li>
+                                    <li>Xem các điều kiện và quy trình trong Câu hỏi thường gặp về trả lại của chúng tôi</li>
                                 </ul>
                             </div>
                         </div>
@@ -898,64 +917,6 @@
             </div>
         </div>
     </div> <!-- End Modal Shipping Info -->
-
-    <!-- Start Modal Product Ask -->
-    <div class="modal fade" id="modalProductAsk" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col text-right">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true"> <i class="fal fa-times"></i></span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <!-- Start Add Review Form-->
-                                <div class="review-form m-t-30">
-                                    <div class="section-content">
-                                        <h6 class="font--bold text-uppercase">Have a question?</h6>
-                                        <p class="section-content__desc">Your email address will not be published. Required fields are marked *</p>
-                                    </div>
-                                    <form class="form-box" action="#" method="post">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-box__single-group">
-                                                    <input type="text" id="modal-ask-name" placeholder="Your name">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-box__single-group">
-                                                    <input type="email" id="modal-ask-email" placeholder="Your email" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-box__single-group">
-                                                    <input type="text" id="modal-ask-phone" placeholder="Your phone number" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="form-box__single-group">
-                                                    <textarea id="modal-ask-message" rows="8" placeholder="Your message"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <button class="btn btn--box btn--small btn--black btn--black-hover-green btn--uppercase font--bold m-t-30" type="submit">Submit</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div> <!-- End Add Review Form- -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End Modal Product Ask -->
-
 @endsection
 @section('script')
     <script>

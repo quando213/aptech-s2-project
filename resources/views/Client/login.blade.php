@@ -52,15 +52,15 @@
                                               class="password__toggle--btn fa fa-fw fa-eye"></span>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-between flex-wrap m-tb-20">
-                                    <label for="account-remember">
-                                        <input type="checkbox" name="account-remember" id="account-remember">
-                                        <span>Nhớ Mật Khẩu</span>
-                                    </label>
-                                </div>
+{{--                                <div class="d-flex justify-content-between flex-wrap m-tb-20">--}}
+{{--                                    <label for="account-remember">--}}
+{{--                                        <input type="checkbox" name="account-remember" id="account-remember">--}}
+{{--                                        <span>Nhớ Mật Khẩu</span>--}}
+{{--                                    </label>--}}
+{{--                                </div>--}}
                                 <button
                                     class="btn btn--box btn--medium btn--radius btn--black btn--black-hover-green btn--uppercase font--semi-bold"
-                                    type="submit">LOGIN
+                                    type="submit">Đăng Nhập
                                 </button>
                             </form>
                         </div>
@@ -158,7 +158,8 @@
                                     </div>
                                 </div>
                                 <div class="pt-4 text-center">
-                                    <button  class="btn btn--box btn--medium btn--radius btn--black btn--black-hover-green btn--uppercase font--semi-bold" type="submit">Đăng Ký</button>
+                                    <button  class="btn btn--box btn--medium btn--radius btn--black btn--black-hover-green btn--uppercase
+                                    font--semi-bold" type="submit">Đăng Ký</button>
                                 </div>
                             </form>
                         </div>

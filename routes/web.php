@@ -80,8 +80,8 @@ Route::get('/contact', [TemplateClientController::class, 'contact']);
 
 Route::get('/product-single-tab-left', [TemplateClientController::class, 'product_left']);
 Route::get('/shop-sidebar-grid-left', [TemplateClientController::class, 'shop_layout_left']);
-Route::get('/category', [ClientProductController::class, 'list']);
-Route::get('/shop-sidebar-full-width', [TemplateClientController::class, 'shop_layout_with']);
+//Route::get('/shop-sidebar-grid-left', [ClientProductController::class, 'list']);
+    Route::get('/shop-sidebar-full-width', [TemplateClientController::class, 'shop_layout_with']);
 
 Route::get('/my-account', [TemplateClientController::class, 'account']);
 Route::get('/about', [TemplateClientController::class, 'about']);

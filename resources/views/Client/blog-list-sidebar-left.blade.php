@@ -49,7 +49,7 @@
                                     </a>
                                     <div class="sidebar__post-content">
                                         <span class="d-block color-gray">Jul 23, 2020</span>
-                                        <a class="link--gray" href="">Consectetur adipi...</a>
+                                        <a class="link--gray" href="">Trứng.</a>
                                     </div>
                                 </li>
                                 <li class="d-flex align-items-center">
@@ -58,7 +58,7 @@
                                     </a>
                                     <div class="sidebar__post-content">
                                         <span class="d-block color-gray">Jul 16, 2020</span>
-                                        <a class="link--gray" href="">Without Very Dark...</a>
+                                        <a class="link--gray" href="">Sữa</a>
                                     </div>
                                 </li>
                             </ul>
@@ -377,7 +377,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="product-details-box">
-                                    <h5 class="title title--normal m-b-20">Aliquam lobortis</h5>
+                                    <h5 class="title title--normal m-b-20">Táo Xanh</h5>
                                     <div class="product__price">
                                         <span class="product__price-del">$35.90</span>
                                         <span class="product__price-reg">$31.69</span>
@@ -390,17 +390,18 @@
                                         <li class="product__review--blank"><i class="icon-star"></i></li>
                                     </ul>
                                     <div class="product__desc m-t-25 m-b-30">
-                                        <p>On the other hand, we denounce with righteous indignation and dislike men who
-                                            are so beguiled and demoralized by the charms of pleasure of the moment, so
-                                            blinded by desire, that they cannot foresee the pain and trouble that are
-                                            bound to ensue; and equal blame belongs to those who fail in their duty
-                                            through weakness of will</p>
+                                        <p>Táo xanh có hàm lượng chất xơ cao giúp tăng cường quá trình trao đổi chất
+                                            của cơ thể. Bên cạnh đó, hàm lượng chất xơ này còn giúp hỗ trợ quá trình
+                                            giải độc, giúp gan và hệ tiêu hóa tránh xa các chất độc hại.
+                                            <br>
+                                            Khi ăn táo xanh, nên để nguyên vỏ để có thể nạp vào cơ thể lượng chất
+                                            xơ cao hơn. Ngoài ra, có thể chế biến táo xanh thành nước ép để dễ tiêu hóa.</p>
                                     </div>
 
                                     <div class="product-var p-t-30">
                                         <div
                                             class="product-quantity product-var__item d-flex align-items-center flex-wrap">
-                                            <span class="product-var__text">Quantity: </span>
+                                            <span class="product-var__text">Số Lượng: </span>
                                             <form class="modal-quantity-scale m-l-20">
                                                 <div class="value-button" id="modal-decrease"
                                                      onclick="decreaseValueModal()">-
@@ -415,7 +416,7 @@
 
                                     <div class="product-links">
                                         <div class="product-social m-tb-30">
-                                            <span>SHARE THIS PRODUCT</span>
+                                            <span>Chia Sẻ Sản Phẩm</span>
                                             <ul class="product-social-link">
                                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
