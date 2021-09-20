@@ -79,4 +79,13 @@ class GroupController extends Controller
             'personnel'=>$personnel
         ]);
     }
+    public function check()
+    {
+        $personnel = User::query()->where('group_id',Auth::user()->group_id)->with(['district','ward','group'])->get();
+        return view('Admin.Group.personnel',[
+            'title'=>'Group',
+            'breadcrumb'=>'Edit Group',
+            'personnel'=>$personnel
+        ]);
+    }
 }
