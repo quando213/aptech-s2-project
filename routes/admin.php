@@ -72,9 +72,20 @@ Route::prefix('/combos')->group(function () {
     Route::post('update/{id}', [ComboController::class, 'save']);
     Route::get('delete/{id}', [ComboController::class, 'destroy'])->name('comboDelete');
 });
+
+
 Route::prefix('/orders')->group(function () {
-    Route::get('', [OrderController::class, 'list']);
+    Route::get('', [OrderController::class, 'list'])->name('orderList');
     Route::get('/{id}', [OrderController::class, 'orderDetail'])->name('orderDetail');
+    Route::post('/{id}', [OrderController::class, 'save']);
+});
+
+
+Route::prefix('/shipper')->group(function () {
+
+//    Route::get('', [OrderController::class, 'list'])->name('orderList');
+//    Route::get('/{id}', [OrderController::class, 'orderDetail'])->name('orderDetail');
+    Route::get('/personnel', [GroupController::class, 'personnel']);
 });
 
 

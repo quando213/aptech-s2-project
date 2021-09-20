@@ -1,9 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\CategoryController;
-
-use App\Http\Controllers\Admin\GroupController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\WardController;
@@ -14,7 +11,8 @@ use App\Http\Controllers\Client\EntryController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\TemplateAdminController;
 use App\Http\Controllers\TemplateClientController;
-use App\Http\Controllers\Admin\ComboController;
+use App\Http\Middleware\checkAdmin;
+use App\Http\Middleware\checkShipper;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,15 +26,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware(['auth', CheckAdmin::class])->group(function () {
     require_once __DIR__ . '/admin.php';
 });
 
+Route::prefix('shipper')->middleware(['auth', checkShipper::class])->group(function () {
+    require_once __DIR__ . '/shipper.php';
+});
+
+
 
 Route::get('/api/ward/{id}', [WardController::class, 'api']);
+Route::get('/api/ward/check/{id}', [WardController::class, 'check']);
 Route::get('/api/product/{id}', [ProductController::class, 'apiCheck']);
-
-
 Route::get('/test', [OrderController::class, 'test']);
 Route::get('/test/order', [OrderController::class, 'detail']);
 Route::get('addToCart/{id}', [OrderController::class, 'addToCart'])->name('addToCart');
@@ -44,7 +46,10 @@ Route::get('addToCart/{id}', [OrderController::class, 'addToCart'])->name('addTo
 //Route::post('/test/order', [OrderController::class, 'update'])->name('update');
 Route::get('/buy', [OrderController::class, 'buynow'])->name('buy');
 
-Route::get('/', [HomeController::class, 'home']);
+Route::get('/', [HomeController::class, 'home'])->name("home");
+
+
+
 
 Route::get('/login', [EntryController::class, 'register'])->name('register');
 Route::get('/register', [EntryController::class, 'register']);
@@ -59,10 +64,17 @@ Route::get('/cart', [TemplateClientController::class, 'cart']);
 Route::post('/cart', [OrderController::class, 'update']);
 
 
+
+Route::prefix('product')->group(function () {
+    Route::get('/', [ClientProductController::class, 'list']);
+    Route::get('detail/{id}', [ClientProductController::class, 'detail'])->name('detailProduct');
+});
+
 //Route::prefix('product')->group(function () {
 //    Route::get('/', [ClientProductDetailController::class, 'list']);
 //    Route::get('detail/{id}', [ClientProductDetailController::class, 'detail'])->name('detailProduct');
 //});
+
 
 
 Route::get('/form-layout', [TemplateAdminController::class, 'form_layout']);

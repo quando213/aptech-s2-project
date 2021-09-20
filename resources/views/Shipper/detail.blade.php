@@ -1,4 +1,4 @@
-@extends('.Admin.layout.index')
+@extends('.Shipper.layout.index')
 @section('title')
     Admin Dashboard - {{$title}}
 @endsection

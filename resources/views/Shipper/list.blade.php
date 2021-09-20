@@ -1,4 +1,4 @@
-@extends('.Admin.layout.index')
+@extends('.Shipper.layout.index')
 @section('title')
     Admin Dashboard - {{$title}}
 @endsection
@@ -15,7 +15,7 @@
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="/shipper">Dashboard</a></li>
                             <li class="breadcrumb-item active" aria-current="page">{{$breadcrumb}}</li>
                         </ol>
                     </nav>
@@ -26,9 +26,6 @@
             <div class="row" id="basic-table">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title"><a href="{{route('comboCreate')}}">Add Combo</a></h4>
-                        </div>
                         <div class="card-content">
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -106,7 +103,7 @@
                                                         @endswitch
                                                     </td>
                                                     <td>
-                                                        <a href="{{route('orderDetail',$item->id)}}" type="button"
+                                                        <a href="{{route('shipperOrderDetail',$item->id)}}" type="button"
                                                            class="btn btn-primary">Detail</a>
                                                     </td>
                                                 </tr>

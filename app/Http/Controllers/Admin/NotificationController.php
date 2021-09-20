@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Group;
-use App\Models\Ward;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 
-class WardController extends Controller
+class NotificationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,21 +16,6 @@ class WardController extends Controller
     public function index()
     {
         //
-    }
-    public function check($id)
-    {
-        $group = Group::query()->where('ward_id',$id)->first();
-
-        if ($group){
-            return $group;
-        }
-        return null;
-
-    }
-    public function api($id)
-    {
-        $ward = Ward::query()->where('maqh',$id)->get();
-        return $ward;
     }
 
     /**
@@ -58,10 +42,10 @@ class WardController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Ward  $ward
+     * @param  \App\Models\Notification  $notification
      * @return \Illuminate\Http\Response
      */
-    public function show(Ward $ward)
+    public function show(Notification $notification)
     {
         //
     }
@@ -69,10 +53,10 @@ class WardController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Ward  $ward
+     * @param  \App\Models\Notification  $notification
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ward $ward)
+    public function edit(Notification $notification)
     {
         //
     }
@@ -81,10 +65,10 @@ class WardController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Ward  $ward
+     * @param  \App\Models\Notification  $notification
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ward $ward)
+    public function update(Request $request, Notification $notification)
     {
         //
     }
@@ -92,10 +76,10 @@ class WardController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Ward  $ward
+     * @param  \App\Models\Notification  $notification
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ward $ward)
+    public function destroy(Notification $notification)
     {
         //
     }

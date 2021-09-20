@@ -6,8 +6,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\GroupPostRequest;
 use App\Models\Group;
+use App\Models\User;
 use App\Models\Ward;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class GroupController extends Controller
 {
@@ -67,5 +69,23 @@ class GroupController extends Controller
         $group = Group::find($id);
         $group->delete();
         return redirect()->route('groupList')->with('message','Xóa thành công đơn vị '.$group->name);
+    }
+    public function personnel()
+    {
+        $personnel = User::query()->where('group_id',Auth::user()->group_id)->with(['district','ward','group'])->get();
+        return view('Admin.Group.personnel',[
+            'title'=>'Group',
+            'breadcrumb'=>'Edit Group',
+            'personnel'=>$personnel
+        ]);
+    }
+    public function check()
+    {
+        $personnel = User::query()->where('group_id',Auth::user()->group_id)->with(['district','ward','group'])->get();
+        return view('Admin.Group.personnel',[
+            'title'=>'Group',
+            'breadcrumb'=>'Edit Group',
+            'personnel'=>$personnel
+        ]);
     }
 }
