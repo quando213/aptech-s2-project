@@ -24,7 +24,7 @@ class EntryController extends Controller
     {
         $districts = District::query()->orderBy('name', 'asc')->get();
         return view('Client.login', [
-            'data' => $districts
+            'districts' => $districts
         ]);
     }
 

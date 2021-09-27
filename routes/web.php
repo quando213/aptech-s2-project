@@ -80,36 +80,4 @@ Route::post('/checkout', [OrderController::class, 'buynow'])->name('buy');
 //    require_once __DIR__ . '/insert_data.php';
 //});
 
-
-
-// Routes chưa rõ mục đích - CHƯA DUYỆT, KHÔNG ĐƯA LÊN TRÊN
-Route::get('/test', [OrderController::class, 'test']);
-Route::get('/test/order', [OrderController::class, 'detail']);
-//Route::post('/test/order', [OrderController::class, 'update'])->name('update');
-
-Route::get('/form-layout', [TemplateAdminController::class, 'form_layout']);
-Route::get('/input', [TemplateAdminController::class, 'input']);
-Route::get('/table', [TemplateAdminController::class, 'table']);
-Route::get('/datatable', [TemplateAdminController::class, 'datatable']);
-Route::get('/email', [TemplateAdminController::class, 'email']);
-Route::get('/sign-up', [TemplateAdminController::class, 'sign_in']);
-Route::get('/forgot', [TemplateAdminController::class, 'forgot']);
-Route::get('/product/create', [TemplateAdminController::class, 'createProduct']);
-Route::get('/product/list', [TemplateAdminController::class, 'listProduct']);
-Route::get('/blog-simple-sidebar-left', [TemplateClientController::class, 'blog']);
-Route::get('/blog-list-sidebar-left', [TemplateClientController::class, 'blog2']);
-Route::get('/contact', [TemplateClientController::class, 'contact']);
-
-Route::get('/product-single-tab-left', [TemplateClientController::class, 'product_left']);
-Route::get('/shop-sidebar-grid-left', [TemplateClientController::class, 'shop_layout_left']);
-//Route::get('/shop-sidebar-grid-left', [ClientProductController::class, 'list']);
-    Route::get('/shop-sidebar-full-width', [TemplateClientController::class, 'shop_layout_with']);
-
-Route::post('/checkout', [OrderController::class, 'buynow'])->name('buy');
-Route::get('cart/remove/{id}', [OrderController::class, 'remove']);
-Route::get('cart/destroy', [OrderController::class, 'destroy']);
-Route::get('/cart', [HomeController::class, 'cart']);
-Route::post('/cart', [OrderController::class, 'update']);
-Route::get('addToCart/{id}', [OrderController::class, 'addToCart'])->name('addToCart');
-
 Route::get('/combo', [ClientComboController::class, 'list']);
