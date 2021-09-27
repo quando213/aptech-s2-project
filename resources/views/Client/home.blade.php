@@ -107,9 +107,9 @@
                     </div>
                 </div>
             </div>
-        </div> <!-- ::::::  End banner Section  ::::::  -->
+        </div>
 
-        <!-- ::::::  Start  Product Style - Catagory Section  ::::::  -->
+
         <div class="product m-t-100">
             <div class="container">
                 <div class="row">

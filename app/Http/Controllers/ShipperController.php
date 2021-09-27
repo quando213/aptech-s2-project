@@ -19,8 +19,7 @@ class ShipperController extends Controller
     }
     public function notification()
     {
-        $notifications = Notification::query()->where('id',Auth::id())->orderBy('created_at','desc')->first();
-
+        $notifications = Notification::query()->where('sender_id',Auth::id())->orderBy('created_at','desc')->get();
         return view('.Shipper.notification',[
             'title' => 'Trang thông báo',
             'breadcrumb' => 'Hiện thị thông báo',
@@ -31,7 +30,9 @@ class ShipperController extends Controller
 
     public function list()
     {
-        $data = Order::query()->with(['district', 'ward', 'user'])->orderBy('created_at', 'desc')->get();
+        $user = User::find(Auth::id());
+        $group = Group::find($user->group_id);
+        $data = Order::query()->where('shipping_ward_id',$group->ward_id )->with(['district', 'ward', 'user'])->orderBy('created_at', 'desc')->get();
         return view('Shipper.list', [
             'data' => $data,
             'title' => 'Trang đơn hàng',

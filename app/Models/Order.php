@@ -28,6 +28,11 @@ class Order extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    public function orderDetail()
+    {
+        return $this->hasMany(OrderDetail::class);
+    }
+
     public function ward()
     {
         return $this->belongsTo(Ward::class, 'shipping_ward_id');

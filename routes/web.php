@@ -31,12 +31,17 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('admin')->middleware(['auth', CheckAdmin::class])->group(function () {
     require_once __DIR__ . '/admin.php';
 });
+//Route::get('insert', require_once __DIR__ . '/insert_data.php');
 
 Route::prefix('shipper')->middleware(['auth', checkShipper::class])->group(function () {
     require_once __DIR__ . '/shipper.php';
 });
 
 Route::get('/', [HomeController::class, 'home'])->name("home");
+
+// REPOSITION
+Route::get('/response', [OrderController::class, 'response']); // thanh toán xong
+Route::get('/ipn', [OrderController::class, 'ipnResponse']); // vnpay gửi request trả về, xác nhận
 
 Route::prefix('product')->group(function () {
     Route::get('/', [ClientProductController::class, 'list'])->name('listProduct');
@@ -48,6 +53,12 @@ Route::post('/login', [EntryController::class, 'processLogin'])->name('processLo
 Route::get('/register', [EntryController::class, 'register'])->name('register');
 Route::post('/register', [EntryController::class, 'processRegister'])->name('processRegister');
 Route::get('/logout', [EntryController::class, 'logout'])->name('logout');
+
+Route::prefix('account')->middleware('auth')->group(function () {
+    Route::get('/', [EntryController::class, 'myAccount'])->name('myAccount');
+    Route::get('my-order/{id}', [EntryController::class, 'myOrderDetail'])->name('myOrder');
+    Route::get('my-order/{id}/{notification}', [EntryController::class, 'myOrderDetail'])->name('myOrderDetail');
+});
 
 Route::prefix('cart')->group(function () {
     Route::get('/', [CartController::class, 'view'])->name('viewCart');
@@ -94,19 +105,11 @@ Route::get('/shop-sidebar-grid-left', [TemplateClientController::class, 'shop_la
 //Route::get('/shop-sidebar-grid-left', [ClientProductController::class, 'list']);
     Route::get('/shop-sidebar-full-width', [TemplateClientController::class, 'shop_layout_with']);
 
-Route::get('/my-account', [TemplateClientController::class, 'account']);
-Route::get('/about', [TemplateClientController::class, 'about']);
-Route::get('/frequently-questions', [TemplateClientController::class, 'frequently']);
-Route::get('/privacy-policy', [TemplateClientController::class, 'privacy_policy']);
-Route::get('/wishlist', [TemplateClientController::class, 'wishlist']);
-Route::get('/emply-cart', [TemplateClientController::class, 'emply_cart']);
-
-Route::get('/compare', [TemplateClientController::class, 'compare']);
-
-// Link list category vs product ra trang all sản phẩm
-
+Route::post('/checkout', [OrderController::class, 'buynow'])->name('buy');
+Route::get('cart/remove/{id}', [OrderController::class, 'remove']);
+Route::get('cart/destroy', [OrderController::class, 'destroy']);
+Route::get('/cart', [HomeController::class, 'cart']);
+Route::post('/cart', [OrderController::class, 'update']);
+Route::get('addToCart/{id}', [OrderController::class, 'addToCart'])->name('addToCart');
 
 Route::get('/combo', [ClientComboController::class, 'list']);
-
-
-

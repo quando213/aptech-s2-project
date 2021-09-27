@@ -59,7 +59,6 @@
                                 </div>
                             </div>
                         </div>  <!-- Start Single Sidebar Widget - Filter [Price] -->
-
                     </div>
                 </div> <!-- End Left Sidebar Widget -->
 
@@ -83,7 +82,6 @@
                             <button v-if="hasFilter" type="button" @click="clearFilter"
                                     class="btn btn--box btn--tiny btn--radius-tiny btn--green btn--green-hover-black ml-3">Bỏ lọc</button>
                         </div>
-
                     </div> <!-- ::::::  Start Sort Box Section  ::::::  -->
 
                     <div class="product-tab-area">
@@ -213,4 +211,3 @@
         })
     </script>
 @endsection
-

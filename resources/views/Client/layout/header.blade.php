@@ -39,11 +39,9 @@
                         <ul class="header__user-action-icon">
                             <!-- Start Header Wishlist Box -->
                             @if(!\Illuminate\Support\Facades\Auth::check())
-                                <li>
                                 <li class="header__nav-item pos-relative">
                                     <a href="{{route('register')}}" style="font-size: 13px" class="header__nav-link"> <i
                                             class="fa-fw fas fa-user" aria-hidden="true"></i>Đăng nhập</a>
-                                </li>
                                 </li>
                             @else
                                 <li class="header__nav-item pos-relative">
@@ -51,7 +49,7 @@
                                                                                             aria-hidden="true"></i> {{\Illuminate\Support\Facades\Auth::user()->last_name . ' ' .\Illuminate\Support\Facades\Auth::user()->first_name}}
                                     </a>
                                     <ul class="dropdown__menu pos-absolute">
-                                        <li class="dropdown__list"><a href="/about" class="dropdown__link">Thông tin của
+                                        <li class="dropdown__list"><a href="{{route('myAccount')}}" class="dropdown__link">Thông tin của
                                                 bạn</a></li>
                                         <li class="dropdown__list pos-relative">
                                             <a href="/frequently-questions" class="dropdown__link">Đơn hàng của bạn</a>
@@ -69,6 +67,11 @@
                                     <i class="icon-shopping-cart"></i>
                                     <span
                                         class="wishlist-item-count cart-count pos-absolute">{{\Gloudemans\Shoppingcart\Facades\Cart::count()}}</span>
+                                </a>
+                            </li>
+                            <li class="header__nav-item pos-relative" >
+                                <a href="{{route('register')}}" style="font-size: 13px" class="header__nav-link">
+                                    <i class="fas fa-bell" aria-hidden="true"></i>
                                 </a>
                             </li>
                         </ul>
@@ -151,8 +154,7 @@
                                 aria-hidden="true"></i> {{\Illuminate\Support\Facades\Auth::user()->last_name . ' ' .\Illuminate\Support\Facades\Auth::user()->first_name}}
                         </a>
                         <ul class="dropdown__menu pos-absolute">
-                            <li class="dropdown__list"><a href="/about" class="dropdown__link">Thông tin của bạn</a>
-                            </li>
+                            <li class="dropdown__list"><a href="{{route('myAccount')}}" class="dropdown__link">Thông tin của bạn</a></li>
                             <li class="dropdown__list pos-relative">
                                 <a href="/frequently-questions" class="dropdown__link">Đơn hàng của bạn</a>
                             </li>
