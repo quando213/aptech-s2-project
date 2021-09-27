@@ -16,47 +16,56 @@
 
     <!-- ::::::  Start  Main Container Section  ::::::  -->
     <main id="main-container" class="main-container">
-        <div class="container">
+        <div class="">
             <div class="row">
                 <div class="col-12">
-                    <!-- :::::::::: Start My Account Section :::::::::: -->
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    @if ( session()->has('status') )
+                        <div
+                            class="text-center alert alert-success alert-dismissable">{{ session()->get('status') }}</div>
+                    @endif
                     <div class="my-account-area">
                         <div class="row">
                             <div class="col-xl-3 col-md-4">
                                 <div class="my-account-menu">
-                                    <ul class="nav account-menu-list flex-column nav-pills" id="pills-tab" role="tablist">
+                                    <ul class="nav account-menu-list flex-column nav-pills" id="pills-tab"
+                                        role="tablist">
                                         <li>
-                                            <a class="active link--icon-left" id="pills-dashboard-tab" data-toggle="pill" href="#pills-dashboard"
+                                            <a class="active link--icon-left" id="pills-dashboard-tab"
+                                               data-toggle="pill" href="#pills-dashboard"
                                                role="tab" aria-controls="pills-dashboard" aria-selected="true"><i
-                                                    class="fas fa-tachometer-alt"></i> Công Cụ</a>
+                                                    class="fas fa-tachometer-alt"></i>Đơn hàng</a>
                                         </li>
                                         <li>
-                                            <a id="pills-order-tab" class="link--icon-left" data-toggle="pill" href="#pills-order" role="tab"
-                                               aria-controls="pills-order" aria-selected="false"><i
-                                                    class="fas fa-shopping-cart"></i> Đặt Hàng</a>
-                                        </li>
-{{--                                        <li>--}}
-{{--                                            <a id="pills-download-tab" class="link--icon-left" data-toggle="pill" href="#pills-download" role="tab"--}}
-{{--                                               aria-controls="pills-download" aria-selected="false"><i--}}
-{{--                                                    class="fas fa-cloud-download-alt"></i> Download</a>--}}
-{{--                                        </li>--}}
-                                        <li>
-                                            <a id="pills-payment-tab" class="link--icon-left" data-toggle="pill" href="#pills-payment" role="tab"
+                                            <a id="pills-payment-tab" class="link--icon-left" data-toggle="pill"
+                                               href="#pills-payment" role="tab"
                                                aria-controls="pills-payment" aria-selected="false"><i
-                                                    class="fas fa-credit-card"></i>Phương Thức Thanh Toám</a>
+                                                    class="fas fa-credit-card"></i>Thông báo</a>
                                         </li>
                                         <li>
-                                            <a id="pills-address-tab" class="link--icon-left" data-toggle="pill" href="#pills-address" role="tab"
+                                            <a id="pills-address-tab" class="link--icon-left" data-toggle="pill"
+                                               href="#pills-address" role="tab"
                                                aria-controls="pills-address" aria-selected="false"><i
                                                     class="fas fa-map-marker-alt"></i> Địa Chỉ</a>
                                         </li>
                                         <li>
-                                            <a id="pills-account-tab" class="link--icon-left" data-toggle="pill" href="#pills-account" role="tab"
-                                               aria-controls="pills-account" aria-selected="false"><i class="fas fa-user"></i>
-                                              Chi Tiết Người Dùng</a>
+                                            <a id="pills-account-tab" class="link--icon-left" data-toggle="pill"
+                                               href="#pills-account" role="tab"
+                                               aria-controls="pills-account" aria-selected="false"><i
+                                                    class="fas fa-user"></i>
+                                                Chi Tiết Người Dùng</a>
                                         </li>
                                         <li>
-                                            <a class="link--icon-left" href="/login"><i class="fas fa-sign-out-alt"></i> Đăng Xuất</a>
+                                            <a class="link--icon-left" href="{{route('logout')}}"><i
+                                                    class="fas fa-sign-out-alt"></i> Đăng Xuất</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -66,164 +75,207 @@
                                     <div class="tab-pane fade show active" id="pills-dashboard" role="tabpanel"
                                          aria-labelledby="pills-dashboard-tab">
                                         <div class="my-account-dashboard account-wrapper">
-                                            <h4 class="account-title">Công Cụ</h4>
-                                            <div class="welcome-dashboard m-t-30">
-                                                <p>Xin Chào,
-{{--                                                    <strong>You</strong> (If Not <strong>Tuntuni !</strong> <a--}}
-{{--                                                        href="#">Logout</a> )--}}
-                                                </p>
-                                            </div>
-                                            <p class="m-t-25">Từ trang tổng quan tài khoản của bạn. bạn có thể dễ dàng kiểm tra và xem các đơn đặt hàng gần đây, quản lý địa chỉ giao hàng và thanh toán cũng như chỉnh sửa mật khẩu và chi tiết tài khoản của mình.</p>
+
+                                            <h4 class="account-title">Đơn hàng</h4>
                                         </div>
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Mã đơn hàng</th>
+                                                <th scope="col">Gía trị</th>
+                                                <th scope="col">Trạng thái</th>
+                                                <th scope="col">Ngày tạo</th>
+                                                <th scope="col">Chi Tiết</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            @if($order)
+                                                @foreach($order as $item)
+                                                    <tr>
+                                                        <th scope="row">{{$item->id}}</th>
+                                                        <td>{{$item->total_price}}</td>
+                                                        <td>{{$item->status}}</td>
+                                                        <td>{{$item->created_at}}</td>
+                                                        <td><a href="{{route('myOrder',$item->id)}}"
+                                                               class="btn btn--small btn--radius btn--green btn--green-hover-black font--regular text-uppercase text-capitalize"
+                                                               tabindex="0">Xem
+                                                                Thêm </a></td>
+                                                    </tr>
+                                                @endforeach
+                                            @else
+                                                <tr class="odd">
+                                                    <td colspan="5" class="dataTables_empty">Không có dư liệu nào
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                            </tbody>
+                                        </table>
                                     </div>
-{{--                                    <div class="tab-pane fade" id="pills-order" role="tabpanel" aria-labelledby="pills-order-tab">--}}
-{{--                                        <div class="my-account-order account-wrapper">--}}
-{{--                                            <h4 class="account-title">Đặt Hàng</h4>--}}
-{{--                                            <div class="account-table text-center m-t-30 table-responsive">--}}
-{{--                                                <table class="table">--}}
-{{--                                                    <thead>--}}
-{{--                                                    <tr>--}}
-{{--                                                        <th class="no">No</th>--}}
-{{--                                                        <th class="name">Name</th>--}}
-{{--                                                        <th class="date">Date</th>--}}
-{{--                                                        <th class="status">Status</th>--}}
-{{--                                                        <th class="total">Total</th>--}}
-{{--                                                        <th class="action">Action</th>--}}
-{{--                                                    </tr>--}}
-{{--                                                    </thead>--}}
-{{--                                                    <tbody>--}}
-{{--                                                    <tr>--}}
-{{--                                                        <td>1</td>--}}
-{{--                                                        <td>Mostarizing Oil</td>--}}
-{{--                                                        <td>Aug 22, 2020</td>--}}
-{{--                                                        <td>Pending</td>--}}
-{{--                                                        <td>$100</td>--}}
-{{--                                                        <td><a href="#">View</a></td>--}}
-{{--                                                    </tr>--}}
-{{--                                                    <tr>--}}
-{{--                                                        <td>2</td>--}}
-{{--                                                        <td>Katopeno Altuni</td>--}}
-{{--                                                        <td>July 22, 2020</td>--}}
-{{--                                                        <td>Approved</td>--}}
-{{--                                                        <td>$45</td>--}}
-{{--                                                        <td><a href="#">View</a></td>--}}
-{{--                                                    </tr>--}}
-{{--                                                    <tr>--}}
-{{--                                                        <td>3</td>--}}
-{{--                                                        <td>Murikhete Paris</td>--}}
-{{--                                                        <td>June 22, 2020</td>--}}
-{{--                                                        <td>On Hold</td>--}}
-{{--                                                        <td>$99</td>--}}
-{{--                                                        <td><a href="#">View</a></td>--}}
-{{--                                                    </tr>--}}
-{{--                                                    </tbody>--}}
-{{--                                                </table>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-                                    <div class="tab-pane fade" id="pills-download" role="tabpanel"
-                                         aria-labelledby="pills-download-tab">
-                                        <div class="my-account-download account-wrapper">
-                                            <h4 class="account-title">Công Cụ</h4>
-                                            <div class="account-table text-center m-t-30 table-responsive">
-                                                <table class="table">
-                                                    <thead>
+                                    <div class="tab-pane fade" id="pills-payment" role="tabpanel"
+                                         aria-labelledby="pills-payment-tab">
+                                        <div class="my-account-payment account-wrapper">
+                                            <h4 class="account-title">Thông báo</h4>
+                                        </div>
+                                        <div class="account-table text-center table-responsive">
+                                            <table class="table text-left">
+                                                <thead>
+                                                @foreach($notifications as $notification)
                                                     <tr>
-                                                        <th class="name">Sản Phẩm</th>
-                                                        <th class="date">Date</th>
-                                                        <th class="status">Expire</th>
-                                                        <th class="action">Download</th>
+                                                        <td>
+                                                            @if($notification->the_send == 1)
+                                                                <a href="{{$notification->link.'/'.$notification->id}}"
+                                                                   class="btn btn btn--small btn--green-hover-black font--regular text-uppercase text-capitalizebtn-warning"
+                                                                   style="background: wheat">{{$notification->message}} </a>
+                                                            @else
+                                                                <a href="{{$notification->link.'/'.$notification->id}}"
+                                                                   class="btn btn btn--small btn--green-hover-black font--regular text-uppercase text-capitalizebtn-warning"
+                                                                   style="background: #89c74a">{{$notification->message}} </a>
+                                                            @endif
+                                                        </td>
                                                     </tr>
-                                                    </thead>
-                                                    <tbody>
+                                                @endforeach
+                                                </thead>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-address" role="tabpanel"
+                                         aria-labelledby="pills-address-tab">
+                                        <div class="my-account-address account-wrapper">
+                                            <h4 class="account-title">Thông tin cá nhân</h4>
+                                            <div class="account-address m-t-30">
+                                                <table class="table text-left">
+                                                    <tbody class="text-left">
                                                     <tr>
-                                                        <td>Mostarizing Oil</td>
-                                                        <td>Aug 22, 2020</td>
-                                                        <td>Yes</td>
-                                                        <td><a href="#">Download File</a></td>
+                                                        <th scope="col">Họ va tên</th>
+                                                        <td>{{$user->first_name .' '.$user->last_name}}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Katopeno Altuni</td>
-                                                        <td>July 22, 2020</td>
-                                                        <td>Never</td>
-                                                        <td><a href="#">Download File</a></td>
+                                                        <th scope="col">Địa chỉ</th>
+                                                        <td>{{$user->district->name .', '.$user->ward->name.', '.$user->street}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">Số điện thoại người nhận</th>
+
+                                                        <td>{{$user->phone}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">Email</th>
+
+                                                        <td>{{$user->email}}</td>
                                                     </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="pills-payment" role="tabpanel"
-                                         aria-labelledby="pills-payment-tab">
-                                        <div class="my-account-payment account-wrapper">
-                                            <h4 class="account-title">Phương Thức Thanh Toán</h4>
-                                            <p class="m-t-30">Bạn chưa thể lưu Phương thức thanh toán của mình.</p>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="pills-address" role="tabpanel"
-                                         aria-labelledby="pills-address-tab">
-                                        <div class="my-account-address account-wrapper">
-                                            <h4 class="account-title">Phương Thức thang Toán</h4>
-                                            <div class="account-address m-t-30">
-                                                <h6 class="name">Dương CHinh</h6>
-                                                <p>1355 Market St, Suite 900 <br> San Francisco, CA 94103</p>
-                                                <p>SĐT: 0987654321</p>
-                                                <a class="box-btn m-t-25 " href="#"><i class="far fa-edit"></i> Sửa Địa Chỉ</a>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="tab-pane fade" id="pills-account" role="tabpanel"
                                          aria-labelledby="pills-account-tab">
                                         <div class="my-account-details account-wrapper">
-                                            <h4 class="account-title">Chi Tiết Tài Khoản</h4>
+                                            <h4 class="account-title">Thay đổi thông tin</h4>
 
                                             <div class="account-details">
                                                 <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-box__single-group">
-                                                            <input type="text" placeholder="Họ">
+                                                    <form method="post">
+                                                        @csrf
+                                                        <div class="row">
+                                                            <div class="col-md-6 col-12">
+                                                                <div class="form-group">
+                                                                    <label for="first-name-column">Tên đầu</label>
+                                                                    <input type="text" id="first-name-column"
+                                                                           class="form-control"
+                                                                           placeholder="Nhập tên đầu"
+                                                                           value="{{$user->first_name}}"
+                                                                           name="first_name">
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-12">
+                                                                <div class="form-group">
+                                                                    <label for="last-name-column">Họ</label>
+                                                                    <input type="text" id="last-name-column"
+                                                                           class="form-control"
+                                                                           placeholder="Nhập họ"
+                                                                           value="{{$user->last_name}}"
+                                                                           name="last_name">
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-box__single-group">
-                                                            <input type="text" placeholder="Tên">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <label for="Phone">Số điện thoại</label>
+                                                                    <input type="text" id="Phone"
+                                                                           class="form-control"
+                                                                           value="{{$user->phone}}"
+                                                                           name="phone">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-6 col-12">
+                                                                    <div class="form-group">
+                                                                        <label for="sel1">Quận</label>
+                                                                        <select class="form-control" id="sel1"
+                                                                                name="district_id">
+                                                                            <option selected disabled hidden>Chọn
+                                                                            </option>
+                                                                            @foreach($data as $district )
+                                                                                <option
+                                                                                    value="{{$district->maqh}}" {{$user->district_id ==$district->maqh ? 'selected':''  }} >{{$district->name}}</option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 col-12">
+                                                                    <div class="form-group">
+                                                                        <label for="Ward">Phường</label>
+                                                                        <select class="form-control" id="Ward"
+                                                                                name="ward_id">
+                                                                            <option selected
+                                                                                    value="{{$user->ward_id}}">{{$user->ward->name}}</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <label for="Street">Đường & phố</label>
+                                                                    <input type="text" id="Street" class="form-control"
+                                                                           value="{{$user->street}}"
+                                                                           name="street">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="form-box__single-group">
+                                                                    <h5 class="title">Đổi Mật Khẩu</h5>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="form-box__single-group">
+                                                                    <input type="password_now"
+                                                                           placeholder="Mật Khẩu Hiện Tại ">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-box__single-group">
+                                                                    <input type="password" name="password"
+                                                                           placeholder="Mật Khẩu Mới">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-box__single-group">
+                                                                    <input type="password_cf"
+                                                                           placeholder="Xác Nhận Lại Mật Khẩu">
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-box__single-group">
-                                                            <input type="text" placeholder="Tên Đệm">
+                                                        <div class="pt-4 text-center">
+                                                            <button
+                                                                class="btn btn--box btn--medium btn--radius btn--black btn--black-hover-green btn--uppercase font--semi-bold"
+                                                                type="submit">Lưu thông tin
+                                                            </button>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-box__single-group">
-                                                            <input type="text" placeholder="Email">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-box__single-group">
-                                                            <h5 class="title">Đổi Mật Khẩu</h5>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-box__single-group">
-                                                            <input type="password" placeholder="Mật Khẩu Hiện Tại ">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-box__single-group">
-                                                            <input type="password" placeholder="Mật Khẩu Mới">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-box__single-group">
-                                                            <input type="password" placeholder="Xác Nhận Lại Mật Khẩu">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-box__single-group">
-                                                            <button class="btn btn--box btn--radius btn--small btn--black btn--black-hover-green btn--uppercase font--bold">Lưu Thay Đổi</button>
-                                                        </div>
-                                                    </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
@@ -237,6 +289,28 @@
         </div>
     </main> <!-- ::::::  End  Main Container Section  ::::::  -->
 
+@endsection
+@section('script')
+    <script>
+        const selectDistrict = $('select[name="district_id"]');
+        const selectWard = $('select[name="ward_id"]');
+        selectDistrict.change(function () {
+            $.ajax({
+                type: 'GET',
+                url: '/api/ward/' + selectDistrict.val(),
+                beforeSend: function () {
+                    selectWard.html('<option value hidden disabled selected></option>').prop('disabled', false);
+                },
+                success: function (data) {
+                    data.forEach(item => selectWard.append(new Option(item.name, item.xaid)));
+                },
+                error: function (xhr) {
+                    let errors = JSON.parse(xhr.responseText).errors;
+                    alert(errors.map(a => a.msg).join(';'));
+                }
+            });
+        })
+    </script>
 @endsection
 
 

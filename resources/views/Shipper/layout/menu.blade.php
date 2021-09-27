@@ -27,7 +27,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item  ">
-                    <a  class='sidebar-link'>
+                    <a href="{{route('notification')}}" class='sidebar-link'>
                         <i class="bi bi-person-lines-fill"></i>
                         <span>Thông báo</span>
                     </a>

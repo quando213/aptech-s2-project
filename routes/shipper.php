@@ -24,7 +24,7 @@ Route::prefix('/orders')->group(function () {
     Route::get('/{id}', [ShipperController::class, 'detail'])->name('shipperOrderDetail');
 });
 Route::prefix('/notification')->group(function () {
-    Route::get('', [ShipperController::class, 'notification']);
+    Route::get('', [ShipperController::class, 'notification'])->name('notification');
 
 });
 

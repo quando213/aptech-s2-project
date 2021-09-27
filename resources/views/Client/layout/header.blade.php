@@ -57,10 +57,12 @@
                                     <li class="header__nav-item pos-relative">
                                         <a href="/" class="header__nav-link">Trang Chủ</a>
                                     </li> <!-- End Single Nav link-->
-
+                                    <li class="header__nav-item pos-relative">
+                                        <a href="/" class="header__nav-link">Combo</a>
+                                    </li> <!-- End Single Nav link-->
                                     <!--Start Single Nav link-->
                                     <li class="header__nav-item pos-relative">
-                                        <a href="#" class="header__nav-link">Sản Phẩm <i
+                                        <a href="{{route('product')}}" class="header__nav-link">Sản Phẩm <i
                                                 class="fal fa-chevron-down"></i></a>
                                         <!-- Megamenu Menu-->
                                         <ul class="dropdown__menu pos-absolute">
@@ -71,7 +73,8 @@
                                                     @foreach($categories as $category)
                                                         <ul class="mega-menu__item">
                                                             <li class="mega-menu__list">
-                                                                <a href="/category{{$category->id}}" class="mega-menu__link">{{$category->name}}</a>
+                                                                <a href="{{route('category',$category->id) }}"
+                                                                   class="mega-menu__link">{{$category->name}}</a>
                                                             </li>
                                                         </ul>
                                                     @endforeach
@@ -347,11 +350,9 @@
 
 
                             @if(!\Illuminate\Support\Facades\Auth::check())
-                                <li>
                                 <li class="header__nav-item pos-relative">
                                     <a href="{{route('register')}}" style="font-size: 13px" class="header__nav-link"> <i
                                             class="fa-fw fas fa-user" aria-hidden="true"></i>Đăng nhập</a>
-                                </li>
                                 </li>
                             @else
 
@@ -360,7 +361,7 @@
                                                                                             aria-hidden="true"></i> {{\Illuminate\Support\Facades\Auth::user()->first_name . ' ' .\Illuminate\Support\Facades\Auth::user()->last_name}}
                                     </a>
                                     <ul class="dropdown__menu pos-absolute">
-                                        <li class="dropdown__list"><a href="/about" class="dropdown__link">Thông tin của
+                                        <li class="dropdown__list"><a href="{{route('myAccount')}}" class="dropdown__link">Thông tin của
                                                 bạn</a></li>
                                         <li class="dropdown__list pos-relative">
                                             <a href="/frequently-questions" class="dropdown__link">Đơn hàng của bạn</a>
@@ -373,12 +374,16 @@
                                 </li>
                             @endif
 
-
                             <li>
                                 <a href="#offcanvas-add-cart__box" class="offcanvas-toggle">
                                     <i class="icon-shopping-cart"></i>
                                     <span
                                         class="wishlist-item-count pos-absolute">{{\Gloudemans\Shoppingcart\Facades\Cart::content()->count()}}</span>
+                                </a>
+                            </li>
+                            <li class="header__nav-item pos-relative" >
+                                <a href="{{route('register')}}" style="font-size: 13px" class="header__nav-link">
+                                    <i class="fas fa-bell" aria-hidden="true"></i>
                                 </a>
                             </li>
                         </ul>
@@ -406,15 +411,16 @@
                         </div>
                     </div>
                     <div class="col-xl-7 col-lg-6">
-                        <form class="header-search" action="#" method="post">
+                        <form class="header-search m-tb-15" action="{{route('search')}}" method="get">
+                            @csrf
                             <div class="header-search__content pos-relative">
-                                <input type="search" name="header-search" placeholder="Tìm Kiếm" required>
+                                <input type="search" name="header_search" placeholder="Tìm Kiếm" required>
                                 <button class="pos-absolute" type="submit"><i class="icon-search"></i></button>
                             </div>
                         </form>
                     </div>
                     <div class="col-xl-2 col-lg-3">
-                        <div class="header-phone text-right"><span>Liên Hệ SĐT: 123 456 789</span></div>
+                        <div class="header-phone text-right"><span>Liên Hệ SĐT  0929427881</span></div>
                     </div>
                 </div>
             </div>
@@ -479,27 +485,10 @@
         </div>
 
         <div class="offcanvas-inner">
-            {{--            <ul class="user-set-role d-flex justify-content-between m-tb-15">--}}
-            {{--                <li class="user-currency pos-relative">--}}
-            {{--                    <a class="user-set-role__button" href="#" data-toggle="dropdown" aria-expanded="false">Select--}}
-            {{--                        Language<i class="fal fa-chevron-down"></i></a>--}}
-            {{--                    <ul class="expand-dropdown-menu dropdown-menu">--}}
-            {{--                        <li><a href="#"><img src="assets/img/icon/flag/icon_usa.png" alt="">English</a></li>--}}
-            {{--                        <li><a href="#"><img src="assets/img/icon/flag/icon_france.png" alt="">French</a></li>--}}
-            {{--                    </ul>--}}
-            {{--                </li>--}}
-            {{--                <li class="user-info pos-relative">--}}
-            {{--                    <a class="user-set-role__button" href="#" data-toggle="dropdown" aria-expanded="false">Select--}}
-            {{--                        Currency <i class="fal fa-chevron-down"></i></a>--}}
-            {{--                    <ul class="expand-dropdown-menu dropdown-menu">--}}
-            {{--                        <li><a href="#">USD</a></li>--}}
-            {{--                        <li><a href="#">POUND</a></li>--}}
-            {{--                    </ul>--}}
-            {{--                </li>--}}
-            {{--            </ul>--}}
-            <form class="header-search m-tb-15" action="#" method="post">
+            <form class="header-search m-tb-15" action="{{route('search')}}" method="get">
+                @csrf
                 <div class="header-search__content pos-relative">
-                    <input type="search" name="header-search" placeholder="Tìm Kiếm" required>
+                    <input type="search" name="header_search" placeholder="Tìm Kiếm" required>
                     <button class="pos-absolute" type="submit"><i class="icon-search"></i></button>
                 </div>
             </form>
@@ -519,8 +508,7 @@
                                 aria-hidden="true"></i> {{\Illuminate\Support\Facades\Auth::user()->first_name . ' ' .\Illuminate\Support\Facades\Auth::user()->last_name}}
                         </a>
                         <ul class="dropdown__menu pos-absolute">
-                            <li class="dropdown__list"><a href="/about" class="dropdown__link">Thông tin của bạn</a>
-                            </li>
+                            <li class="dropdown__list"><a href="{{route('myAccount')}}" class="dropdown__link">Thông tin của bạn</a></li>
                             <li class="dropdown__list pos-relative">
                                 <a href="/frequently-questions" class="dropdown__link">Đơn hàng của bạn</a>
                             </li>
@@ -542,93 +530,15 @@
                 <ul>
                     <li><a href="/"><span>Trang Chủ</span></a></li>
                     <li>
-                        <a href="#"><span>Sản Phẩm</span></a>
+                        <a href="{{route('product')}}"><span>Sản Phẩm</span></a>
                         <ul class="sub-menu">
                             @foreach($categories as $category)
                                 <li>
-                                    <a href="/category{{$category->id}}">{{$category->name }}</a>
+                                    <a href="{{route('category',$category->id) }}">{{$category->name }}</a>
                                 </li>
                             @endforeach
                         </ul>
-                        {{--                        <span class="mega-menu__title">Danh Sách Sản Phẩm</span>--}}
-                        {{--                        @foreach($categories as $category)--}}
-                        {{--                            <ul class="mega-menu__item">--}}
-                        {{--                                <li class="mega-menu__list">--}}
-                        {{--                                    <a href="/category {{ $category->id }}"--}}
-                        {{--                                       class="mega-menu__link">{{ $category->name }}</a>--}}
-                        {{--                                </li>--}}
-                        {{--                            </ul>--}}
-                        {{--                        @endforeach--}}
-                        {{--                        <ul class="sub-menu">--}}
-                        {{--                            <li>--}}
-                        {{--                                <a href="#">Shop Pages</a>--}}
-                        {{--                                <ul class="sub-menu">--}}
-                        {{--                                    <li><a href="/cart">Giỏ Hàng</a></li>--}}
-                        {{--                                    <li><a href="/checkout">Thanh Toán</a></li>--}}
-                        {{--                                    --}}{{--                                    <li><a href="compare.html">Compare</a></li>--}}
-                        {{--                                    <li><a href="/emply-cart">Giỏ Hàng Rỗng</a></li>--}}
-                        {{--                                    --}}{{--                                    <li><a href="wishlist.html">Wishlist</a></li>--}}
-                        {{--                                    <li><a href="/my-accoun">Tài Khoản Người Dùng</a></li>--}}
-                        {{--                                    <li><a href="/loginl">Đăng Nhập</a></li>--}}
-
-                        {{--                                </ul>--}}
-                        {{--                            </li>--}}
-                        {{--                        </ul>--}}
-                        {{--                        <ul class="sub-menu">--}}
-                        {{--                            <li>--}}
-                        {{--                                <a href="#">Product Single</a>--}}
-                        {{--                                <ul class="sub-menu">--}}
-                        {{--                                    <li><a href="/product-single-default">Simple</a></li>--}}
-                        {{--                                    --}}{{--                                    <li><a href="product-single-affiliate.html">Affiliate</a></li>--}}
-                        {{--                                    --}}{{--                                    <li><a href="product-single-group.html">Grouped</a></li>--}}
-                        {{--                                    --}}{{--                                    <li><a href="product-single-variable.html">Variable</a></li>--}}
-                        {{--                                    <li><a href="/product-single-tab-left">Left Tab</a></li>--}}
-                        {{--                                    --}}{{--                                    <li><a href="product-single-tab-right.html">Right Tab</a></li>--}}
-                        {{--                                    --}}{{--                                    <li><a href="product-single-slider.html">Single Slider</a></li>--}}
-                        {{--                                    --}}{{--                                    <li><a href="product-single-gallery-left.html">Gallery Left</a></li>--}}
-                        {{--                                    --}}{{--                                    <li><a href="product-single-gallery-right.html">Gallery Right</a></li>--}}
-                        {{--                                    --}}{{--                                    <li><a href="product-single-sticky-left.html">Sticky Left</a></li>--}}
-                        {{--                                    --}}{{--                                    <li><a href="product-single-sticky-right.html">Sticky Right</a></li>--}}
-                        {{--                                </ul>--}}
-                        {{--                            </li>--}}
-                        {{--                        </ul>--}}
                     </li>
-                    {{--                    <li>--}}
-                    {{--                        <a href="#"><span>Blogs</span></a>--}}
-                    {{--                        <ul class="sub-menu">--}}
-                    {{--                            --}}{{--                            <li>--}}
-                    {{--                            --}}{{--                                <a href="#">Blog Grid</a>--}}
-                    {{--                            --}}{{--                                <ul class="sub-menu">--}}
-                    {{--                            --}}{{--                                    <li><a href="/blog-simple-sidebar-left"> Blog Grid Left Sidebar</a></li>--}}
-                    {{--                            --}}{{--                                    <li><a href="blog-grid-sidebar-right.html"> Blog Grid Right Sidebar</a></li>--}}
-                    {{--                            --}}{{--                                </ul>--}}
-                    {{--                            --}}{{--                            </li>--}}
-                    {{--                            <li>--}}
-                    {{--                                <a href="#">Blog List</a>--}}
-                    {{--                                <ul class="sub-menu">--}}
-                    {{--                                    <li><a href="/blog-list-sidebar-left"> Blog List Left Sidebar</a></li>--}}
-                    {{--                                    --}}{{--                                                                <li><a href="blog-list-sidebar-right.html"> Blog List Right Sidebar</a></li>--}}
-                    {{--                                </ul>--}}
-                    {{--                            </li>--}}
-                    {{--                            <li>--}}
-                    {{--                                <a href="#">Blog Single</a>--}}
-                    {{--                                <ul class="sub-menu">--}}
-                    {{--                                    <li><a href="/blog-simple-sidebar-left"> Blog Single Left Sidebar</a></li>--}}
-                    {{--                                    --}}{{--                                    <li><a href="blog-single-sidebar-right.html"> Blog Single Right Sidebar</a></li>--}}
-                    {{--                                </ul>--}}
-                    {{--                            </li>--}}
-                    {{--                        </ul>--}}
-                    {{--                    </li>--}}
-                    {{--                    <li>--}}
-                    {{--                        <a href="#"><span>Pages</span></a>--}}
-                    {{--                        <ul class="sub-menu">--}}
-                    {{--                            <li><a href="/about">CHúng Tôi</a></li>--}}
-                    {{--                            <li><a href="/frequently-questions">Câu Hỏi Thường Gặp</a></li>--}}
-                    {{--                            <li><a href="/privacy-policy">Chính Sách Bảo Mật</a></li>--}}
-                    {{--                            --}}{{--                            <li><a href="404.html">404 Page</a></li>--}}
-                    {{--                        </ul>--}}
-                    {{--                    </li>--}}
-                    {{--                    <li><a href="/contact">Liên Hệ </a></li>--}}
                 </ul>
             </div>
         </div>
@@ -656,40 +566,26 @@
         </div>
         <!-- Start Add Cart Item Box-->
         <ul class="offcanvas-add-cart__menu">
-            <!-- Start Single Add Cart Item-->
-            <li class="offcanvas-add-cart__list pos-relative d-flex align-items-center justify-content-between ">
-                <div class="offcanvas-add-cart__content d-flex align-items-start m-r-10">
-                    <div class="offcanvas-add-cart__img-box pos-relative">
-                        <a href="/product-single-default" class="offcanvas-add-cart__img-link img-responsive"><img
-                                src="assets/img/product/size-small/product-home-1-img-1.jpg" alt=""
-                                class="add-cart__img"></a>
-                        <span class="offcanvas-add-cart__item-count pos-absolute">2x</span>
-                    </div>
-                    <div class="offcanvas-add-cart__detail">
-                        <a href="/product-single-default" class="offcanvas-add-cart__link">Trứng</a>
-                        <span class="offcanvas-add-cart__price">$29.00</span>
-                        <span class="offcanvas-add-cart__info">Dimension: 40x60cm</span>
-                    </div>
-                </div>
-                <button class="offcanvas-add-cart__item-dismiss"><i class="fal fa-times"></i></button>
-            </li> <!-- Start Single Add Cart Item-->
-            <!-- Start Single Add Cart Item-->
-            <li class="offcanvas-add-cart__list pos-relative d-flex align-items-center justify-content-between">
-                <div class="offcanvas-add-cart__content d-flex  align-items-start m-r-10">
-                    <div class="offcanvas-add-cart__img-box pos-relative">
-                        <a href="/product-single-default" class="offcanvas-add-cart__img-link img-responsive"><img
-                                src="assets/img/product/size-small/product-home-1-img-2.jpg" alt=""
-                                class="add-cart__img"></a>
-                        <span class="offcanvas-add-cart__item-count pos-absolute">2x</span>
-                    </div>
-                    <div class="offcanvas-add-cart__detail">
-                        <a href="/product-single-default" class="offcanvas-add-cart__link">Rau Củ</a>
-                        <span class="offcanvas-add-cart__price">$29.00</span>
-                        <span class="offcanvas-add-cart__info">Dimension: 40x60cm</span>
-                    </div>
-                </div>
-                <button class="offcanvas-add-cart__item-dismiss"><i class="fal fa-times"></i></button>
-            </li> <!-- Start Single Add Cart Item-->
+            @if(\Gloudemans\Shoppingcart\Facades\Cart::content()->count() > 0)
+                @foreach(\Gloudemans\Shoppingcart\Facades\Cart::content() as $item)
+                    <li class="offcanvas-add-cart__list pos-relative d-flex align-items-center justify-content-between ">
+                        <div class="offcanvas-add-cart__content d-flex align-items-start m-r-10">
+                            <div class="offcanvas-add-cart__img-box pos-relative">
+                                <a href="{{route('detailProduct',$item->id)}}"
+                                   class="offcanvas-add-cart__img-link img-responsive"><img
+                                        src="{{$item->options->thumbnail}}" style="width: 100px;height: 100px" alt=""
+                                        class="add-cart__img"></a>
+                                <span class="offcanvas-add-cart__item-count pos-absolute">{{$item->qty}}x</span>
+                            </div>
+                            <div class="offcanvas-add-cart__detail">
+                                <a href="{{route('detailProduct',$item->id)}}" class="offcanvas-add-cart__link">{{$item->name}}</a>
+                                <span class="offcanvas-add-cart__price">{{$item->subtotal(0)}} ₫</span>
+                            </div>
+                        </div>
+                        <button class="offcanvas-add-cart__item-dismiss"><i class="fal fa-times"></i></button>
+                    </li>
+                @endforeach
+            @endif
         </ul> <!-- Start Add Cart Item Box-->
         <!-- Start Add Cart Checkout Box-->
         <div class="offcanvas-add-cart__checkout-box-bottom">
@@ -698,27 +594,12 @@
                 <!-- Start Single Add Cart Checkout Info-->
                 <li class="offcanvas-add-cart__checkout-list">
                     <span class="offcanvas-add-cart__checkout-left-info">Tổng Giá Sản Phẩm</span>
-                    <span class="offcanvas-add-cart__checkout-right-info">$60.59</span>
-                </li> <!-- End Single Add Cart Checkout Info-->
-                <!-- Start Single Add Cart Checkout Info-->
-                <li class="offcanvas-add-cart__checkout-list">
-                    <span class="offcanvas-add-cart__checkout-left-info">Phí Vận Chuyển</span>
-                    <span class="offcanvas-add-cart__checkout-right-info">$7.00</span>
-                </li> <!-- End Single Add Cart Checkout Info-->
-                <!-- Start Single Add Cart Checkout Info-->
-            {{--                <li class="offcanvas-add-cart__checkout-list">--}}
-            {{--                    <span class="offcanvas-add-cart__checkout-left-info">Taxes</span>--}}
-            {{--                    <span class="offcanvas-add-cart__checkout-right-info">$0.00</span>--}}
-            {{--                </li> <!-- End Single Add Cart Checkout Info-->--}}
-            <!-- Start Single Add Cart Checkout Info-->
-                <li class="offcanvas-add-cart__checkout-list">
-                    <span class="offcanvas-add-cart__checkout-left-info">Tổng</span>
-                    <span class="offcanvas-add-cart__checkout-right-info">$67.59</span>
-                </li> <!-- End Single Add Cart Checkout Info-->
-            </ul> <!-- End offcanvas Add Cart Checkout Info-->
+                    <span class="offcanvas-add-cart__checkout-right-info">{{\Gloudemans\Shoppingcart\Facades\Cart::total(0)}} ₫</span>
+                </li>
+            </ul>
 
             <div class="offcanvas-add-cart__btn-checkout">
-                <a href="/checkout"
+                <a href="{{route('checkout')}}"
                    class="btn btn--block btn--radius btn--box btn--black btn--black-hover-green btn--large btn--uppercase font--bold">Tiến
                     Hành Thanh Toán</a>
             </div>

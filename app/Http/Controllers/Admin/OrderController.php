@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Enums\OrderStatus;
 use App\Enums\UserRole;
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\District;
 use App\Models\Group;
 use App\Models\Notification;
@@ -13,9 +14,13 @@ use App\Models\OrderDetail;
 use App\Models\Product;
 use App\Models\User;
 use Gloudemans\Shoppingcart\Facades\Cart;
+
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 
 class  OrderController extends Controller
@@ -223,15 +228,14 @@ class  OrderController extends Controller
             if ($secureHash === $vnp_SecureHash) {
                 if ($order != NULL) {
                     if ($floatVar == $vnp_Amount) {
-                        if ($order->payment_method != NULL && $order->payment_method == 0) {
+                        if ($order->payment_method == 0) {
                             if ($request->vnp_ResponseCode == '00' || $request->vnp_TransactionStatus == '00') {
-                                $order->update(['payment_method' => true]);
+                                $shipper = $this->rollShipper($order);
+                                $order->update([
+                                    'payment_method' => true,
+                                    'shipper_id'=>$shipper
+                                ]);
                                 $order->save();
-                                $notification = new Notification();
-                                $notification->sender_id = $order->user_id;
-                                $notification->link = "/myorder/".$order->id;
-                                $notification->message = "Đơn hàng của bạn đã được xác nhân thanh toán với giá trị: ".$order->total_price."đơn hàng sẽ được giao trong thời gian sớm nhất";
-                                $notification->save();
                                 $returnData['RspCode'] = '00';
                                 $returnData['Message'] = 'Confirm Success';
                                 return $returnData;
@@ -279,6 +283,7 @@ class  OrderController extends Controller
             'breadcrumb'=>'Hiện thị đơn hàng'
         ]);
     }
+
     public function orderDetail($id){
         $order = Order::query()->where('id',$id)->with(['district','ward','user'])->orderBy('created_at','desc')->first();
         $groupShipper = Group::query()->where('ward_id',$order->shipping_ward_id)->first();
@@ -294,7 +299,8 @@ class  OrderController extends Controller
             'title'=>'Trang chi tiết đơn hàng',
             'breadcrumb'=>'Hiện thị chi tiết đơn hàng',
             'orderDetails'=>$orderDetails,
-            'order'=>$order
+            'order'=>$order,
+            'categories'=>Category::all()
         ]);
     }
     public function save(Request $request,$id){
@@ -302,7 +308,6 @@ class  OrderController extends Controller
         $notification->sender_id = $request->shipper_id;
         $notification->link = "/shipper/notification/";
         $notification->message = "ban nhân đươc 1 đơn hàng giao đến ";
-        return $request;
         $order = Order::find($id);
         $order->status = $request->status;
         $order->payment_method = $request->payment_method;
@@ -311,11 +316,48 @@ class  OrderController extends Controller
         return redirect()->route('orderList');
     }
 
+
+    public function rollShipper ($order){
+        $array = array();
+        $count = array();
+        $group = Group::query()->where('ward_id',$order->shipping_ward_id)->with('user')->first();
+        if ($group){
+            foreach ($group->user as $item){
+                $user = Order::query()->where('shipper_id',$item->id)->get();
+                $data = [
+                    'id'=>$item->id,
+                    'count'=> sizeof($user)
+                ];
+                array_push($array,$data);
+                array_push($count,sizeof($user));
+            }
+        }
+        foreach ($array as $item){
+            if ($item['count'] == min($count)){
+                $user = User::find($item['id']);
+                $notification = new Notification();
+                $notification->sender_id = $item['id'];
+                $notification->link = "/shipper/order/".$order->id;
+                $notification->message = "ban nhân đươc 1 đơn mới";
+                $notification->save();
+                $to_name = $user->first_name.' '.$user->last_name;
+                $user_email = $user->email;
+                Mail::send('mails.demo_mail', ['order'=>$order ,$user ], function ($message) use ($to_name, $user_email) {
+                    $message->to($user_email, $to_name)
+                        ->subject('HNFOOD Mail');
+                    $message->from(env('MAIL_USERNAME'), 'HNFOOD');
+                });
+                return  $item['id'];
+            };
+        }
+    }
+
+
+
     public function sendNotification($order){
         $notification = new Notification();
         $notification->sender_id = $order->user_id;
         $notification->link = "/myOrder/".$order->id;
-
         switch ($order->status){
             case 1:
                 $notification->message = "Chúng tôi đã ghi nhân đặt hàng của bạn với giá trị: ".$order->total_price."<br> đơn hàng đang đươc xủ lý xin cảm ơn";
@@ -335,4 +377,5 @@ class  OrderController extends Controller
         }
         $notification->save();
     }
+
 }
