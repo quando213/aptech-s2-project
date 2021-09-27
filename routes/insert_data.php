@@ -2,7 +2,7 @@
 $hostname = 'localhost:3306';
 $username = 'root';
 $password = '';
-$dbname = "project_2";
+$dbname = "sem2_project";
 $conn = mysqli_connect($hostname, $username, $password, $dbname);
 if (!$conn) {
     die('Không thể kết nối: ' . mysqli_error($conn));

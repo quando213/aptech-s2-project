@@ -1,0 +1,76 @@
+.product-img-square-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+}
+
+.product-img-square-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.page-breadcrumb {
+    padding: 20px 0;
+    margin-bottom: 60px;
+    background-color: #89c74a;
+    color: white;
+}
+
+.page-breadcrumb__menu, .page-breadcrumb__nav, .page-breadcrumb__nav.active, .page-breadcrumb__nav a {
+    color: white;
+}
+
+.page-breadcrumb__nav a:hover {
+    color: white;
+}
+
+.select-sort option {
+    text-align: inherit;
+}
+
+.selected-category {
+    background-color: #89c74a;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 0 5px 10px;
+    margin-left: -10px;
+}
+
+.sidebar__menu > li a.selected-category:hover {
+    color: white;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.page-item.active .page-link {
+    background-color: #89c74a;
+    border-color: #89c74a;
+}
+
+.page-link, .page-link:hover {
+    color: #89c74a;
+}
+
+.modal__product-shipping-info span.cart-total, .modal__product-shipping-info span.cart-count {
+    font-weight: inherit;
+    padding: 0 5px;
+}
+
+.cart-summary td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.cart-table-content tr td:last-child, .cart-table-content tr th:last-child {
+    text-align: right;
+    padding-left: 45px;
+    padding-right: 45px;
+}

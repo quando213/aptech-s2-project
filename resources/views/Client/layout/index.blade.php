@@ -9,7 +9,11 @@
 @yield('contact')
 
 @include('.Client.layout.footer')
-@yield('moddal')
+
+<!-- material-scrolltop button -->
+<button class="material-scrolltop" type="button"></button>
+
+@include('.Client.layout.modal')
 
 @include('.Client.layout.script')
 @yield('script')

@@ -64,7 +64,7 @@ class ProductSeeder extends Seeder
             [
                 'id' => 5,
                 'name' => 'Đùi bò nhập khẩu đông lạnh túi 1kg',
-                'price' => '305.000',
+                'price' => '305000',
                 'thumbnail' => 'https://cdn.tgdd.vn/Products/Images/8139/248985/bhx/dui-bo-nhap-khau-dong-lanh-tui-1kg-202108150201596990.jpeg',
                 'category_id' => 1,
                 'stock' => 30,

@@ -12,10 +12,9 @@ use BenSampo\Enum\Enum;
 final class OrderStatus extends Enum
 {
 
-    const Create = 1;
-    const OrderReceived = 2;
-    const WaitingForDelivery = 3;
-    const Complete = 4;
-    const Cancel = 5;
-
+    const CREATED = 1;
+    const PAID = 2;
+    const IN_DELIVERY = 3;
+    const COMPLETED = 4;
+    const CANCELED = 5;
 }

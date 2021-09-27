@@ -6,8 +6,9 @@
             <div class="row">
                 <div class="col-12">
                     <ul class="page-breadcrumb__menu">
-                        <li class="page-breadcrumb__nav"><a href="/">Trang Chủ</a></li>
-                        <li class="page-breadcrumb__nav active">Tiến Hành Thanh Toán</li>
+                        <li class="page-breadcrumb__nav"><a href="{{ route('home') }}">Trang chủ</a></li>
+                        <li class="page-breadcrumb__nav"><a href="{{ route('viewCart') }}">Giỏ hàng</a></li>
+                        <li class="page-breadcrumb__nav active">Thanh toán</li>
                     </ul>
                 </div>
             </div>
@@ -19,11 +20,13 @@
         <div class="container">
             <div class="row">
                     <div class="section-content text-danger pb-3" id="text-danger">
-{{--                        <h5 class=" text-danger" >Hiên khu vựng {{$data->ward->name}} của bạn không có đơn vị vân chuyển nào vui lòng chọn khu vưc khác hoặc qoay lại sau </h5>--}}
+                        @if(!$group)
+                            <h5 class=" text-danger" >Hiên khu vực {{$data->ward->name}} của bạn không có đơn vị vận chuyển nào. Vui lòng chọn khu vực khác hoặc quay lại sau.</h5>
+                        @endif
                     </div>
                 <div class="col-lg-7 pt-3">
                     <div class="section-content">
-                        <h5 class="section-content__title">Chi Tiết Thanh Toán</h5>
+                        <h5 class="section-content__title">Thông tin người nhận</h5>
                     </div>
 
                     <form method="post" class="form-box" id="form">
@@ -33,16 +36,16 @@
                                 <div class="form-box__single-group">
                                     <label for="form-first-name">Tên</label>
                                     <input type="text" name="shipping_name"
-                                           value="{{$data ? $data->first_name .' '.$data->last_name :''}}"
+                                           value="{{$data ? $data->last_name .' '.$data->first_name :''}}"
                                            id="form-first-name">
                                 </div>
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="form-box__single-group">
-                                    <label for="sel1">Quận</label>
+                                    <label for="sel1">Quận/Huyện</label>
                                     <select class="form-control" id="sel1" name="shipping_district_id">
                                         <option selected disabled hidden>Chọn</option>
-                                        @foreach($districts as $district )
+                                        @foreach($districts as $district)
                                             <option
                                                 value="{{$district->maqh}}" {{ $data && number_format($data->district_id) == $district->maqh ? 'selected' :'' }} >{{$district->name}}</option>
                                         @endforeach
@@ -51,12 +54,13 @@
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class=" form-box__single-group">
-                                    <label for="Ward">Phường</label>
+                                    <label for="Ward">Phường/Xã</label>
                                     <select class="form-control" id="Ward" name="shipping_ward_id">
                                         <option selected disabled hidden>Chọn</option>
                                         @if($data)
-                                            <option selected
-                                                    value="{{$data->ward->xaid}}">{{$data->ward->name}}</option>
+                                            @foreach($data->district->wards as $ward)
+                                                <option value="{{ $ward->xaid }}" {{ $data && $data->ward_id ==  $ward->xaid ? 'selected' : '' }}>{{ $ward->name }}</option>
+                                            @endforeach
                                         @endif
                                     </select>
                                 </div>
@@ -70,7 +74,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="form-box__single-group">
-                                    <label for="form-phone">Số Điện Thoại</label>
+                                    <label for="form-phone">Số điện thoại</label>
                                     <input type="text" name="shipping_phone" value="{{$data->phone}}" id="form-phone">
                                 </div>
                             </div>
@@ -142,88 +146,11 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="form-box__single-group">
-                                    <h6>Thông Tin Thêm</h6>
-                                    <label for="form-additional-info">Ghi Chú</label>
-                                    <textarea name="node" id="form-additional-info" rows="5"
-                                              placeholder="Ghi Chú."></textarea>
+                                    <label for="form-additional-info">Ghi chú thêm</label>
+                                    <textarea name="note" id="form-additional-info" rows="5"
+                                              placeholder="Nhập ghi chú"></textarea>
                                 </div>
                             </div>
-
-                            <!-- Add Another Shipping Address -->
-                            {{--                            <div class="col-md-12">--}}
-                            {{--                                <div class="m-tb-20">--}}
-                            {{--                                    <label for="shipping-account">--}}
-                            {{--                                        <input type="checkbox" name="check-account" class="shipping-account"  id="shipping-account">--}}
-                            {{--                                        <span>Gủi Đến Địa Chỉ Khác?</span>--}}
-                            {{--                                    </label>--}}
-                            {{--                                    <div class="toogle-form open-shipping-account">--}}
-                            {{--                                        <div class="row">--}}
-                            {{--                                            <div class="col-md-6">--}}
-                            {{--                                                <div class="form-box__single-group">--}}
-                            {{--                                                    <label for="shipping-form-first-name">Tên</label>--}}
-                            {{--                                                    <input type="text" id="shipping-form-first-name">--}}
-                            {{--                                                </div>--}}
-                            {{--                                            </div>--}}
-                            {{--                                            <div class="col-md-6">--}}
-                            {{--                                                <div class="form-box__single-group">--}}
-                            {{--                                                    <label for="shipping-form-last-name">Họ</label>--}}
-                            {{--                                                    <input type="text" id="shipping-form-last-name">--}}
-                            {{--                                                </div>--}}
-                            {{--                                            </div>--}}
-                            {{--                                            <div class="col-md-12">--}}
-                            {{--                                                <div class="form-box__single-group">--}}
-                            {{--                                                    <label for="shipping-form-country">* Thành Phố</label>--}}
-                            {{--                                                    <select id="shipping-form-country">--}}
-                            {{--                                                        <option value="select-country" selected>Select a country</option>--}}
-                            {{--                                                        <option value="BD">Bangladesh</option>--}}
-                            {{--                                                        <option value="US">USA</option>--}}
-                            {{--                                                        <option value="UK">UK</option>--}}
-                            {{--                                                        <option value="TR">Turkey</option>--}}
-                            {{--                                                        <option value="CA">Canada</option>--}}
-                            {{--                                                    </select>--}}
-                            {{--                                                </div>--}}
-                            {{--                                            </div>--}}
-                            {{--                                            <div class="col-md-12">--}}
-                            {{--                                                <div class="form-box__single-group">--}}
-                            {{--                                                    <label for="shipping-form-address-1">Sôa Nhà </label>--}}
-                            {{--                                                    <input type="text" id="shipping-form-address-1" placeholder="Số Nhà Và Tên Đường">--}}
-                            {{--                                                    <input type="text" class="m-t-10" id="shipping-form-address-2" placeholder="Apartment, suite, unit etc.">--}}
-                            {{--                                                </div>--}}
-                            {{--                                            </div>--}}
-                            {{--                                            <div class="col-md-6">--}}
-                            {{--                                                <div class="form-box__single-group">--}}
-                            {{--                                                    <label for="shipping-form-state">* Quận</label>--}}
-                            {{--                                                    <select id="shipping-form-state">--}}
-                            {{--                                                        <option value="Dha" selected>Dhaka</option>--}}
-                            {{--                                                        <option value="Kha">Khulna</option>--}}
-                            {{--                                                        <option value="Raj">Rajshahi</option>--}}
-                            {{--                                                        <option value="Syl">Sylet</option>--}}
-                            {{--                                                        <option value="Chi">Chittagong</option>--}}
-                            {{--                                                    </select>--}}
-                            {{--                                                </div>--}}
-                            {{--                                            </div>--}}
-                            {{--                                            <div class="col-md-6">--}}
-                            {{--                                                <div class="form-box__single-group">--}}
-                            {{--                                                    <label for="shipping-form-zipcode">* Phường</label>--}}
-                            {{--                                                    <input type="text" id="shipping-form-zipcode">--}}
-                            {{--                                                </div>--}}
-                            {{--                                            </div>--}}
-                            {{--                                            <div class="col-md-6">--}}
-                            {{--                                                <div class="form-box__single-group">--}}
-                            {{--                                                    <label for="shipping-form-phone">SĐT</label>--}}
-                            {{--                                                    <input type="text" id="shipping-form-phone">--}}
-                            {{--                                                </div>--}}
-                            {{--                                            </div>--}}
-                            {{--                                            <div class="col-md-6">--}}
-                            {{--                                                <div class="form-box__single-group">--}}
-                            {{--                                                    <label for="shipping-form-email">Địa Chỉ Email</label>--}}
-                            {{--                                                    <input type="email" id="shipping-form-email">--}}
-                            {{--                                                </div>--}}
-                            {{--                                            </div>--}}
-                            {{--                                        </div>--}}
-                            {{--                                    </div>--}}
-                            {{--                                </div>--}}
-                            {{--                            </div>  <!-- End Another Shipping Address -->--}}
                         </div>
                     </form>
                 </div> <!-- End Client Shipping Address -->
@@ -237,7 +164,7 @@
                         <div class="your-order-box gray-bg m-t-40 m-b-30">
                             <div class="your-order-product-info">
                                 <div class="your-order-top d-flex justify-content-between">
-                                    <h6 class="your-order-top-left font--bold">Sản Phẩm</h6>
+                                    <h6 class="your-order-top-left font--bold">Sản phẩm</h6>
                                     <h6 class="your-order-top-right font--bold">Tổng</h6>
                                 </div>
                                 <ul class="your-order-middle">
@@ -246,68 +173,18 @@
                                             <span
                                                 class="your-order-middle-left font--semi-bold">{{$item->name}}  X {{$item->qty}}</span>
                                             <span
-                                                class="your-order-middle-right font--semi-bold">{{$item->subtotal(0)}}</span>
+                                                class="your-order-middle-right font--semi-bold">{{$item->subtotal(0)}} đ</span>
                                         </li>
                                     @endforeach
-
                                 </ul>
                                 <div class="your-order-bottom d-flex justify-content-between">
-                                    <h6 class="your-order-bottom-left font--bold">Vận Đơn</h6>
-                                    <span class="your-order-bottom-right font--semi-bold">Miễn Phí Vận Chuyển</span>
+                                    <h6 class="your-order-bottom-left font--bold">Phí vận chuyển</h6>
+                                    <span class="your-order-bottom-right font--semi-bold">0 đ</span>
                                 </div>
                                 <div class="your-order-total d-flex justify-content-between">
-                                    <h5 class="your-order-total-left font--bold">Tổng</h5>
-                                    <h5 class="your-order-total-right font--bold">{{\Gloudemans\Shoppingcart\Facades\Cart::total(0)}}</h5>
+                                    <h5 class="your-order-total-left font--bold">Thành tiền</h5>
+                                    <h5 class="your-order-total-right font--bold">{{\Gloudemans\Shoppingcart\Facades\Cart::total(0)}} đ</h5>
                                 </div>
-
-                                {{--                                <div class="payment-method">--}}
-                                {{--                                    <div class="payment-accordion element-mrg">--}}
-                                {{--                                        <div class="panel-group" id="accordion">--}}
-                                {{--                                            <div class="panel payment-accordion">--}}
-                                {{--                                                <div class="panel-heading" id="method-one">--}}
-                                {{--                                                    <h4 class="panel-title">--}}
-                                {{--                                                        <a class="collapsed d-flex justify-content-between align-items-center" data-toggle="collapse" data-parent="#accordion" href="#method1" aria-expanded="false">--}}
-                                {{--                                                            Chuyển Khoản <i class="far fa-chevron-down"></i>--}}
-                                {{--                                                        </a>--}}
-                                {{--                                                    </h4>--}}
-                                {{--                                                </div>--}}
-                                {{--                                                <div id="method1" class="panel-collapse collapse">--}}
-                                {{--                                                    <div class="panel-body">--}}
-                                {{--                                                        <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>--}}
-                                {{--                                                    </div>--}}
-                                {{--                                                </div>--}}
-                                {{--                                            </div>--}}
-                                {{--                                            <div class="panel payment-accordion">--}}
-                                {{--                                                <div class="panel-heading" id="method-two">--}}
-                                {{--                                                    <h4 class="panel-title">--}}
-                                {{--                                                        <a class="collapsed d-flex justify-content-between align-items-center" data-toggle="collapse" data-parent="#accordion" href="#method2" aria-expanded="false">--}}
-                                {{--                                                            Check payments <i class="far fa-chevron-down"></i>--}}
-                                {{--                                                        </a>--}}
-                                {{--                                                    </h4>--}}
-                                {{--                                                </div>--}}
-                                {{--                                                <div id="method2" class="panel-collapse collapse" >--}}
-                                {{--                                                    <div class="panel-body">--}}
-                                {{--                                                        <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>--}}
-                                {{--                                                    </div>--}}
-                                {{--                                                </div>--}}
-                                {{--                                            </div>--}}
-                                {{--                                            <div class="panel payment-accordion">--}}
-                                {{--                                                <div class="panel-heading" id="method-three">--}}
-                                {{--                                                    <h4 class="panel-title">--}}
-                                {{--                                                        <a class="collapsed d-flex justify-content-between align-items-center" data-toggle="collapse" data-parent="#accordion" href="#method3" aria-expanded="false">--}}
-                                {{--                                                            Cash on delivery <i class="far fa-chevron-down"></i>--}}
-                                {{--                                                        </a>--}}
-                                {{--                                                    </h4>--}}
-                                {{--                                                </div>--}}
-                                {{--                                                <div id="method3" class="panel-collapse collapse">--}}
-                                {{--                                                    <div class="panel-body">--}}
-                                {{--                                                        <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>--}}
-                                {{--                                                    </div>--}}
-                                {{--                                                </div>--}}
-                                {{--                                            </div>--}}
-                                {{--                                        </div>--}}
-                                {{--                                    </div>--}}
-                                {{--                                </div>--}}
                             </div>
                         </div>
                         <div class="text-center">
@@ -330,9 +207,6 @@
 @section('script')
     <script>
         const text_danger = $('#text-danger');
-        if ({{$group == null}}){
-            text_danger.append(`<h5 class=" text-danger" >Hiên khu vựng {{$data->ward->name}} của bạn không có đơn vị vân chuyển nào vui lòng chọn khu vưc khác hoặc quay lại sau </h5>`)
-        }
         const selectDistrict = $('select[name="shipping_district_id"]');
         const selectWard = $('select[name="shipping_ward_id"]');
         selectDistrict.change(function () {
@@ -340,7 +214,7 @@
                 type: 'GET',
                 url: '/api/ward/' + selectDistrict.val(),
                 beforeSend: function () {
-                    selectWard.html('<option value hidden disabled selected></option>').prop('disabled', false);
+                    selectWard.html('<option value hidden disabled selected>Chọn</option>').prop('disabled', false);
                 },
                 success: function (data) {
                     data.forEach(item => selectWard.append(new Option(item.name, item.xaid)));
@@ -359,9 +233,8 @@
                     text_danger.html(``)
                 },
                 success: function (data) {
-                    console.log(data)
                     if (data == ''){
-                        text_danger.html(`<h5 class="text-danger" >Hiên khu vựng bạn chọn không có đơn vị vân chuyển nào vui lòng chọn khu vưc khác hoặc qoay lại sau </h5>`)
+                        text_danger.html(`<h5 class="text-danger" >Hiên khu vực bạn chọn không có đơn vị vận chuyển nào. Vui lòng chọn khu vực khác hoặc quay lại sau.</h5>`)
                     }
                 },
                 error: function (xhr) {

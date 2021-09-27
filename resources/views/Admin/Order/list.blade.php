@@ -105,7 +105,11 @@
                                                             @break
                                                         @endswitch
                                                     </td>
+
                                                     <td>
+
+                                                        <a href="{{route('orderDetail',$item->id)}}" type="button"
+                                                           class="btn btn-primary">Detail</a>
                                                         <a href="{{route('orderDetail',$item->id)}}" type="button"
                                                            class="btn btn-primary">Detail</a>
                                                     </td>
@@ -115,7 +119,7 @@
                                         @else
                                             <tbody>
                                             <tr class="odd">
-                                                <td colspan="4" class="dataTables_empty">Không có dư liệu nào
+                                                <td colspan="8" class="dataTables_empty">Không có dư liệu nào
                                                 </td>
                                             </tr>
                                             </tbody>

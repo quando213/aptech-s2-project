@@ -39,6 +39,9 @@ class User extends Authenticatable
     public function ward(){
         return $this->belongsTo(Ward::class,'ward_id');
     }
+    public function orderShipper(){
+        return $this->hasMany(Order::class);
+    }
     public function notifications(){
         return $this->hasMany(Notifiable::class);
     }

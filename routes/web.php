@@ -4,6 +4,8 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\WardController;
+use App\Http\Controllers\Client\CartController;
+use App\Http\Controllers\Client\CheckoutController;
 use App\Http\Controllers\Client\ClientComboController;
 use App\Http\Controllers\Client\ClientProductController;
 use App\Http\Controllers\Client\ClientProductDetailController;
@@ -29,53 +31,61 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('admin')->middleware(['auth', CheckAdmin::class])->group(function () {
     require_once __DIR__ . '/admin.php';
 });
+//Route::get('insert', require_once __DIR__ . '/insert_data.php');
 
 Route::prefix('shipper')->middleware(['auth', checkShipper::class])->group(function () {
     require_once __DIR__ . '/shipper.php';
 });
 
-
-
-Route::get('/api/ward/{id}', [WardController::class, 'api']);
-Route::get('/api/ward/check/{id}', [WardController::class, 'check']);
-Route::get('/api/product/{id}', [ProductController::class, 'apiCheck']);
-Route::get('/test', [OrderController::class, 'test']);
-Route::get('/test/order', [OrderController::class, 'detail']);
-Route::get('addToCart/{id}', [OrderController::class, 'addToCart'])->name('addToCart');
-
-//Route::post('/test/order', [OrderController::class, 'update'])->name('update');
-Route::get('/buy', [OrderController::class, 'buynow'])->name('buy');
-
 Route::get('/', [HomeController::class, 'home'])->name("home");
 
-
-
-
-Route::get('/login', [EntryController::class, 'register'])->name('register');
-Route::get('/register', [EntryController::class, 'register']);
-Route::post('/login', [EntryController::class, 'processLogin'])->name('processLogin');
-Route::post('/register', [EntryController::class, 'processRegister'])->name('processRegister');
-Route::get('/logout', [EntryController::class, 'logout'])->name('logout');
-Route::get('/checkout', [OrderController::class, 'checkout']);
-Route::post('/checkout', [OrderController::class, 'buynow'])->name('buy');
-Route::get('cart/remove/{id}', [OrderController::class, 'remove']);
-Route::get('cart/destroy', [OrderController::class, 'destroy']);
-Route::get('/cart', [TemplateClientController::class, 'cart']);
-Route::post('/cart', [OrderController::class, 'update']);
-
-
+// REPOSITION
+Route::get('/response', [OrderController::class, 'response']); // thanh toán xong
+Route::get('/ipn', [OrderController::class, 'ipnResponse']); // vnpay gửi request trả về, xác nhận
 
 Route::prefix('product')->group(function () {
-    Route::get('/', [ClientProductController::class, 'list']);
-    Route::get('detail/{id}', [ClientProductController::class, 'detail'])->name('detailProduct');
+    Route::get('/', [ClientProductController::class, 'list'])->name('listProduct');
+    Route::get('{id}', [ClientProductController::class, 'detail'])->name('detailProduct');
 });
 
-//Route::prefix('product')->group(function () {
-//    Route::get('/', [ClientProductDetailController::class, 'list']);
-//    Route::get('detail/{id}', [ClientProductDetailController::class, 'detail'])->name('detailProduct');
+Route::get('/login', [EntryController::class, 'register'])->name('login');
+Route::post('/login', [EntryController::class, 'processLogin'])->name('processLogin');
+Route::get('/register', [EntryController::class, 'register'])->name('register');
+Route::post('/register', [EntryController::class, 'processRegister'])->name('processRegister');
+Route::get('/logout', [EntryController::class, 'logout'])->name('logout');
+
+Route::prefix('account')->middleware('auth')->group(function () {
+    Route::get('/', [EntryController::class, 'myAccount'])->name('myAccount');
+    Route::get('my-order/{id}', [EntryController::class, 'myOrderDetail'])->name('myOrder');
+    Route::get('my-order/{id}/{notification}', [EntryController::class, 'myOrderDetail'])->name('myOrderDetail');
+});
+
+Route::prefix('cart')->group(function () {
+    Route::get('/', [CartController::class, 'view'])->name('viewCart');
+    Route::post('/', [CartController::class, 'update'])->name('updateCart');
+    Route::post('add', [CartController::class, 'add'])->name('addToCart');
+    Route::get('remove/{rowId}', [CartController::class, 'remove'])->name('removeCart');
+    Route::get('destroy', [CartController::class, 'destroy'])->name('destroyCart');
+});
+
+Route::prefix('checkout')->middleware('auth')->group(function () {
+    Route::get('/', [CheckoutController::class, 'checkout'])->name('checkout');
+});
+
+Route::get('/buy', [OrderController::class, 'buynow'])->name('buy');
+Route::post('/checkout', [OrderController::class, 'buynow'])->name('buy');
+
+// FOR DISTRICT & WARD SEEDER
+//Route::prefix('insert')->group(function () {
+//    require_once __DIR__ . '/insert_data.php';
 //});
 
 
+
+// Routes chưa rõ mục đích - CHƯA DUYỆT, KHÔNG ĐƯA LÊN TRÊN
+Route::get('/test', [OrderController::class, 'test']);
+Route::get('/test/order', [OrderController::class, 'detail']);
+//Route::post('/test/order', [OrderController::class, 'update'])->name('update');
 
 Route::get('/form-layout', [TemplateAdminController::class, 'form_layout']);
 Route::get('/input', [TemplateAdminController::class, 'input']);
@@ -95,26 +105,11 @@ Route::get('/shop-sidebar-grid-left', [TemplateClientController::class, 'shop_la
 //Route::get('/shop-sidebar-grid-left', [ClientProductController::class, 'list']);
     Route::get('/shop-sidebar-full-width', [TemplateClientController::class, 'shop_layout_with']);
 
-Route::get('/my-account', [TemplateClientController::class, 'account']);
-Route::get('/about', [TemplateClientController::class, 'about']);
-Route::get('/frequently-questions', [TemplateClientController::class, 'frequently']);
-Route::get('/privacy-policy', [TemplateClientController::class, 'privacy_policy']);
-Route::get('/wishlist', [TemplateClientController::class, 'wishlist']);
-Route::get('/emply-cart', [TemplateClientController::class, 'emply_cart']);
-
-Route::get('/compare', [TemplateClientController::class, 'compare']);
-
-// Link list category vs product ra trang all sản phẩm
-
-Route::get('/product/{id}', [ClientProductController::class, 'list']);
-Route::prefix('product')->group(function () {
-    Route::get('/', [ClientProductDetailController::class, 'list']);
-    Route::get('detail/{id}', [ClientProductDetailController::class, 'detail'])->name('detailProduct');
-    Route::get('/', [ClientProductController::class, 'list']);
-    Route::get('/category/{id}', [ClientProductController::class, 'optionCategori'])->name('option');
-});
+Route::post('/checkout', [OrderController::class, 'buynow'])->name('buy');
+Route::get('cart/remove/{id}', [OrderController::class, 'remove']);
+Route::get('cart/destroy', [OrderController::class, 'destroy']);
+Route::get('/cart', [HomeController::class, 'cart']);
+Route::post('/cart', [OrderController::class, 'update']);
+Route::get('addToCart/{id}', [OrderController::class, 'addToCart'])->name('addToCart');
 
 Route::get('/combo', [ClientComboController::class, 'list']);
-
-
-

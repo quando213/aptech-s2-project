@@ -46,11 +46,6 @@ class TemplateClientController extends Controller
         return view('.Client.shop-sidebar-grid-left');
     }
 
-    public function cart()
-    {
-        return view('.Client.cart');
-    }
-
     public function login()
     {
         return view('.Client.login');

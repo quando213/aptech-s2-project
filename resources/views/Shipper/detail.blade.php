@@ -22,6 +22,7 @@
                 </div>
             </div>
         </div>
+
         <section class="section">
             <div class="row" id="basic-table">
                 <div class="col-12">
@@ -82,6 +83,56 @@
                             </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <div class="card-body">
+                                    <div class="modal fade text-left modal-borderless" id="border-less" tabindex="-1" aria-labelledby="myModalLabel1" aria-hidden="true" style="display: none;">
+                                        <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Border-Less</h5>
+                                                    <button type="button" class="close rounded-pill" data-bs-dismiss="modal" aria-label="Close">
+                                                        <i data-feather="x"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>
+                                                        Bonbon caramels muffin. Chocolate bar oat cake cookie pastry
+                                                        dragée
+                                                        pastry. Carrot cake
+                                                        chocolate tootsie roll chocolate bar candy canes biscuit.
+                                                        Gummies bonbon apple pie fruitcake icing biscuit apple pie
+                                                        jelly-o sweet
+                                                        roll. Toffee sugar
+                                                        plum sugar plum jelly-o jujubes bonbon dessert carrot cake.
+                                                        Cookie
+                                                        dessert tart muffin topping
+                                                        donut icing fruitcake. Sweet roll cotton candy dragée danish
+                                                        Candy canes
+                                                        chocolate bar cookie.
+                                                        Gingerbread apple pie oat cake. Carrot cake fruitcake bear
+                                                        claw. Pastry
+                                                        gummi bears
+                                                        marshmallow jelly-o.
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-light-primary" data-bs-dismiss="modal">
+                                                        <i class="bx bx-x d-block d-sm-none"></i>
+                                                        <span class="d-none d-sm-block">Close</span>
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                                                        <i class="bx bx-check d-block d-sm-none"></i>
+                                                        <span class="d-none d-sm-block">Accept</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                                        <a type="button" class=" btn-outline-primary block" data-bs-toggle="modal" data-bs-target="#border-less">
+                                            huy don
+                                        </a>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
                                     <form action="" method="post">
                                         @csrf
                                         <div class="col-md-6 col-12">
@@ -97,19 +148,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label for="sel1">Trạng thái thanh toán</label>
-                                                <select class="form-select" name="payment_method"
-                                                        aria-label="Default select example">
-                                                    <option selected disabled hidden>Open this select menu</option>
-                                                    @foreach(\App\Enums\OrderPaymentMethod::getValues() as $type)
-                                                        <option
-                                                            value="{{$type}}" {{$order && $order->payment_method === $type ? 'selected' : ''}}>{{\App\Enums\OrderPaymentMethod::getDescription($type)}}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                        </div>
+
                                         @if($shippers)
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">

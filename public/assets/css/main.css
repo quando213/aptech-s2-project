@@ -71,7 +71,7 @@ Template URL: https://hasthemes.com/
 }
 
 body {
-  font-family: "Rubik", sans-serif;
+  /*font-family: "Rubik", sans-serif;*/
   font-size: 16px;
   font-weight: 400;
   color: #323232;
@@ -96,27 +96,7 @@ span {
   outline: none;
   border: none;
 }
-.product__catagory--single{
-    height: 50px;
-    width: 40px;
-    overflow: hidden;
-}
-.product__catagory--single .product__img-box img {
-    /*height: 70px;*/
-    /*width: 100px;*/
-    padding-top: 70px;
-    padding-bottom: 2px;
-}
 
-.product__img-box {
-    height: 270px;
-    width: 270px;
-    overflow: hidden;
-}
-.product__img-box img {
-    height: auto;
-    width: 270px;
-}
 *:focus {
   outline: none !important;
 }
