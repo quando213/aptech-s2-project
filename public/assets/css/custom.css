@@ -74,3 +74,14 @@
     padding-left: 45px;
     padding-right: 45px;
 }
+
+.form-box__group {
+    margin-top: 25px;
+}
+
+.form-box__group label {
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+}
