@@ -51,41 +51,6 @@ class  OrderController extends Controller
         return view('list');
     }
 
-    public function update(Request $request)
-    {
-        $row = Cart::get($request->rowId);
-
-        if ($row->qty < 100 && $request->qty < 100) {
-            Cart::update($request->rowId, $row->qty = $request->qty);
-        } else {
-            return redirect('/cart')->with('message', 'lỗi');
-        }
-        return redirect('/cart');
-    }
-
-    public function remove($rowId)
-    {
-        Cart::remove($rowId);
-        return redirect('/cart');
-    }
-
-    public function destroy(){
-        Cart::destroy();
-        return redirect('/cart');
-    }
-
-    public function checkout(){
-
-        $districts = District::query()->orderBy('name', 'asc')->get();
-        $data = User::query()->where('id', Auth::user()->id)->with(['district','ward','group'])->first();
-        $group = Group::query()->where('ward_id',$data->ward_id)->with('ward')->first();
-        return view('.Client.checkout',[
-            'districts'=>$districts,
-            'data'=>$data,
-            'group'=>$group
-        ]);
-    }
-
     public function buynow(Request $request)
     {
         $order = new Order();
@@ -99,7 +64,7 @@ class  OrderController extends Controller
         $order->shipping_phone = $request->shipping_phone;
         $order->shipper_id = null;
         $order->payment_method = false;
-        $order->status = OrderStatus::Create;
+        $order->status = OrderStatus::CREATED;
         $order->save();
         foreach (Cart::content() as $item) {
             $product = Product::find($item->id);

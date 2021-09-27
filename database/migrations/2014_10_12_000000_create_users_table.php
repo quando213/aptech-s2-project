@@ -23,9 +23,9 @@ class CreateUsersTable extends Migration
             $table->string('ward_id');
             $table->string('street');
             $table->string('phone');
-            $table->integer('group_id');
+            $table->integer('group_id')->nullable();
             $table->integer('role');
-            $table->string('position');
+            $table->string('position')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

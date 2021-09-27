@@ -17,7 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('description');
-            $table->string('sort_number');
+            $table->integer('sort_number');
             $table->string('thumbnail');
             $table->timestamps();
             $table->softDeletes();

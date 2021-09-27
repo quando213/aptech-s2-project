@@ -20,9 +20,9 @@ class GroupSeeder extends Seeder
         DB::table('groups')->insert([
             [
                 'id' => 1,
-                'name' => 'T2009M1',
-                'ward_id' => '4',
-                'type' => 'Quân đoàn',
+                'name' => 'Tiểu đội 1',
+                'ward_id' => '626',
+                'type' => 'Tiểu đội',
                 'created_at' => Carbon::now()->addDays(-1),
                 'updated_at' => Carbon::now()->addDays(-1),
             ],

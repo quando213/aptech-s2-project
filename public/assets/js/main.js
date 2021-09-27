@@ -1,6 +1,6 @@
 (function ($) {
     "use strict";
-    
+
     /*****************************
     * Commons Variables
     *****************************/
@@ -10,7 +10,7 @@
      /**********************
      * Sticky Menu
      ***********************/
-    $(window).on('scroll', function(event) {    
+    $(window).on('scroll', function(event) {
         var scroll = $(window).scrollTop();
         if (scroll < 350) {
             $(".sticky-header").removeClass("is-sticky");
@@ -96,19 +96,19 @@
 
         if ($lis.length > 0) {
             $ul
-                .append($('<li class="expand">' + (isExpanded ? '<a href="javascript:;"><div><i class="icon-minus-square"></i>Close Categories</div></a>' : '<a href="javascript:;"><div><i class="icon-plus-square"></i>More Categories</div></a>') + '</li>')
+                .append($('<li class="expand">' + (isExpanded ? '<a href="javascript:;"><div><i class="icon-minus-square"></i>Hiện bớt danh mục</div></a>' : '<a href="javascript:;"><div><i class="icon-plus-square"></i>Hiện thêm danh mục</div></a>') + '</li>')
                     .on('click', function (event) {
                         var isExpanded = $ul.hasClass('expanded');
                         event.preventDefault();
-                        $(this).html(isExpanded ? '<a href="javascript:;"><div><i class="icon-plus-square"></i>More Categories</div></a>' : '<a href="javascript:;"><div><i class="icon-minus-square"></i>Close Categories</div></a>');
+                        $(this).html(isExpanded ? '<a href="javascript:;"><div><i class="icon-plus-square"></i>Hiện thêm danh mục</div></a>' : '<a href="javascript:;"><div><i class="icon-minus-square"></i>Hiện bớt danh mục</div></a>');
                         $ul.toggleClass('expanded');
                         $lis.toggle(300);
                     }));
         }
     });
 
-    /***************************** 
-    * Category more toggle  
+    /*****************************
+    * Category more toggle
     *****************************/
 
     $(".category-menu li.hidden").hide();
@@ -116,8 +116,8 @@
 
         e.preventDefault();
         $(".category-menu li.hidden").toggle(500);
-        var htmlAfter = '<i class="ion-ios-minus-empty" aria-hidden="true"></i> Less Categories';
-        var htmlBefore = '<i class="ion-ios-plus-empty" aria-hidden="true"></i> More Categories';
+        var htmlAfter = '<i class="ion-ios-minus-empty" aria-hidden="true"></i> Hiện bớt danh mục';
+        var htmlBefore = '<i class="ion-ios-plus-empty" aria-hidden="true"></i> Hiện thêm danh mục';
 
 
         if ($(this).html() == htmlBefore) {
@@ -235,7 +235,7 @@
         prevArrow: '<button type="button" class="default-slider__arrow default-slider__arrow--left prevArrow"><i class="far fa-chevron-left"></button>',
         nextArrow: '<button type="button"  class="default-slider__arrow default-slider__arrow--right nextArrow"><i class="far fa-chevron-right"></button>',
     });
-        
+
 
     /************************************************
      * Blog Slider - Style: Feed [3 Grid, 1 Rows]
@@ -344,7 +344,7 @@
         nextArrow: '<button type="button"  class="gallery__nav gallery__nav-horizontal gallery__nav-horizontal--right nextArrow"><i class="fas fa-chevron-right"></i></button>'
     });
     /***********************************
-    * Gallery - Vertical 
+    * Gallery - Vertical
     ************************************/
    $('.product-image--large-vertical').slick({
         slidesToShow: 1,
@@ -363,7 +363,7 @@
 
 
     /***********************************
-    * Gallery - Slider 
+    * Gallery - Slider
     ************************************/
    $('.product-gallery-box--single-slider').slick({
         slidesToShow: 3,
@@ -456,12 +456,12 @@
       max: 1000,
       values: [0, 1000],
       step: 100,
-    
+
       slide: function (event, ui) {
         if (ui.values[0] == ui.values[1]) {
           return false;
         }
-        
+
         $("#min_price").val(ui.values[0]);
         $("#max_price").val(ui.values[1]);
       }
@@ -548,7 +548,7 @@
         }
       });
     });
-    
+
 
     /****************************
     * Google Map - Location
@@ -569,7 +569,7 @@
         title: 'Snazzy!'
     });
     }
-    google.maps.event.addDomListener(window, 'load', init);
+    // google.maps.event.addDomListener(window, 'load', init);
 
 
 
