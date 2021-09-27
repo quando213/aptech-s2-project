@@ -9,6 +9,7 @@ use App\Http\Controllers\Client\ClientProductController;
 use App\Http\Controllers\Client\ClientProductDetailController;
 use App\Http\Controllers\Client\EntryController;
 use App\Http\Controllers\Client\HomeController;
+use App\Http\Controllers\Client\PostsController;
 use App\Http\Controllers\TemplateAdminController;
 use App\Http\Controllers\TemplateClientController;
 use App\Http\Middleware\checkAdmin;
@@ -70,11 +71,6 @@ Route::prefix('product')->group(function () {
     Route::get('detail/{id}', [ClientProductController::class, 'detail'])->name('detailProduct');
 });
 
-//Route::prefix('product')->group(function () {
-//    Route::get('/', [ClientProductDetailController::class, 'list']);
-//    Route::get('detail/{id}', [ClientProductDetailController::class, 'detail'])->name('detailProduct');
-//});
-
 
 
 Route::get('/form-layout', [TemplateAdminController::class, 'form_layout']);
@@ -117,4 +113,4 @@ Route::prefix('product')->group(function () {
 Route::get('/combo', [ClientComboController::class, 'list']);
 
 
-
+//Route::get('/search/', [PostsController::class, 'search'])->name('search');

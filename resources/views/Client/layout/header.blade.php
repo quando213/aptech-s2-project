@@ -405,14 +405,14 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-7 col-lg-6">
-                        <form class="header-search" action="#" method="post">
-                            <div class="header-search__content pos-relative">
-                                <input type="search" name="header-search" placeholder="Tìm Kiếm" required>
-                                <button class="pos-absolute" type="submit"><i class="icon-search"></i></button>
-                            </div>
-                        </form>
-                    </div>
+{{--                    <div class="col-xl-7 col-lg-6">--}}
+{{--                        <form class="header-search" action="{{ route('search') }}" method="get">--}}
+{{--                            <div class="header-search__content pos-relative">--}}
+{{--                                <input type="text" name="search" placeholder="Tìm Kiếm" required>--}}
+{{--                                <button class="pos-absolute" type="submit"><i class="icon-search"></i></button>--}}
+{{--                            </div>--}}
+{{--                        </form>--}}
+{{--                    </div>--}}
                     <div class="col-xl-2 col-lg-3">
                         <div class="header-phone text-right"><span>Liên Hệ SĐT: 123 456 789</span></div>
                     </div>
@@ -497,12 +497,12 @@
             {{--                    </ul>--}}
             {{--                </li>--}}
             {{--            </ul>--}}
-            <form class="header-search m-tb-15" action="#" method="post">
-                <div class="header-search__content pos-relative">
-                    <input type="search" name="header-search" placeholder="Tìm Kiếm" required>
-                    <button class="pos-absolute" type="submit"><i class="icon-search"></i></button>
-                </div>
-            </form>
+{{--            <form class="header-search m-tb-15" action="{{ route('search') }}" method="get">--}}
+{{--                <div class="header-search__content pos-relative">--}}
+{{--                    <input type="text" name="search" placeholder="Tìm Kiếm" required>--}}
+{{--                    <button class="pos-absolute" type="submit"><i class="icon-search"></i></button>--}}
+{{--                </div>--}}
+{{--            </form>--}}
             <!-- Start Mobile User Action -->
             <ul class="header__user-action-icon m-tb-15 text-center">
                 <!-- Start Header Wishlist Box -->
@@ -511,7 +511,6 @@
                     <li class="header__nav-item pos-relative">
                         <a href="{{route('register')}}" style="font-size: 13px" class="header__nav-link"> <i
                                 class="fa-fw fas fa-user" aria-hidden="true"></i>Đăng nhập</a>
-                    </li>
                     </li>
                 @else
                     <li class="header__nav-item pos-relative">
@@ -526,9 +525,7 @@
                             </li>
                             <li class="dropdown__list"><a href="{{route('logout')}}" class="dropdown__link">Đăng
                                     xuất</a></li>
-                            {{--                                            <li class="dropdown__list"><a href="404.html" class="dropdown__link">404 Page</a></li>--}}
                         </ul>
-                        <!--Single Dropdown Menu-->
                     </li>
                 @endif
                 <li>
