@@ -3,7 +3,8 @@
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
                 <div class="logo">
-                    <a  href="/admin"> {{\Illuminate\Support\Facades\Auth::user()->first_name.' '.\Illuminate\Support\Facades\Auth::user()->last_name}}</a>
+                    <a href="{{ route('home') }}" target="_blank">Gsore</a>
+                    <button class="btn btn-primary btn-sm disabled">{{ \App\Enums\UserRole::getDescription(\Illuminate\Support\Facades\Auth::user()->role) }}</button>
                 </div>
                 <div class="toggler">
 
@@ -13,55 +14,49 @@
         </div>
         <div class="sidebar-menu">
             <ul class="menu">
-                <li class="sidebar-title">Danh mục</li>
-
-                <li class="sidebar-item active ">
+                <li class="sidebar-title">Đơn hàng</li>
+                <li class="sidebar-item {{ \Illuminate\Support\Facades\Route::currentRouteName() == 'adminDashboard' ? 'active' : '' }} ">
                     <a href="/admin" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Bảng điều khiển</span>
                     </a>
                 </li>
-                <li class="sidebar-item  ">
-                    <a href="{{route('userList')}}" class='sidebar-link'>
-                        <i class="bi bi-person-circle"></i>
-                        <span>Danh sách người dùng</span>
-                    </a>
-                </li>
-                <li class="sidebar-item  ">
+                <li class="sidebar-item {{ request()->route()->getPrefix() == 'admin/orders' ? 'active' : '' }}">
                     <a href="{{route('orderList')}}" class='sidebar-link'>
                         <i class="bi bi-card-list"></i>
-                        <span>Danh sách đơn hàng</span>
+                        <span>Đơn hàng</span>
                     </a>
                 </li>
-                <li class="sidebar-item  ">
-                    <a  class='sidebar-link'>
-                    <i class="bi bi-person-lines-fill"></i>
-                        <span>Danh sách nhân sự</span>
+                <li class="sidebar-title">Người dùng</li>
+                <li class="sidebar-item {{ request()->route()->getPrefix() == 'admin/users' ? 'active' : '' }}">
+                    <a href="{{route('userList')}}" class='sidebar-link'>
+                        <i class="bi bi-person-circle"></i>
+                        <span>Người dùng</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
-                    <a href="{{route('productList')}}" class='sidebar-link'>
-                        <i class="bi bi-box-seam"></i>
-                        <span>Danh sách sản phẩm</span>
-                    </a>
-                </li>
-                <li class="sidebar-item ">
-                    <a href="{{route('categoryList')}}" class='sidebar-link'>
-                        <i class="bi bi-list-nested"></i>
-                        <span>Danh sách thể loại sản phẩm</span>
-                    </a>
-                </li>
-                <li class="sidebar-item  ">
+                <li class="sidebar-item {{ request()->route()->getPrefix() == 'admin/groups' ? 'active' : '' }}">
                     <a href="{{route('groupList')}}" class='sidebar-link'>
                         <i class="bi bi-people-fill"></i>
-                        <span>Danh sách các nhóm</span>
+                        <span>Nhóm người dùng</span>
                     </a>
                 </li>
-                <li class="sidebar-title">Biểu mẫu &amp; Bảng</li>
-                <li class="sidebar-item  has-sub">
+                <li class="sidebar-title">Sản phẩm</li>
+                <li class="sidebar-item {{ request()->route()->getPrefix() == 'admin/products' ? 'active' : '' }}">
+                    <a href="{{route('productList')}}" class='sidebar-link'>
+                        <i class="bi bi-box-seam"></i>
+                        <span>Sản phẩm</span>
+                    </a>
+                </li>
+                <li class="sidebar-item {{ request()->route()->getPrefix() == 'admin/categories' ? 'active' : '' }}">
+                    <a href="{{route('categoryList')}}" class='sidebar-link'>
+                        <i class="bi bi-list-nested"></i>
+                        <span>Danh mục sản phẩm</span>
+                    </a>
+                </li>
+                <li class="sidebar-item has-sub {{ request()->route()->getPrefix() == 'admin/combos' ? 'active' : '' }}">
                     <a class='sidebar-link'>
                         <i class="bi bi-hexagon-fill"></i>
-                        <span>Quản lý các gói sản phẩm</span>
+                        <span>Combo sản phẩm</span>
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item ">
@@ -78,8 +73,6 @@
                         </li>
                     </ul>
                 </li>
-
-
             </ul>
         </div>
         <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
