@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class FormSearch extends Component
+class DateRangePicker extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class FormSearch extends Component
      */
     public function render()
     {
-        return view('Client.components.form-search');
+        return view('Admin.components.date-range-picker');
     }
 }

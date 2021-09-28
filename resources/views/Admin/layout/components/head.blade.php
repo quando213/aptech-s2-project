@@ -9,3 +9,20 @@
 {{--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jq-3.3.1/jszip-2.5.0/dt-1.11.0/b-2.0.0/b-colvis-2.0.0/b-html5-2.0.0/b-print-2.0.0/kt-2.6.4/sb-1.2.0/sp-1.4.0/sl-1.3.3/datatables.min.css"/>--}}
 {{--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/searchpanes/1.4.0/css/searchPanes.dataTables.min.css"/>--}}
 {{--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.3/css/select.dataTables.min.css"/>--}}
+
+<style>
+    .img-square-container {
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;
+        position: relative;
+    }
+
+    .img-square-container img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+</style>

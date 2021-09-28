@@ -25,7 +25,8 @@ class UpdateAccount extends FormRequest
     public function rules()
     {
         return [
-            'password' => ['nullable' ,'min:6'],
+            'password' => ['nullable', 'confirmed', 'min:6'],
+            'password_current' => ['nullable', 'required_with:password', 'min:6'],
             'first_name' => ['required'],
             'last_name' => ['required'],
             'phone' => ['required'],

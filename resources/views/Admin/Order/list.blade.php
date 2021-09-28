@@ -1,136 +1,59 @@
-@extends('.Admin.layout.index')
-@section('title')
-    Admin Dashboard - {{$title}}
+@extends('.Admin.layout.list', [
+    'limit_options' => null,
+    'sort_options' => ['created_at DESC' => 'Mới nhất trước', 'created_at ASC' => 'Cũ nhất trước'],
+    'create_href' => null,
+    'create_label' => null
+])
+@section('title', 'Quản lý đơn hàng')
+
+@section('thead')
+    <tr>
+        <th>ID</th>
+        <th>Người nhận</th>
+        <th>Thành tiền</th>
+        <th>Ngày tạo</th>
+        <th>Trạng thái</th>
+        <th>Thao tác</th>
+    </tr>
 @endsection
-@section('content')
-    <div class="page-heading">
-        <div class="page-title">
-            <div class="row">
-                <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>{{$title}}</h3>
-                    @if ( session()->has('message') )
-                        <div class="alert alert-success alert-dismissable">{{ session()->get('message') }}</div>
-                    @endif
-                </div>
-                <div class="col-12 col-md-6 order-md-2 order-first">
-                    <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">{{$breadcrumb}}</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <section class="section">
-            <div class="row" id="basic-table">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title"><a href="{{route('comboCreate')}}">Add Combo</a></h4>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table id="myTable" class="table table-lg">
-                                        <thead class="thead-dark">
-                                        <tr>
-                                            <th>Người đặt</th>
-                                            <th>Người nhận</th>
-                                            <th>Địa Điểm</th>
-                                            <th>Số điên thoai người nhận</th>
-                                            <th>Gía đơn hàng</th>
-                                            <th>Trạng thái thanh toán</th>
-                                            <th>Trạng thái</th>
-                                            <th>Hành động</th>
 
-                                        </tr>
-                                        </thead>
-                                        @if($data && sizeof($data) > 0)
-                                            <tbody>
-                                            @foreach($data as $item)
-                                                <div class="modal fade" id="delete{{$item->id}}" tabindex="-1"
-                                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="exampleModalLabel">Modal
-                                                                    title</h5>
-                                                                <button type="button" class="btn-close"
-                                                                        data-bs-dismiss="modal"
-                                                                        aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <p>Are you sure you want to delete this
-                                                                    Product {{$item->name}}</p>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary"
-                                                                        data-bs-dismiss="modal">Close
-                                                                </button>
-                                                                <a href="{{route('productDelete', $item->id)}}"
-                                                                   class="btn btn-primary">Delete</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <tr>
-                                                    <td class="text-bold-500">{{$item->user->first_name .' '.$item->user->last_name}}</td>
-                                                    <td>{{$item->shipping_name}}</td>
-                                                    <td class="text-bold-500">{{$item->district->name .' '.$item->ward->name.' '. $item->shipping_street}}</td>
-                                                    <td class="text-bold-500">{{$item->shipping_phone}}</td>
-                                                    <td class="text-bold-500">{{$item->total_price}}</td>
-                                                    <td class="text-bold-500">{{\App\Enums\OrderPaymentMethod::getDescription($item->payment_method) }}</td>
-                                                    <td class="text-bold-500">
-                                                        @switch($item->status)
-                                                            @case(1)
-                                                            <span
-                                                                class="badge bg-primary">{{\App\Enums\OrderStatus::getDescription($item->status) }}</span>
-                                                            @break
-                                                            @case(2)
-                                                            <span
-                                                                class="badge bg-info">{{\App\Enums\OrderStatus::getDescription($item->status) }}</span>
-                                                            @break
-                                                            @case(3)
-                                                            <span
-                                                                class="badge bg-warning">{{\App\Enums\OrderStatus::getDescription($item->status) }}</span>
-                                                            @break
-                                                            @case(4)
-                                                            <span
-                                                                class="badge bg-success">{{\App\Enums\OrderStatus::getDescription($item->status) }}</span>
-                                                            @break
-                                                            @case(5)
-                                                            <span
-                                                                class="badge bg-danger">{{\App\Enums\OrderStatus::getDescription($item->status) }}</span>
-                                                            @break
-                                                        @endswitch
-                                                    </td>
+@section('tbody')
+    @foreach($data as $item)
+        <tr>
+            <td>{{$item->id}}</td>
+            <td>
+                <strong>{{$item->shipping_name}}</strong><br>
+                {{ $item->shipping_street }}<br>
+                {{$item->ward->name . ', ' . $item->district->name}}<br>
+                {{$item->shipping_phone}}
+            </td>
+            <td style="text-align: right;">{{$item->total_price}}đ</td>
+            <td>{{ \Carbon\Carbon::parse($item->created_at)->format(DISPLAY_DATETIME_FORMAT) }}</td>
+            <td>
+                <x-order-status-badge :status="$item->status"></x-order-status-badge>
+            </td>
+            <td>
+                <a href="{{route('orderDetail',$item->id)}}" type="button"
+                   class="btn btn-primary text-nowrap">Xem</a>
+            </td>
+        </tr>
+    @endforeach
+@endsection
 
-                                                    <td>
-
-                                                        <a href="{{route('orderDetail',$item->id)}}" type="button"
-                                                           class="btn btn-primary">Detail</a>
-                                                        <a href="{{route('orderDetail',$item->id)}}" type="button"
-                                                           class="btn btn-primary">Detail</a>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                            </tbody>
-                                        @else
-                                            <tbody>
-                                            <tr class="odd">
-                                                <td colspan="8" class="dataTables_empty">Không có dư liệu nào
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        @endif
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+@section('filter')
+    <div class="col-6">
+        <x-select name="shipping_district_id" option-all="Tất cả quận/huyện" icon="bi-filter" is-filter="true"
+                  :options="arrayToOptions($districts, 'name', 'maqh')"></x-select>
+    </div>
+    <div class="col-6">
+        <x-select name="shipping_ward_id" option-all="Tất cả phường/xã" icon="bi-filter" is-filter="true"
+                  :disabled="!sizeof($wards)" :options="arrayToOptions($wards, 'name', 'xaid')"></x-select>
+    </div>
+    <div class="col-6">
+        <x-select name="status" option-all="Tất cả trạng thái" icon="bi-filter" is-filter="true"
+                  :options="App\Enums\OrderStatus::asSelectArray()"></x-select>
+    </div>
+    <div class="col-6">
+        <x-date-range-picker></x-date-range-picker>
     </div>
 @endsection

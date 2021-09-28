@@ -13,6 +13,7 @@ use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Product;
 use App\Models\User;
+use App\Models\Ward;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 use Illuminate\Database\Eloquent\Builder;
@@ -25,19 +26,41 @@ use Illuminate\Support\Facades\Mail;
 
 class  OrderController extends Controller
 {
-    public function addToCart(Request $request,$id)
+    public function list(Request $request)
     {
-        $product = Product::find($id);
-        $floatVar = (float)$product->price;
-        Cart::add($product->id, $product->name , $request->quantity , $floatVar, 100, ['thumbnail' => $product->thumbnail]);
-    }
+        $search = $request->query('search');
+        $limit = $request->query('limit') ?? 50;
+        $start_date = $request->query('start_date');
+        $end_date = $request->query('end_date');
+        $district_id = $request->query('shipping_district_id');
 
-    public function index()
-    {
+        $data = Order::query()->with(['district', 'ward', 'user']);
+        $data = buildQuery($request, $data, ['shipping_district_id', 'shipping_ward_id', 'status']);
+        if ($search && strlen($search)) {
+            $data = $data->where(function (Builder $q) use ($search) {
+                return $q->where('shipping_name', 'like', '%' . $search . '%')
+                    ->orWhere('shipping_street', 'like', '%' . $search . '%')
+                    ->orWhere('shipping_phone', 'like', '%' . $search . '%')
+                    ->orWhereHas('district', function ($q) use ($search) {
+                        return $q->where('name', 'like', '%' . $search . '%');
+                    })
+                    ->orWhereHas('ward', function ($q) use ($search) {
+                        return $q->where('name', 'like', '%' . $search . '%');
+                    })
+                    ->orWhere('id', 'like', '%' . $search . '%');
+            });
+        }
+        if ($start_date) {
+            $data = $data->whereDate('created_at', '>=', $start_date);
+        }
+        if ($end_date) {
+            $data = $data->whereDate('created_at', '<=', $end_date);
+        }
+
         return view('Admin.Order.list', [
-            'title' => 'Product',
-            'breadcrumb' => 'Edit Product',
-            'data' => ''
+            'data' => $data->paginate($limit),
+            'districts' => District::query()->orderBy('name')->get(),
+            'wards' => $district_id ? Ward::query()->where('maqh', $district_id)->orderBy('name')->get() : []
         ]);
     }
 
@@ -74,7 +97,7 @@ class  OrderController extends Controller
         foreach (Cart::content() as $item) {
             $product = Product::find($item->id);
             $product->update([
-                'stock'=> $product->stock - $item->qty
+                'stock' => $product->stock - $item->qty
             ]);
             $product->save();
             $order_detail = new Orderdetail();
@@ -198,7 +221,7 @@ class  OrderController extends Controller
                                 $shipper = $this->rollShipper($order);
                                 $order->update([
                                     'payment_method' => true,
-                                    'shipper_id'=>$shipper
+                                    'shipper_id' => $shipper
                                 ]);
                                 $order->save();
                                 $returnData['RspCode'] = '00';
@@ -232,43 +255,35 @@ class  OrderController extends Controller
             $returnData['Message'] = 'Unknow error';
         }
     }
+
     public function testIpn($id)
     {
         $order = Order::find($id);
         return $order;
     }
 
-
-
-    public function list(){
-        $data = Order::query()->with(['district','ward','user'])->orderBy('created_at','desc')->get();
-        return view('Admin.Order.list',[
-            'data'=>$data,
-            'title'=>'Trang đơn hàng',
-            'breadcrumb'=>'Hiện thị đơn hàng'
-        ]);
-    }
-
-    public function orderDetail($id){
-        $order = Order::query()->where('id',$id)->with(['district','ward','user'])->orderBy('created_at','desc')->first();
-        $groupShipper = Group::query()->where('ward_id',$order->shipping_ward_id)->first();
-        if ($groupShipper){
-            $shippers = User::query()->where(['group_id'=>$groupShipper->id,'role'=>UserRole::Shipper])->get();
-        }
-        else{
+    public function orderDetail($id)
+    {
+        $order = Order::query()->where('id', $id)->with(['district', 'ward', 'user'])->orderBy('created_at', 'desc')->first();
+        $groupShipper = Group::query()->where('ward_id', $order->shipping_ward_id)->first();
+        if ($groupShipper) {
+            $shippers = User::query()->where(['group_id' => $groupShipper->id, 'role' => UserRole::Shipper])->get();
+        } else {
             $shippers = null;
         }
-        $orderDetails = OrderDetail::query()->where(['order_id'=>$id,'created_at'=>$order->created_at])->with(['product'])->get();
-        return view('Admin.Order.detail',[
-            'shippers'=>$shippers,
-            'title'=>'Trang chi tiết đơn hàng',
-            'breadcrumb'=>'Hiện thị chi tiết đơn hàng',
-            'orderDetails'=>$orderDetails,
-            'order'=>$order,
-            'categories'=>Category::all()
+        $orderDetails = OrderDetail::query()->where(['order_id' => $id, 'created_at' => $order->created_at])->with(['product'])->get();
+        return view('Admin.Order.detail', [
+            'shippers' => $shippers,
+            'title' => 'Trang chi tiết đơn hàng',
+            'breadcrumb' => 'Hiện thị chi tiết đơn hàng',
+            'orderDetails' => $orderDetails,
+            'order' => $order,
+            'categories' => Category::all()
         ]);
     }
-    public function save(Request $request,$id){
+
+    public function save(Request $request, $id)
+    {
         $notification = new Notification();
         $notification->sender_id = $request->shipper_id;
         $notification->link = "/shipper/notification/";
@@ -282,50 +297,51 @@ class  OrderController extends Controller
     }
 
 
-    public function rollShipper ($order){
+    public function rollShipper($order)
+    {
         $array = array();
         $count = array();
-        $group = Group::query()->where('ward_id',$order->shipping_ward_id)->with('user')->first();
-        if ($group){
-            foreach ($group->user as $item){
-                $user = Order::query()->where('shipper_id',$item->id)->get();
+        $group = Group::query()->where('ward_id', $order->shipping_ward_id)->with('user')->first();
+        if ($group) {
+            foreach ($group->user as $item) {
+                $user = Order::query()->where('shipper_id', $item->id)->get();
                 $data = [
-                    'id'=>$item->id,
-                    'count'=> sizeof($user)
+                    'id' => $item->id,
+                    'count' => sizeof($user)
                 ];
-                array_push($array,$data);
-                array_push($count,sizeof($user));
+                array_push($array, $data);
+                array_push($count, sizeof($user));
             }
         }
-        foreach ($array as $item){
-            if ($item['count'] == min($count)){
+        foreach ($array as $item) {
+            if ($item['count'] == min($count)) {
                 $user = User::find($item['id']);
                 $notification = new Notification();
                 $notification->sender_id = $item['id'];
-                $notification->link = "/shipper/order/".$order->id;
+                $notification->link = "/shipper/order/" . $order->id;
                 $notification->message = "ban nhân đươc 1 đơn mới";
                 $notification->save();
-                $to_name = $user->first_name.' '.$user->last_name;
+                $to_name = $user->first_name . ' ' . $user->last_name;
                 $user_email = $user->email;
-                Mail::send('mails.demo_mail', ['order'=>$order ,$user ], function ($message) use ($to_name, $user_email) {
+                Mail::send('mails.demo_mail', ['order' => $order, $user], function ($message) use ($to_name, $user_email) {
                     $message->to($user_email, $to_name)
                         ->subject('HNFOOD Mail');
                     $message->from(env('MAIL_USERNAME'), 'HNFOOD');
                 });
-                return  $item['id'];
+                return $item['id'];
             };
         }
     }
 
 
-
-    public function sendNotification($order){
+    public function sendNotification($order)
+    {
         $notification = new Notification();
         $notification->sender_id = $order->user_id;
-        $notification->link = "/myOrder/".$order->id;
-        switch ($order->status){
+        $notification->link = "/myOrder/" . $order->id;
+        switch ($order->status) {
             case 1:
-                $notification->message = "Chúng tôi đã ghi nhân đặt hàng của bạn với giá trị: ".$order->total_price."<br> đơn hàng đang đươc xủ lý xin cảm ơn";
+                $notification->message = "Chúng tôi đã ghi nhân đặt hàng của bạn với giá trị: " . $order->total_price . "<br> đơn hàng đang đươc xủ lý xin cảm ơn";
                 break;
             case 2:
                 $notification->message = "đơn hàng của bạn đã được nhân bởi: ";//.$order->shipper->name."";

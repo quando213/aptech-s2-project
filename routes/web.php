@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\WardController;
+use App\Http\Controllers\Client\AccountController;
 use App\Http\Controllers\Client\CartController;
 use App\Http\Controllers\Client\CheckoutController;
 use App\Http\Controllers\Client\ClientComboController;
@@ -55,9 +56,10 @@ Route::post('/register', [EntryController::class, 'processRegister'])->name('pro
 Route::get('/logout', [EntryController::class, 'logout'])->name('logout');
 
 Route::prefix('account')->middleware('auth')->group(function () {
-    Route::get('/', [EntryController::class, 'myAccount'])->name('myAccount');
-    Route::get('my-order/{id}', [EntryController::class, 'myOrderDetail'])->name('myOrder');
-    Route::get('my-order/{id}/{notification}', [EntryController::class, 'myOrderDetail'])->name('myOrderDetail');
+    Route::get('/', [AccountController::class, 'myAccount'])->name('myAccount');
+    Route::post('/', [AccountController::class, 'updateAccount'])->name('updateAccount');
+    Route::get('my-order/{id}', [AccountController::class, 'myOrderDetail'])->name('myOrder');
+    Route::get('my-order/{id}/{notification}', [AccountController::class, 'myOrderDetail'])->name('myOrderDetail');
 });
 
 Route::prefix('cart')->group(function () {

@@ -24,8 +24,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', [TemplateAdminController::class, 'page_content']);
+Route::get('/', [TemplateAdminController::class, 'page_content'])->name('adminDashboard');
 
+Route::prefix('orders')->group(function () {
+    Route::get('', [OrderController::class, 'list'])->name('orderList');
+    Route::get('/{id}', [OrderController::class, 'orderDetail'])->name('orderDetail');
+    Route::post('/{id}', [OrderController::class, 'save']);
+});
 
 Route::prefix('/users')->group(function () {
     Route::get('', [AdminUserController::class, 'index'])->name('userList');
@@ -35,7 +40,15 @@ Route::prefix('/users')->group(function () {
     Route::post('update/{id}', [AdminUserController::class, 'save']);
     Route::get('delete/{id}', [AdminUserController::class, 'destroy'])->name('userDelete');
 });
-// phân quản lý group trang admin
+
+Route::prefix('/admins')->group(function () {
+    Route::get('', [AdminUserController::class, 'listAdmin'])->name('adminList');
+});
+
+Route::prefix('/shippers')->group(function () {
+    Route::get('', [AdminUserController::class, 'listShipper'])->name('shipperList');
+});
+
 Route::prefix('/groups')->group(function () {
     Route::get('', [GroupController::class, 'index'])->name('groupList');
     Route::get('create', [GroupController::class, 'create'])->name('groupCreate');
@@ -44,7 +57,7 @@ Route::prefix('/groups')->group(function () {
     Route::post('update/{id}', [GroupController::class, 'save']);
     Route::get('delete/{id}', [GroupController::class, 'destroy'])->name('groupDelete');
 });
-// phân quản lý category trang admin
+
 Route::prefix('/categories')->group(function () {
     Route::get('', [CategoryController::class, 'index'])->name('categoryList');
     Route::get('create', [CategoryController::class, 'create'])->name('categoryCreate');
@@ -53,7 +66,7 @@ Route::prefix('/categories')->group(function () {
     Route::post('update/{id}', [CategoryController::class, 'save']);
     Route::get('delete/{id}', [CategoryController::class, 'destroy'])->name('categoryDelete');
 });
-// phân quản lý product trang admin
+
 Route::prefix('/products')->group(function () {
     Route::get('', [ProductController::class, 'index'])->name('productList');
     Route::get('create', [ProductController::class, 'create'])->name('productCreate');
@@ -71,13 +84,6 @@ Route::prefix('/combos')->group(function () {
     Route::get('update/{id}', [ComboController::class, 'update'])->name('comboUpdate');
     Route::post('update/{id}', [ComboController::class, 'save']);
     Route::get('delete/{id}', [ComboController::class, 'destroy'])->name('comboDelete');
-});
-
-
-Route::prefix('/orders')->group(function () {
-    Route::get('', [OrderController::class, 'list'])->name('orderList');
-    Route::get('/{id}', [OrderController::class, 'orderDetail'])->name('orderDetail');
-    Route::post('/{id}', [OrderController::class, 'save']);
 });
 
 

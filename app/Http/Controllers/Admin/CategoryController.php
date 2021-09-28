@@ -5,17 +5,28 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryPostRequest;
 use App\Models\Category;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $data = Category::query()->orderBy('created_at','desc')->get();
-        return view('Admin.Category.list',[
-            'data'=>$data,
-            'title'=>'Trang thể loại sản phẩm',
-            'breadcrumb'=>'Hiện thị thể loại sản phẩm'
+        $search = $request->query('search');
+        $limit = $request->query('limit') ?? 25;
+
+        $data = Category::query();
+        $data = buildQuery($request, $data);
+        if ($search && strlen($search)) {
+            $data = $data->where(function (Builder $q) use ($search) {
+                return $q->where('name', 'like', '%' . $search . '%')
+                    ->orWhere('description', 'like', '%' . $search . '%')
+                    ->orWhere('id', 'like', '%' . $search . '%');
+            });
+        }
+
+        return view('Admin.Category.list', [
+            'data' => $data->paginate($limit)
         ]);
 
     }
