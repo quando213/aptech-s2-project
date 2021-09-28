@@ -28,6 +28,6 @@ class Product extends Component
      */
     public function render()
     {
-        return view('components.product');
+        return view('Client.components.product');
     }
 }

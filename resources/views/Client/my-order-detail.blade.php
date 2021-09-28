@@ -6,8 +6,8 @@
             <div class="row">
                 <div class="col-12">
                     <ul class="page-breadcrumb__menu">
-                        <li class="page-breadcrumb__nav"><a href="/">Trang Chủ</a></li>
-                        <li class="page-breadcrumb__nav active">Tài Khoản Người Dùng</li>
+                        <li class="page-breadcrumb__nav"><a href="/">Trang chủ</a></li>
+                        <li class="page-breadcrumb__nav active">Tài khoản người dùng</li>
                     </ul>
                 </div>
             </div>
@@ -16,7 +16,7 @@
 
     <!-- ::::::  Start  Main Container Section  ::::::  -->
     <main id="main-container" class="main-container">
-        <div class="">
+        <div class="container">
             <div class="row">
                 <div class="col-12">
                     @if ($errors->any())

@@ -2,18 +2,25 @@
 
 namespace App\View\Components;
 
+use App\Enums\OrderStatus;
 use Illuminate\View\Component;
 
-class FormSearch extends Component
+class OrderStatusBadge extends Component
 {
+    /**
+     * @var integer
+     */
+
+    public int $status;
+
     /**
      * Create a new component instance.
      *
-     * @return void
+     * @param $status
      */
-    public function __construct()
+    public function __construct($status)
     {
-        //
+        $this->status = $status;
     }
 
     /**
@@ -23,6 +30,6 @@ class FormSearch extends Component
      */
     public function render()
     {
-        return view('Client.components.form-search');
+        return view('Admin.components.order-status-badge');
     }
 }

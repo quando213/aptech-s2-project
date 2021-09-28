@@ -2,6 +2,7 @@
 
 namespace App\Enums;
 
+use BenSampo\Enum\Contracts\LocalizedEnum;
 use BenSampo\Enum\Enum;
 
 /**
@@ -9,9 +10,8 @@ use BenSampo\Enum\Enum;
  * @method static static OptionTwo()
  * @method static static OptionThree()
  */
-final class OrderStatus extends Enum
+final class OrderStatus extends Enum implements LocalizedEnum
 {
-
     const CREATED = 1;
     const PAID = 2;
     const IN_DELIVERY = 3;

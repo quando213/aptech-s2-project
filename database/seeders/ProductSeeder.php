@@ -43,7 +43,7 @@ class ProductSeeder extends Seeder
                 'unit' => 2,
                 'images' => '',
                 'quantity' => 500,
-                'origin' => 'Viêt Nam',
+                'origin' => 'Việt Nam',
                 'brand' => '  C.P',
                 'created_at' => Carbon::now()->addDays(1)
             ],[
