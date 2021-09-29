@@ -3,13 +3,12 @@
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
                 <div class="logo">
-                    <a href="{{ route('home') }}" target="_blank">Gsore</a>
-                    <button class="btn btn-primary btn-sm disabled">{{ \App\Enums\UserRole::getDescription(\Illuminate\Support\Facades\Auth::user()->role) }}</button>
+                    <a href="{{ route('adminDashboard') }}" class="btn btn-primary btn-sm">{{ \App\Enums\UserRole::getDescription(\Illuminate\Support\Facades\Auth::user()->role) }}</a>
+                    <a href="{{ route('home') }}" class="d-block" target="_blank">Chợ hộ Hà Nội</a>
                 </div>
                 <div class="toggler">
                     <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
                 </div>
-
             </div>
         </div>
         <div class="sidebar-menu">
@@ -61,28 +60,40 @@
 {{--                    </ul>--}}
 {{--                </li>--}}
                 <li class="sidebar-title">Người dùng</li>
-                <li class="sidebar-item {{ request()->route()->getPrefix() == 'admin/users' ? 'active' : '' }}">
+                <li class="sidebar-item {{ request()->route()->getPrefix() == 'admin/users' && !request()->route()->hasParameter('role') ? 'active' : '' }}">
                     <a href="{{route('userList')}}" class='sidebar-link'>
                         <i class="bi bi-person-circle"></i>
                         <span>Khách hàng</span>
                     </a>
                 </li>
-                <li class="sidebar-item {{ request()->route()->getPrefix() == 'admin/shippers' ? 'active' : '' }}">
-                    <a href="{{route('shipperList')}}" class='sidebar-link'>
-                        <i class="bi bi-truck"></i>
-                        <span>Nhân viên vận chuyển</span>
+                <li class="sidebar-item {{ request()->route()->getPrefix() == 'admin/users' && request()->route()->hasParameter('role') && request()->route()->parameter('role') == \App\Enums\UserRole::SHIPPER ? 'active' : '' }}">
+                    <a href="{{route('userList', ['role' => \App\Enums\UserRole::SHIPPER])}}" class='sidebar-link'>
+                        <i class="bi bi-star-fill"></i>
+                        <span>Quân nhân</span>
                     </a>
                 </li>
                 <li class="sidebar-item {{ request()->route()->getPrefix() == 'admin/groups' ? 'active' : '' }}">
                     <a href="{{route('groupList')}}" class='sidebar-link'>
                         <i class="bi bi-people-fill"></i>
-                        <span>Nhóm vận chuyển</span>
+                        <span>Nhóm quân nhân</span>
                     </a>
                 </li>
-                <li class="sidebar-item {{ request()->route()->getPrefix() == 'admin/admins' ? 'active' : '' }}">
-                    <a href="{{route('adminList')}}" class='sidebar-link'>
+                <li class="sidebar-item {{ request()->route()->getPrefix() == 'admin/users' && request()->route()->hasParameter('role') && request()->route()->parameter('role') == \App\Enums\UserRole::ADMIN ? 'active' : '' }}">
+                    <a href="{{route('userList', ['role' => \App\Enums\UserRole::ADMIN])}}" class='sidebar-link'>
                         <i class="bi bi-key-fill"></i>
                         <span>Quản trị viên</span>
+                    </a>
+                </li>
+                <li class="sidebar-title">
+                    @if(\Illuminate\Support\Facades\Auth::user()->role == \App\Enums\UserRole::SHIPPER && \Illuminate\Support\Facades\Auth::user()->position)
+                        {{ \Illuminate\Support\Facades\Auth::user()->position }}
+                    @endif
+                    {{ \Illuminate\Support\Facades\Auth::user()->last_name . ' ' . \Illuminate\Support\Facades\Auth::user()->first_name }}
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{route('logout')}}" class='sidebar-link'>
+                        <i class="bi bi-arrow-left-square-fill"></i>
+                        <span>Đăng xuất</span>
                     </a>
                 </li>
             </ul>

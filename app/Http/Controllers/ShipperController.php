@@ -43,7 +43,7 @@ class ShipperController extends Controller
         $order = Order::query()->where('id',$id)->with(['district','ward','user'])->orderBy('created_at','desc')->first();
         $groupShipper = Group::query()->where('ward_id',$order->shipping_ward_id)->first();
         if ($groupShipper){
-            $shippers = User::query()->where(['group_id'=>$groupShipper->id,'role'=>UserRole::Shipper])->get();
+            $shippers = User::query()->where(['group_id'=>$groupShipper->id,'role'=>UserRole::SHIPPER])->get();
         }
         else{
             $shippers = null;

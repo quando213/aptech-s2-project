@@ -3,6 +3,7 @@
 use App\Enums\OrderPaymentMethod;
 use App\Enums\OrderStatus;
 use App\Enums\ProductUnit;
+use App\Enums\UserRole;
 
 return [
 
@@ -21,5 +22,11 @@ return [
 
     ProductUnit::class => [
         ProductUnit::Item => 'Cái'
+    ],
+
+    UserRole::class => [
+        UserRole::ADMIN => 'Quản trị viên',
+        UserRole::USER => 'Khách hàng',
+        UserRole::SHIPPER => 'Quân nhân'
     ]
 ];

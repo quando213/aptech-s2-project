@@ -37,3 +37,16 @@ function buildQuery(Request $request, $data, array $where_attributes = []) {
 
 const DISPLAY_DATE_FORMAT = 'd/m/Y';
 const DISPLAY_DATETIME_FORMAT = 'd/m/Y H:m:s';
+
+function generateHtmlAttribute($field)
+{
+    $str = '';
+    foreach ($field as $key => $value)
+    {
+        if ($key != 'element' && $key !== 'hidden')
+        {
+            $str .= $key . '="' . $value . '" ';
+        }
+    }
+    return $str;
+}

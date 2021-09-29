@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Enums\UserRole;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\CategoryController;
 
@@ -33,20 +34,12 @@ Route::prefix('orders')->group(function () {
 });
 
 Route::prefix('/users')->group(function () {
-    Route::get('', [AdminUserController::class, 'index'])->name('userList');
     Route::get('create', [AdminUserController::class, 'create'])->name('userCreate');
     Route::post('create', [AdminUserController::class, 'store']);
     Route::get('update/{id}', [AdminUserController::class, 'update'])->name('userUpdate');
     Route::post('update/{id}', [AdminUserController::class, 'save']);
     Route::get('delete/{id}', [AdminUserController::class, 'destroy'])->name('userDelete');
-});
-
-Route::prefix('/admins')->group(function () {
-    Route::get('', [AdminUserController::class, 'listAdmin'])->name('adminList');
-});
-
-Route::prefix('/shippers')->group(function () {
-    Route::get('', [AdminUserController::class, 'listShipper'])->name('shipperList');
+    Route::get('{role?}', [AdminUserController::class, 'index'])->name('userList');
 });
 
 Route::prefix('/groups')->group(function () {
