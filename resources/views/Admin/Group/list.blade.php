@@ -37,10 +37,10 @@
 @section('filter')
     <div class="col-6">
         <x-select name="district_id" option-all="Tất cả quận/huyện" icon="bi-filter" is-filter="true"
-                  :options="arrayToOptions($districts, 'name', 'maqh')"></x-select>
+                  :options="arrayToOptions($districts, 'name', 'id')"></x-select>
     </div>
     <div class="col-6">
         <x-select name="ward_id" option-all="Tất cả phường/xã" icon="bi-filter" is-filter="true"
-                  :disabled="!sizeof($wards)" :options="arrayToOptions($wards, 'name', 'xaid')"></x-select>
+                  :disabled="!sizeof($wards)" :options="arrayToOptions($wards, 'name', 'id')"></x-select>
     </div>
 @endsection

@@ -22,7 +22,7 @@ class CreateOrdersTable extends Migration
             $table->string('shipping_street');
             $table->string('shipping_phone');
             $table->integer('shipper_id')->nullable();
-            $table->string('total_price');
+            $table->double('total_price');
             $table->integer('status');
             $table->integer('payment_method');
             $table->timestamps();

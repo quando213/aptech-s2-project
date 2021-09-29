@@ -43,7 +43,7 @@
             'name' => 'district_id',
             'label' => 'Quận/huyện',
             'placeholder' => 'Chọn quận/huyện',
-            'options' => arrayToOptions($districts, 'name', 'maqh'),
+            'options' => arrayToOptions($districts, 'name', 'id'),
         ],
         [
             'element' => 'select',
@@ -51,7 +51,7 @@
             'name' => 'ward_id',
             'label' => 'Phường/xã',
             'placeholder' => 'Chọn phường/xã',
-            'options' => arrayToOptions($wards ?? [], 'name', 'xaid'),
+            'options' => arrayToOptions($wards ?? [], 'name', 'id'),
         ],
         [
             'element' => 'input',

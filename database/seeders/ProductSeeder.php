@@ -25,7 +25,7 @@ class ProductSeeder extends Seeder
                 'thumbnail' => 'https://cdn.tgdd.vn/Products/Images/8781/241258/bhx/nac-vai-heo-cp-khay-300g-202106021659328180.jpg',
                 'category_id' => 1,
                 'stock' => 50,
-                'description' => 'Nạc vai heo  của thương hiệu CP được đóng gói và bảo quản theo những tiêu chuẩn nghiêm ngặt về vệ sinh và an toàn thực phẩm, đảm bảo về chất lượng, độ tươi và ngon của thực phẩm, xuất xứ rõ ràng. Thịt vai heo ít mỡ, mềm và mọng nước nên thường được chế biến thành thịt luộc, thịt kho tiêu,..',
+                'description' => 'Nạc vai heo của thương hiệu CP được đóng gói và bảo quản theo những tiêu chuẩn nghiêm ngặt về vệ sinh và an toàn thực phẩm, đảm bảo về chất lượng, độ tươi và ngon của thực phẩm, xuất xứ rõ ràng. Thịt vai heo ít mỡ, mềm và mọng nước nên thường được chế biến thành thịt luộc, thịt kho tiêu,..',
                 'unit' => 2,
                 'images' => '',
                 'quantity' => 300,

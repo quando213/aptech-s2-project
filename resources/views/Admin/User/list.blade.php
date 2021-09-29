@@ -14,7 +14,7 @@
         Quản lý quản trị viên
         @break
         @case(\App\Enums\UserRole::SHIPPER)
-        Quản lý tài khoản quân nhân
+        Quản lý quân nhân
         @break
         @default
         Quản lý khách hàng
@@ -41,7 +41,7 @@
         <tr>
             <td>{{$item->last_name . ' '. $item->first_name}}</td>
             <td>{{$item->email}}</td>
-            <td>{{$item->district->name . ', '. $item->ward->name . ', '. $item->street}}</td>
+            <td>{{$item->street . ', '. $item->ward->name . ', '. $item->district->name}}</td>
             <td>{{$item->phone}}</td>
             @if(isset($role) && $role == \App\Enums\UserRole::SHIPPER)
                 <td>{{$item->group->name}}</td>
@@ -58,10 +58,10 @@
 @section('filter')
     <div class="col-6">
         <x-select name="district_id" option-all="Tất cả quận/huyện" icon="bi-filter" is-filter="true"
-                  :options="arrayToOptions($districts, 'name', 'maqh')"></x-select>
+                  :options="arrayToOptions($districts, 'name', 'id')"></x-select>
     </div>
     <div class="col-6">
         <x-select name="ward_id" option-all="Tất cả phường/xã" icon="bi-filter" is-filter="true"
-                  :disabled="!sizeof($wards)" :options="arrayToOptions($wards, 'name', 'xaid')"></x-select>
+                  :disabled="!sizeof($wards)" :options="arrayToOptions($wards, 'name', 'id')"></x-select>
     </div>
 @endsection

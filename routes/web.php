@@ -32,7 +32,6 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('admin')->middleware(['auth', CheckAdmin::class])->group(function () {
     require_once __DIR__ . '/admin.php';
 });
-//Route::get('insert', require_once __DIR__ . '/insert_data.php');
 
 Route::prefix('shipper')->middleware(['auth', checkShipper::class])->group(function () {
     require_once __DIR__ . '/shipper.php';

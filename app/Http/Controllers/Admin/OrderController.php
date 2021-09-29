@@ -60,7 +60,7 @@ class  OrderController extends Controller
         return view('Admin.Order.list', [
             'data' => $data->paginate($limit),
             'districts' => District::query()->orderBy('name')->get(),
-            'wards' => $district_id ? Ward::query()->where('maqh', $district_id)->orderBy('name')->get() : []
+            'wards' => $district_id ? Ward::query()->where('district_id', $district_id)->orderBy('name')->get() : []
         ]);
     }
 

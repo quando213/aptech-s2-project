@@ -11,12 +11,11 @@ class Ward extends Model
     use HasFactory;
 
     protected $fillable = [
-        'xaid',
+        'id',
         'name',
         'type',
-        'maqh'
+        'district_id'
     ];
-    protected $primaryKey = 'xaid';
 
     public function group()
     {
@@ -30,6 +29,6 @@ class Ward extends Model
 
     public function district()
     {
-        return $this->belongsTo(District::class, 'maqh');
+        return $this->belongsTo(District::class);
     }
 }

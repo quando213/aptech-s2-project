@@ -49,7 +49,7 @@ class AdminUserController extends Controller
         return view('Admin.User.list', [
             'data' => $data->paginate($limit),
             'districts' => District::query()->orderBy('name')->get(),
-            'wards' => $district_id ? Ward::query()->where('maqh', $district_id)->orderBy('name')->get() : [],
+            'wards' => $district_id ? Ward::query()->where('district_id', $district_id)->orderBy('name')->get() : [],
             'role' => $role
         ]);
     }
@@ -68,7 +68,7 @@ class AdminUserController extends Controller
     {
         $data = User::find($id);
         $districts = District::query()->orderBy('name')->get();
-        $wards = Ward::where('maqh', $data->district_id)->get();
+        $wards = Ward::where('district_id', $data->district_id)->get();
         $groups = Group::query()->orderBy('name')->get();
         return view('Admin.User.form', [
             'districts' => $districts,

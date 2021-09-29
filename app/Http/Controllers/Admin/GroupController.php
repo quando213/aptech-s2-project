@@ -31,14 +31,14 @@ class GroupController extends Controller
         }
         if ($district_id) {
             $data = $data->whereHas('ward', function (Builder $q) use ($district_id) {
-                return $q->where('maqh', $district_id);
+                return $q->where('district_id', $district_id);
             });
         }
 
         return view('Admin.Group.list', [
             'data' => $data->paginate($limit),
             'districts' => District::query()->orderBy('name')->get(),
-            'wards' => $district_id ? Ward::query()->where('maqh', $district_id)->orderBy('name')->get() : []
+            'wards' => $district_id ? Ward::query()->where('district_id', $district_id)->orderBy('name')->get() : []
         ]);
     }
 
