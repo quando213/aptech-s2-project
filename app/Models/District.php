@@ -11,17 +11,17 @@ class District extends Model
     use HasFactory;
 
     protected $fillable = [
-        'maqh',
+        'id',
         'name',
         'type',
-        'matp'
+        'city_id'
     ];
-    protected $primaryKey = 'maqh';
+
     public function user(){
         return $this->hasMany(User::class);
     }
 
     public function wards() {
-        return $this->hasMany(Ward::class, 'maqh');
+        return $this->hasMany(Ward::class);
     }
 }

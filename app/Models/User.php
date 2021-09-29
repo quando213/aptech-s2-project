@@ -36,18 +36,23 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
     public function ward(){
-        return $this->belongsTo(Ward::class,'ward_id');
+        return $this->belongsTo(Ward::class);
     }
+
     public function orderShipper(){
         return $this->hasMany(Order::class);
     }
+
     public function notifications(){
         return $this->hasMany(Notifiable::class);
     }
+
     public function district(){
-        return $this->belongsTo(District::class,'district_id');
+        return $this->belongsTo(District::class);
     }
+
     public function group(){
         return $this->belongsTo(Group::class,'group_id');
     }

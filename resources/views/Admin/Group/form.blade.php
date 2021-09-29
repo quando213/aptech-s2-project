@@ -24,8 +24,8 @@
             'name' => 'district_id',
             'label' => 'Quận/huyện',
             'placeholder' => 'Chọn quận/huyện',
-            'selected' => isset($data) && $data->ward_id ? $data->ward->maqh : '',
-            'options' => arrayToOptions($districts, 'name', 'maqh'),
+            'selected' => isset($data) && $data->ward_id ? $data->ward->district_id : '',
+            'options' => arrayToOptions($districts, 'name', 'id'),
         ],
         [
             'element' => 'select',
@@ -33,7 +33,7 @@
             'name' => 'ward_id',
             'label' => 'Phường/xã quản lý',
             'placeholder' => 'Chọn phường/xã',
-            'options' => arrayToOptions($wards ?? [], 'name', 'xaid'),
+            'options' => arrayToOptions($wards ?? [], 'name', 'id'),
         ],
     ],
     'data' => $data ?? null

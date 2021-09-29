@@ -30,7 +30,7 @@ class WardController extends Controller
     }
     public function api($id)
     {
-        $ward = Ward::query()->where('maqh',$id)->get();
+        $ward = Ward::query()->where('district_id',$id)->get();
         return $ward;
     }
 

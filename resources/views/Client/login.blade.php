@@ -136,7 +136,7 @@
                                                 <option selected disabled hidden>Chọn</option>
                                                 @foreach($districts as $district)
                                                     <option
-                                                        value="{{$district->maqh}}">{{$district->name}}</option>
+                                                        value="{{$district->id}}">{{$district->name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -187,7 +187,7 @@
                     selectWard.html('<option value hidden disabled selected>Chọn</option>').prop('disabled', false);
                 },
                 success: function (data) {
-                    data.forEach(item => selectWard.append(new Option(item.name, item.xaid)));
+                    data.forEach(item => selectWard.append(new Option(item.name, item.id)));
                 },
                 error: function (xhr) {
                     let errors = JSON.parse(xhr.responseText).errors;

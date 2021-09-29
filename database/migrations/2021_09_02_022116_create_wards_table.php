@@ -14,10 +14,10 @@ class CreateWardsTable extends Migration
     public function up()
     {
         Schema::create('wards', function (Blueprint $table) {
-            $table->string('xaid');
+            $table->id();
             $table->string('name');
             $table->string('type');
-            $table->string('maqh');
+            $table->integer('district_id');
             $table->timestamps();
             $table->softDeletes();
         });

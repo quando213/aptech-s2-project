@@ -165,7 +165,7 @@
                                                                         </option>
                                                                         @foreach($districts as $district)
                                                                             <option
-                                                                                value="{{$district->maqh}}" {{$user->district_id ==$district->maqh ? 'selected':''  }} >{{$district->name}}</option>
+                                                                                value="{{$district->id}}" {{$user->district_id ==$district->maqh ? 'selected':''  }} >{{$district->name}}</option>
                                                                         @endforeach
                                                                     </select>
                                                                 </div>
@@ -176,7 +176,7 @@
                                                                             name="ward_id">
                                                                         @if($user)
                                                                             @foreach($user->district->wards as $ward)
-                                                                                <option value="{{ $ward->xaid }}" {{ $user && $user->ward_id ==  $ward->xaid ? 'selected' : '' }}>{{ $ward->name }}</option>
+                                                                                <option value="{{ $ward->id }}" {{ $user && $user->ward_id ==  $ward->id ? 'selected' : '' }}>{{ $ward->name }}</option>
                                                                             @endforeach
                                                                         @endif
                                                                     </select>
@@ -253,7 +253,7 @@
                     selectWard.html('<option value hidden disabled selected></option>').prop('disabled', false);
                 },
                 success: function (data) {
-                    data.forEach(item => selectWard.append(new Option(item.name, item.xaid)));
+                    data.forEach(item => selectWard.append(new Option(item.name, item.id)));
                 },
                 error: function (xhr) {
                     let errors = JSON.parse(xhr.responseText).errors;

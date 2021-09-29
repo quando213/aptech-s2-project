@@ -18,7 +18,7 @@ class CreateOrderDetailsTable extends Migration
             $table->integer('product_id');
             $table->integer('order_id');
             $table->integer('quantity');
-            $table->string('unit_price');
+            $table->double('unit_price');
             $table->softDeletes();
             $table->timestamps();
         });

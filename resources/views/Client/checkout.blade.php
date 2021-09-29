@@ -47,7 +47,7 @@
                                         <option selected disabled hidden>Chọn</option>
                                         @foreach($districts as $district)
                                             <option
-                                                value="{{$district->maqh}}" {{ $data && number_format($data->district_id) == $district->maqh ? 'selected' :'' }} >{{$district->name}}</option>
+                                                value="{{$district->id}}" {{ $data && number_format($data->district_id) == $district->maqh ? 'selected' :'' }} >{{$district->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -59,7 +59,7 @@
                                         <option selected disabled hidden>Chọn</option>
                                         @if($data)
                                             @foreach($data->district->wards as $ward)
-                                                <option value="{{ $ward->xaid }}" {{ $data && $data->ward_id ==  $ward->xaid ? 'selected' : '' }}>{{ $ward->name }}</option>
+                                                <option value="{{ $ward->id }}" {{ $data && $data->ward_id ==  $ward->id ? 'selected' : '' }}>{{ $ward->name }}</option>
                                             @endforeach
                                         @endif
                                     </select>
@@ -217,7 +217,7 @@
                     selectWard.html('<option value hidden disabled selected>Chọn</option>').prop('disabled', false);
                 },
                 success: function (data) {
-                    data.forEach(item => selectWard.append(new Option(item.name, item.xaid)));
+                    data.forEach(item => selectWard.append(new Option(item.name, item.id)));
                 },
                 error: function (xhr) {
                     let errors = JSON.parse(xhr.responseText).errors;
