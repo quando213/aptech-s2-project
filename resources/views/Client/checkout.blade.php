@@ -78,78 +78,80 @@
                                     <input type="text" name="shipping_phone" value="{{$data->phone}}" id="form-phone">
                                 </div>
                             </div>
-                            <div class="col-md-12">
-                                <div class="form-box__single-group">
-                                    <label for="bankcode">Ngân hàng</label>
-                                    <select name="bankcode" id="bankcode" class="form-control">
-                                        <option value="">Không chọn</option>
-                                        <option value="VNPAYQR">VNPAYQR</option>
-                                        <option value="VNBANK">LOCAL BANK</option>
-                                        <option value="IB">INTERNET BANKING</option>
-                                        <option value="ATM">ATM CARD</option>
-                                        <option value="INTCARD">INTERNATIONAL CARD</option>
-                                        <option value="VISA">VISA</option>
-                                        <option value="MASTERCARD"> MASTERCARD</option>
-                                        <option value="JCB">JCB</option>
-                                        <option value="UPI">UPI</option>
-                                        <option value="VIB">VIB</option>
-                                        <option value="VIETCAPITALBANK">VIETCAPITALBANK</option>
+{{--                            <div class="col-md-12">--}}
+{{--                                <div class="form-box__single-group">--}}
+{{--                                    <label for="bankcode">Ngân hàng</label>--}}
+{{--                                    <select name="bankcode" id="bankcode" class="form-control">--}}
+{{--                                        <option value="">Không chọn</option>--}}
+{{--                                        <option value="VNPAYQR">VNPAYQR</option>--}}
+{{--                                        <option value="VNBANK">LOCAL BANK</option>--}}
+{{--                                        <option value="IB">INTERNET BANKING</option>--}}
+{{--                                        <option value="ATM">ATM CARD</option>--}}
+{{--                                        <option value="INTCARD">INTERNATIONAL CARD</option>--}}
+{{--                                        <option value="VISA">VISA</option>--}}
+{{--                                        <option value="MASTERCARD"> MASTERCARD</option>--}}
+{{--                                        <option value="JCB">JCB</option>--}}
+{{--                                        <option value="UPI">UPI</option>--}}
+{{--                                        <option value="VIB">VIB</option>--}}
+{{--                                        <option value="VIETCAPITALBANK">VIETCAPITALBANK</option>--}}
+{{--                                        <option value="SCB">Ngân hàng SCB</option>--}}
+{{--                                        <option value="NCB">Ngân hàng NCB</option>--}}
+{{--                                        <option value="SACOMBANK">Ngân hàng SacomBank  </option>--}}
+{{--                                        <option value="EXIMBANK">Ngân hàng EximBank </option>--}}
+{{--                                        <option value="MSBANK">Ngân hàng MSBANK </option>--}}
+{{--                                        <option value="NAMABANK">Ngân hàng NamABank </option>--}}
+{{--                                        <option value="VNMART"> Vi dien tu VnMart</option>--}}
+{{--                                        <option value="VIETINBANK">Ngân hàng Vietinbank  </option>--}}
+{{--                                        <option value="VIETCOMBANK">Ngân hàng VCB </option>--}}
+{{--                                        <option value="HDBANK">Ngân hàng HDBank</option>--}}
+{{--                                        <option value="DONGABANK">Ngân hàng Dong A</option>--}}
+{{--                                        <option value="TPBANK">Ngân hàng TPBank </option>--}}
+{{--                                        <option value="OJB">Ngân hàng OceanBank</option>--}}
+{{--                                        <option value="BIDV">Ngân hàng BIDV </option>--}}
+{{--                                        <option value="TECHCOMBANK">Ngân hàng Techcombank </option>--}}
+{{--                                        <option value="VPBANK">Ngân hàng VPBank </option>--}}
+{{--                                        <option value="AGRIBANK">Ngân hàng Agribank </option>--}}
+{{--                                        <option value="MBBANK">Ngân hàng MBBank </option>--}}
+{{--                                        <option value="ACB">Ngân hàng ACB </option>--}}
+{{--                                        <option value="OCB">Ngân hàng OCB </option>--}}
+{{--                                        <option value="IVB">Ngân hàng IVB </option>--}}
+{{--                                        <option value="SHB">Ngân hàng SHB </option>--}}
 
-                                        <option value="SCB">Ngân hàng SCB</option>
-                                        <option value="NCB">Ngân hàng NCB</option>
-                                        <option value="SACOMBANK">Ngân hàng SacomBank  </option>
-                                        <option value="EXIMBANK">Ngân hàng EximBank </option>
-                                        <option value="MSBANK">Ngân hàng MSBANK </option>
-                                        <option value="NAMABANK">Ngân hàng NamABank </option>
-                                        <option value="VNMART"> Vi dien tu VnMart</option>
-                                        <option value="VIETINBANK">Ngân hàng Vietinbank  </option>
-                                        <option value="VIETCOMBANK">Ngân hàng VCB </option>
-                                        <option value="HDBANK">Ngân hàng HDBank</option>
-                                        <option value="DONGABANK">Ngân hàng Dong A</option>
-                                        <option value="TPBANK">Ngân hàng TPBank </option>
-                                        <option value="OJB">Ngân hàng OceanBank</option>
-                                        <option value="BIDV">Ngân hàng BIDV </option>
-                                        <option value="TECHCOMBANK">Ngân hàng Techcombank </option>
-                                        <option value="VPBANK">Ngân hàng VPBank </option>
-                                        <option value="AGRIBANK">Ngân hàng Agribank </option>
-                                        <option value="MBBANK">Ngân hàng MBBank </option>
-                                        <option value="ACB">Ngân hàng ACB </option>
-                                        <option value="OCB">Ngân hàng OCB </option>
-                                        <option value="IVB">Ngân hàng IVB </option>
-                                        <option value="SHB">Ngân hàng SHB </option>
+{{--                                        <option value="SCB">Ngan hang SCB</option>--}}
+{{--                                        <option value="NCB">Ngan hang NCB</option>--}}
+{{--                                        <option value="SACOMBANK">Ngan hang SacomBank</option>--}}
+{{--                                        <option value="EXIMBANK">Ngan hang EximBank</option>--}}
+{{--                                        <option value="MSBANK">Ngan hang MSBANK</option>--}}
+{{--                                        <option value="NAMABANK">Ngan hang NamABank</option>--}}
+{{--                                        <option value="VNMART"> Vi dien tu VnMart</option>--}}
+{{--                                        <option value="VIETINBANK">Ngan hang Vietinbank</option>--}}
+{{--                                        <option value="VIETCOMBANK">Ngan hang VCB</option>--}}
+{{--                                        <option value="HDBANK">Ngan hang HDBank</option>--}}
+{{--                                        <option value="DONGABANK">Ngan hang Dong A</option>--}}
+{{--                                        <option value="TPBANK">Ngân hàng TPBank</option>--}}
+{{--                                        <option value="OJB">Ngân hàng OceanBank</option>--}}
+{{--                                        <option value="BIDV">Ngân hàng BIDV</option>--}}
+{{--                                        <option value="TECHCOMBANK">Ngân hàng Techcombank</option>--}}
+{{--                                        <option value="VPBANK">Ngan hang VPBank</option>--}}
+{{--                                        <option value="AGRIBANK">Ngan hang Agribank</option>--}}
+{{--                                        <option value="MBBANK">Ngan hang MBBank</option>--}}
+{{--                                        <option value="ACB">Ngan hang ACB</option>--}}
+{{--                                        <option value="OCB">Ngan hang OCB</option>--}}
+{{--                                        <option value="IVB">Ngan hang IVB</option>--}}
+{{--                                        <option value="SHB">Ngan hang SHB</option>--}}
 
-                                        <option value="SCB">Ngan hang SCB</option>
-                                        <option value="NCB">Ngan hang NCB</option>
-                                        <option value="SACOMBANK">Ngan hang SacomBank</option>
-                                        <option value="EXIMBANK">Ngan hang EximBank</option>
-                                        <option value="MSBANK">Ngan hang MSBANK</option>
-                                        <option value="NAMABANK">Ngan hang NamABank</option>
-                                        <option value="VNMART"> Vi dien tu VnMart</option>
-                                        <option value="VIETINBANK">Ngan hang Vietinbank</option>
-                                        <option value="VIETCOMBANK">Ngan hang VCB</option>
-                                        <option value="HDBANK">Ngan hang HDBank</option>
-                                        <option value="DONGABANK">Ngan hang Dong A</option>
-                                        <option value="TPBANK">Ngân hàng TPBank</option>
-                                        <option value="OJB">Ngân hàng OceanBank</option>
-                                        <option value="BIDV">Ngân hàng BIDV</option>
-                                        <option value="TECHCOMBANK">Ngân hàng Techcombank</option>
-                                        <option value="VPBANK">Ngan hang VPBank</option>
-                                        <option value="AGRIBANK">Ngan hang Agribank</option>
-                                        <option value="MBBANK">Ngan hang MBBank</option>
-                                        <option value="ACB">Ngan hang ACB</option>
-                                        <option value="OCB">Ngan hang OCB</option>
-                                        <option value="IVB">Ngan hang IVB</option>
-                                        <option value="SHB">Ngan hang SHB</option>
-
-                                    </select>
-                                </div>
-                            </div>
+{{--                                    </select>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                             <div class="col-md-12">
                                 <div class="form-box__single-group">
                                     <label for="form-additional-info">Ghi chú thêm</label>
                                     <textarea name="note" id="form-additional-info" rows="5"
                                               placeholder="Nhập ghi chú"></textarea>
                                 </div>
+                            </div>
+                            <div id="cod">
+
                             </div>
                         </div>
                     </form>
@@ -190,7 +192,11 @@
                         <div class="text-center">
                             <button
                                 class="btn btn--small btn--radius btn--green btn--green-hover-black btn--uppercase font--bold"
-                                id="btn" type="submit">Đặt Hàng
+                                id="btn" type="submit">Thanh toán VNpay
+                            </button>
+                            <button
+                                class="btn btn--small btn--radius btn--green btn--green-hover-black btn--uppercase font--bold"
+                                id="btn_cod" type="submit">Đặt hàng
                             </button>
                         </div>
                     </div>
@@ -244,6 +250,11 @@
             });
         })
         $('#btn').click(function (){
+            $('#cod').append(`<input type="text" name="payment_type" value="onl">`)
+            $('#form').submit()
+        })
+        $('#btn_cod').click(function (){
+            $('#cod').append(`<input type="text" name="payment_type" value="cod">`)
             $('#form').submit()
         })
     </script>

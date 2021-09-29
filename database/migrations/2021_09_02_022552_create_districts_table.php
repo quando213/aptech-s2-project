@@ -14,12 +14,11 @@ class CreateDistrictsTable extends Migration
     public function up()
     {
         Schema::create('districts', function (Blueprint $table) {
-            $table->string('maqh');
+            $table->integer('maqh');
             $table->string('name');
             $table->string('type');
             $table->string('matp');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

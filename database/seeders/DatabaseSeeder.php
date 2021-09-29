@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $path = 'countries.sql';
+        DB::unprepared(file_get_contents($path));
         $this->call([
             CategorySeeder::class,
             ComboSeeder::class,
@@ -20,5 +23,7 @@ class DatabaseSeeder extends Seeder
             ProductSeeder::class,
             UserSeeder::class
         ]);
+
+
     }
 }

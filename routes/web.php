@@ -32,8 +32,6 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('admin')->middleware(['auth', CheckAdmin::class])->group(function () {
     require_once __DIR__ . '/admin.php';
 });
-//Route::get('insert', require_once __DIR__ . '/insert_data.php');
-
 Route::prefix('shipper')->middleware(['auth', checkShipper::class])->group(function () {
     require_once __DIR__ . '/shipper.php';
 });
@@ -41,7 +39,8 @@ Route::prefix('shipper')->middleware(['auth', checkShipper::class])->group(funct
 Route::get('/', [HomeController::class, 'home'])->name("home");
 
 // REPOSITION
-Route::get('/response', [OrderController::class, 'response']); // thanh toán xong
+Route::get('/response', [OrderController::class, 'response'])->name('response'); // thanh toán xong
+Route::get('/response/cod/{id}', [OrderController::class, 'responseCod'])->name('responseCod'); // thanh toán xong
 Route::get('/ipn', [OrderController::class, 'ipnResponse']); // vnpay gửi request trả về, xác nhận
 
 Route::prefix('product')->group(function () {

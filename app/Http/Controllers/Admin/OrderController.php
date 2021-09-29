@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 
 class  OrderController extends Controller
@@ -83,6 +84,8 @@ class  OrderController extends Controller
     {
         $order = new Order();
         $order->total_price = Cart::total();
+        $order->id = "A-".Str::random(6);
+        $order->total_price = Cart::total();
         $floatVar = floatval(preg_replace("/[^-0-9\.]/", "", Cart::total()));
         $order->user_id = Auth::id();
         $order->shipping_name = $request->shipping_name;
@@ -93,6 +96,7 @@ class  OrderController extends Controller
         $order->shipper_id = null;
         $order->payment_method = false;
         $order->status = OrderStatus::CREATED;
+        $order->payment_type = $request->payment_type;
         $order->save();
         foreach (Cart::content() as $item) {
             $product = Product::find($item->id);
@@ -110,75 +114,75 @@ class  OrderController extends Controller
 
         $this->sendNotification($order);
         Cart::destroy();
-        $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-        $vnp_Returnurl = "https://sem2-project.herokuapp.com/response";
-        $vnp_TmnCode = "OV95A0Y9";
-        $vnp_HashSecret = "ZGZKUWRMIPLAZFFGCMMRDRTQUKFOMGLS";
-        $vnp_TxnRef = $order->id;
-        $vnp_OrderInfo = "Thanh toan don hang ";
-        $vnp_OrderType = "billpayment";
-        $vnp_Amount = $floatVar * 100;
-        $vnp_Locale = "vn";
-        $vnp_BankCode = $request->bankcode;
-        $vnp_IpAddr = request()->ip();
+        if ($request->payment_type == "onl"){
+            $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
+            $vnp_Returnurl = "https://sem2-project.herokuapp.com/response";
+            $vnp_TmnCode = "OV95A0Y9";
+            $vnp_HashSecret = "ZGZKUWRMIPLAZFFGCMMRDRTQUKFOMGLS";
+            $vnp_TxnRef = $order->id;
+            $vnp_OrderInfo = "Thanh toan don hang ";
+            $vnp_OrderType = "billpayment";
+            $vnp_Amount = $floatVar * 100;
+            $vnp_Locale = "vn";
+            $vnp_BankCode = $request->bankcode;
+            $vnp_IpAddr = request()->ip();
 
-        $inputData = array(
-            "vnp_Version" => "2.1.0",
-            "vnp_TmnCode" => $vnp_TmnCode,
-            "vnp_Amount" => $vnp_Amount,
-            "vnp_Command" => "pay",
-            "vnp_CreateDate" => date('YmdHis'),
-            "vnp_CurrCode" => "VND",
-            "vnp_IpAddr" => $vnp_IpAddr,
-            "vnp_Locale" => $vnp_Locale,
-            "vnp_OrderInfo" => $vnp_OrderInfo,
-            "vnp_OrderType" => $vnp_OrderType,
-            "vnp_ReturnUrl" => $vnp_Returnurl,
-            "vnp_TxnRef" => $vnp_TxnRef,
-        );
-        if (isset($vnp_BankCode) && $vnp_BankCode != null) {
-            $inputData['vnp_BankCode'] = $vnp_BankCode;
-        }
-        ksort($inputData);
-        $query = "";
-        $i = 0;
-        $hashdata = "";
-        foreach ($inputData as $key => $value) {
-            if ($i == 1) {
-                $hashdata .= '&' . urlencode($key) . "=" . urlencode($value);
-            } else {
-                $hashdata .= urlencode($key) . "=" . urlencode($value);
-                $i = 1;
+            $inputData = array(
+                "vnp_Version" => "2.1.0",
+                "vnp_TmnCode" => $vnp_TmnCode,
+                "vnp_Amount" => $vnp_Amount,
+                "vnp_Command" => "pay",
+                "vnp_CreateDate" => date('YmdHis'),
+                "vnp_CurrCode" => "VND",
+                "vnp_IpAddr" => $vnp_IpAddr,
+                "vnp_Locale" => $vnp_Locale,
+                "vnp_OrderInfo" => $vnp_OrderInfo,
+                "vnp_OrderType" => $vnp_OrderType,
+                "vnp_ReturnUrl" => $vnp_Returnurl,
+                "vnp_TxnRef" => $vnp_TxnRef,
+            );
+            if (isset($vnp_BankCode) && $vnp_BankCode != null) {
+                $inputData['vnp_BankCode'] = $vnp_BankCode;
             }
-            $query .= urlencode($key) . "=" . urlencode($value) . '&';
-        }
+            ksort($inputData);
+            $query = "";
+            $i = 0;
+            $hashdata = "";
+            foreach ($inputData as $key => $value) {
+                if ($i == 1) {
+                    $hashdata .= '&' . urlencode($key) . "=" . urlencode($value);
+                } else {
+                    $hashdata .= urlencode($key) . "=" . urlencode($value);
+                    $i = 1;
+                }
+                $query .= urlencode($key) . "=" . urlencode($value) . '&';
+            }
 
-        $vnp_Url = $vnp_Url . "?" . $query;
-        if (isset($vnp_HashSecret)) {
-            $vnpSecureHash = hash_hmac('sha512', $hashdata, $vnp_HashSecret);
-            $vnp_Url .= 'vnp_SecureHash=' . $vnpSecureHash;
+            $vnp_Url = $vnp_Url . "?" . $query;
+            if (isset($vnp_HashSecret)) {
+                $vnpSecureHash = hash_hmac('sha512', $hashdata, $vnp_HashSecret);
+                $vnp_Url .= 'vnp_SecureHash=' . $vnpSecureHash;
+            }
+            return redirect($vnp_Url);
         }
-        return redirect($vnp_Url);
+        return redirect()->route('responseCod',$order->id);
+
     }
 
     public function response(Request $request)
     {
-//        $order = Order::find($request->vnp_TxnRef);
-//
-//        $group = Group::query()->where('ward_id',$order->shipping_ward_id)->first();
-//        if ($group != null){
-//            $shippers = User::query()->where(['group_id'=>$group->id,'role'=>3])->get();
-//            foreach ($shippers as $shipper){
-//                $notification = new Notification();
-//                $notification->sender_id = $shipper->id;
-//                $notification->link = "/admin/orders/".$order->id;
-//                $notification->message = "đơ vị của bạn vưa nhân đươc 1 đơn hàng mới";
-//                $notification->save();
-//            }
-//        }
-//        else{
-//
-//        }
+        $order = Order::query()->where('id',$request->vnp_TxnRef)->first();
+        return view('Client.response',[
+            'order'=>$order
+        ]);
+    }
+    public function responseCod($id)
+    {
+        $order = Order::query();
+
+        return view('Client.response',[
+            'order'=>$order
+        ]);
     }
 
 
@@ -210,7 +214,7 @@ class  OrderController extends Controller
         }
         $secureHash = hash_hmac('sha512', $hashData, $vnp_HashSecret);
         $vnp_Amount = $inputData['vnp_Amount'] / 100;
-        $order = Order::find($request->vnp_TxnRef);
+        $order = Order::query()->where('id',$request->vnp_TxnRef)->first();
         $floatVar = floatval(preg_replace("/[^-0-9\.]/", "", $order->total_price));
         try {
             if ($secureHash === $vnp_SecureHash) {
@@ -258,7 +262,7 @@ class  OrderController extends Controller
 
     public function testIpn($id)
     {
-        $order = Order::find($id);
+        $order = Order::query()->where('id',$id)->first();
         return $order;
     }
 
@@ -288,7 +292,7 @@ class  OrderController extends Controller
         $notification->sender_id = $request->shipper_id;
         $notification->link = "/shipper/notification/";
         $notification->message = "ban nhân đươc 1 đơn hàng giao đến ";
-        $order = Order::find($id);
+        $order = Order::query()->where('id',$id)->first();
         $order->status = $request->status;
         $order->payment_method = $request->payment_method;
         $order->save();
