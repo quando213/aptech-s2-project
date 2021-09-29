@@ -30,6 +30,6 @@ class OrderStatusBadge extends Component
      */
     public function render()
     {
-        return view('Admin.components.order-status-badge');
+        return view('components.order-status-badge');
     }
 }

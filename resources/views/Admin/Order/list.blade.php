@@ -27,28 +27,36 @@
                 {{$item->ward->name . ', ' . $item->district->name}}<br>
                 {{$item->shipping_phone}}
             </td>
-            <td style="text-align: right;">{{$item->total_price}}đ</td>
-            <td>{{ \Carbon\Carbon::parse($item->created_at)->format(DISPLAY_DATETIME_FORMAT) }}</td>
+            <td style="text-align: right;">{{number_format($item->total_price)}}đ</td>
+            <td>{{ $item->created_at }}</td>
             <td>
                 <x-order-status-badge :status="$item->status"></x-order-status-badge>
+                @if(isAdmin() && $item->status == \App\Enums\OrderStatus::CREATED)
+                    <a href="{{route('orderMarkedAsPaid', $item->id)}}"
+                       data-bs-toggle="tooltip" title="" data-bs-original-title="Đánh dấu đã nhận chuyển khoản">
+                        <i class="bi bi-check-circle-fill text-danger" style="font-size: 1rem;"></i>
+                    </a>
+                @endif
             </td>
-            <td>
-                <a href="{{route('orderDetail',$item->id)}}" type="button"
-                   class="btn btn-primary text-nowrap">Xem</a>
+            <td class="text-nowrap text-center">
+                <a href="{{route('orderDetail', $item->id)}}" type="button"
+                   class="btn btn-primary">Xem</a>
             </td>
         </tr>
     @endforeach
 @endsection
 
 @section('filter')
-    <div class="col-6">
-        <x-select name="shipping_district_id" option-all="Tất cả quận/huyện" icon="bi-filter" is-filter="true"
-                  :options="arrayToOptions($districts, 'name', 'id')"></x-select>
-    </div>
-    <div class="col-6">
-        <x-select name="shipping_ward_id" option-all="Tất cả phường/xã" icon="bi-filter" is-filter="true"
-                  :disabled="!sizeof($wards)" :options="arrayToOptions($wards, 'name', 'id')"></x-select>
-    </div>
+    @if(isAdmin())
+        <div class="col-6">
+            <x-select name="shipping_district_id" option-all="Tất cả quận/huyện" icon="bi-filter" is-filter="true"
+                      :options="arrayToOptions($districts, 'name', 'id')"></x-select>
+        </div>
+        <div class="col-6">
+            <x-select name="shipping_ward_id" option-all="Tất cả phường/xã" icon="bi-filter" is-filter="true"
+                      :disabled="!sizeof($wards)" :options="arrayToOptions($wards, 'name', 'id')"></x-select>
+        </div>
+    @endif
     <div class="col-6">
         <x-select name="status" option-all="Tất cả trạng thái" icon="bi-filter" is-filter="true"
                   :options="App\Enums\OrderStatus::asSelectArray()"></x-select>
@@ -56,4 +64,13 @@
     <div class="col-6">
         <x-date-range-picker></x-date-range-picker>
     </div>
+@endsection
+
+@section('extraJs')
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
 @endsection

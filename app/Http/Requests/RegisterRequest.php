@@ -2,11 +2,10 @@
 
 namespace App\Http\Requests;
 
-use App\Enums\UserRole;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class UpdateIn4PostRequest extends FormRequest
+class RegisterRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,16 +25,14 @@ class UpdateIn4PostRequest extends FormRequest
     public function rules()
     {
         return [
+            'password' => ['required', 'min:6'],
             'first_name' => ['required'],
             'last_name' => ['required'],
-//            'email' => ['required', 'email', Rule::unique('users')],
+            'email' => ['required', 'email', Rule::unique('users')],
             'district_id'=>['required'],
             'ward_id'=>['required'],
             'street'=>['required'],
             'phone'=>['required'],
-            'role'=>['required'],
-            'group_id'=>['required_if:role,'.UserRole::SHIPPER],
-            'position'=>['required_if:role,'.UserRole::SHIPPER],
         ];
     }
 }

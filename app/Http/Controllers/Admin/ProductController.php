@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ProductPostRequest;
+use App\Http\Requests\ProductRequest;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Builder;
@@ -46,7 +46,7 @@ class ProductController extends Controller
     }
 
 
-    public function store(ProductPostRequest $request)
+    public function store(ProductRequest $request)
     {
         $product = new Product();
         $product->fill($request->validated());
@@ -55,7 +55,7 @@ class ProductController extends Controller
             ->with('message', 'Tao mới thành công sản phẩm ' . $product->name);
     }
 
-    public function save(ProductPostRequest $request, $id)
+    public function save(ProductRequest $request, $id)
     {
         $product = Product::find($id);
         $product->update($request->validated());

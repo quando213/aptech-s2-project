@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -21,6 +22,7 @@ class Order extends Model
         'total_price',
         'status',
         'payment_method',
+        'paid_at'
     ];
 
     public function user()
@@ -28,7 +30,7 @@ class Order extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function orderDetail()
+    public function details()
     {
         return $this->hasMany(OrderDetail::class);
     }
@@ -42,9 +44,24 @@ class Order extends Model
     {
         return $this->belongsTo(District::class, 'shipping_district_id');
     }
+
     public function shipper()
     {
         return $this->belongsTo(User::class, 'shipper_id');
     }
 
+    public function getCreatedAtAttribute($date)
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format(DISPLAY_DATETIME_FORMAT);
+    }
+
+    public function getUpdatedAtAttribute($date)
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format(DISPLAY_DATETIME_FORMAT);
+    }
+
+    public function getFullAddress()
+    {
+        return "{$this->shipping_street}, {$this->ward->name}, {$this->district->name}";
+    }
 }

@@ -15,6 +15,7 @@ use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\TemplateAdminController;
 use App\Http\Controllers\TemplateClientController;
 use App\Http\Middleware\checkAdmin;
+use App\Http\Middleware\CheckCMSAccess;
 use App\Http\Middleware\checkShipper;
 use Illuminate\Support\Facades\Route;
 
@@ -29,12 +30,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('admin')->middleware(['auth', CheckAdmin::class])->group(function () {
+Route::prefix('cms')->middleware(['auth', CheckCMSAccess::class])->group(function () {
     require_once __DIR__ . '/admin.php';
-});
-
-Route::prefix('shipper')->middleware(['auth', checkShipper::class])->group(function () {
-    require_once __DIR__ . '/shipper.php';
 });
 
 Route::get('/', [HomeController::class, 'home'])->name("home");
@@ -57,8 +54,8 @@ Route::get('/logout', [EntryController::class, 'logout'])->name('logout');
 Route::prefix('account')->middleware('auth')->group(function () {
     Route::get('/', [AccountController::class, 'myAccount'])->name('myAccount');
     Route::post('/', [AccountController::class, 'updateAccount'])->name('updateAccount');
-    Route::get('my-order/{id}', [AccountController::class, 'myOrderDetail'])->name('myOrder');
-    Route::get('my-order/{id}/{notification}', [AccountController::class, 'myOrderDetail'])->name('myOrderDetail');
+    Route::get('order/{id}', [AccountController::class, 'myOrderDetail'])->name('myOrderDetail');
+//    Route::get('order/{id}/{notification}', [AccountController::class, 'myOrderDetail'])->name('myOrderDetail');
 });
 
 Route::prefix('cart')->group(function () {
@@ -71,14 +68,8 @@ Route::prefix('cart')->group(function () {
 
 Route::prefix('checkout')->middleware('auth')->group(function () {
     Route::get('/', [CheckoutController::class, 'checkout'])->name('checkout');
+    Route::post('/', [CheckoutController::class, 'placeOrder'])->name('buy');
+    Route::get('/vnpay/{id}', [CheckoutController::class, 'makeVNPayPayment'])->name('makeVNPayPayment');
 });
-
-Route::get('/buy', [OrderController::class, 'buynow'])->name('buy');
-Route::post('/checkout', [OrderController::class, 'buynow'])->name('buy');
-
-// FOR DISTRICT & WARD SEEDER
-//Route::prefix('insert')->group(function () {
-//    require_once __DIR__ . '/insert_data.php';
-//});
 
 Route::get('/combo', [ClientComboController::class, 'list']);

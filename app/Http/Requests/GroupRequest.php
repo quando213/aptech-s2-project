@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class ClientUserRequest extends FormRequest
+class GroupRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,14 +24,17 @@ class ClientUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'password' => ['required', 'min:6'],
-            'first_name' => ['required'],
-            'last_name' => ['required'],
-            'email' => ['required', 'email', Rule::unique('users')],
-            'district_id'=>['required'],
-            'ward_id'=>['required'],
-            'street'=>['required'],
-            'phone'=>['required'],
+            'name' => ['required','min:5'],
+            'ward_id' => ['required'],
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'name.required' => 'Vui lòng nhập tên đơn vị',
+            'name.min' => 'Tên đơn vi it nhất gồm 5 ký tự',
+            'ward_id.required' => 'Vui lòng chọn đơn vị hành chính quản lý',
+
         ];
     }
 }

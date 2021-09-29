@@ -17,96 +17,35 @@
                         <form class="form" method="POST">
                             @csrf
                             <div class="row">
-                                <div class="col-md-6 col-12">
-                                    <div class="form-group">
-                                        <label for="sel1">Trang thái</label>
-                                        <select class="form-select" name="status"
-                                                aria-label="Default select example">
-                                            <option selected disabled hidden>Open this select menu</option>
-                                            @foreach(\App\Enums\OrderStatus::getValues() as $type)
-                                                <option
-                                                    value="{{$type}}" {{$order && $order->status === $type ? 'selected' : ''}}>{{\App\Enums\OrderStatus::getDescription($type)}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-12">
-                                    <div class="form-group">
-                                        <label for="sel1">Trạng thái thanh toán</label>
-                                        <select class="form-select" name="payment_method"
-                                                aria-label="Default select example">
-                                            <option selected disabled hidden>Open this select menu</option>
-                                            @foreach(\App\Enums\OrderPaymentMethod::getValues() as $type)
-                                                <option
-                                                    value="{{$type}}" {{$order && $order->payment_method === $type ? 'selected' : ''}}>{{\App\Enums\OrderPaymentMethod::getDescription($type)}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                @if($shippers)
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="company-Password">Người nhận đơn</label>
-                                            <select class="form-select" name="shipper_id"
-                                                    aria-label="Default select example">
-                                                <option selected disabled hidden>Open this select menu</option>
-                                                @foreach($shippers as $shipper)
-                                                    <option
-                                                        value="{{$shipper->id}}" {{$order && $order->shipper_id === $shipper->id ? 'selected' : ''}}>{{$shipper->first_name.' '.$shipper->last_name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                @else
-                                    <div>
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <h4 class="card-title">Nơi nhận đơn hàng hiên không có đơn vị
-                                                    vận chuyển nào
-                                                    <br>Bạn có thể hủy hơn hàng hoặc chọn đơn vi vân chuyển mắc
-                                                    định</h4>
-                                            </div>
-                                            <div class="card-content">
-                                                <div class="card-body">
-                                                    <div class="form-body">
-                                                        <div class="row">
-                                                            <div class="card-body">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="radio"
-                                                                           value="1" name="choice"
-                                                                           id="flexRadioDefault1" checked="">
-                                                                    <label class="form-check-label"
-                                                                           for="flexRadioDefault1">
-                                                                        Nhận đơn hàng với đợn vị vân chuyển mặc
-                                                                        định
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="radio"
-                                                                           value="0" name="choice"
-                                                                           id="flexRadioDefault2">
-                                                                    <label class="form-check-label"
-                                                                           for="flexRadioDefault2">
-                                                                        Hủy đơn hàng và thông báo với khác hàng
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group mb-3" id="text"
-                                                                 style="display:none">
-                                                                <label for="exampleFormControlTextarea1"
-                                                                       class="form-label">Lý do hủy đơn</label>
-                                                                <textarea class="form-control" name="message"
-                                                                          id="exampleFormControlTextarea1"
-                                                                          placeholder="Viết lý do hủy đơn cũ thể cho khác hàng"
-                                                                          rows="3"></textarea>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endif
+                                @include('Admin.layout.form-fields', [
+'fields' => [
+    [
+        'element' => 'select',
+        'col' => 12,
+        'name' => 'status',
+        'label' => 'Trạng thái',
+        'placeholder' => 'Chọn trạng thái',
+        'options' => \App\Enums\OrderStatus::asSelectArray(),
+    ],
+    [
+        'element' => 'select',
+        'col' => 12,
+        'name' => 'payment_method',
+        'label' => 'Phương thức thanh toán',
+        'placeholder' => 'Chọn phương thức thanh toán',
+        'options' => \App\Enums\OrderPaymentMethod::asSelectArray(),
+    ],
+    [
+        'element' => 'select',
+        'col' => 12,
+        'name' => 'shipper_id',
+        'label' => 'Quân nhân phụ trách',
+        'placeholder' => 'Chọn người phụ trách mua hộ',
+        'options' => arrayToOptions($shippers ?? [], 'first_name', 'id'),
+    ],
+],
+'data' => $order
+])
                                 <div class="col-12 d-flex justify-content-end mt-4">
                                     <button type="submit" class="btn btn-primary me-1 mb-1">Lưu</button>
                                 </div>
@@ -127,7 +66,7 @@
                             <tbody>
                             <tr>
                                 <th>Người đặt hàng</th>
-                                <td>{{$order->user->first_name .' '.$order->user->last_name}}</td>
+                                <td>{{$order->user->getFullName()}}</td>
                             </tr>
                             <tr>
                                 <th>Người nhận hàng</th>
@@ -135,7 +74,7 @@
                             </tr>
                             <tr>
                                 <th>Địa chỉ người nhận</th>
-                                <td>{{$order->shipping_street .', '.$order->ward->name.', '.$order->district->name}}</td>
+                                <td>{{$order->getFullAddress()}}</td>
                             </tr>
                             <tr>
                                 <th>Số điện thoại người nhận</th>
@@ -147,7 +86,7 @@
                             </tr>
                             <tr>
                                 <th>Ngày đặt hàng</th>
-                                <td>{{\Carbon\Carbon::parse($order->created_at)->format(DISPLAY_DATETIME_FORMAT)}}</td>
+                                <td>{{$order->created_at}}</td>
                             </tr>
                             </tbody>
                         </table>
@@ -173,7 +112,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($orderDetails as $orderDetail)
+                            @foreach($order->details as $orderDetail)
                                 <tr>
                                     <td>
                                         <div class="img-square-container">
@@ -182,9 +121,9 @@
                                         </div>
                                     </td>
                                     <td>{{$orderDetail->product->name}}</td>
-                                    <td style="text-align: right;">{{number_format(floatval($orderDetail->unit_price))}}đ</td>
+                                    <td style="text-align: right;">{{number_format($orderDetail->unit_price)}}đ</td>
                                     <td style="text-align: right;">{{$orderDetail->quantity}}</td>
-                                    <td style="text-align: right;">{{number_format(floatval($orderDetail->unit_price) * $orderDetail->quantity)}}đ</td>
+                                    <td style="text-align: right;">{{number_format($orderDetail->unit_price * $orderDetail->quantity)}}đ</td>
                                 </tr>
                             @endforeach
                             <tr>
@@ -199,33 +138,4 @@
             </div>
         </div>
     </div>
-
-    {{--    @include('Admin.layout.form-fields', [--}}
-    {{--    'fields' => [--}}
-    {{--        [--}}
-    {{--            'element' => 'input',--}}
-    {{--            'col' => 12,--}}
-    {{--            'name' => 'name',--}}
-    {{--            'label' => 'Tên nhóm'--}}
-    {{--        ],--}}
-    {{--        [--}}
-    {{--            'element' => 'select',--}}
-    {{--            'col' => 6,--}}
-    {{--            'name' => 'district_id',--}}
-    {{--            'label' => 'Quận/huyện',--}}
-    {{--            'placeholder' => 'Chọn quận/huyện',--}}
-    {{--            'selected' => isset($data) && $data->ward_id ? $data->ward->district_id : '',--}}
-    {{--            'options' => arrayToOptions($districts, 'name', 'id'),--}}
-    {{--        ],--}}
-    {{--        [--}}
-    {{--            'element' => 'select',--}}
-    {{--            'col' => 6,--}}
-    {{--            'name' => 'ward_id',--}}
-    {{--            'label' => 'Phường/xã quản lý',--}}
-    {{--            'placeholder' => 'Chọn phường/xã',--}}
-    {{--            'options' => arrayToOptions($wards ?? [], 'name', 'id'),--}}
-    {{--        ],--}}
-    {{--    ],--}}
-    {{--    'data' => $data ?? null--}}
-    {{--])--}}
 @endsection

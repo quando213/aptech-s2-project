@@ -1,12 +1,13 @@
 <?php
+
 namespace App\Http\Middleware;
+
 use App\Enums\UserRole;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-
-class checkAdmin
+class CheckCMSAccess
 {
     /**
      * Handle an incoming request.
@@ -17,7 +18,7 @@ class checkAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->role == UserRole::ADMIN) {
+        if (Auth::check() && Auth::user()->role != UserRole::USER) {
             return $next($request);
         }
         return redirect()->route('home');

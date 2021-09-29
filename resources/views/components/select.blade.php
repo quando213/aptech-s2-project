@@ -1,7 +1,7 @@
 @if(isset($col) && $col)
     <div class="col-12 col-md-{{ $col }}">
         @endif
-        <div class="form-group {{ $icon ? 'position-relative has-icon-left' : '' }}">
+        <div class="form-group {{ $icon ? 'position-relative has-icon-left' : '' }} {{ $cssClass }}">
             @if(isset($label) && strlen($label))
                 <label for="{{ $name }}">{{ $label }}</label>
             @endif

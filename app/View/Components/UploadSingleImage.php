@@ -11,6 +11,7 @@ class UploadSingleImage extends Component
     public string $placeholder;
     public $value;
     public int $col;
+    public string $cssClass;
 
     /**
      * Create a new component instance.
@@ -18,15 +19,17 @@ class UploadSingleImage extends Component
      * @param string $label
      * @param string $placeholder
      * @param null $value
-     * @param $col
+     * @param int $col
+     * @param string $cssClass
      */
-    public function __construct($name, $label = '', $placeholder = '', $value = null, $col = 0)
+    public function __construct($name, $label = '', $placeholder = '', $value = null, $col = 0, $cssClass = '')
     {
         $this->name = $name;
         $this->label = $label;
         $this->placeholder = $placeholder;
         $this->value = $value;
         $this->col = $col;
+        $this->cssClass = $cssClass;
     }
 
     /**

@@ -3,8 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class GroupPostRequest extends FormRequest
+class UpdateAccountRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,17 +25,14 @@ class GroupPostRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required','min:5'],
+            'password' => ['nullable', 'confirmed', 'min:6'],
+            'password_current' => ['nullable', 'required_with:password', 'min:6'],
+            'first_name' => ['required'],
+            'last_name' => ['required'],
+            'phone' => ['required'],
             'ward_id' => ['required'],
-        ];
-    }
-    public function messages()
-    {
-        return [
-            'name.required' => 'Vui lòng nhập tên đơn vị',
-            'name.min' => 'Tên đơn vi it nhất gồm 5 ký tự',
-            'ward_id.required' => 'Vui lòng chọn đơn vị hành chính quản lý',
-
+            'district_id' => ['required'],
+            'street' => ['required'],
         ];
     }
 }

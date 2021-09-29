@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Client;
 
 use App\Enums\UserRole;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ClientUserRequest;
-use App\Http\Requests\UpdateAccount;
+use App\Http\Requests\RegisterRequest;
+use App\Http\Requests\UpdateAccountRequest;
 use App\Models\District;
 use App\Models\Group;
 use App\Models\Order;
@@ -31,7 +31,7 @@ class EntryController extends Controller
         ]);
     }
 
-    public function processRegister(ClientUserRequest $request)
+    public function processRegister(RegisterRequest $request)
     {
         $user = new User();
         $user->fill($request->validated());

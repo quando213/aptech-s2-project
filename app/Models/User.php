@@ -54,6 +54,21 @@ class User extends Authenticatable
     }
 
     public function group(){
-        return $this->belongsTo(Group::class,'group_id');
+        return $this->belongsTo(Group::class);
+    }
+
+    public function getFullName()
+    {
+        return "{$this->last_name} {$this->first_name}";
+    }
+
+    public function getFullNameWithPosition()
+    {
+        return "{$this->position} {$this->last_name} {$this->first_name}";
+    }
+
+    public function getFullAddress()
+    {
+        return "{$this->street}, {$this->ward->name}, {$this->district->name}";
     }
 }
