@@ -2,10 +2,12 @@
 
 namespace App\Http\Requests;
 
+use App\Enums\OrderPaymentMethod;
+use App\Enums\OrderStatus;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class UpdateAccount extends FormRequest
+class UpdateOrderRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,14 +27,9 @@ class UpdateAccount extends FormRequest
     public function rules()
     {
         return [
-            'password' => ['nullable', 'confirmed', 'min:6'],
-            'password_current' => ['nullable', 'required_with:password', 'min:6'],
-            'first_name' => ['required'],
-            'last_name' => ['required'],
-            'phone' => ['required'],
-            'ward_id' => ['required'],
-            'district_id' => ['required'],
-            'street' => ['required'],
+            'payment_method' => ['required', Rule::in(OrderPaymentMethod::getValues())],
+            'status' => ['required', Rule::in(OrderStatus::getValues())],
+            'shipper_id' => 'nullable'
         ];
     }
 }

@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\WardController;
 use App\Http\Controllers\TemplateAdminController;
 use App\Http\Controllers\TemplateClientController;
 use App\Http\Controllers\Admin\ComboController;
+use App\Http\Middleware\CheckAdmin;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -29,11 +30,12 @@ Route::get('/', [TemplateAdminController::class, 'page_content'])->name('adminDa
 
 Route::prefix('orders')->group(function () {
     Route::get('', [OrderController::class, 'list'])->name('orderList');
-    Route::get('/{id}', [OrderController::class, 'orderDetail'])->name('orderDetail');
+    Route::get('/paid/{id}', [OrderController::class, 'markAsPaid'])->name('orderMarkedAsPaid');
+    Route::get('/{id}', [OrderController::class, 'detail'])->name('orderDetail');
     Route::post('/{id}', [OrderController::class, 'save']);
 });
 
-Route::prefix('/users')->group(function () {
+Route::prefix('/users')->middleware([CheckAdmin::class])->group(function () {
     Route::get('create', [AdminUserController::class, 'create'])->name('userCreate');
     Route::post('create', [AdminUserController::class, 'store']);
     Route::get('update/{id}', [AdminUserController::class, 'update'])->name('userUpdate');
@@ -42,7 +44,7 @@ Route::prefix('/users')->group(function () {
     Route::get('{role?}', [AdminUserController::class, 'index'])->name('userList');
 });
 
-Route::prefix('/groups')->group(function () {
+Route::prefix('/groups')->middleware([CheckAdmin::class])->group(function () {
     Route::get('', [GroupController::class, 'index'])->name('groupList');
     Route::get('create', [GroupController::class, 'create'])->name('groupCreate');
     Route::post('create', [GroupController::class, 'store']);
@@ -51,7 +53,7 @@ Route::prefix('/groups')->group(function () {
     Route::get('delete/{id}', [GroupController::class, 'destroy'])->name('groupDelete');
 });
 
-Route::prefix('/categories')->group(function () {
+Route::prefix('/categories')->middleware([CheckAdmin::class])->group(function () {
     Route::get('', [CategoryController::class, 'index'])->name('categoryList');
     Route::get('create', [CategoryController::class, 'create'])->name('categoryCreate');
     Route::post('create', [CategoryController::class, 'store']);
@@ -60,7 +62,7 @@ Route::prefix('/categories')->group(function () {
     Route::get('delete/{id}', [CategoryController::class, 'destroy'])->name('categoryDelete');
 });
 
-Route::prefix('/products')->group(function () {
+Route::prefix('/products')->middleware([CheckAdmin::class])->group(function () {
     Route::get('', [ProductController::class, 'index'])->name('productList');
     Route::get('create', [ProductController::class, 'create'])->name('productCreate');
     Route::post('create', [ProductController::class, 'store']);
@@ -69,7 +71,7 @@ Route::prefix('/products')->group(function () {
     Route::get('delete/{id}', [ProductController::class, 'destroy'])->name('productDelete');
 });
 
-Route::prefix('/combos')->group(function () {
+Route::prefix('/combos')->middleware([CheckAdmin::class])->group(function () {
     Route::get('', [ComboController::class, 'index'])->name('comboList');
     Route::get('detail', [ComboController::class, 'detail'])->name('comboDetail');
     Route::get('create', [ComboController::class, 'create'])->name('comboCreate');
@@ -79,9 +81,7 @@ Route::prefix('/combos')->group(function () {
     Route::get('delete/{id}', [ComboController::class, 'destroy'])->name('comboDelete');
 });
 
-
 Route::prefix('/shipper')->group(function () {
-
 //    Route::get('', [OrderController::class, 'list'])->name('orderList');
 //    Route::get('/{id}', [OrderController::class, 'orderDetail'])->name('orderDetail');
     Route::get('/personnel', [GroupController::class, 'personnel']);

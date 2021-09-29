@@ -25,6 +25,7 @@ class CreateOrdersTable extends Migration
             $table->double('total_price');
             $table->integer('status');
             $table->integer('payment_method');
+            $table->dateTime('paid_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

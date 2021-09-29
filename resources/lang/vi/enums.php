@@ -16,8 +16,8 @@ return [
     ],
 
     OrderPaymentMethod::class => [
-        OrderPaymentMethod::COD => 'Thanh toán khi nhận hàng',
-        OrderPaymentMethod::VNPay => 'VNPay'
+        OrderPaymentMethod::BANK_TRANSFER => 'Chuyển khoản',
+        OrderPaymentMethod::VN_PAY => 'VNPay'
     ],
 
     ProductUnit::class => [

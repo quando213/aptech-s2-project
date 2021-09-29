@@ -15,10 +15,11 @@ class CreateNotificationsTable extends Migration
     {
         Schema::create('notifications', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('sender_id');
-            $table->boolean('the_send')->default(false);
+            $table->integer('user_id');
             $table->string('message');
-            $table->string('link');
+            $table->boolean('is_seen')->default(false);
+            $table->integer('order_id')->nullable();
+            $table->string('custom_url')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

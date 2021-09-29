@@ -15,7 +15,12 @@ class Notification extends Model
         'message',
         'link'
     ];
+
     public function user(){
-        return $this->belongsTo(User::class,'sender_id');
+        return $this->belongsTo(User::class);
+    }
+
+    public function order() {
+        return $this->belongsTo(Order::class);
     }
 }

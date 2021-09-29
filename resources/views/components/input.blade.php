@@ -1,7 +1,7 @@
 @if(isset($col) && $col)
     <div class="col-12 col-md-{{ $col }}">
         @endif
-        <div class="form-group">
+        <div class="form-group {{ $cssClass }}">
             <label for="{{ $name }}">{{ $label && strlen($label) ? $label : ucfirst(strtolower($name)) }}</label>
             <input type="{{ $type ?? 'text' }}" id="{{ $name }}" class="form-control" placeholder="{{ $placeholder }}"
                    name="{{ $name }}" value="{{ $value }}">

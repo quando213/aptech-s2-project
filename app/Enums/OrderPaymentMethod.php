@@ -12,6 +12,6 @@ use BenSampo\Enum\Enum;
  */
 final class OrderPaymentMethod extends Enum implements LocalizedEnum
 {
-    const COD = 1;
-    const VNPay = 2;
+    const BANK_TRANSFER = 1;
+    const VN_PAY = 2;
 }

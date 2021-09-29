@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Enums\UserRole;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\AdminUserPostRequest;
-use App\Http\Requests\UpdateIn4PostRequest;
+use App\Http\Requests\AdminCreateUserRequest;
+use App\Http\Requests\AdminUpdateUserRequest;
 use App\Models\District;
 use App\Models\Group;
 use App\Models\User;
@@ -78,7 +78,7 @@ class AdminUserController extends Controller
         ]);
     }
 
-    public function store(AdminUserPostRequest $request)
+    public function store(AdminCreateUserRequest $request)
     {
         $user = new User();
         $user->fill($request->validated());
@@ -97,7 +97,7 @@ class AdminUserController extends Controller
             ->with('message', 'Xóa thành công người dùng ' . $user->last_name . ' ' . $user->first_name);
     }
 
-    public function save(UpdateIn4PostRequest $request, $id)
+    public function save(AdminUpdateUserRequest $request, $id)
     {
         $user = User::find($id);
         $user->update($request->validated());

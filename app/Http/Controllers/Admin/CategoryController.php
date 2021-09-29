@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CategoryPostRequest;
+use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
@@ -36,7 +36,7 @@ class CategoryController extends Controller
         return view('Admin.Category.form');
     }
 
-    public function store(CategoryPostRequest $request)
+    public function store(CategoryRequest $request)
     {
         $category = new Category();
         $category->fill($request->validated());
@@ -44,7 +44,7 @@ class CategoryController extends Controller
         return redirect()->route('categoryList')->with('message', 'Thêm mới thành công danh mục ' . $category->name);
     }
 
-    public function save(CategoryPostRequest $request, $id)
+    public function save(CategoryRequest $request, $id)
     {
         $category = Category::find($id);
         $category->update($request->validated());

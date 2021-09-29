@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\GroupPostRequest;
+use App\Http\Requests\GroupRequest;
 use App\Models\District;
 use App\Models\Group;
 use App\Models\User;
@@ -50,7 +50,7 @@ class GroupController extends Controller
         ]);
     }
 
-    public function store(GroupPostRequest $request)
+    public function store(GroupRequest $request)
     {
         $data = $request->validated();
         $group = new Group();
@@ -71,7 +71,7 @@ class GroupController extends Controller
         ]);
     }
 
-    public function save($id,GroupPostRequest $request)
+    public function save($id, GroupRequest $request)
     {
         $group = Group::find($id);
         $data = $request->validated();

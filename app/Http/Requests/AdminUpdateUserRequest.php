@@ -6,7 +6,7 @@ use App\Enums\UserRole;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class AdminUserPostRequest extends FormRequest
+class AdminUpdateUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,10 +26,9 @@ class AdminUserPostRequest extends FormRequest
     public function rules()
     {
         return [
-            'password' => ['required', 'min:6'],
             'first_name' => ['required'],
             'last_name' => ['required'],
-            'email' => ['required', 'email', Rule::unique('users')],
+//            'email' => ['required', 'email', Rule::unique('users')],
             'district_id'=>['required'],
             'ward_id'=>['required'],
             'street'=>['required'],

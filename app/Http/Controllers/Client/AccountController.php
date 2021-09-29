@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UpdateAccount;
+use App\Http\Requests\UpdateAccountRequest;
 use App\Models\District;
 use App\Models\Group;
 use App\Models\Notification;
@@ -30,7 +30,7 @@ class AccountController extends Controller
         ]);
     }
 
-    public function updateAccount(UpdateAccount $account)
+    public function updateAccount(UpdateAccountRequest $account)
     {
         $user = User::find(Auth::id());
         $data = $account->validated();
@@ -47,7 +47,7 @@ class AccountController extends Controller
         ]);
     }
 
-    public function myOrderDetail($id,$notification)
+    public function myOrderDetail($id,$notification = null)
     {
         if ($notification){
             $upNotification = Notification::query()->where(['sender_id' => Auth::id(),'id'=>$notification])->first();

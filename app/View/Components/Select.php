@@ -17,6 +17,7 @@ class Select extends Component
     public bool $disabled;
     public string $label;
     public int $col;
+    public string $cssClass;
 
     /**
      * Create a new component instance.
@@ -32,8 +33,10 @@ class Select extends Component
      * @param bool $disabled
      * @param string $label
      * @param int $col
+     * @param string $cssClass
      */
-    public function __construct($name, array $options, $selected = '', $placeholder = '', $optionAll = '', $icon = '', $sameKeyValue = false, $isFilter = false, $disabled = false, $label = '', $col = 0)
+    public function __construct($name, array $options, $selected = '', $placeholder = '', $optionAll = '', $icon = '',
+                                $sameKeyValue = false, $isFilter = false, $disabled = false, $label = '', $col = 0, $cssClass = '')
     {
         $this->name = $name;
         $this->label = $label;
@@ -46,6 +49,7 @@ class Select extends Component
         $this->sameKeyValue = $sameKeyValue;
         $this->isFilter = $isFilter;
         $this->disabled = $disabled;
+        $this->cssClass = $cssClass;
     }
 
     /**
