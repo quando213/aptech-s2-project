@@ -37,15 +37,11 @@ class ProductController extends Controller
         ]);
     }
 
-
     public function create()
     {
-        $categories = Category::query()->orderBy('name', 'asc')->get();
+        $categories = Category::query()->orderBy('name')->get();
         return view('Admin.Product.form', [
-            'categories' => $categories,
-            'data' => null,
-            'title' => 'Trang thêm mới sản phẩm',
-            'breadcrumb' => 'Tạo mới sản phẩm'
+            'categories' => $categories
         ]);
     }
 
@@ -53,57 +49,37 @@ class ProductController extends Controller
     public function store(ProductPostRequest $request)
     {
         $product = new Product();
-//        $img = $request['thumbnail'];
-//        $check = explode('.', $img);
-//        $size = sizeof($check) - 1;
-
-//        if ($check[$size] == 'jpg' || $check[$size] == 'png'|| $check[$size] == 'jpeg') {
         $product->fill($request->validated());
-        $product->images = "";
         $product->save();
-        return redirect()->route('productList')->with('message', 'Tao mới thành công sản phẩm dùng ' . $product->name);
-//        }
-//        else{
-//            return redirect()->route('productCreate')->with('error','image format error, accepted formats .jpg .png .jpeg');
-//        }
-
+        return redirect()->route('productList')
+            ->with('message', 'Tao mới thành công sản phẩm ' . $product->name);
     }
 
     public function save(ProductPostRequest $request, $id)
     {
         $product = Product::find($id);
-        $img = $request['thumbnail'];
-        $check = explode('.', $img);
-        $size = sizeof($check) - 1;
-
-        if ($check[$size] == 'jpg' || $check[$size] == 'png' || $check[$size] == 'jpeg') {
-            $product->update($request->validated());
-            $product->save();
-            return redirect()->route('productList')->with('message', 'Sửa thành công sản phẩm dùng ' . $product->name);
-        } else {
-            return redirect()->route('productUpdate', $id)->with('error', 'image format error, accepted formats .jpg .png .jpeg');
-        }
+        $product->update($request->validated());
+        $product->save();
+        return redirect()->route('productList')
+            ->with('message', 'Sửa thành công sản phẩm ' . $product->name);
     }
 
 
     public function update($id)
     {
         $data = Product::find($id);
-        $categories = Category::query()->orderBy('name', 'asc')->get();
+        $categories = Category::query()->orderBy('name')->get();
         return view('Admin.Product.form', [
             'categories' => $categories,
-            'data' => $data,
-            'title' => 'Product',
-            'breadcrumb' => 'Edit Product'
+            'data' => $data
         ]);
     }
-
 
     public function destroy($id)
     {
         $product = Product::find($id);
         $product->delete();
-        return redirect()->route('productList')->with('message', 'Xóa thành công sản phẩm dùng ' . $product->name);
+        return redirect()->route('productList')->with('message', 'Xóa thành công sản phẩm ' . $product->name);
     }
 
     public function apiCheck($id)

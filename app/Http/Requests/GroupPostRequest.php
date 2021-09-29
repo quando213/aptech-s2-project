@@ -26,16 +26,14 @@ class GroupPostRequest extends FormRequest
         return [
             'name' => ['required','min:5'],
             'ward_id' => ['required'],
-            'type' => ['required'],
         ];
     }
     public function messages()
     {
         return [
-            'name.required' => 'vui lòng nhập tên đơn vị',
-            'name.min' => 'tên đơn vi it nhất gồm 5 ký tự',
-            'ward_id.required' => 'vui long chọn đơn vi hành chính quản lý',
-            'type.required' => 'vui long chọn loại đơn vị',
+            'name.required' => 'Vui lòng nhập tên đơn vị',
+            'name.min' => 'Tên đơn vi it nhất gồm 5 ký tự',
+            'ward_id.required' => 'Vui lòng chọn đơn vị hành chính quản lý',
 
         ];
     }

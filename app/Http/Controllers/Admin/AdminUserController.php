@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Enums\UserRole;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminUserPostRequest;
 use App\Http\Requests\UpdateIn4PostRequest;
@@ -17,12 +18,17 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminUserController extends Controller
 {
-    public function index(Request $request){
+    public function index(Request $request, $role = null)
+    {
         $search = $request->query('search');
         $limit = $request->query('limit') ?? 50;
         $district_id = $request->query('district_id');
-
         $data = User::query()->with(['district', 'ward', 'group']);
+        if ($role) {
+            $data->where('role', $role);
+        } else {
+            $data->where('role', UserRole::USER);
+        }
         $data = buildQuery($request, $data, ['district_id', 'ward_id']);
         if ($search && strlen($search)) {
             $data = $data->where(function (Builder $q) use ($search) {
@@ -43,53 +49,60 @@ class AdminUserController extends Controller
         return view('Admin.User.list', [
             'data' => $data->paginate($limit),
             'districts' => District::query()->orderBy('name')->get(),
-            'wards' => $district_id ? Ward::query()->where('maqh', $district_id)->orderBy('name')->get() : []
+            'wards' => $district_id ? Ward::query()->where('maqh', $district_id)->orderBy('name')->get() : [],
+            'role' => $role
         ]);
     }
-    public function create(){
-        $district = District::query()->orderBy('name','asc')->get();
-        $group = Group::query()->orderBy('name','asc')->get();
-        return view('Admin.User.form',[
-            'districts'=>$district,
-            'group'=>$group,
-            'data'=>null,
-            'title'=>'Trang thêm mới người dùng',
-            'breadcrumb'=>'Tạo mới người dùng'
+
+    public function create()
+    {
+        $districts = District::query()->orderBy('name')->get();
+        $groups = Group::query()->orderBy('name')->get();
+        return view('Admin.User.form', [
+            'districts' => $districts,
+            'groups' => $groups
         ]);
     }
-    public function store(AdminUserPostRequest $request){
+
+    public function update($id)
+    {
+        $data = User::find($id);
+        $districts = District::query()->orderBy('name')->get();
+        $wards = Ward::where('maqh', $data->district_id)->get();
+        $groups = Group::query()->orderBy('name')->get();
+        return view('Admin.User.form', [
+            'districts' => $districts,
+            'wards' => $wards,
+            'groups' => $groups,
+            'data' => $data,
+        ]);
+    }
+
+    public function store(AdminUserPostRequest $request)
+    {
         $user = new User();
         $user->fill($request->validated());
         $user->password = Hash::make($request['password']);
         $user->save();
-        return redirect()->route('userList')->with('message','Tao mới thành công người dùng '.$user->first_name .' '.$user->last_name);
+        return redirect()->route('userList', ['role' => $request['role']])
+            ->with('message', 'Tao mới thành công người dùng ' . $user->last_name . ' ' . $user->first_name);
     }
-    public function destroy($id){
-        $user = User::find($id);
-        $user->delete();
-        return redirect()->route('userList')->with('message','Xóa thành công người dùng '.$user->first_name .' '.$user->last_name);
-    }
-    public function update($id){
-        $data = User::find($id);
-        $key = ($data->ward_id);
-        $ward = Ward::where('xaid',$key)->first();
-        $district = District::query()->orderBy('name','asc')->get();
-        $group = Group::query()->orderBy('name','asc')->get();
-        return view('Admin.User.form',[
-            'districts'=>$district,
-            'group'=>$group,
-            'data'=>$data,
-            'ward'=>$ward,
-            'title'=>'Users',
-            'breadcrumb'=>'Edit User'
 
-        ]);
+    public function destroy($id)
+    {
+        $user = User::find($id);
+        $role = $user['role'];
+        $user->delete();
+        return redirect()->route('userList', ['role' => $role])
+            ->with('message', 'Xóa thành công người dùng ' . $user->last_name . ' ' . $user->first_name);
     }
-    public function save(UpdateIn4PostRequest $request,$id){
+
+    public function save(UpdateIn4PostRequest $request, $id)
+    {
         $user = User::find($id);
         $user->update($request->validated());
         $user->save();
-        return redirect()->route('userList')->with('message','Sửa thành công người dùng '.$user->first_name .' '.$user->last_name);
+        return redirect()->route('userList', ['role' => $request['role']])
+            ->with('message', 'Sửa thành công người dùng ' . $user->last_name . ' ' . $user->first_name);
     }
-
 }

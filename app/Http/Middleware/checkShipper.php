@@ -17,7 +17,7 @@ class checkShipper
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->role == UserRole::Shipper) {
+        if (Auth::check() && Auth::user()->role == UserRole::SHIPPER) {
             return $next($request);
         }
         return redirect()->route('home');

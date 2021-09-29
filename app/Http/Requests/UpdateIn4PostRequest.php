@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Enums\UserRole;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -33,8 +34,8 @@ class UpdateIn4PostRequest extends FormRequest
             'street'=>['required'],
             'phone'=>['required'],
             'role'=>['required'],
-            'group_id'=>['required'],
-            'position'=>['required'],
+            'group_id'=>['required_if:role,'.UserRole::SHIPPER],
+            'position'=>['required_if:role,'.UserRole::SHIPPER],
         ];
     }
 }

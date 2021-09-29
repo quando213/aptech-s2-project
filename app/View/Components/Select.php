@@ -15,6 +15,8 @@ class Select extends Component
     public bool $sameKeyValue;
     public bool $isFilter;
     public bool $disabled;
+    public string $label;
+    public int $col;
 
     /**
      * Create a new component instance.
@@ -28,13 +30,17 @@ class Select extends Component
      * @param bool $sameKeyValue
      * @param bool $isFilter
      * @param bool $disabled
+     * @param string $label
+     * @param int $col
      */
-    public function __construct($name, array $options, $selected = '', $placeholder = '', $optionAll = '', $icon = '', $sameKeyValue = false, $isFilter = false, $disabled = false)
+    public function __construct($name, array $options, $selected = '', $placeholder = '', $optionAll = '', $icon = '', $sameKeyValue = false, $isFilter = false, $disabled = false, $label = '', $col = 0)
     {
         $this->name = $name;
+        $this->label = $label;
+        $this->col = $col;
+        $this->placeholder = $placeholder;
         $this->options = $options;
         $this->selected = $selected;
-        $this->placeholder = $placeholder;
         $this->optionAll = $optionAll;
         $this->icon = $icon;
         $this->sameKeyValue = $sameKeyValue;
@@ -49,6 +55,6 @@ class Select extends Component
      */
     public function render()
     {
-        return view('Admin.components.select');
+        return view('components.select');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Enums;
 
+use BenSampo\Enum\Contracts\LocalizedEnum;
 use BenSampo\Enum\Enum;
 
 /**
@@ -9,9 +10,9 @@ use BenSampo\Enum\Enum;
  * @method static static OptionTwo()
  * @method static static OptionThree()
  */
-final class UserRole extends Enum
+final class UserRole extends Enum implements LocalizedEnum
 {
-    const Admin =   1;
-    const User =   2;
-    const Shipper = 3;
+    const ADMIN =   1;
+    const USER =   2;
+    const SHIPPER = 3;
 }

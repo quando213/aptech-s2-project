@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Ward extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'xaid',
         'name',
@@ -16,10 +17,19 @@ class Ward extends Model
         'maqh'
     ];
     protected $primaryKey = 'xaid';
-    public function group(){
+
+    public function group()
+    {
         return $this->hasMany(Group::class);
     }
-    public function user(){
+
+    public function users()
+    {
         return $this->hasMany(User::class);
+    }
+
+    public function district()
+    {
+        return $this->belongsTo(District::class, 'maqh');
     }
 }

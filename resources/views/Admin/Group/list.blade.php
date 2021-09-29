@@ -1,85 +1,46 @@
-@extends('.Admin.layout.index')
-@section('title')
-    Admin Dashboard - {{$title}}
-@endsection
-@section('content')
-    <div class="page-heading">
-        <div class="page-title">
-            <div class="row">
-                <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>{{$title}}</h3>
-                    @if ( session()->has('message') )
-                        <div class="alert alert-success alert-dismissable">{{ session()->get('message') }}</div>
-                    @endif
-                </div>
-                <div class="col-12 col-md-6 order-md-2 order-first">
-                    <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/admin">Bảng điều khiển</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">{{$breadcrumb}}</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <section class="section">
-            <div class="row" id="basic-table">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title"><a href="{{route('groupCreate')}}"><button class="btn btn-primary">Thêm mới nhóm</button></a></h4>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table id="myTable" class="table table-lg">
-                                        <thead class="thead-dark">
-                                        <tr>
-                                            <th>Tên nhóm</th>
-                                            <th>Khu vực quản lý</th>
-                                            <th>Đơn vị</th>
-                                            <th>Thao tác</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        @foreach($data as $item)
-                                            <div class="modal fade" id="delete{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Tiêu đề</h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <p>Bạn có chắc muốn xóa gói sản phẩm này không? {{$item->name}}?</p>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                                                            <a href="{{route('groupDelete', $item->id)}}"
-                                                               class="btn btn-primary">Xóa</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <tr>
-                                                <td class="text-bold-500">{{$item->name}}</td>
-                                                <td>{{$item->ward->name}}</td>
-                                                <td class="text-bold-500">{{$item->type}}</td>
+@extends('.Admin.layout.list', [
+    'limit_options' => null,
+    'sort_options' => [
+        'created_at DESC' => 'Mới nhất trước',
+        'created_at' => 'Cũ nhất trước',
+        'name' => 'Tên, A-Z',
+        'name DESC' => 'Tên, Z-A'],
+    'create_href' => route('groupCreate'),
+    'create_label' => 'Thêm mới nhóm'
+])
+@section('title', 'Quản lý nhóm')
 
-                                                <td>
-                                                    <a href="{{route('groupUpdate',$item->id)}}" type="button" class="btn btn-primary">Sửa</a>
-                                                    <a type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$item->id}}">Xóa</a>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+@section('thead')
+    <tr>
+        <th>Tên nhóm</th>
+        <th>Khu vực quản lý</th>
+        <th>Thao tác</th>
+    </tr>
+@endsection
+
+@section('tbody')
+    @foreach($data as $item)
+        <tr>
+            <td>{{$item->name}}</td>
+            <td>
+                <span class="badge bg-light-secondary" style="margin-right: 5px;">{{$item->ward->district->name}}</span>
+                {{$item->ward->name}}
+            </td>
+            <td>
+                <a href="{{route('groupUpdate',$item->id)}}" type="button" class="btn btn-primary">Sửa</a>
+                <x-button-delete href="{{ route('productDelete', $item->id) }}" :id="$item->id"></x-button-delete>
+            </td>
+        </tr>
+    @endforeach
+@endsection
+
+@section('filter')
+    <div class="col-6">
+        <x-select name="district_id" option-all="Tất cả quận/huyện" icon="bi-filter" is-filter="true"
+                  :options="arrayToOptions($districts, 'name', 'maqh')"></x-select>
+    </div>
+    <div class="col-6">
+        <x-select name="ward_id" option-all="Tất cả phường/xã" icon="bi-filter" is-filter="true"
+                  :disabled="!sizeof($wards)" :options="arrayToOptions($wards, 'name', 'xaid')"></x-select>
     </div>
 @endsection
