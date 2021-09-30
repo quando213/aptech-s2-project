@@ -95,7 +95,7 @@ class CategorySeeder extends Seeder
                 'name' => 'Chăm sóc cá nhân',
                 'description' => 'Các vật dụng cá nhân',
                 'sort_number' => 9,
-                'thumbnail' => 'https://cdn.vuahanghieu.com/unsafe/0x0/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/news/content/2019/10/10-cac-hang-thuong-hieu-duoc-my-pham-noi-tieng-vhh-18-jpg-1570700347-10102019163907.jpg',
+                'thumbnail' => 'https://tuvangiadinh.net/uploads/images/news/1432950336_news_619.jpg',
                 'created_at' => Carbon::now()->addDays(-1),
                 'updated_at' => Carbon::now()->addDays(-1),
             ],
