@@ -78,7 +78,9 @@
                         </div>
 
                         <div class="sort-box-item">
-                            <span>Kết quả thứ 1 - 9 trên tổng số 12</span>
+                            @if($list->count())
+                                <span>Kết quả thứ {{ $list->firstItem() }} - {{ $list->lastItem() }} trên tổng số {{ $list->total() }}</span>
+                            @endif
                             <button v-if="hasFilter" type="button" @click="clearFilter"
                                     class="btn btn--box btn--tiny btn--radius-tiny btn--green btn--green-hover-black ml-3">Bỏ lọc</button>
                         </div>
@@ -88,11 +90,15 @@
                         <div class="tab-content tab-animate-zoom">
                             <div class="tab-pane show active shop-grid" id="sort-grid">
                                 <div class="row">
-                                    @foreach($list as $product)
-                                        <div class="col-md-4 col-xl-3 col-12">
-                                            <x-product :product="$product"></x-product>
-                                        </div>
-                                    @endforeach
+                                    @if($list->count())
+                                        @foreach($list as $product)
+                                            <div class="col-md-4 col-xl-3 col-12">
+                                                <x-product :product="$product"></x-product>
+                                            </div>
+                                        @endforeach
+                                    @else
+                                        <div>Không có kết quả nào</div>
+                                    @endif
                                 </div>
                                 @if($list->total() > $list->perPage())
                                     <div class="page-pagination">
