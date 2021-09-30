@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 
 class Order extends Model
 {
@@ -50,14 +51,9 @@ class Order extends Model
         return $this->belongsTo(User::class, 'shipper_id');
     }
 
-    public function getCreatedAtAttribute($date)
+    public function createdAtFormatted()
     {
-        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format(DISPLAY_DATETIME_FORMAT);
-    }
-
-    public function getUpdatedAtAttribute($date)
-    {
-        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format(DISPLAY_DATETIME_FORMAT);
+        return $this->created_at->format(DISPLAY_DATETIME_FORMAT);
     }
 
     public function getFullAddress()

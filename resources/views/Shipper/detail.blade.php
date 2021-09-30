@@ -74,7 +74,7 @@
                                         </tr>
                                         <tr>
                                             <th scope="col">Ngày đạt hàng</th>
-                                            <td>{{$order->created_at}}</td>
+                                            <td>{{$order->createdAtFormatted()}}</td>
                                         </tr>
 
                                         </tbody>

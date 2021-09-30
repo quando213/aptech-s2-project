@@ -1,0 +1,43 @@
+a,
+.sidebar-wrapper .menu .sidebar-item.active .sidebar-link {
+    color: #198754;
+}
+
+a:hover {
+    color: #50CB93;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6,
+.sidebar-wrapper .menu .sidebar-link,
+.sidebar-wrapper .menu .sidebar-title {
+    color: #32502E;
+}
+
+.sidebar-wrapper .menu .sidebar-item.active .sidebar-link {
+    background-color: #198754;
+}
+
+.sidebar-wrapper .menu .sidebar-link:hover {
+    background-color: #f4fff4;
+}
+
+.form-group[class*=has-icon-] .form-control:focus~.form-control-icon i, .form-group[class*=has-icon-] .form-control:focus~.form-control-icon svg {
+    color: #50CB93;
+}
+
+.text-muted {
+    color: #198754!important;
+}
+
+.sidebar-wrapper .menu .sidebar-link i, .sidebar-wrapper .menu .sidebar-link svg {
+    color: #32502E;
+}
+
+body {
+    color: #32502E;
+    background-color: #e7ffe7;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: #ACFFAD;
+}

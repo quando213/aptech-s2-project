@@ -28,11 +28,11 @@
                 {{$item->shipping_phone}}
             </td>
             <td style="text-align: right;">{{number_format($item->total_price)}}đ</td>
-            <td>{{ $item->created_at }}</td>
+            <td>{{ $item->createdAtFormatted() }}</td>
             <td>
                 <x-order-status-badge :status="$item->status"></x-order-status-badge>
                 @if(isAdmin() && $item->status == \App\Enums\OrderStatus::CREATED)
-                    <a href="{{route('orderMarkedAsPaid', $item->id)}}"
+                    <a href="{{route('orderMarkAsPaid', $item->id)}}"
                        data-bs-toggle="tooltip" title="" data-bs-original-title="Đánh dấu đã nhận chuyển khoản">
                         <i class="bi bi-check-circle-fill text-danger" style="font-size: 1rem;"></i>
                     </a>
@@ -41,6 +41,19 @@
             <td class="text-nowrap text-center">
                 <a href="{{route('orderDetail', $item->id)}}" type="button"
                    class="btn btn-primary">Xem</a>
+                @if(isShipper() && $item->status == \App\Enums\OrderStatus::PAID)
+                    <a href="{{route('orderMarkAsShipped', $item->id)}}" type="button" class="btn btn-warning">
+                        Nhận đơn
+                    </a>
+                @endif
+                @if(isShipper() && $item->status == \App\Enums\OrderStatus::IN_DELIVERY)
+                    <a href="{{route('orderMarkAsCompleted', $item->id)}}" type="button" class="btn btn-info">
+                        Hoàn thành
+                    </a>
+                    <a href="{{route('orderCancelShipment', $item->id)}}" type="button" class="btn btn-dark">
+                        Huỷ
+                    </a>
+                @endif
             </td>
         </tr>
     @endforeach
@@ -48,19 +61,13 @@
 
 @section('filter')
     @if(isAdmin())
-        <div class="col-6">
-            <x-select name="shipping_district_id" option-all="Tất cả quận/huyện" icon="bi-filter" is-filter="true"
-                      :options="arrayToOptions($districts, 'name', 'id')"></x-select>
-        </div>
-        <div class="col-6">
-            <x-select name="shipping_ward_id" option-all="Tất cả phường/xã" icon="bi-filter" is-filter="true"
-                      :disabled="!sizeof($wards)" :options="arrayToOptions($wards, 'name', 'id')"></x-select>
-        </div>
+        <x-select :col="6" name="shipping_district_id" option-all="Tất cả quận/huyện" icon="bi-filter" is-filter="true"
+                  :options="arrayToOptions($districts, 'name', 'id')"></x-select>
+        <x-select :col="6" name="shipping_ward_id" option-all="Tất cả phường/xã" icon="bi-filter" is-filter="true"
+                  :disabled="!sizeof($wards)" :options="arrayToOptions($wards, 'name', 'id')"></x-select>
     @endif
-    <div class="col-6">
-        <x-select name="status" option-all="Tất cả trạng thái" icon="bi-filter" is-filter="true"
-                  :options="App\Enums\OrderStatus::asSelectArray()"></x-select>
-    </div>
+    <x-select :col="6" name="status" option-all="Tất cả trạng thái" icon="bi-filter" is-filter="true"
+              :options="App\Enums\OrderStatus::asSelectArray()"></x-select>
     <div class="col-6">
         <x-date-range-picker></x-date-range-picker>
     </div>

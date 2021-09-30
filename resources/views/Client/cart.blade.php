@@ -1,5 +1,5 @@
 @extends('Client.layout.index')
-@section('contact')
+@section('content')
     <div class="page-breadcrumb">
         <div class="container">
             <div class="row">

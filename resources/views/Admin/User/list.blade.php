@@ -32,16 +32,16 @@
             <th>Nhóm</th>
             <th>Chức vụ</th>
         @endif
-        <th>Hoạt động</th>
+        <th>Thao tác</th>
     </tr>
 @endsection
 
 @section('tbody')
     @foreach($data as $item)
         <tr>
-            <td>{{$item->last_name . ' '. $item->first_name}}</td>
+            <td>{{$item->getFullName()}}</td>
             <td>{{$item->email}}</td>
-            <td>{{$item->street . ', '. $item->ward->name . ', '. $item->district->name}}</td>
+            <td>{{$item->getFullAddress()}}</td>
             <td>{{$item->phone}}</td>
             @if(isset($role) && $role == \App\Enums\UserRole::SHIPPER)
                 <td>{{$item->group->name}}</td>

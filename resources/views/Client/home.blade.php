@@ -1,5 +1,5 @@
 @extends('Client.layout.index')
-@section('contact')
+@section('content')
     <!-- :::::: Start Main Container Wrapper :::::: -->
     <main id="main-container" class="main-container">
         <!-- ::::::  Start Hero Section  ::::::  -->
@@ -13,15 +13,11 @@
                         <div class="row">
                             <div class="col-12 col-lg-8">
                                 <div class="hero__content--inner">
-                                    <h6 class="title__hero title__hero--tiny text-uppercase">100% Rau Sạch Tốt Cho Sức
-                                        Khỏe</h6>
-                                    <h1 class="title__hero title__hero--xlarge font--regular text-uppercase">Rau Hữu
-                                        Cơ</h1>
-                                    <h4 class="title__hero title__hero--small font--regular">Một Thay Đổi Nhỏ Sự Khác
-                                        Biệt Lớn</h4>
-                                    <a href="/product/category-single-tab-left"
-                                       class="btn btn--large btn--radius btn--black btn--black-hover-green font--bold text-uppercase">Hiển
-                                        Thị</a>
+                                    <h6 class="title__hero title__hero--tiny text-uppercase">Tuân thủ quy định phòng chống dịch</h6>
+                                    <h1 class="title__hero title__hero--xlarge font--regular text-uppercase">Đặt hàng ngay</h1>
+                                    <h4 class="title__hero title__hero--small font--regular">Và nhận hàng từ lực lượng quân đội</h4>
+                                    <a href="{{ route('listProduct') }}"
+                                       class="btn btn--large btn--radius btn--black btn--black-hover-green font--bold text-uppercase">Xem các sản phẩm</a>
                                 </div>
                             </div>
                         </div>
@@ -36,15 +32,11 @@
                         <div class="row">
                             <div class="col-12 col-lg-8">
                                 <div class="hero__content--inner">
-                                    <h6 class="title__hero title__hero--tiny text-uppercase">100% Rau Sạch Tốt Cho Sức
-                                        Khỏe</h6>
-                                    <h1 class="title__hero title__hero--xlarge font--regular text-uppercase">Rau Hữu
-                                        Cơ</h1>
-                                    <h4 class="title__hero title__hero--small font--regular">Một Thay Đổi Nhỏ Sự Khác
-                                        Biệt Lớn</h4>
-                                    <a href="/product/category-single-tab-left"
-                                       class="btn btn--large btn--radius btn--black btn--black-hover-green font--bold text-uppercase">Hiển
-                                        Thị</a>
+                                    <h6 class="title__hero title__hero--tiny text-uppercase">Tuân thủ quy định phòng chống dịch</h6>
+                                    <h1 class="title__hero title__hero--xlarge font--regular text-uppercase">Đặt hàng ngay</h1>
+                                    <h4 class="title__hero title__hero--small font--regular">Và nhận hàng từ lực lượng quân đội</h4>
+                                    <a href="{{ route('listProduct') }}"
+                                       class="btn btn--large btn--radius btn--black btn--black-hover-green font--bold text-uppercase">Xem các sản phẩm</a>
                                 </div>
                             </div>
                         </div>
@@ -52,63 +44,6 @@
                 </div>
             </div> <!-- End Single Hero Slide -->
         </div> <!-- ::::::  End Hero Section  ::::::  -->
-
-        <!-- ::::::  Start banner Section  ::::::  -->
-        <div class="banner m-t-30">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6 col-12">
-                        <div class="banner__box">
-                            <!-- Start Single Banner Item -->
-                            <div class="banner__box--single banner__box--single-text-style-1 pos-relative">
-                                <a href="/product/category-single-tab-left" class="banner__link">
-                                    <img src="assets/img/banner/size-wide/banner-home-1-img-1-wide.jpg" alt=""
-                                         class="banner__img">
-                                </a>
-                                <div class="banner__content banner__content--center pos-absolute">
-                                    <h6 class="banner__title  font--regular letter-spacing--4  text-center m-b-10">Rau
-                                        Xanh</h6>
-                                    <h2 class="banner__title banner__title--large font--medium letter-spacing--4  text-uppercase">
-                                        100% Rau Hữu Cơ</h2>
-                                    <h6 class="banner__title font--regular letter-spacing--4  text-center m-b-20">
-                                        Dinh Dưỡng Có Lợi Cho Sức Khỏe</h6>
-                                    <div class="text-center">
-                                        <a href="/product/category-single-tab-left"
-                                           class="btn btn--medium btn--radius btn--transparent btn--border-black btn--border-black-hover-green font--light text-uppercase">Mua
-                                            Ngay</a>
-                                    </div>
-                                </div>
-                            </div> <!-- End Single Banner Item -->
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-12">
-                        <div class="banner__box">
-                            <!-- Start Single Banner Item -->
-                            <div class="banner__box--single banner__box--single-text-style-1 pos-relative">
-                                <a href="/product/category-single-tab-left" class="banner__link">
-                                    <img src="assets/img/banner/size-wide/banner-home-1-img-2-wide.jpg" alt=""
-                                         class="banner__img">
-                                </a>
-                                <div class="banner__content banner__content--center pos-absolute">
-                                    <h6 class="banner__title letter-spacing--4 font--regular text-center m-b-10">Thảo
-                                        Dược Tươi </h6>
-                                    <h2 class="banner__title banner__title--large letter-spacing--4 font--medium text-uppercase">
-                                        Rau BINA</h2>
-                                    <h6 class="banner__title letter-spacing--4 font--regular text-center m-b-20">Đồ Ăn
-                                        Lành Mạnh</h6>
-                                    <div class="text-center">
-                                        <a href="/product/category-single-tab-left"
-                                           class="btn btn--medium btn--radius btn--transparent btn--border-black btn--border-black-hover-green font--light text-uppercase">
-                                            Mua Ngay</a>
-                                    </div>
-                                </div>
-                            </div> <!-- End Single Banner Item -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
         <div class="product m-t-100">
             <div class="container">
@@ -149,31 +84,6 @@
                 </div>
             </div>
         </div> <!-- ::::::  End  Product Style - Catagory Section  ::::::  -->
-
-    <!-- ::::::  Start banner Section  ::::::  -->
-        <div class="banner m-t-100 pos-relative">
-            <div class="banner__bg">
-                <img src="assets/img/banner/size-extra-large-wide/banner-home-1-img-1-extra-large-wide.jpg" alt="">
-            </div>
-            <div class="banner__box banner__box--single-text-style-2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="banner__content banner__content--center pos-absolute">
-                                <h6 class="banner__title  font--medium m-b-10">GIẢM GIÁ ĐẶC BIỆT</h6>
-                                <h1 class="banner__title banner__title--large font--regular text-capitalize">Cho tất cả
-                                    Sản phẩm <br>tạp hóa</h1>
-                                <h6 class="banner__title font--medium m-b-40">Giảm ngay 20% cho tất cả cửa hàng tạp hóa
-                                    sản phẩm.</h6>
-                                <a href="/product/category-single-tab-left"
-                                   class="btn btn--large btn--radius btn--black btn--black-hover-green font--bold text-uppercase">Hiển
-                                    Thị</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- ::::::  End banner Section  ::::::  -->
 
         @foreach($featured_categories as $category)
             <div class="product m-t-100">

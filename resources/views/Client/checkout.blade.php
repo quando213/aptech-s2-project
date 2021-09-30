@@ -1,5 +1,5 @@
 @extends('Client.layout.index')
-@section('contact')
+@section('content')
     <!-- ::::::  Start  Breadcrumb Section  ::::::  -->
     <div class="page-breadcrumb">
         <div class="container">
@@ -203,7 +203,7 @@
                         <div class="text-center">
                             <button
                                 class="btn btn--small btn--radius btn--green btn--green-hover-black btn--uppercase font--bold"
-                                id="btn" type="submit">Đặt Hàng
+                                id="btn" type="submit">ĐẶT HÀNG
                             </button>
                         </div>
                     </div>

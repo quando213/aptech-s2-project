@@ -12,8 +12,8 @@
                             </a>
                         </div>
                         <ul class="footer__address">
-                            <li class="footer__address-item"><i class="fa fa-home"></i>Địa Chỉ: Số 8, Tôn Thất Thuyết, Mĩ Đình, Nam Từ Liêm, Hà Nội</li>
-                            <li class="footer__address-item"><i class="fa fa-phone-alt"></i>0987654321</li>
+                            <li class="footer__address-item"><i class="fa fa-home"></i>Địa Chỉ: Số X Nguyễn Hoàng, Mỹ Đình 2, Nam Từ Liêm, Hà Nội</li>
+                            <li class="footer__address-item"><i class="fa fa-phone-alt"></i>0913 000 XXX</li>
                             <li class="footer__address-item"><i class="fa fa-envelope"></i>support@somemail.com</li>
                         </ul>
                         <ul class="footer__social-nav">
@@ -32,10 +32,9 @@
                             <li class="footer__list"><a href="" class="footer__link">Thông Tin Giao Hàng</a></li>
                             <li class="footer__list"><a href="" class="footer__link">Tìm Kiếm </a></li>
                             <li class="footer__list"><a href="" class="footer__link">Trợ Giúp và Câu Hỏi </a></li>
-                            <li class="footer__list"><a href="" class="footer__link">Vị Trí Cửa Hàng</a></li>
                             <li class="footer__list"><a href="" class="footer__link">Đơn Hàng</a></li>
                             <li class="footer__list"><a href="" class="footer__link">Giao Hàng</a></li>
-                            <li class="footer__list"><a href="" class="footer__link"> Trả Hàng</a></li>
+                            <li class="footer__list"><a href="" class="footer__link">Trả Hàng</a></li>
                         </ul>
                     </div> <!-- End Footer Nav -->
                 </div>
@@ -49,17 +48,15 @@
                             <li class="footer__list"><a href="" class="footer__link">Thanh Toán An Toàn</a></li>
                             <li class="footer__list"><a href="" class="footer__link">Blog</a></li>
                             <li class="footer__list"><a href="" class="footer__link">Chúng Tôi</a></li>
-                            <li class="footer__list"><a href="" class="footer__link">Người Vận Chuyển</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-6 col-12">
                     <div class="footer__menu">
-                        <h4 class="footer__nav-title footer__nav-title--dash footer__nav-title--dash-red">Tài Khoản NGười Dùng</h4>
+                        <h4 class="footer__nav-title footer__nav-title--dash footer__nav-title--dash-red">Tài Khoản Người Dùng</h4>
                         <ul class="footer__nav">
                             <li class="footer__list"><a href="" class="footer__link">Tìm Kiếm </a></li>
-{{--                            <li class="footer__list"><a href="" class="footer__link">Advanced Search</a></li>--}}
-                            <li class="footer__list"><a href="" class="footer__link">Trợ Giúp và Câu Hỏi</a></li>
+                            <li class="footer__list"><a href="" class="footer__link">Tìm kiếm nâng cao</a></li>
                             <li class="footer__list"><a href="" class="footer__link">Vị trí Cửa hàng</a></li>
                             <lia class="footer__list"><a href="" class="footer__link">Đơn Hàng</a></lia>
                             <li class="footer__list"><a href="" class="footer__link">Giao Hàng</a></li>
@@ -88,14 +85,14 @@
                 <div class="col-lg-8 col-md-6 col-12">
                     <!-- Start Footer Copyright Text -->
                     <div class="footer__copyright-text">
-                        <p>Copyright &copy; <a href="https://hasthemes.com/">HasThemes</a>. All Rights Reserved</p>
+                        <p>Copyright &copy; 2021 T2009M1 Group 1. All Rights Reserved</p>
                     </div> <!-- End Footer Copyright Text -->
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Footer Payment Logo -->
                     <div class="footer__payment">
                         <a href="#" class="footer__payment-link">
-                            <img src="assets/img/company-logo/payment.png" alt="" class="footer__payment-img">
+{{--                            <img src="assets/img/company-logo/payment.png" alt="" class="footer__payment-img">--}}
                         </a>
                     </div>  <!-- End Footer Payment Logo -->
                 </div>

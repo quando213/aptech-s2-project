@@ -28,14 +28,14 @@ class AdminUpdateUserRequest extends FormRequest
         return [
             'first_name' => ['required'],
             'last_name' => ['required'],
-//            'email' => ['required', 'email', Rule::unique('users')],
-            'district_id'=>['required'],
-            'ward_id'=>['required'],
-            'street'=>['required'],
-            'phone'=>['required'],
-            'role'=>['required'],
-            'group_id'=>['required_if:role,'.UserRole::SHIPPER],
-            'position'=>['required_if:role,'.UserRole::SHIPPER],
+            'email' => ['required', 'email', Rule::unique('users')->ignore($this->id)],
+            'district_id' => ['required'],
+            'ward_id' => ['required'],
+            'street' => ['required'],
+            'phone' => ['required'],
+            'role' => ['required'],
+            'group_id' => ['required_if:role,' . UserRole::SHIPPER],
+            'position' => ['required_if:role,' . UserRole::SHIPPER],
         ];
     }
 }

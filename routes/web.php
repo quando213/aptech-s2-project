@@ -60,7 +60,8 @@ Route::prefix('account')->middleware('auth')->group(function () {
     Route::get('/', [AccountController::class, 'myAccount'])->name('myAccount');
     Route::post('/', [AccountController::class, 'updateAccount'])->name('updateAccount');
     Route::get('order/{id}', [AccountController::class, 'myOrderDetail'])->name('myOrderDetail');
-//    Route::get('order/{id}/{notification}', [AccountController::class, 'myOrderDetail'])->name('myOrderDetail');
+    Route::get('notifications', [AccountController::class, 'notifications'])->name('myNotifications');
+    Route::get('notifications/read', [AccountController::class, 'readNotifications'])->name('readNotifications');
 });
 
 Route::prefix('cart')->group(function () {
@@ -74,7 +75,8 @@ Route::prefix('cart')->group(function () {
 Route::prefix('checkout')->middleware('auth')->group(function () {
     Route::get('/', [CheckoutController::class, 'checkout'])->name('checkout');
     Route::post('/', [CheckoutController::class, 'placeOrder'])->name('buy');
-    Route::get('/vnpay/{id}', [CheckoutController::class, 'makeVNPayPayment'])->name('makeVNPayPayment');
+    Route::get('/vnpay/{id}', [CheckoutController::class, 'makeVNPayPayment'])->withoutMiddleware('auth')
+        ->name('makeVNPayPayment');
 });
 
 Route::get('/combo', [ClientComboController::class, 'list']);

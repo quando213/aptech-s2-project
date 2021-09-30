@@ -31,7 +31,7 @@ class PlaceOrderRequest extends FormRequest
             'shipping_district_id' => 'required',
             'shipping_ward_id' => 'required',
             'shipping_phone' => 'required',
-            'payment_method' => ['required', Rule::in(OrderPaymentMethod::getValues())]
+            'payment_method' => ['nullable', Rule::in(OrderPaymentMethod::getValues())]
         ];
     }
 }

@@ -26,7 +26,7 @@ class UpdateAccountRequest extends FormRequest
     {
         return [
             'password' => ['nullable', 'confirmed', 'min:6'],
-            'password_current' => ['nullable', 'required_with:password', 'min:6'],
+            'current_password' => ['nullable', 'required_with:password', 'min:6'],
             'first_name' => ['required'],
             'last_name' => ['required'],
             'phone' => ['required'],
