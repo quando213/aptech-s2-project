@@ -54,12 +54,13 @@ class CheckoutController extends Controller
             $order_detail->save();
         }
         Cart::destroy();
+        notifyOrderStatusUpdate($order->id);
         return redirect()->route('myOrderDetail', ['id' => $order->id]);
     }
 
     public function makeVNPayPayment($order_id)
     {
-        $order = Order::find($order_id);
+        $order = Order::query()->where(['id' => $order_id, 'status' => OrderStatus::CREATED])->firstOrFail();
         $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
         $vnp_Returnurl = "https://sem2-project.herokuapp.com/response";
         $vnp_TmnCode = "OV95A0Y9";

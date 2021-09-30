@@ -24,7 +24,7 @@ class CreateOrdersTable extends Migration
             $table->integer('shipper_id')->nullable();
             $table->double('total_price');
             $table->integer('status');
-            $table->integer('payment_method');
+            $table->integer('payment_method')->nullable();
             $table->dateTime('paid_at')->nullable();
             $table->timestamps();
             $table->softDeletes();

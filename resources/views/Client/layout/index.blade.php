@@ -5,8 +5,9 @@
 
 <body>
 <!-- ::::::  Start Header Section  ::::::  -->
-@include('.Client.layout.header')  <!-- :::::: End Header Section ::::::  -->
-@yield('contact')
+@include('.Client.layout.header')
+@include('Client.layout.canvas-cart')<!-- :::::: End Header Section ::::::  -->
+@yield('content')
 
 @include('.Client.layout.footer')
 

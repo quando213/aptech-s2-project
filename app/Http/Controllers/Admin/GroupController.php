@@ -86,25 +86,4 @@ class GroupController extends Controller
         $group->delete();
         return redirect()->route('groupList')->with('message','Xóa thành công nhóm '.$group->name);
     }
-
-    public function personnel()
-    {
-        $personnel = User::query()->where('group_id',Auth::user()->group_id)->with(['district','ward','group'])->get();
-        return view('Admin.Group.personnel',[
-            'title'=>'Group',
-            'breadcrumb'=>'Edit Group',
-            'personnel'=>$personnel
-        ]);
-    }
-
-    public function check()
-    {
-        $personnel = User::query()->where('group_id',Auth::user()->group_id)
-            ->with(['district','ward','group'])->get();
-        return view('Admin.Group.personnel',[
-            'title'=>'Group',
-            'breadcrumb'=>'Edit Group',
-            'personnel'=>$personnel
-        ]);
-    }
 }

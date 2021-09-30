@@ -19,7 +19,7 @@ class AccountController extends Controller
     public function myAccount()
     {
         $districts = District::query()->orderBy('name', 'asc')->get();
-        $notifications = Notification::query()->where('sender_id', Auth::id())->get();
+        $notifications = Auth::user()->notifications;
         $user = User::query()->where('id', Auth::id())->with(['district', 'ward', 'group'])->first();
         $order = Order::query()->where('user_id', Auth::id())->orderBy('created_at', 'desc')->get();
         return view('Client.my-account', [
@@ -47,23 +47,25 @@ class AccountController extends Controller
         ]);
     }
 
-    public function myOrderDetail($id,$notification = null)
+    public function myOrderDetail($id)
     {
-        if ($notification){
-            $upNotification = Notification::query()->where(['sender_id' => Auth::id(),'id'=>$notification])->first();
-            if ($upNotification->the_send == false ){
-                $upNotification->update([
-                    'the_send'=> true
-                ]);
-                $upNotification->save();
-            }
-        }
-        $order = Order::query()->where('id',$id)->with(['district','ward','user'])->orderBy('created_at','desc')->first();
-        $groupShipper = Group::query()->where('ward_id',$order->shipping_ward_id)->first();
-        $orderDetails = OrderDetail::query()->where(['order_id'=>$id])->with(['product'])->get();
-        return view('Client.my-order-detail',[
-            'order'=>$order,
-            'orderDetails'=>$orderDetails
+        $order = Order::query()->where(['id' => $id, 'user_id' => Auth::id()])->firstOrFail();
+        return view('Client.my-order-detail', [
+            'order' => $order
         ]);
+    }
+
+    public function notifications()
+    {
+        return redirect()->route('myAccount')->with(['tab' => 'notifications']);
+    }
+
+    public function readNotifications()
+    {
+        $notifications = Notification::query()->where(['user_id' => Auth::id(), 'is_seen' => false])->get();
+        foreach ($notifications as $notification) {
+            $notification->is_seen = true;
+            $notification->save();
+        }
     }
 }

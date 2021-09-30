@@ -13,6 +13,7 @@ use App\Http\Controllers\TemplateAdminController;
 use App\Http\Controllers\TemplateClientController;
 use App\Http\Controllers\Admin\ComboController;
 use App\Http\Middleware\CheckAdmin;
+use App\Http\Middleware\CheckShipper;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -30,9 +31,14 @@ Route::get('/', [TemplateAdminController::class, 'page_content'])->name('adminDa
 
 Route::prefix('orders')->group(function () {
     Route::get('', [OrderController::class, 'list'])->name('orderList');
-    Route::get('/paid/{id}', [OrderController::class, 'markAsPaid'])->name('orderMarkedAsPaid');
-    Route::get('/{id}', [OrderController::class, 'detail'])->name('orderDetail');
-    Route::post('/{id}', [OrderController::class, 'save']);
+    Route::get('paid/{id}', [OrderController::class, 'markAsPaid'])->middleware([CheckAdmin::class])->name('orderMarkAsPaid');
+    Route::get('{id}', [OrderController::class, 'detail'])->name('orderDetail');
+    Route::post('{id}', [OrderController::class, 'save'])->middleware(CheckAdmin::class);
+    Route::prefix('ship')->middleware(CheckShipper::class)->group(function () {
+        Route::get('start/{id}', [OrderController::class, 'markAsShipped'])->name('orderMarkAsShipped');
+        Route::get('finish/{id}', [OrderController::class, 'markAsCompleted'])->name('orderMarkAsCompleted');
+        Route::get('cancel/{id}', [OrderController::class, 'cancelShipment'])->name('orderCancelShipment');
+    });
 });
 
 Route::prefix('/users')->middleware([CheckAdmin::class])->group(function () {
@@ -86,7 +92,5 @@ Route::prefix('/shipper')->group(function () {
 //    Route::get('/{id}', [OrderController::class, 'orderDetail'])->name('orderDetail');
     Route::get('/personnel', [GroupController::class, 'personnel']);
 });
-
-
 
 
