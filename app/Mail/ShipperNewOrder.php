@@ -32,7 +32,7 @@ class ShipperNewOrder extends Mailable
      */
     public function __construct(Order $order, User $shipper)
     {
-        $this->subject('Có đơn hàng mới trong khu vực của bạn');
+        $this->subject('Có đơn hàng mới trong khu vực của bạn: #' . $order->id);
         $this->order = $order;
         $this->shipper = $shipper;
     }
