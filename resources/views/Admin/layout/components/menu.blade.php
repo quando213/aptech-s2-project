@@ -69,7 +69,7 @@
                     {{--                    </ul>--}}
                     {{--                </li>--}}
                     <li class="sidebar-title">Người dùng</li>
-                    <li class="sidebar-item {{ request()->route()->getPrefix() == 'cms/users' && !request()->route()->hasParameter('role') ? 'active' : '' }}">
+                    <li class="sidebar-item {{ request()->route()->getPrefix() == 'cms/users' && !request()->route()->hasParameter('role') || request()->route()->hasParameter('role') == \App\Enums\UserRole::USER ? 'active' : '' }}">
                         <a href="{{route('userList')}}" class='sidebar-link'>
                             <i class="bi bi-person-circle"></i>
                             <span>Khách hàng</span>

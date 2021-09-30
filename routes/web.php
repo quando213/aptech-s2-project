@@ -1,23 +1,15 @@
 <?php
 
-use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\OrderController;
-use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\WardController;
 use App\Http\Controllers\Client\AccountController;
 use App\Http\Controllers\Client\CartController;
 use App\Http\Controllers\Client\CheckoutController;
 use App\Http\Controllers\Client\ClientComboController;
 use App\Http\Controllers\Client\ClientProductController;
-use App\Http\Controllers\Client\ClientProductDetailController;
 use App\Http\Controllers\Client\EntryController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\OrderSeederController;
-use App\Http\Controllers\TemplateAdminController;
-use App\Http\Controllers\TemplateClientController;
-use App\Http\Middleware\checkAdmin;
 use App\Http\Middleware\CheckCMSAccess;
-use App\Http\Middleware\checkShipper;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,14 +28,6 @@ Route::prefix('cms')->middleware(['auth', CheckCMSAccess::class])->group(functio
 });
 
 Route::get('/', [HomeController::class, 'home'])->name("home");
-Route::get('/seeder-order', [OrderSeederController::class, 'addCart']);
-Route::get('/test-chart', [OrderSeederController::class, 'testChart'])->name('chart');
-Route::get('/chartOrderPrice', [OrderSeederController::class, 'chartOrderPrice'])->name('chartOrderPrice');
-Route::get('/chartCategory', [OrderSeederController::class, 'chartCategory'])->name('chartCategory');
-
-// REPOSITION
-Route::get('/response', [OrderController::class, 'response']); // thanh toán xong
-Route::get('/ipn', [OrderController::class, 'ipnResponse']); // vnpay gửi request trả về, xác nhận
 
 Route::prefix('product')->group(function () {
     Route::get('/', [ClientProductController::class, 'list'])->name('listProduct');
@@ -79,4 +63,9 @@ Route::prefix('checkout')->middleware('auth')->group(function () {
         ->name('makeVNPayPayment');
 });
 
+// in development
 Route::get('/combo', [ClientComboController::class, 'list']);
+Route::get('/seeder-order', [OrderSeederController::class, 'addCart']);
+// VNPay
+Route::get('/response', [OrderController::class, 'response']); // thanh toán xong
+Route::get('/ipn', [OrderController::class, 'ipnResponse']); // vnpay gửi request trả về, xác nhận

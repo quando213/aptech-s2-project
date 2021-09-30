@@ -1,11 +1,8 @@
 @extends('.Admin.layout.index')
 @section('title')
-    Profile - Mazer Admin Dashboard
+    Dashboard
 @endsection
 @section('content')
-    <div class="page-heading">
-        <h3>Thống kê dịch bệnh</h3>
-    </div>
     <div class="page-content">
         <section class="row">
             <div class="col-12">
@@ -37,7 +34,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <h6 class="text-muted font-semibold">Đơn vị hỗ trợ</h6>
+                                        <h6 class="text-muted font-semibold">Số nhóm quân nhân</h6>
                                         <h6 class="font-extrabold mb-0">{{ $data['group']}}</h6>
                                     </div>
                                 </div>
@@ -80,74 +77,75 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-md-6">
                         <div class="card ">
                             <div class="card-header">
-                                <h4>Thông kê đơn hàng</h4>
-                                <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+                                <h4>Thống kê số lượng đơn hàng</h4>
+                                <div id="datePickerOrderQuantity"
+                                     style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
                                     <i class="fa fa-calendar"></i>&nbsp;
                                     <span></span> <i class="fa fa-caret-down"></i>
                                 </div>
                             </div>
                             <div class="card-body">
-                                <div id="chart_div"></div>
+                                <div id="chartOrderQuantity"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-md-6">
                         <div class="card ">
-                            <div class="col-4">
-                                <div class="card-header">
-                                    <h4>Danh mục sản phẩm</h4>
-                                    <div id="chartCategory" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
-                                        <i class="fa fa-calendar"></i>&nbsp;
-                                        <span></span> <i class="fa fa-caret-down"></i>
-                                    </div>
+                            <div class="card-header">
+                                <h4>Thống kê theo danh mục sản phẩm</h4>
+                                <div id="datePickerCategory"
+                                     style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+                                    <i class="fa fa-calendar"></i>&nbsp;
+                                    <span></span> <i class="fa fa-caret-down"></i>
                                 </div>
-                                <div class="card-body">
-                                    <div id="chartCategory"></div>
-                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div id="chartCategory"></div>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Thông kê danh thu</h4>
-                                <div id="chartOrderPrice" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+                                <h4>Thống kê theo doanh thu</h4>
+                                <div id="datePickerRevenue"
+                                     style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
                                     <i class="fa fa-calendar"></i>&nbsp;
                                     <span></span> <i class="fa fa-caret-down"></i>
                                 </div>
                             </div>
                             <div class="card-body">
-                                <div id="chartPrice"></div>
+                                <div id="chartRevenue"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </section>
     </div>
 
 @endsection
 @section('script')
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
     <script type="text/javascript">
-        $(function() {
+        $(function () {
             var start = moment().subtract(6, 'days');
             var end = moment();
 
             function cb(start, end) {
-                $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-                chartOrder(start.format('D-M-Y'),end.format('D-M-Y'))
+                $('#datePickerOrderQuantity span').html(start.format('DD/MM/YYYY') + ' - ' + end.format('DD/MM/YYYY'));
+                chartOrderQuantity(start.format('D-M-Y'), end.format('D-M-Y'))
             }
-            $('#reportrange').daterangepicker({
+
+            $('#datePickerOrderQuantity').daterangepicker({
                 startDate: start,
                 endDate: end,
                 ranges: {
@@ -157,29 +155,38 @@
                     'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
                 }
             }, cb);
-
             cb(start, end);
         });
 
-        function chartOrder  (start, end){
+        function chartOrderQuantity(start, end) {
             $.ajax({
                 type: 'GET',
-                url: '{{route('chart')}}',
+                url: '{{route('chartOrderQuantity')}}',
                 data: {
-                    'start':start,
-                    'end':end
+                    'start': start,
+                    'end': end
                 },
                 success: function (data) {
                     var options = {
                         series: [{
-                            name: "đơn hàng",
-                            data: data['order']
+                            name: "Đơn hàng",
+                            data: data['quantities']
                         }],
                         chart: {
                             height: 350,
                             type: 'line',
                             zoom: {
-                                enabled: false
+                                type: 'x',
+                                enabled: true,
+                                autoScaleYaxis: true
+                            },
+                            events: {
+                                markerClick: function (event, chartContext, config) {
+                                    if (data['quantities'][config.dataPointIndex]) {
+                                        const date = data['dates'][config.dataPointIndex];
+                                        window.location.href = `/cms/orders?start_date=${date}&end_date=${date}`;
+                                    }
+                                }
                             }
                         },
                         dataLabels: {
@@ -188,25 +195,27 @@
                         stroke: {
                             curve: 'straight'
                         },
-                        title: {
-                            text: 'Product Trends by Month',
-                            align: 'left'
-                        },
                         grid: {
                             row: {
                                 colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
                                 opacity: 0.5
                             },
                         },
+                        yaxis: {
+                            title: {
+                                text: 'Orders'
+                            },
+                        },
                         xaxis: {
-                            categories: data['time']
+                            categories: data['dates'],
+                            type: 'datetime'
                         }
                     };
-                    var chart = new ApexCharts(document.querySelector("#chart_div"), options);
+                    var chart = new ApexCharts(document.querySelector("#chartOrderQuantity"), options);
                     chart.render();
                     chart.updateSeries([{
-                        data: data['order'],
-                        categories:data['time']
+                        data: data['quantities'],
+                        categories: data['dates']
                     },])
                 },
                 error: function (xhr) {
@@ -216,75 +225,72 @@
             });
         }
     </script>
+
     <script type="text/javascript">
-        $(function() {
-            var start = moment().subtract(29, 'days');
+        $(function () {
+            var start = moment().subtract(6, 'days');
             var end = moment();
 
             function cb(start, end) {
-                $('#chartOrderPrice span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-                chartOrderPrice(start.format('D-M-Y'),end.format('D-M-Y'))
+                $('#datePickerCategory span').html(start.format('DD/MM/YYYY') + ' - ' + end.format('DD/MM/YYYY'));
+                chartCategory(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'))
             }
-            $('#chartOrderPrice').daterangepicker({
+
+            $('#datePickerCategory').daterangepicker({
                 startDate: start,
                 endDate: end,
                 ranges: {
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
                     'Last 30 Days': [moment().subtract(29, 'days'), moment()],
                     'This Month': [moment().startOf('month'), moment().endOf('month')],
                     'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
                 }
             }, cb);
-
             cb(start, end);
         });
 
-        function chartOrderPrice  (start, end){
+        function chartCategory(start, end) {
             $.ajax({
                 type: 'GET',
-                url: '{{route('chartOrderPrice')}}',
+                url: '{{route('chartCategory')}}',
                 data: {
-                    'start':start,
-                    'end':end
+                    'start': start,
+                    'end': end
                 },
-                success: function (datas) {
+                success: function (data) {
                     var options = {
-                        series: [{
-                            name: "VND",
-                            data: datas['price']
-                        }],
+                        series: data['counts'],
+                        labels: data['categories'],
                         chart: {
-                            height: 350,
-                            type: 'line',
-                            zoom: {
-                                enabled: false
+                            scale: 0.8,
+                            type: 'pie',
+                            events: {
+                                dataPointSelection: function (event, chartContext, config) {
+                                    if (data['counts'][config.dataPointIndex]) {
+                                        const category_id = data['category_ids'][config.dataPointIndex];
+                                        window.location.href = `/cms/products?category_id=${category_id}`;
+                                    }
+                                }
                             }
                         },
+                        responsive: [{
+                            breakpoint: 480,
+                            options: {
+                                chart: {
+                                    width: 200
+                                },
+                                legend: {
+                                    position: 'bottom'
+                                }
+                            }
+                        }],
                         dataLabels: {
-                            enabled: false
-                        },
-                        stroke: {
-                            curve: 'straight'
-                        },
-                        title: {
-                            text: 'Product Trends by Month',
-                            align: 'left'
-                        },
-                        grid: {
-                            row: {
-                                colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
-                                opacity: 0.5
-                            },
-                        },
-                        xaxis: {
-                            categories: datas['timesPrice']
+                            enabled: true
                         }
                     };
-                    var chartPrice = new ApexCharts(document.querySelector("#chartPrice"), options);
-                    chartPrice.render();
-                    chartPrice.updateSeries([{
-                        data: datas['price'],
-                        categories: datas['timesPrice']
-                    },])
+                    var chart = new ApexCharts(document.querySelector("#chartCategory"), options);
+                    chart.render();
+                    chart.updateSeries()
                 },
                 error: function (xhr) {
                     let errors = JSON.parse(xhr.responseText).errors;
@@ -294,6 +300,103 @@
         }
     </script>
 
+    <script type="text/javascript">
+        $(function () {
+            var start = moment().subtract(6, 'days');
+            var end = moment();
 
+            function cb(start, end) {
+                $('#datePickerRevenue span').html(start.format('DD/MM/YYYY') + ' - ' + end.format('DD/MM/YYYY'));
+                chartRevenue(start.format('D-M-Y'), end.format('D-M-Y'))
+            }
 
+            $('#datePickerRevenue').daterangepicker({
+                startDate: start,
+                endDate: end,
+                ranges: {
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                }
+            }, cb);
+            cb(start, end);
+        });
+
+        function chartRevenue(start, end) {
+            $.ajax({
+                type: 'GET',
+                url: '{{route('chartRevenue')}}',
+                data: {
+                    'start': start,
+                    'end': end
+                },
+                success: function (data) {
+                    var options = {
+                        series: [{
+                            name: "Triệu đồng",
+                            data: data['revenues']
+                        }],
+                        chart: {
+                            height: 350,
+                            type: 'line',
+                            zoom: {
+                                type: 'x',
+                                enabled: true,
+                                autoScaleYaxis: true
+                            },
+                            events: {
+                                markerClick: function (event, chartContext, config) {
+                                    if (data['revenues'][config.dataPointIndex]) {
+                                        const date = data['dates'][config.dataPointIndex];
+                                        window.location.href = `/cms/orders?start_date=${date}&end_date=${date}`;
+                                    }
+                                }
+                            }
+                        },
+                        dataLabels: {
+                            enabled: false
+                        },
+                        stroke: {
+                            curve: 'straight'
+                        },
+                        title: {
+                            text: 'Daily revenue',
+                            align: 'left'
+                        },
+                        grid: {
+                            row: {
+                                colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+                                opacity: 0.5
+                            },
+                        },
+                        yaxis: {
+                            labels: {
+                                formatter: function (val) {
+                                    return (val / 1000000).toFixed(0);
+                                },
+                            },
+                            title: {
+                                text: 'Revenue (in million VND)'
+                            },
+                        },
+                        xaxis: {
+                            categories: data['dates'],
+                            type: 'datetime'
+                        }
+                    };
+                    var chartPrice = new ApexCharts(document.querySelector("#chartRevenue"), options);
+                    chartPrice.render();
+                    chartPrice.updateSeries([{
+                        data: data['revenues'],
+                        categories: data['dates']
+                    },])
+                },
+                error: function (xhr) {
+                    let errors = JSON.parse(xhr.responseText).errors;
+                    alert(errors.map(a => a.msg).join(';'));
+                }
+            });
+        }
+    </script>
 @endsection

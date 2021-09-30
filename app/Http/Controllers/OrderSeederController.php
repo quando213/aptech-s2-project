@@ -17,62 +17,6 @@ use Illuminate\Database\Eloquent\Builder;
 
 class OrderSeederController extends Controller
 {
-
-
-    public function testChart(Request $request)
-    {
-        $start = Carbon::parse($request->start);
-        $end = Carbon::parse($request->end);
-        $diff = $end->diffInDays($start);
-        $times = [];
-        $total_order = [];
-
-        for ($i = $diff; $i >= 0; $i--) {
-            $time = date_format(Carbon::parse($request->end)->addDays(-($i)), 'd-m');
-            $order = Order::query()->whereDate('created_at', '=',date_format(Carbon::parse($request->end)->addDays(-($i)), 'Y-m-d'))->get();
-            array_push($total_order,sizeof($order));
-            array_push($times,$time);
-        }
-        $data['time'] = $times;
-        $data['order'] = $total_order;
-        return  $data;
-    }
-    public function chartOrderPrice(Request $request)
-    {
-        $start = Carbon::parse($request->start);
-        $end = Carbon::parse($request->end);
-        $diff = $end->diffInDays($start);
-        $timesPrice = [];
-        $prices = [];
-        for ($i = $diff; $i >= 0; $i--) {
-            $timePrice = date_format(Carbon::parse($request->end)->addDays(-($i)), 'd/m');
-            $price = Order::query()->whereDate('created_at', '=',date_format(Carbon::parse($request->end)->addDays(-($i)), 'Y-m-d'))->sum('total_price');
-            array_push($timesPrice,$timePrice);
-            array_push($prices,$price);
-        }
-        $data['price'] = $prices;
-        $data['timesPrice'] = $timesPrice;
-        return  $data;
-    }
-
-
-    public function chartCategory(Request $request){
-        $categories = [];
-        $totals = [];
-        $start = Carbon::parse($request->start);
-        $end = Carbon::parse($request->end);
-        $diff = $end->diffInDays($start);
-        for ($i = 1; $i >= 7; $i++) {
-            $category = Category::find($i)->name;
-            return $category;
-            array_push($categories,$category);
-        }
-        $data['name'] = $categories;
-        $data['total'] = $totals;
-        return  $data;
-
-    }
-
     public function addCart()
     {
         Cart::destroy();
