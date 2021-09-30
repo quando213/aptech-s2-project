@@ -32,13 +32,14 @@ Route::get('/', [TemplateAdminController::class, 'page_content'])->name('adminDa
 Route::prefix('orders')->group(function () {
     Route::get('', [OrderController::class, 'list'])->name('orderList');
     Route::get('paid/{id}', [OrderController::class, 'markAsPaid'])->middleware([CheckAdmin::class])->name('orderMarkAsPaid');
-    Route::get('{id}', [OrderController::class, 'detail'])->name('orderDetail');
-    Route::post('{id}', [OrderController::class, 'save'])->middleware(CheckAdmin::class);
     Route::prefix('ship')->middleware(CheckShipper::class)->group(function () {
         Route::get('start/{id}', [OrderController::class, 'markAsShipped'])->name('orderMarkAsShipped');
         Route::get('finish/{id}', [OrderController::class, 'markAsCompleted'])->name('orderMarkAsCompleted');
         Route::get('cancel/{id}', [OrderController::class, 'cancelShipment'])->name('orderCancelShipment');
     });
+    Route::get('mine', [OrderController::class, 'list'])->middleware(CheckShipper::class)->name('myShipments');
+    Route::get('{id}', [OrderController::class, 'detail'])->name('orderDetail');
+    Route::post('{id}', [OrderController::class, 'save'])->middleware(CheckAdmin::class);
 });
 
 Route::prefix('/users')->middleware([CheckAdmin::class])->group(function () {
@@ -87,10 +88,11 @@ Route::prefix('/combos')->middleware([CheckAdmin::class])->group(function () {
     Route::get('delete/{id}', [ComboController::class, 'destroy'])->name('comboDelete');
 });
 
-Route::prefix('/shipper')->group(function () {
-//    Route::get('', [OrderController::class, 'list'])->name('orderList');
+Route::prefix('/me')->group(function () {
+    Route::get('profile', [AdminUserController::class, 'detailShipper'])->name('detailShipper');
+    Route::get('group', [AdminUserController::class, 'detailGroup'])->name('detailGroup');
 //    Route::get('/{id}', [OrderController::class, 'orderDetail'])->name('orderDetail');
-    Route::get('/personnel', [GroupController::class, 'personnel']);
+//    Route::get('/personnel', [GroupController::class, 'personnel']);
 });
 
 

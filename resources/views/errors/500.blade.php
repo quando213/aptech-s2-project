@@ -1,5 +1,5 @@
 @extends('Client.layout.index')
-@section('title', '404')
+@section('title', '500')
 
 @section('content')
     <main id="main-container" class="main-container">
@@ -7,9 +7,9 @@
             <div class="row">
                 <div class="col-12 col-sm-10 offset-sm-1 col-md-10 offset-md-1 col-lg-6 offset-lg-3">
                     <div class="error-section-top text-center">
-                        <h1>404</h1>
-                        <h4 class="m-b-20">OOOPS! LỖI 404</h4>
-                        <h5 class="font--light">Trang bạn đang tìm không tồn tại!</h5>
+                        <h1>500</h1>
+                        <h4 class="m-b-20">OOOPS! LỖI HỆ THỐNG</h4>
+                        <h5 class="font--light">Vui lòng thử lại sau hoặc liên hệ với quản trị viên!</h5>
                     </div>
                 </div>
             </div>
