@@ -13,6 +13,7 @@ use App\Models\Ward;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -34,8 +35,9 @@ class AdminUserController extends Controller
             $data = $data->where(function (Builder $q) use ($search) {
                 return $q->where('first_name', 'like', '%' . $search . '%')
                     ->orWhere('last_name', 'like', '%' . $search . '%')
-                    ->orWhere('shipping_street', 'like', '%' . $search . '%')
-                    ->orWhere('shipping_phone', 'like', '%' . $search . '%')
+                    ->orWhere('email', 'like', '%' . $search . '%')
+                    ->orWhere('street', 'like', '%' . $search . '%')
+                    ->orWhere('phone', 'like', '%' . $search . '%')
                     ->orWhereHas('district', function ($q) use ($search) {
                         return $q->where('name', 'like', '%' . $search . '%');
                     })
@@ -88,6 +90,15 @@ class AdminUserController extends Controller
             ->with('message', 'Tao mới thành công người dùng ' . $user->last_name . ' ' . $user->first_name);
     }
 
+    public function save(AdminUpdateUserRequest $request, $id)
+    {
+        $user = User::find($id);
+        $user->update($request->validated());
+        $user->save();
+        return redirect()->route('userList', ['role' => $request['role']])
+            ->with('message', 'Sửa thành công người dùng ' . $user->last_name . ' ' . $user->first_name);
+    }
+
     public function destroy($id)
     {
         $user = User::find($id);
@@ -97,12 +108,15 @@ class AdminUserController extends Controller
             ->with('message', 'Xóa thành công người dùng ' . $user->last_name . ' ' . $user->first_name);
     }
 
-    public function save(AdminUpdateUserRequest $request, $id)
+    public function detailShipper()
     {
-        $user = User::find($id);
-        $user->update($request->validated());
-        $user->save();
-        return redirect()->route('userList', ['role' => $request['role']])
-            ->with('message', 'Sửa thành công người dùng ' . $user->last_name . ' ' . $user->first_name);
+        $data = Auth::user();
+        return view('Admin.Shipper.profile', ['data' => $data]);
+    }
+
+    public function detailGroup()
+    {
+        $data = Auth::user()->group;
+        return view('Admin.Shipper.group', ['data' => $data]);
     }
 }

@@ -7,6 +7,7 @@ use App\Enums\OrderStatus;
 use App\Enums\UserRole;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateOrderRequest;
+use App\Mail\ShipperNewOrder;
 use App\Models\District;
 use App\Models\Group;
 use App\Models\Notification;
@@ -18,6 +19,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
@@ -59,13 +61,12 @@ class  OrderController extends Controller
 
         $user = Auth::user();
         if ($user->role == UserRole::SHIPPER) {
-            $data = $data->where('shipping_ward_id', $user->group->ward_id)
-                ->where('status', '>', OrderStatus::CREATED)
-                ->where(function(Builder $query) use ($user) {
-                    $query->whereNull('shipper_id')
-                        ->orWhere('shipper_id', $user->id);
-                })
-            ;
+            $data = $data->where('shipping_ward_id', $user->group->ward_id);
+            if (\Illuminate\Support\Facades\Route::currentRouteName() == 'myShipments') {
+                $data = $data->where('shipper_id', $user->id);
+            } else {
+                $data = $data->where('status', OrderStatus::PAID);
+            }
         }
 
         return view('Admin.Order.list', [
@@ -104,9 +105,11 @@ class  OrderController extends Controller
         $old_status = $order->status;
         if ($data['status'] == OrderStatus::CREATED) {
             $data['paid_at'] = null;
-        }
-        if ($data['status'] <= OrderStatus::PAID) {
             $data['shipper_id'] = null;
+        }
+        if ($data['status'] == OrderStatus::PAID) {
+            $data['shipper_id'] = null;
+            $this->notifyNewOrderToShippers($id);
         }
         $order->fill($data);
         $order->save();
@@ -127,7 +130,27 @@ class  OrderController extends Controller
         $order->paid_at = Carbon::now();
         $order->save();
         notifyOrderStatusUpdate($id);
-        return redirect()->route('orderList')->with('message', 'Cập nhật thành công đơn hàng #' . $id);
+        $this->notifyNewOrderToShippers($id);
+        return redirect()->back()->with('message', 'Cập nhật thành công đơn hàng #' . $id);
+    }
+
+    /**
+     * @param $order_id
+     * @param array $exceptions IDs of shippers that should not receive this email
+     */
+    public function notifyNewOrderToShippers($order_id, $exceptions = [])
+    {
+        $order = Order::find($order_id);
+        $shippers = User::query()->where('role', UserRole::SHIPPER)
+            ->whereHas('group', function ($q) use ($order) {
+                return $q->where('ward_id', $order->shipping_ward_id);
+            })->get();
+        foreach ($shippers as $shipper)
+        {
+            if (!in_array($shipper->id, $exceptions)) {
+                Mail::to($shipper->email)->send(new ShipperNewOrder($order, $shipper));
+            }
+        }
     }
 
 
@@ -155,7 +178,7 @@ class  OrderController extends Controller
         $order->status = OrderStatus::COMPLETED;
         $order->save();
         notifyOrderStatusUpdate($id);
-        return redirect()->route('orderList')->with('message', 'Cập nhật thành công đơn hàng #' . $id);
+        return redirect()->route('myShipments')->with('message', 'Cập nhật thành công đơn hàng #' . $id);
     }
 
     public function cancelShipment($id)
@@ -169,7 +192,8 @@ class  OrderController extends Controller
         $order->shipper_id = null;
         $order->save();
         notifyOrderStatusUpdate($id, Auth::user()->getFullNameWithPosition() . ' đã thôi mua hộ đơn hàng #' . $id . ' của bạn. Chúng tôi sẽ thông báo khi có quân nhân khác nhận đơn.');
-        return redirect()->route('orderList')->with('message', 'Cập nhật thành công đơn hàng #' . $id);
+        $this->notifyNewOrderToShippers($id, [Auth::id()]);
+        return redirect()->route('myShipments')->with('message', 'Cập nhật thành công đơn hàng #' . $id);
     }
 
 

@@ -20,13 +20,21 @@
                         <span>Bảng điều khiển</span>
                     </a>
                 </li>
-                <li class="sidebar-item {{ request()->route()->getPrefix() == 'cms/orders' ? 'active' : '' }}">
+                <li class="sidebar-item {{ request()->route()->getPrefix() == 'cms/orders' && \Illuminate\Support\Facades\Route::currentRouteName() != 'myShipments' ? 'active' : '' }}">
                     <a href="{{route('orderList')}}" class='sidebar-link'>
                         <i class="bi bi-card-list"></i>
-                        <span>Đơn hàng</span>
+                        <span>Đơn hàng {{ isShipper() ? 'mới' : '' }}</span>
                     </a>
                 </li>
-                @if(\Illuminate\Support\Facades\Auth::user()->role == \App\Enums\UserRole::ADMIN)
+                @if(isShipper())
+                    <li class="sidebar-item {{ \Illuminate\Support\Facades\Route::currentRouteName() == 'myShipments' ? 'active' : '' }}">
+                        <a href="{{route('myShipments')}}" class='sidebar-link'>
+                            <i class="bi bi-paperclip"></i>
+                            <span>Đơn tôi đã nhận</span>
+                        </a>
+                    </li>
+                @endif
+                @if(isAdmin())
                     <li class="sidebar-title">Sản phẩm</li>
                     <li class="sidebar-item {{ request()->route()->getPrefix() == 'cms/products' ? 'active' : '' }}">
                         <a href="{{route('productList')}}" class='sidebar-link'>
@@ -92,6 +100,20 @@
                     @endif
                     {{ \Illuminate\Support\Facades\Auth::user()->getFullName() }}
                 </li>
+                @if(isShipper())
+                    <li class="sidebar-item {{ \Illuminate\Support\Facades\Route::currentRouteName() == 'detailShipper' ? 'active' : '' }}">
+                        <a href="{{route('detailShipper')}}" class='sidebar-link'>
+                            <i class="bi bi-person-fill"></i>
+                            <span>Hồ sơ cá nhân</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item {{ \Illuminate\Support\Facades\Route::currentRouteName() == 'detailGroup' ? 'active' : '' }}">
+                        <a href="{{route('detailGroup')}}" class='sidebar-link'>
+                            <i class="bi bi-people-fill"></i>
+                            <span>Nhóm của tôi</span>
+                        </a>
+                    </li>
+                @endif
                 <li class="sidebar-item">
                     <a href="{{route('logout')}}" class='sidebar-link'>
                         <i class="bi bi-arrow-left-square-fill"></i>

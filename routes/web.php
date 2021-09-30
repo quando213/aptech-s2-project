@@ -75,4 +75,4 @@ Route::prefix('checkout')->middleware('auth')->group(function () {
 });
 
 Route::get('/combo', [ClientComboController::class, 'list']);
-Route::view('/test', 'mails.order-update', ['order' => \App\Models\Order::find(13)]);
+Route::view('/test', 'mails.shippers.new-order', ['order' => \App\Models\Order::find(13), 'shipper' => \App\Models\User::find(2)]);
