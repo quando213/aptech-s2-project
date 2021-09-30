@@ -12,6 +12,7 @@ use App\Http\Controllers\Client\ClientProductController;
 use App\Http\Controllers\Client\ClientProductDetailController;
 use App\Http\Controllers\Client\EntryController;
 use App\Http\Controllers\Client\HomeController;
+use App\Http\Controllers\OrderSeederController;
 use App\Http\Controllers\TemplateAdminController;
 use App\Http\Controllers\TemplateClientController;
 use App\Http\Middleware\checkAdmin;
@@ -35,6 +36,10 @@ Route::prefix('cms')->middleware(['auth', CheckCMSAccess::class])->group(functio
 });
 
 Route::get('/', [HomeController::class, 'home'])->name("home");
+Route::get('/seeder-order', [OrderSeederController::class, 'addCart']);
+Route::get('/test-chart', [OrderSeederController::class, 'testChart'])->name('chart');
+Route::get('/chartOrderPrice', [OrderSeederController::class, 'chartOrderPrice'])->name('chartOrderPrice');
+Route::get('/chartCategory', [OrderSeederController::class, 'chartCategory'])->name('chartCategory');
 
 // REPOSITION
 Route::get('/response', [OrderController::class, 'response']); // thanh toán xong

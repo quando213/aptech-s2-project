@@ -1,5 +1,6 @@
 <script src="/asset/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 <script src="/asset/js/bootstrap.bundle.min.js"></script>
+
 <script src="/asset/js/main.js"></script>
 <script src="/asset/js/jquery.js"></script>
 
@@ -10,4 +11,5 @@
 {{--<script type="text/javascript" src="https://cdn.datatables.net/searchpanes/1.4.0/js/dataTables.searchPanes.min.js"></script>--}}
 {{--<script type="text/javascript" src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js"></script>--}}
 <script src="/asset/js/jquery.repeater.js"></script>
+
 
