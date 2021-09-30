@@ -81,6 +81,33 @@ class CategorySeeder extends Seeder
                 'created_at' => Carbon::now()->addDays(-1),
                 'updated_at' => Carbon::now()->addDays(-1),
             ],
+            [
+                'id' => 8,
+                'name' => 'Hóa-mỹ phẩm',
+                'description' => 'Các Lại mỹ phẩm làm đẹp',
+                'sort_number' => 8,
+                'thumbnail' => 'https://heranature.vn/wp-content/uploads/2020/03/hoa-my-pham-3.jpg',
+                'created_at' => Carbon::now()->addDays(-1),
+                'updated_at' => Carbon::now()->addDays(-1),
+            ],
+            [
+                'id' => 9,
+                'name' => 'Chăm sóc cá nhân',
+                'description' => 'Các vật dụng cá nhân',
+                'sort_number' => 9,
+                'thumbnail' => 'https://cdn.vuahanghieu.com/unsafe/0x0/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/news/content/2019/10/10-cac-hang-thuong-hieu-duoc-my-pham-noi-tieng-vhh-18-jpg-1570700347-10102019163907.jpg',
+                'created_at' => Carbon::now()->addDays(-1),
+                'updated_at' => Carbon::now()->addDays(-1),
+            ],
+            [
+                'id' => 10,
+                'name' => 'Chăm sóc mẹ và bé',
+                'description' => 'Các đồ dùng cho mẹ bầu và trẻ sơ sinh',
+                'sort_number' => 10,
+                'thumbnail' => 'https://salt.tikicdn.com/cache/550x550/ts/product/d1/69/ca/8017b9ad5f2391fff5aa379f874e0b03.jpg',
+                'created_at' => Carbon::now()->addDays(-1),
+                'updated_at' => Carbon::now()->addDays(-1),
+            ],
         ]);
     }
 }
