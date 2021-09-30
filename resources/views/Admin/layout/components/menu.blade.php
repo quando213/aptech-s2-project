@@ -3,7 +3,7 @@
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
                 <div class="logo">
-                    <a href="{{ route('adminDashboard') }}" class="btn btn-primary btn-sm disabled">{{ \App\Enums\UserRole::getDescription(\Illuminate\Support\Facades\Auth::user()->role) }}</a>
+                    <a href="{{ route('adminDashboard') }}" class="btn {{ isAdmin() ? 'btn-primary' : 'btn-success' }} }} btn-sm disabled">{{ \App\Enums\UserRole::getDescription(\Illuminate\Support\Facades\Auth::user()->role) }}</a>
                     <a href="{{ route('home') }}" class="d-block" target="_blank">Chợ hộ Hà Nội</a>
                 </div>
                 <div class="toggler">

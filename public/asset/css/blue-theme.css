@@ -1,0 +1,48 @@
+a,
+.sidebar-wrapper .menu .sidebar-item.active .sidebar-link {
+    color: #435ebe;
+}
+
+a:hover {
+    color: #364b98;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6,
+.sidebar-wrapper .menu .sidebar-link,
+.sidebar-wrapper .menu .sidebar-title {
+    color: #25396f;
+}
+
+.sidebar-wrapper .menu .sidebar-item.active .sidebar-link {
+    background-color: #435ebe;
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+    background-color: #435ebe;
+    border-color: #435ebe;
+}
+
+.sidebar-wrapper .menu .sidebar-link:hover {
+    background-color: #f0f1f5;
+}
+
+.form-group[class*=has-icon-] .form-control:focus~.form-control-icon i, .form-group[class*=has-icon-] .form-control:focus~.form-control-icon svg {
+    color: #5a8dee;
+}
+
+.text-muted {
+    color: #7c8db5!important;
+}
+
+.sidebar-wrapper .menu .sidebar-link i, .sidebar-wrapper .menu .sidebar-link svg {
+    color: #7c8db5;
+}
+
+body {
+    color: #607080;
+    background-color: #f2f7ff;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: #e9ecef;
+}

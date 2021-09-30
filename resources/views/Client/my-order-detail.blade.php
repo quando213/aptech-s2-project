@@ -1,5 +1,5 @@
 @extends('Client.layout.index')
-@section('contact')
+@section('content')
     <!-- ::::::  Start  Breadcrumb Section  ::::::  -->
     <div class="page-breadcrumb">
         <div class="container">
@@ -35,11 +35,11 @@
                             class="text-center alert alert-success alert-dismissable">{{ session()->get('status') }}</div>
                     @endif
                     @if($order->status == \App\Enums\OrderStatus::CREATED)
-                        <div class="card my-2 mb-4">
+                        <div class="card mb-5">
                             <div class="card-header" style="background: #89c74a; color: white;">
-                                <h4 class="card-title text-center py-3">
-                                    Thanh toán ngay để nhanh chóng nhận được đơn hàng bạn đã đặt!
-                                </h4>
+                                <h5 class="card-title text-center py-3">
+                                    Cảm ơn bạn đã sử dụng Đi Chợ Hộ. Thanh toán ngay để nhanh chóng nhận được đơn hàng bạn đã đặt!
+                                </h5>
                             </div>
                             <div class="card-body">
                                 <div class="row d-flex justify-content-center">
@@ -48,7 +48,7 @@
                                         <h4>Chuyển khoản</h4>
                                         <div class="text-left mt-3 px-4">
                                             <div>Vui lòng chuyển khoản vào số tài khoản sau:</div>
-                                            <b>Chủ tài khoản:</b> Đi Chợ Hộ<br>
+                                            <b>Tài khoản thụ hưởng:</b> Đi Chợ Hộ Hà Nội<br>
                                             <b>Số tài khoản:</b> 12345XXX69<br>
                                             <b>Ngân hàng:</b> Ngân hàng TMCP Kỹ thương Việt Nam (Techcombank)<br>
                                             <b>Số tiền:</b> {{number_format($order->total_price)}}đ<br>
@@ -75,7 +75,7 @@
                                 <div class="mr-5 d-flex flex-md-column align-items-end align-items-md-start">
                                     <div class="text-secondary text-uppercase small font-weight-bold mr-3">Ngày đặt
                                     </div>
-                                    <div>{{ $order->created_at }}</div>
+                                    <div>{{ $order->createdAtFormatted() }}</div>
                                 </div>
                                 <div class="mr-5 d-flex flex-md-column align-items-end align-items-md-start">
                                     <div class="text-secondary text-uppercase small font-weight-bold mr-3">Tổng giá
@@ -103,7 +103,7 @@
                         <div class="card-body row d-md-flex justify-content-between py-4 pl-3">
                             <div class="col-md-9">
                                 <div class="my-4 my-md-0">
-                                    @foreach($orderDetails as $orderDetail)
+                                    @foreach($order->details as $orderDetail)
                                         <div class="row d-flex align-items-center">
                                             <div class="col-3">
                                                 <div class="offcanvas-add-cart__img-box pos-relative my-2">

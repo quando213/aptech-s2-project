@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Mail;
 
 class  OrderController extends Controller
 {
+    // ****** METHODS FOR BOTH ADMINS AND SHIPPERS (SOME DIFFERENCES MAY APPLIED) ******
     public function list(Request $request)
     {
         $search = $request->query('search');
@@ -58,7 +59,13 @@ class  OrderController extends Controller
 
         $user = Auth::user();
         if ($user->role == UserRole::SHIPPER) {
-            $data = $data->where('shipping_ward_id', $user->group->ward_id)->where('status', '>', OrderStatus::CREATED);
+            $data = $data->where('shipping_ward_id', $user->group->ward_id)
+                ->where('status', '>', OrderStatus::CREATED)
+                ->where(function(Builder $query) use ($user) {
+                    $query->whereNull('shipper_id')
+                        ->orWhere('shipper_id', $user->id);
+                })
+            ;
         }
 
         return view('Admin.Order.list', [
@@ -70,7 +77,14 @@ class  OrderController extends Controller
 
     public function detail($id)
     {
-        $order = Order::find($id);
+        $order = Order::query()->where('id', $id);
+        if (isShipper()) {
+            $order = $order->where(function(Builder $query) {
+                $query->whereNull('shipper_id')
+                    ->orWhere('shipper_id', Auth::id());
+            });
+        }
+        $order = $order->firstOrFail();
         $shippers = User::query()->where('role', UserRole::SHIPPER)
             ->whereHas('group', function ($q) use ($order) {
                 return $q->where('ward_id', $order->shipping_ward_id);
@@ -81,25 +95,33 @@ class  OrderController extends Controller
         ]);
     }
 
+
+    // ****** METHODS FOR ADMINS ONLY ******
     public function save(UpdateOrderRequest $request, $id)
     {
         $data = $request->validated();
-        $order = Order::find($id);
-        if ($data['status'] != $order->status) {
-            notifyOrderStatusUpdate($id);
+        $order = Order::query()->where('id', $id)->firstOrFail();
+        $old_status = $order->status;
+        if ($data['status'] == OrderStatus::CREATED) {
+            $data['paid_at'] = null;
+        }
+        if ($data['status'] <= OrderStatus::PAID) {
+            $data['shipper_id'] = null;
         }
         $order->fill($data);
         $order->save();
+        if ($data['status'] != $old_status) {
+            notifyOrderStatusUpdate($id);
+        }
         return redirect()->route('orderList')->with('message', 'Cập nhật thành công đơn hàng #' . $id);
     }
 
     public function markAsPaid($id)
     {
-        $order = Order::find($id);
-        if ($order['status'] != OrderStatus::CREATED)
-        {
-            return redirect()->back()->withErrors(['msg' => 'Lỗi! Đơn hàng đã ở trạng thái hoàn tất thanh toán']);
-        }
+        $order = Order::query()->where([
+            'id' => $id,
+            'status' => OrderStatus::CREATED
+        ])->firstOrFail();
         $order->status = OrderStatus::PAID;
         $order->payment_method = OrderPaymentMethod::BANK_TRANSFER;
         $order->paid_at = Carbon::now();
@@ -108,27 +130,50 @@ class  OrderController extends Controller
         return redirect()->route('orderList')->with('message', 'Cập nhật thành công đơn hàng #' . $id);
     }
 
-    public function response(Request $request)
+
+    // ****** METHODS FOR SHIPPERS ONLY ******
+    public function markAsShipped($id)
     {
-//        $order = Order::find($request->vnp_TxnRef);
-//
-//        $group = Group::query()->where('ward_id',$order->shipping_ward_id)->first();
-//        if ($group != null){
-//            $shippers = User::query()->where(['group_id'=>$group->id,'role'=>3])->get();
-//            foreach ($shippers as $shipper){
-//                $notification = new Notification();
-//                $notification->sender_id = $shipper->id;
-//                $notification->link = "/admin/orders/".$order->id;
-//                $notification->message = "đơ vị của bạn vưa nhân đươc 1 đơn hàng mới";
-//                $notification->save();
-//            }
-//        }
-//        else{
-//
-//        }
+        $order = Order::query()->where([
+            'id' => $id,
+            'status' => OrderStatus::PAID,
+            'shipper_id' => null])->firstOrFail();
+        $order->status = OrderStatus::IN_DELIVERY;
+        $order->shipper_id = Auth::id();
+        $order->save();
+        notifyOrderStatusUpdate($id);
+        return redirect()->route('orderList')->with('message', 'Cập nhật thành công đơn hàng #' . $id);
+    }
+
+    public function markAsCompleted($id)
+    {
+        $order = Order::query()->where([
+            'id' => $id,
+            'status' => OrderStatus::IN_DELIVERY,
+            'shipper_id' => Auth::user()->id
+        ])->firstOrFail();
+        $order->status = OrderStatus::COMPLETED;
+        $order->save();
+        notifyOrderStatusUpdate($id);
+        return redirect()->route('orderList')->with('message', 'Cập nhật thành công đơn hàng #' . $id);
+    }
+
+    public function cancelShipment($id)
+    {
+        $order = Order::query()->where([
+            'id' => $id,
+            'status' => OrderStatus::IN_DELIVERY,
+            'shipper_id' => Auth::user()->id
+        ])->firstOrFail();
+        $order->status = OrderStatus::PAID;
+        $order->shipper_id = null;
+        $order->save();
+        notifyOrderStatusUpdate($id, Auth::user()->getFullNameWithPosition() . ' đã thôi mua hộ đơn hàng #' . $id . ' của bạn. Chúng tôi sẽ thông báo khi có quân nhân khác nhận đơn.');
+        return redirect()->route('orderList')->with('message', 'Cập nhật thành công đơn hàng #' . $id);
     }
 
 
+    // ****** by Thuan Nguyen ******
     public function ipnResponse(Request $request)
     {
         Log::debug('An informational message.');

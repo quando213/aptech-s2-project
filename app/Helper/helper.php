@@ -2,22 +2,24 @@
 
 use App\Enums\OrderStatus;
 use App\Enums\UserRole;
+use App\Mail\OrderUpdate;
 use App\Models\Notification;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 const DISPLAY_DATE_FORMAT = 'd/m/Y';
 const DISPLAY_DATETIME_FORMAT = 'd/m/Y H:m:s';
 
 function isAdmin(): bool
 {
-    return Auth::user()->role == UserRole::ADMIN;
+    return Auth::check() && Auth::user()->role == UserRole::ADMIN;
 }
 
 function isShipper(): bool
 {
-    return Auth::user()->role == UserRole::SHIPPER;
+    return Auth::check() && Auth::user()->role == UserRole::SHIPPER;
 }
 
 function arrayToOptions($array, $label_attribute, $key_attribute = null): array
@@ -35,8 +37,9 @@ function arrayToOptions($array, $label_attribute, $key_attribute = null): array
     return $options;
 }
 
-function buildQuery(Request $request, $data, array $where_attributes = []) {
-    $sort = urldecode($request->query('sort'));
+function buildQuery(Request $request, $data, array $where_attributes = [], $default_sort = '')
+{
+    $sort = urldecode($request->query('sort') ?? $default_sort);
     if ($sort) {
         $sort_attribute = explode(' ', $sort)[0];
         $sort_order = explode(' ', $sort)[1] ?? 'ASC';
@@ -55,8 +58,7 @@ function buildQuery(Request $request, $data, array $where_attributes = []) {
 
 function sendNotifications(array $receivers, string $message, $order_id = null, $custom_url = null)
 {
-    foreach ($receivers as $receiver)
-    {
+    foreach ($receivers as $receiver) {
         $notification = new Notification();
         $notification->user_id = $receiver;
         $notification->message = $message;
@@ -66,27 +68,37 @@ function sendNotifications(array $receivers, string $message, $order_id = null, 
     }
 }
 
-function notifyOrderStatusUpdate($order_id)
+function notifyOrderStatusUpdate($order_id, $custom_message = '')
 {
     $order = Order::find($order_id);
     $message = '';
-    switch ($order->status)
-    {
-        case OrderStatus::CREATED:
-            $message = 'Chúng tôi đã ghi nhận đơn hàng #' . $order_id . ' của bạn với giá trị ' . $order->total_price . '. Hãy hoàn tất thanh toán để chúng tôi có thể sớm hoàn thành "đi chợ hộ" bạn nhé.';
-            break;
-        case OrderStatus::PAID:
-            $message = 'Thanh toán hoàn tất cho đơn hàng #' .$order_id . '. Chúng tôi sẽ gửi thông báo ngay khi đơn hàng bắt đầu được mua.';
-            break;
-        case 3:
-            $message = 'Đơn hàng #' .$order_id . ' chuẩn bi đươc giao bởi ' . $order->shipper->getFullNameWithPosition() . '. Vui lòng giữ điện thoại.';
-            break;
-        case 4:
-            $message = 'Đơn hàng #' .$order_id . ' đã được giao thành công bởi ' . $order->shipper->getFullNameWithPosition() . '.';
-            break;
-        case 5:
-            $message = "Đơn hàng #' .$order_id . ' của bạn đã bị huỷ.";
-            break;
+    if (!$order) {
+        error_log('Invalid order_id');
+        return;
     }
-    sendNotifications([$order->user_id], $message, $order_id);
+    if ($custom_message && strlen($custom_message)) {
+        $message = $custom_message;
+    } else {
+        switch ($order->status) {
+            case OrderStatus::CREATED:
+                $message = 'Chúng tôi đã ghi nhận đơn hàng #' . $order_id . ' của bạn với giá trị ' . $order->total_price . '. Hãy hoàn tất thanh toán để chúng tôi có thể sớm hoàn thành "đi chợ hộ" bạn nhé.';
+                break;
+            case OrderStatus::PAID:
+                $message = 'Thanh toán hoàn tất cho đơn hàng #' . $order_id . '. Chúng tôi sẽ gửi thông báo ngay khi đơn hàng bắt đầu được mua.';
+                break;
+            case 3:
+                $message = 'Đơn hàng #' . $order_id . ' chuẩn bi đươc giao bởi ' . $order->shipper->getFullNameWithPosition() . '. Vui lòng giữ điện thoại.';
+                break;
+            case 4:
+                $message = 'Đơn hàng #' . $order_id . ' đã được giao thành công bởi ' . $order->shipper->getFullNameWithPosition() . '.';
+                break;
+            case 5:
+                $message = "Đơn hàng #' .$order_id . ' của bạn đã bị huỷ.";
+                break;
+        }
+    }
+    if ($order->status != OrderStatus::CREATED || strlen($custom_message)) {
+        sendNotifications([$order->user_id], $message, $order_id);
+    }
+    Mail::to($order->user->email)->send(new OrderUpdate($order));
 }

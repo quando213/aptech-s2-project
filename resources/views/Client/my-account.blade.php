@@ -1,5 +1,5 @@
 @extends('Client.layout.index')
-@section('contact')
+@section('content')
     <!-- ::::::  Start  Breadcrumb Section  ::::::  -->
     <div class="page-breadcrumb">
         <div class="container">
@@ -45,9 +45,9 @@
                                                     class="fas fa-tachometer-alt"></i>Đơn hàng</a>
                                         </li>
                                         <li>
-                                            <a id="pills-payment-tab" class="{{ session()->has('tab') && session()->get('tab') == 'payment' ? 'active' : '' }} link--icon-left" data-toggle="pill"
-                                               href="#pills-payment" role="tab"
-                                               aria-controls="pills-payment" aria-selected="false"><i
+                                            <a id="pills-notifications-tab" class="{{ session()->has('tab') && session()->get('tab') == 'notifications' ? 'active' : '' }} link--icon-left" data-toggle="pill"
+                                               href="#pills-notifications" role="tab"
+                                               aria-controls="pills-notifications" aria-selected="false"><i
                                                     class="fas fa-alarm-exclamation"></i>Thông báo</a>
                                         </li>
                                         <li>
@@ -69,7 +69,6 @@
                                     <div class="tab-pane fade {{ !session()->has('tab') || session()->get('tab') == 'dashboard' ? 'show active' : '' }}" id="pills-dashboard" role="tabpanel"
                                          aria-labelledby="pills-dashboard-tab">
                                         <div class="my-account-dashboard account-wrapper">
-
                                             <h4 class="account-title">Đơn hàng</h4>
                                         </div>
                                         <table class="table">
@@ -86,14 +85,13 @@
                                             @if(sizeof($order))
                                                 @foreach($order as $item)
                                                     <tr>
-                                                        <th scope="row">{{$item->id}}</th>
-                                                        <td>{{$item->total_price}}</td>
-                                                        <td>{{$item->status}}</td>
-                                                        <td>{{$item->created_at}}</td>
-                                                        <td><a href="{{route('myOrder',$item->id)}}"
-                                                               class="btn btn--small btn--radius btn--green btn--green-hover-black font--regular text-uppercase text-capitalize"
-                                                               tabindex="0">Xem
-                                                                Thêm </a></td>
+                                                        <td>{{$item->id}}</td>
+                                                        <td>{{number_format($item->total_price)}}</td>
+                                                        <td>{{\App\Enums\OrderStatus::getDescription($item->status)}}</td>
+                                                        <td>{{$item->createdAtFormatted()}}</td>
+                                                        <td><a href="{{route('myOrderDetail',$item->id)}}"
+                                                               class="btn btn--tiny btn--radius btn--green btn--green-hover-black font--regular text-uppercase text-capitalize"
+                                                               tabindex="0">Xem thêm</a></td>
                                                     </tr>
                                                 @endforeach
                                             @else
@@ -105,33 +103,22 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div class="tab-pane fade {{ session()->has('tab') && session()->get('tab') == 'payment' ? 'active' : '' }}" id="pills-payment" role="tabpanel"
-                                         aria-labelledby="pills-payment-tab">
-                                        <div class="my-account-payment account-wrapper">
-                                            <h4 class="account-title">Thông báo</h4>
+                                    <div class="tab-pane fade {{ session()->has('tab') && session()->get('tab') == 'notifications' ? 'active' : '' }}" id="pills-notifications" role="tabpanel">
+                                        <div class="my-account-notifications account-wrapper">
+                                            <h4 class="account-title">Thông báo <i class="bi bi-power"></i></h4>
                                         </div>
-                                        <div class="account-table text-center table-responsive">
-                                            <table class="table text-left">
-                                                <thead>
-                                                @foreach($notifications as $notification)
-                                                    <tr>
-                                                        <td>
-                                                            @if($notification->the_send == 1)
-                                                                <a href="{{$notification->link.'/'.$notification->id}}"
-                                                                   class="btn btn btn--small btn--green-hover-black font--regular text-uppercase text-capitalizebtn-warning"
-                                                                   style="background: wheat">{{$notification->message}} </a>
-                                                            @else
-                                                                <a href="{{$notification->link.'/'.$notification->id}}"
-                                                                   class="btn btn btn--small btn--green-hover-black font--regular text-uppercase text-capitalizebtn-warning"
-                                                                   style="background: #89c74a">{{$notification->message}} </a>
-                                                            @endif
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
-                                                </thead>
-                                            </table>
+                                        <div class="list-group">
+                                            @foreach($notifications as $notification)
+                                                <a href="{{ $notification->custom_url ?? ($notification->order_id ? route('myOrderDetail', $notification->order_id) : 'javascript:void(0)') }}"
+                                                   class="list-group-item list-group-item-action px-3"
+                                                   style="background-color: {{ $notification->is_seen ? 'inherit' : '#deffbc' }};"
+                                                >
+                                                    @if(!$notification->is_seen)
+                                                        <i class="fa fa-star"></i>
+                                                    @endif
+                                                    {{$notification->message}}</a>
+                                            @endforeach
                                         </div>
-
                                     </div>
                                     <div class="tab-pane fade {{ session()->has('tab') && session()->get('tab') == 'account' ? 'active' : '' }}" id="pills-account" role="tabpanel"
                                          aria-labelledby="pills-account-tab">
@@ -203,7 +190,7 @@
                                                             </div>
                                                             <div class="col-md-12">
                                                                 <div class="form-box__single-group">
-                                                                    <input type="password" name="password_current"
+                                                                    <input type="password" name="current_password"
                                                                            placeholder="Nhập mật khẩu hiện tại">
                                                                 </div>
                                                             </div>
@@ -261,6 +248,18 @@
                 }
             });
         })
+    </script>
+
+    <script>
+        function readNotifications() {
+            axios.get('{{ route("readNotifications") }}');
+        }
+
+        @if(session()->has('tab') && session()->get('tab') == 'notifications')
+            readNotifications();
+        @endif
+
+        $('#pills-notifications-tab').click(readNotifications());
     </script>
 @endsection
 
