@@ -1,17 +1,13 @@
 <?php
 
-
-use App\Enums\UserRole;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\CategoryController;
-
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GroupController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\WardController;
-use App\Http\Controllers\TemplateAdminController;
-use App\Http\Controllers\TemplateClientController;
 use App\Http\Controllers\Admin\ComboController;
+
 use App\Http\Middleware\CheckAdmin;
 use App\Http\Middleware\CheckShipper;
 use Illuminate\Support\Facades\Route;
@@ -27,7 +23,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', [TemplateAdminController::class, 'page_content'])->name('adminDashboard');
+Route::get('/', [DashboardController::class, 'index'])->name('adminDashboard');
+Route::get('/test-chart', [DashboardController::class, 'chartOrderQuantity'])->name('chartOrderQuantity');
+Route::get('/chartOrderPrice', [DashboardController::class, 'chartRevenue'])->name('chartRevenue');
+Route::get('/chartCategory', [DashboardController::class, 'chartCategory'])->name('chartCategory');
 
 Route::prefix('orders')->group(function () {
     Route::get('', [OrderController::class, 'list'])->name('orderList');
@@ -91,8 +90,6 @@ Route::prefix('/combos')->middleware([CheckAdmin::class])->group(function () {
 Route::prefix('/me')->group(function () {
     Route::get('profile', [AdminUserController::class, 'detailShipper'])->name('detailShipper');
     Route::get('group', [AdminUserController::class, 'detailGroup'])->name('detailGroup');
-//    Route::get('/{id}', [OrderController::class, 'orderDetail'])->name('orderDetail');
-//    Route::get('/personnel', [GroupController::class, 'personnel']);
 });
 
 
