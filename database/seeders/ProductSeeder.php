@@ -32,7 +32,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => ' C.P',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 2,
                 'name' => 'Sườn non heo C.P khay 500g',
                 'price' => '109000',
@@ -46,7 +46,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => '  C.P',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 3,
                 'name' => 'Đùi tỏi gà khay 500g',
                 'price' => '52000',
@@ -75,7 +75,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Úc',
                 'brand' => 'Úc',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 6,
                 'name' => 'Trứng gà, vịt tươi vỉ 10 trứng',
                 'price' => '35000',
@@ -89,7 +89,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Việt Nam',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 7,
                 'name' => 'Chả cá chiên M.ngon gói 300g',
                 'price' => '59000',
@@ -103,7 +103,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => ' M.ngon',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 8,
                 'name' => 'Cá hồi cắt lát Oceangift khay 200g',
                 'price' => '105000',
@@ -117,7 +117,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Oceangift',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 9,
                 'name' => 'Cá trứng đông lạnh Trần Gia khay 200g',
                 'price' => '38000',
@@ -131,7 +131,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Trần Gia',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 10,
                 'name' => 'Nạc heo xay túi 200g',
                 'price' => '36000',
@@ -145,7 +145,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Việt Nam',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 11,
                 'name' => 'Cải ngọt baby túi 300g',
                 'price' => '18800',
@@ -159,7 +159,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Hạnh Phúc',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 12,
                 'name' => 'Rau tần ô túi 300g',
                 'price' => '7500',
@@ -173,7 +173,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Nông sản nội địa',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 13,
                 'name' => 'Chanh túi 200g',
                 'price' => '7000',
@@ -187,7 +187,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Trái cây nhập khẩu',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 14,
                 'name' => 'Bắp cải trắng 500g',
                 'price' => '9000',
@@ -201,7 +201,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Nông sản nội địa',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 15,
                 'name' => 'Khoai tây 1kg',
                 'price' => '19900',
@@ -215,7 +215,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Nông sản nội địa',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 16,
                 'name' => 'Bí đỏ tròn túi 500g',
                 'price' => '12000',
@@ -229,7 +229,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Nông sản nội địa',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 17,
                 'name' => 'Quả bầu 700g',
                 'price' => '13230',
@@ -243,7 +243,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Nông sản nội địa',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 18,
                 'name' => 'Nấm kim châm VN 150g',
                 'price' => '11000',
@@ -257,7 +257,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Nông sản nội địa',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 19,
                 'name' => 'Hành Tây 200g',
                 'price' => '3460',
@@ -271,7 +271,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Nông sản nội địa',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 20,
                 'name' => 'Dưa leo túi 500g',
                 'price' => '17400',
@@ -285,7 +285,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Nông sản nội địa',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 30,
                 'name' => 'Dưa leo túi 500g',
                 'price' => '17400',
@@ -299,7 +299,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Nông sản nội địa',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 31,
                 'name' => 'Táo Royal Gala PG size 120g',
                 'price' => '34950',
@@ -313,7 +313,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Trái cây nhập khẩu',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 32,
                 'name' => 'Lê đỏ Nam phi 500g',
                 'price' => '42000',
@@ -327,7 +327,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Trái cây nhập khẩu',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 33,
                 'name' => 'Kiwi vàng Newzealand (4trái/hộp)',
                 'price' => '132900',
@@ -341,7 +341,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Trái cây nhập khẩu',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 34,
                 'name' => 'Dưa lưới Đế Vương ruột cam King Size',
                 'price' => '79000',
@@ -355,7 +355,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'VinEco',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 35,
                 'name' => 'Chanh dây (1kg)',
                 'price' => '32000',
@@ -369,7 +369,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Nông sản nội địa',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 36,
                 'name' => 'Quýt Úc 1kg',
                 'price' => '150000',
@@ -383,7 +383,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Australia',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 37,
                 'name' => 'Cherry sz9.5 500g',
                 'price' => '225000',
@@ -397,7 +397,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Canada',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 38,
                 'name' => 'Lê nâu Hàn Quốc 1kg',
                 'price' => '90000',
@@ -411,7 +411,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Trái cây nhập khẩu.',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 39,
                 'name' => 'Nho xanh Mỹ không hạt 1kg',
                 'price' => '280000',
@@ -425,7 +425,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Trái cây nhập khẩu.',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 40,
                 'name' => 'Trái mít tố nữ 2 kg',
                 'price' => '40000',
@@ -439,7 +439,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Nông sản nội địa',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 41,
                 'name' => '2 lốc sữa có đường Dutch Lady hộp 180ml',
                 'price' => '60500',
@@ -453,7 +453,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Dutch Lady',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 42,
                 'name' => 'Lốc 4 hộp sữa đậu nành óc chó Vinamilk 180ml',
                 'price' => '28600',
@@ -467,7 +467,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Vinamilk',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 43,
                 'name' => 'Sữa đặc có đường Ông Thọ Đỏ hộp 40g',
                 'price' => '5200',
@@ -481,7 +481,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => ' Ông Thọ',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 44,
                 'name' => 'Lốc 4 hộp sữa trái cây vị dâu Vinamilk Hero hộp 110ml',
                 'price' => '15500',
@@ -495,7 +495,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Vinamilk',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 45,
                 'name' => 'Lốc 4 hộp sữa chua uống hương cam Vinamilk Yomilk 170ml',
                 'price' => '26000',
@@ -509,7 +509,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Vinamilk',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 46,
                 'name' => 'Sữa bột Lamosa Diabetes Care lon 900g',
                 'price' => '403000',
@@ -523,7 +523,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Lamosa',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 47,
                 'name' => 'Sữa bột Vinamilk Sure Diecerna lon 900g (cho người bệnh tiểu đường)',
                 'price' => '537000',
@@ -537,7 +537,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Vinamilk',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 48,
                 'name' => 'Bột thức uống lúa mạch Milo Active Go hũ 400g',
                 'price' => '66000',
@@ -551,7 +551,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Milo',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 49,
                 'name' => 'Kem đặc có đường DeliPure lon 1kg.',
                 'price' => '36800',
@@ -565,7 +565,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'DeliPure',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 50,
                 'name' => 'Lốc 6 chai sữa chua uống hương táo Fristi 80ml',
                 'price' => '24000',
@@ -579,7 +579,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => ' Fristi',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 51,
                 'name' => '6 chai nước ngọt Coca Cola 600ml',
                 'price' => '35000',
@@ -593,7 +593,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Coca Cola (Mỹ)',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 52,
                 'name' => '4 chai trà chanh với sả Fuze Tea 1 lít',
                 'price' => '49000',
@@ -607,7 +607,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Fuze Tea',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 53,
                 'name' => '6 lon nước ngọt Fanta hương cam 330ml',
                 'price' => '49000',
@@ -621,7 +621,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => ' Fanta',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 54,
                 'name' => 'Nước ép đào & táo Fontana 1 lít',
                 'price' => '30000',
@@ -635,7 +635,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Fontana',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 55,
                 'name' => '6 lon bia Budweiser 330ml',
                 'price' => '85000',
@@ -649,7 +649,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => ' Budweiser ',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 56,
                 'name' => '6 chai nước tinh khiết Lama 350ml',
                 'price' => '18000',
@@ -663,7 +663,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Lama',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 57,
                 'name' => '6 lon nước me Yooh 240ml',
                 'price' => '54000',
@@ -677,7 +677,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Yooh',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 58,
                 'name' => '24 lon nước tăng lực Monster Energy 355ml',
                 'price' => '696000',
@@ -691,7 +691,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Monster Energy',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 59,
                 'name' => '24 lon cà phê sữa Highlands 235ml',
                 'price' => '295000',
@@ -705,7 +705,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Highlands ',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 60,
                 'name' => '12 chai nước ngọt Fanta hương soda kem trái cây 1.5 lít',
                 'price' => '230000',
@@ -719,7 +719,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Fanta',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 61,
                 'name' => 'Snack khoai tây vị tảo biển nori Lay gói 52g',
                 'price' => '11600',
@@ -733,7 +733,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Lay',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 62,
                 'name' => 'Khoai tây chiên ít béo vị thịt nướng Eldorada Amica gói 130g',
                 'price' => '95000',
@@ -747,7 +747,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Amica',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 63,
                 'name' => 'Bánh quy phô mai Nissin Sagu Keju gói 110g',
                 'price' => '26000',
@@ -761,7 +761,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Nissin',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 64,
                 'name' => 'Kẹo Icedrop siêu mát lạnh hũ 28g',
                 'price' => '19000',
@@ -775,7 +775,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Icedrop ',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 65,
                 'name' => 'Bánh xốp cuộn ca cao Bahlsen Waffle Minis 75g',
                 'price' => '53000',
@@ -789,7 +789,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Bahlsen',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 66,
                 'name' => 'Socola sữa hạnh nhân Bernique hộp 450g',
                 'price' => '239000',
@@ -803,7 +803,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => ' Bernique',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 67,
                 'name' => 'Đu đủ sấy dẻo Frusa gói 35g',
                 'price' => '8000',
@@ -817,7 +817,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Frusa',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 68,
                 'name' => 'Snack khoai tây Poca Wavy Bò bít tết Manhattan 95g',
                 'price' => '21000',
@@ -831,7 +831,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Poca',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 69,
                 'name' => 'Snack mì hương gà Enaak gói 30g',
                 'price' => '5200',
@@ -845,7 +845,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Enaak ',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 70,
                 'name' => 'Kẹo hương chanh dây Lolli hũ 23g',
                 'price' => '20000',
@@ -859,7 +859,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Lolli',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 71,
                 'name' => 'Muối tôm thượng hạng Mỹ Liên Food hũ 420g',
                 'price' => '43000',
@@ -873,7 +873,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Mỹ Liên Food',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 72,
                 'name' => 'Dầu thực vật Tường An Cooking Oil chai 1 lít',
                 'price' => '42000',
@@ -887,7 +887,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => ' Tường An',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 73,
                 'name' => 'Hạt nêm ngọt tôm thơm thịt Chinsu gói 800g',
                 'price' => '42000',
@@ -901,7 +901,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => ' Chinsu',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 74,
                 'name' => 'Nước chấm Nam Ngư Đệ Nhị chai 900ml',
                 'price' => '21000',
@@ -915,7 +915,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Nam Ngư',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 75,
                 'name' => 'Gia vị cà ri đỏ MaePranom gói 50g',
                 'price' => '16000',
@@ -929,7 +929,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'MaePranom',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 76,
                 'name' => 'Tương ớt Chinsu chai 250g',
                 'price' => '12500',
@@ -943,7 +943,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => ' Chinsu',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 77,
                 'name' => 'Nước tương đậu nành Maggi chai 700ml',
                 'price' => '26300',
@@ -957,7 +957,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Maggi',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 78,
                 'name' => 'Sốt mayonnaise Simply chai 230g',
                 'price' => '32800',
@@ -971,7 +971,7 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => 'Simply',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ], [
                 'id' => 79,
                 'name' => 'Muối ớt vàng cay dịu Queen Food chai 300ml',
                 'price' => '65000',
@@ -985,7 +985,8 @@ class ProductSeeder extends Seeder
                 'origin' => 'Việt Nam',
                 'brand' => ' Queen Food ',
                 'created_at' => Carbon::now()->addDays(1)
-            ],[
+            ],
+            [
                 'id' => 80,
                 'name' => 'Đường làm bánh Biên Hòa Pro gói 1kg',
                 'price' => '43800',
@@ -998,6 +999,231 @@ class ProductSeeder extends Seeder
                 'quantity' => 1,
                 'origin' => 'Việt Nam',
                 'brand' => 'Biên Hòa',
+                'created_at' => Carbon::now()->addDays(1)
+            ],
+            [
+                'id' => 81,
+                'name' => 'Nước giặt OMO Matic túi 4kg',
+                'price' => '195000',
+                'thumbnail' => 'http://vinhomesagent.com/wp-content/uploads/2021/02/B%E1%BB%99t-gi%E1%BA%B7t-OMO-h%E1%BB%87-b%E1%BB%8Dt-th%C3%B4ng-minh-6kg.jpg',
+                'category_id' => 8,
+                'stock' => 40,
+                'description' => 'OMO là thương hiệu bột giặt của tập đoàn Unilever, một trong những công ty đa quốc gia hàng đầu thế giới chuyên về các sản phẩm chăm sóc cá nhân, chăm sóc gia đình.',
+                'unit' => 6,
+                'images' => '',
+                'quantity' => 2,
+                'origin' => 'Việt Nam',
+                'brand' => 'OMO',
+                'created_at' => Carbon::now()->addDays(1)
+            ],
+            [
+                'id' => 82,
+                'name' => 'Nước rửa chén Sunlight matcha can 3,6kg',
+                'price' => '114000',
+                'thumbnail' => 'https://ptphucthinh.com/wp-content/uploads/2017/08/LAU-SAN-VIM-SUNLIGHT-4-KG-1.jpg',
+                'category_id' => 8,
+                'stock' => 30,
+                'description' => 'Nước rửa chén khử mùi tanh Sunlight matcha trà Nhật với công thức mới sạch cực nhanh, đánh bay dầu mỡ kể cả ở những vết bẩn cứng đầu nhất và sử dụng tốt với cả đồ dùng bằng nhựa. Sản phẩm giúp cho bát đĩa luôn sạch đẹp, sáng bóng, đồng thời lưu lại hương chanh và trà xanh Nhật Bản thơm dịu.',
+                'unit' => 3,
+                'images' => '',
+                'quantity' => 3,
+                'origin' => 'Việt Nam',
+                'brand' => 'Sunlight',
+                'created_at' => Carbon::now()->addDays(1)
+            ],
+            [
+                'id' => 83,
+                'name' => 'Nước tẩy toilet VinMart Home chai 900g',
+                'price' => '35000',
+                'thumbnail' => 'https://cdn.vinid.net/cdn-cgi/image/fit=scale-down,w=600,quality=75,f=auto/https://cdn-vincart.vinid.net/vm/product/8934954005311/16778099687454.jpg',
+                'category_id' => 8,
+                'stock' => 20,
+                'description' => 'Nước tẩy toilet VinMart Home chai 900g với công thức tẩy cực mạnh không chỉ tẩy sạch mọi vết bẩn cứng đầu bám dính lâu ngày, vết ố vàng mà còn tiêu diệt hoàn toàn các loại vi khuẩn lưu trú có hại cho sức khỏe.',
+                'unit' => 2,
+                'images' => '',
+                'quantity' => 1,
+                'origin' => 'Việt Nam',
+                'brand' => 'VinMart Home',
+                'created_at' => Carbon::now()->addDays(1)
+            ],
+            [
+                'id' => 84,
+                'name' => 'Bình xịt côn trùng Raid hương cam chanh 600ml',
+                'price' => '65500',
+                'thumbnail' => 'https://salt.tikicdn.com/cache/w1200/media/catalog/producttmp/d8/36/69/734208e07416e81acdc9efd7b00349ac.jpg',
+                'category_id' => 8,
+                'stock' => 15,
+                'description' => 'Sản phẩm còn có mùi hương cam chanh dễ chịu giúp diệt côn trùng hiệu quả, đồng thời mang lại hương thơm đặc trưng, không tạo mùi khó chịu như những loại bình xịt côn trùng thông thường.',
+                'unit' => 2,
+                'images' => '',
+                'quantity' => 1,
+                'origin' => 'Việt Nam',
+                'brand' => 'Raid',
+                'created_at' => Carbon::now()->addDays(1)
+            ],
+            [
+                'id' => 85,
+                'name' => 'Sáp thơm Glade hương trầm hương 180g',
+                'price' => '50000',
+                'thumbnail' => 'https://salt.tikicdn.com/ts/product/3f/f1/e4/92a7e72a92a5c77a86123156daf89346.jpg',
+                'category_id' => 8,
+                'stock' => 10,
+                'description' => 'Sáp thơm Glade trầm hương sâu lắng 180g có công thức đậm đặc giúp tỏa hương liên tục đến 30 ngày. Chỉ cần thao tác một vài bước đơn giản, sáp thơm Glade sẽ đem tới cho gia đình bạn một bầu không khí hoàn toàn khác biệt, tươi mới và đầy hưng phấn.',
+                'unit' => 2,
+                'images' => '',
+                'quantity' => 1,
+                'origin' => 'Thái Lan',
+                'brand' => 'Glade',
+                'created_at' => Carbon::now()->addDays(1)
+            ],
+            [
+                'id' => 86,
+                'name' => 'Nước rửa tay Lifebuoy chai 500g',
+                'price' => '65500',
+                'thumbnail' => 'https://cdn.tgdd.vn/Products/Images/2486/76495/bhx/nuoc-rua-tay-lifebuoy-bao-ve-vuot-troi-huong-tuoi-mat-chai-493ml-201811281333333487.jpg',
+                'category_id' => 9,
+                'stock' => 24,
+                'description' => 'Nước rửa tay Lifebuoy chứa các ion Bạc giúp loại bỏ vi khuẩn nhanh chóng và giữ cho bàn tay luôn sạch, bảo vệ khỏi vi khuẩn gây hại.',
+                'unit' => 6,
+                'images' => '',
+                'quantity' => 5,
+                'origin' => 'Thái Lan',
+                'brand' => 'Lifebuoy',
+                'created_at' => Carbon::now()->addDays(1)
+            ],
+            [
+                'id' => 87,
+                'name' => 'nước súc miệng Listerine Cool Mint 750ml',
+                'price' => '199000',
+                'thumbnail' => 'https://nhathuoc365.vn/upload_images/images/nuoc-suc-mieng-listerine-bac-ha-the-mat-750ml-201812030904014797.jpg',
+                'category_id' => 9,
+                'stock' => 40,
+                'description' => 'Nước súc miệng diệt khuẩn Listerine Cool Mint 750ml được sản xuất và đóng gói bởi thương hiệu Listerine – là một thương hiệu nước súc miệng sát trùng được hình thành từ năm 1914.',
+                'unit' => 6,
+                'images' => '',
+                'quantity' => 3,
+                'origin' => 'Thái Lan',
+                'brand' => 'Listerine',
+                'created_at' => Carbon::now()->addDays(1)
+            ],
+            [
+                'id' => 88,
+                'name' => 'Kem đánh răng Close up trắng sáng tự nhiên 230g',
+                'price' => '46000',
+                'thumbnail' => 'https://product.hstatic.net/1000126467/product/kem-danh-rang-close-up-trang-sang-dua-than-hoat-tinh-230g_6bb7a337ac6d46568c41f34616fd1c25_grande.jpg',
+                'category_id' => 9,
+                'stock' => 98,
+                'description' => 'Kem đánh răng Closeup trắng sáng tự nhiên 230G là sản phẩm kem đánh răng đầu tiên giúp răng trắng một cách tự nhiên chỉ trong 2 tuần với hương dừa đột phá.',
+                'unit' => 5,
+                'images' => '',
+                'quantity' => 1,
+                'origin' => 'Việt Nam',
+                'brand' => 'Close up',
+                'created_at' => Carbon::now()->addDays(1)
+            ],
+            [
+                'id' => 89,
+                'name' => 'Giấy vệ sinh cao cấp Silkwell 10 cuộn',
+                'price' => '79000',
+                'thumbnail' => 'https://product.hstatic.net/1000126467/product/untitled_1e90f3556332457eae2f7262f89affd3_grande.jpg',
+                'category_id' => 9,
+                'stock' => 250,
+                'description' => 'Giấy vệ sinh cao cấp Silkwell 10 cuộn.',
+                'unit' => 2,
+                'images' => '',
+                'quantity' => 2,
+                'origin' => 'Việt Nam',
+                'brand' => 'Silkwell',
+                'created_at' => Carbon::now()->addDays(1)
+            ],
+            [
+                'id' => 90,
+                'name' => 'Bàn chải đánh răng Sensodyne Repair & Protect Extra Soft',
+                'price' => '35500',
+                'thumbnail' => 'https://thucphamplaza.com/tpplaza_content/uploads/products_img/Sensodyne-Repair-and-Protect.jpg',
+                'category_id' => 9,
+                'stock' => 67,
+                'description' => 'Bàn chải đánh răng Sensodyne Repair & Protect Extra Soft thiết kế dành riêng cho răng ê buốt với bàn chải đặc biệt linh hoạt khi tiếp xúc với răng và nướu, giúp chải sạch hiệu quả mà vẫn nhẹ nhàng chăm sóc răng nhạy cảm.',
+                'unit' => 3,
+                'images' => '',
+                'quantity' => 6,
+                'origin' => 'United Kingdom',
+                'brand' => 'Sensodyne Repair',
+                'created_at' => Carbon::now()->addDays(1)
+            ],
+            [
+                'id' => 91,
+                'name' => 'Sữa bột Abbott Ensure Gold hương vani hộp 400g',
+                'price' => '346000',
+                'thumbnail' => 'https://minhcaumart.vn/media/com_eshop/products/image_5f2cfa1bb6fa0_8886451071378.jpg',
+                'category_id' => 10,
+                'stock' => 10,
+                'description' => 'Sữa bột dành dinh dưỡng dành cho người lớn Chắc hẳn sẽ chẳng có người dùng nào nghi ngờ về thành phần và chất lượng của Sữa bột Abbott Ensure Gold hương vani hộp 400g. Sữa cung cấp dinh dưỡng đầy đủ và cân đối, dùng thay thế hoàn toàn một bữa ăn hoặc bổ sung cho chế độ ăn hàng ngày.',
+                'unit' => 5,
+                'images' => '',
+                'quantity' => 1,
+                'origin' => 'Singapore',
+                'brand' => 'Ensure Gold',
+                'created_at' => Carbon::now()->addDays(1)
+            ],
+            [
+                'id' => 92,
+                'name' => 'Tã-bỉm quần Bobby XXL28/30 X4',
+                'price' => '239000',
+                'thumbnail' => 'https://cdn.concung.com/2020/10/45059-66012-large_mobile/bim-ta-quan-bobby-size-xxl-30-mieng.jpg',
+                'category_id' => 10,
+                'stock' => 25,
+                'description' => 'Sữa bột dành dinh dưỡng dành cho người lớn Chắc hẳn sẽ chẳng có người dùng nào nghi ngờ về thành phần và chất lượng của Sữa bột Abbott Ensure Gold hương vani hộp 400g. Sữa cung cấp dinh dưỡng đầy đủ và cân đối, dùng thay thế hoàn toàn một bữa ăn hoặc bổ sung cho chế độ ăn hàng ngày.',
+                'unit' => 1,
+                'images' => '',
+                'quantity' => 1,
+                'origin' => 'Việt Nam',
+                'brand' => 'Bobby',
+                'created_at' => Carbon::now()->addDays(1)
+            ],
+            [
+                'id' => 93,
+                'name' => 'Sữa đặc có đường Ông Thọ đỏ lon 380g',
+                'price' => '23500',
+                'thumbnail' => 'https://product.hstatic.net/1000288770/product/sua_dac_co_duong_ong_tho_do_lon_380g_07d52fa702dd43d28416584864a6d083_1024x1024.jpg',
+                'category_id' => 10,
+                'stock' => 67,
+                'description' => 'Sữa đặc có đường Ông Thọ ​ được sản xuất trên dây chuyền hiện đại, không chứa chất bảo quản độc hại cho người sử dụng. Sản phẩm thuộc thương hiệu nước giải khát nổi tiếng Vinamilk nên người dùng có thể hoàn toàn yên tâm về chất lượng.',
+                'unit' => 1,
+                'images' => '',
+                'quantity' => 1,
+                'origin' => 'Việt Nam',
+                'brand' => 'Vinamilk',
+                'created_at' => Carbon::now()->addDays(1)
+            ],
+            [
+                'id' => 94,
+                'name' => 'Sữa tắm tinh chất sữa và gạo Johnson & Johnson 500ml',
+                'price' => '118000',
+                'thumbnail' => 'https://www.johnsonsbaby.com.vn/sites/jbaby_vn/files/styles/product_image/public/jbaby-bath-milkrice-500ml-front.jpg',
+                'category_id' => 10,
+                'stock' => 21,
+                'description' => 'Sữa tắm tinh chất sữa và gạo Johnson Baby.',
+                'unit' => 2,
+                'images' => '',
+                'quantity' => 1,
+                'origin' => 'Malaysia',
+                'brand' => 'Johnson Baby',
+                'created_at' => Carbon::now()->addDays(1)
+            ],
+            [
+                'id' => 95,
+                'name' => 'Bàn chải đánh răng P/S trẻ em 2-6t',
+                'price' => '32000',
+                'thumbnail' => 'https://cdn-images.kiotviet.vn/alotaphoa/dfb96d7cb4ea4be1a491b2eabad7c2ce.jpg',
+                'category_id' => 10,
+                'stock' => 14,
+                'description' => 'Bàn chải đánh răng P/S trẻ em 2-6t.',
+                'unit' => 2,
+                'images' => '',
+                'quantity' => 1,
+                'origin' => 'Việt Name',
+                'brand' => 'P/S',
                 'created_at' => Carbon::now()->addDays(1)
             ],
         ]);
