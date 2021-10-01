@@ -10,14 +10,15 @@ class Notification extends Model
 {
     use HasFactory,SoftDeletes;
     protected $fillable = [
-        'sender_id',
-        'the_send',
+        'user_id',
+        'is_seen',
         'message',
-        'link'
+        'custom_url',
+        'order_id'
     ];
 
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class)->withTrashed();
     }
 
     public function order() {

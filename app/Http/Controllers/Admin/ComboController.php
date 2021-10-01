@@ -55,7 +55,7 @@ class ComboController extends Controller
     public function update($id)
     {
         $product = Product::query()->orderBy('name', 'asc')->get();
-        $data = Combo::find($id);
+        $data = Combo::query()->where('id', $id)->firstOrFail();
         $combo_detail = ComboDetail::query()->where('combo_id',$id)->get();
         return view('Admin.Combo.form', [
             'title' => 'Combos',
@@ -67,7 +67,7 @@ class ComboController extends Controller
     }
     public function save(ComboRequest $request,$id)
     {
-        $combo = Combo::find($id);
+        $combo = Combo::query()->where('id', $id)->firstOrFail();
         $combo->update($request->validated());
         $combo->save();
         ComboDetail::query()->where('combo_id',$id)->delete();
@@ -82,7 +82,7 @@ class ComboController extends Controller
     }
     public function destroy($id)
     {
-        $combo = Combo::find($id);
+        $combo = Combo::query()->where('id', $id)->firstOrFail();
         $combo->delete();
         ComboDetail::query()->where('combo_id',$id)->delete();
         return redirect()->route('comboList')->with('message','Xóa thành công sản phẩm dùng '.$combo->name);

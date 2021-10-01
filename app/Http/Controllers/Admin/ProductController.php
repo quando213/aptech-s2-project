@@ -57,7 +57,7 @@ class ProductController extends Controller
 
     public function save(ProductRequest $request, $id)
     {
-        $product = Product::find($id);
+        $product = Product::query()->where('id', $id)->firstOrFail();
         $product->update($request->validated());
         $product->save();
         return redirect()->route('productList')
@@ -67,7 +67,7 @@ class ProductController extends Controller
 
     public function update($id)
     {
-        $data = Product::find($id);
+        $data = Product::query()->where('id', $id)->firstOrFail();
         $categories = Category::query()->orderBy('name')->get();
         return view('Admin.Product.form', [
             'categories' => $categories,
@@ -77,14 +77,14 @@ class ProductController extends Controller
 
     public function destroy($id)
     {
-        $product = Product::find($id);
+        $product = Product::query()->where('id', $id)->firstOrFail();
         $product->delete();
         return redirect()->route('productList')->with('message', 'Xóa thành công sản phẩm ' . $product->name);
     }
 
     public function apiCheck($id)
     {
-        $product = Product::find($id);
+        $product = Product::query()->where('id', $id)->firstOrFail();
         return $product;
     }
 }

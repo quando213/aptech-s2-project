@@ -18,7 +18,7 @@ class Group extends Model
     ];
 
     public function ward(){
-       return $this->belongsTo(Ward::class,'ward_id');
+       return $this->belongsTo(Ward::class);
     }
 
     public function users(){

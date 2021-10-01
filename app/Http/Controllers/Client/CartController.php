@@ -15,7 +15,7 @@ class CartController extends Controller
 {
     public function add(Request $request)
     {
-        $product = Product::find($request->input('product_id'));
+        $product = Product::query()->where('id', $request->input('product_id'))->firstOrFail();
         $quantity = $request->input('quantity');
         Cart::add($product->id, $product->name, $quantity, $product->price, 100, ['thumbnail' => $product->thumbnail]);
         return response()->json([

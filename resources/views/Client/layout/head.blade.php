@@ -1,7 +1,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Gsore | Grocery and Organic Food Shop HTML Template</title>
+    <title>DCH | Đi Chợ Hộ Hà Nội</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
