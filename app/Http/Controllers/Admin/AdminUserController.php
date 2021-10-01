@@ -68,7 +68,7 @@ class AdminUserController extends Controller
 
     public function update($id)
     {
-        $data = User::find($id);
+        $data = User::query()->where('id', $id)->firstOrFail();
         $districts = District::query()->orderBy('name')->get();
         $wards = Ward::where('district_id', $data->district_id)->get();
         $groups = Group::query()->orderBy('name')->get();
@@ -92,7 +92,7 @@ class AdminUserController extends Controller
 
     public function save(AdminUpdateUserRequest $request, $id)
     {
-        $user = User::find($id);
+        $user = User::query()->where('id', $id)->firstOrFail();
         $user->update($request->validated());
         $user->save();
         return redirect()->route('userList', ['role' => $request['role']])
@@ -101,7 +101,7 @@ class AdminUserController extends Controller
 
     public function destroy($id)
     {
-        $user = User::find($id);
+        $user = User::query()->where('id', $id)->firstOrFail();
         $role = $user['role'];
         $user->delete();
         return redirect()->route('userList', ['role' => $role])

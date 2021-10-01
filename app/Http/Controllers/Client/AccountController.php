@@ -32,7 +32,7 @@ class AccountController extends Controller
 
     public function updateAccount(UpdateAccountRequest $account)
     {
-        $user = User::find(Auth::id());
+        $user = User::query()->where('id', Auth::id())->firstOrFail();
         $data = $account->validated();
         if ($data['password'] && Hash::check($data['password_current'], $user->password)) {
             $data['password'] = Hash::make($data['password']);

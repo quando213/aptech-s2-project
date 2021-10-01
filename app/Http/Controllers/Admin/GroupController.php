@@ -61,7 +61,7 @@ class GroupController extends Controller
 
     public function update($id)
     {
-        $data = Group::find($id);
+        $data = Group::query()->where('id', $id)->firstOrFail();
         $districts = District::query()->orderBy('name')->get();
         $wards = $data->ward->district->wards;
         return view('Admin.Group.form',[
@@ -73,7 +73,7 @@ class GroupController extends Controller
 
     public function save($id, GroupRequest $request)
     {
-        $group = Group::find($id);
+        $group = Group::query()->where('id', $id)->firstOrFail();
         $data = $request->validated();
         $group->update($data);
         $group->save();
@@ -82,7 +82,7 @@ class GroupController extends Controller
 
     public function destroy($id)
     {
-        $group = Group::find($id);
+        $group = Group::query()->where('id', $id)->firstOrFail();
         $group->delete();
         return redirect()->route('groupList')->with('message','Xóa thành công nhóm '.$group->name);
     }

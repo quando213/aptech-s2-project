@@ -226,7 +226,7 @@ class  OrderController extends Controller
         }
         $secureHash = hash_hmac('sha512', $hashData, $vnp_HashSecret);
         $vnp_Amount = $inputData['vnp_Amount'] / 100;
-        $order = Order::find($request->vnp_TxnRef);
+        $order = Order::query()->where('id', $request->vnp_TxnRef)->firstOrFail();
         $floatVar = floatval(preg_replace("/[^-0-9\.]/", "", $order->total_price));
         try {
             if ($secureHash === $vnp_SecureHash) {

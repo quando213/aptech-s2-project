@@ -46,7 +46,7 @@ class ClientProductController extends Controller
 
     public function detail($id)
     {
-        $product = Product::find($id);
+        $product = Product::query()->where('id', $id)->firstOrFail();
         $related_products = Product::query()
             ->where('category_id', $product->category_id)
             ->where('stock', '>', 0)

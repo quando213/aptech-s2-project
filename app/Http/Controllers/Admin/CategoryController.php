@@ -46,7 +46,7 @@ class CategoryController extends Controller
 
     public function save(CategoryRequest $request, $id)
     {
-        $category = Category::find($id);
+        $category = Category::query()->where('id', $id)->firstOrFail();
         $category->update($request->validated());
         $category->save();
         return redirect()->route('categoryList')->with('message', 'Sửa thành công danh mục ' . $category->name);
@@ -54,7 +54,7 @@ class CategoryController extends Controller
 
     public function update($id)
     {
-        $data = Category::find($id);
+        $data = Category::query()->where('id', $id)->firstOrFail();
         return view('Admin.Category.form', [
             'data' => $data
         ]);
@@ -62,7 +62,7 @@ class CategoryController extends Controller
 
     public function destroy($id)
     {
-        $category = Category::find($id);
+        $category = Category::query()->where('id', $id)->firstOrFail();
         $category->delete();
         return redirect()->route('categoryList')->with('message', 'Xóa thành công danh mục ' . $category->name);
     }
