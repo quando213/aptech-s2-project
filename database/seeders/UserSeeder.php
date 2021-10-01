@@ -22,7 +22,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         DB::table('users')->truncate();
         DB::table('users')->insert([
             [
@@ -347,33 +346,34 @@ class UserSeeder extends Seeder
             ],
 
         ]);
-        $faker = Faker::create();
-        for ($i = 1; $i <= 50; $i++) {
-            $random = random_int(1, 30);
-            $last_names = ['Nguyễn', 'Trần', 'Đỗ', 'Trần', 'Bùi', 'Vương', 'Nguyễn', 'Lê', 'Đào', 'Ngô',
-                'Nguyễn', 'Trần', 'Đỗ', 'Trần', 'Bùi', 'Vương', 'Nguyễn', 'Lê', 'Đào', 'Ngô',
-                'Nguyễn', 'Trần', 'Đỗ', 'Trần', 'Bùi', 'Vương', 'Nguyễn', 'Lê', 'Đào', 'Ngô'];
-            $first_names =  ['Nguyễn', 'Trần', 'Đỗ', 'Thọ', 'Bùi', 'Vương', 'Nhật', 'Lê', 'Đào', 'Ngô',
-                'Thị', 'Thành', 'Phương', 'Hinh', 'Lâm', 'Lực', 'Điền', 'Hoàng', 'Vũ', 'Hồ',
-                'Tùng', 'Cúc', 'Trúc', 'Mai', 'Xuân', 'Hạ', 'Thu', 'Đông', 'Long', 'Lân', 'Quy'
-            ];
-            User::create(
-                [
-                    'first_name' => $first_names[random_int(0, 30)] . ' ' . $first_names[random_int(0, 30)],
-                    'last_name' => $last_names[random_int(0, 29)],
-                    'email' => $faker->email,
-                    'password' => Hash::make('123456'),
-                    'district_id' => $random,
-                    'ward_id' => (Ward::query()->where('district_id', $random)->first())->id,
-                    'street' => $i . ' ' . Ward::query()->where('id', $i)->first()->name,
-                    'phone' => '0' . random_int(310000000, 999999999),
-                    'role' => UserRole::USER,
-                    'group_id' => null,
-                    'position' => null,
-                    'created_at' => Carbon::now()->addDays(-$i),
-                    'updated_at' => Carbon::now()->addDays(-$i),]
-            );
-        }
+//        $faker = Faker::create();
+//        for ($i = 1; $i <= 50; $i++) {
+//            $random = random_int(1, 30);
+//            $last_names = ['Nguyễn', 'Trần', 'Đỗ', 'Trần', 'Bùi', 'Vương', 'Nguyễn', 'Lê', 'Đào', 'Ngô',
+//                'Nguyễn', 'Trần', 'Đỗ', 'Trần', 'Bùi', 'Vương', 'Nguyễn', 'Lê', 'Đào', 'Ngô',
+//                'Nguyễn', 'Trần', 'Đỗ', 'Trần', 'Bùi', 'Vương', 'Nguyễn', 'Lê', 'Đào', 'Ngô'];
+//            $first_names =  ['Nguyễn', 'Trần', 'Đỗ', 'Thọ', 'Bùi', 'Vương', 'Nhật', 'Lê', 'Đào', 'Ngô',
+//                'Thị', 'Thành', 'Phương', 'Hinh', 'Lâm', 'Lực', 'Điền', 'Hoàng', 'Vũ', 'Hồ',
+//                'Tùng', 'Cúc', 'Trúc', 'Mai', 'Xuân', 'Hạ', 'Thu', 'Đông', 'Long', 'Lân', 'Quy'
+//            ];
+//            User::create(
+//                [
+//                    'id' => 20 + $i,
+//                    'first_name' => $first_names[random_int(0, 30)] . ' ' . $first_names[random_int(0, 30)],
+//                    'last_name' => $last_names[random_int(0, 29)],
+//                    'email' => $faker->email,
+//                    'password' => Hash::make('123456'),
+//                    'district_id' => $random,
+//                    'ward_id' => (Ward::query()->where('district_id', $random)->first())->id,
+//                    'street' => $i . ' ' . Ward::query()->where('id', $i)->first()->name,
+//                    'phone' => '0' . random_int(310000000, 999999999),
+//                    'role' => UserRole::USER,
+//                    'group_id' => null,
+//                    'position' => null,
+//                    'created_at' => Carbon::now()->addDays(-$i),
+//                    'updated_at' => Carbon::now()->addDays(-$i),]
+//            );
+//        }
         $faker = Faker::create();
         for ($i = 1; $i <= 579; $i++) {
             $random = random_int(1, 30);
@@ -386,6 +386,7 @@ class UserSeeder extends Seeder
                 ];
             User::create(
                 [
+                    'id' => 20 + $i,
                     'first_name' => $first_names[random_int(0, 30)] . ' ' . $first_names[random_int(0, 30)],
                     'last_name' => $last_names[random_int(0, 29)],
                     'email' => $faker->email,
@@ -400,24 +401,6 @@ class UserSeeder extends Seeder
                     'created_at' => Carbon::now()->addDays(-$i),
                     'updated_at' => Carbon::now()->addDays(-$i),]
             );
-            if (random_int(0, 5) > 3) {
-                User::create(
-                    [
-                        'first_name' => $first_names[random_int(0, 30)] . ' ' . $first_names[random_int(0, 30)],
-                        'last_name' => $last_names[random_int(0, 29)],
-                        'email' => $faker->email,
-                        'password' => Hash::make('123456'),
-                        'district_id' => $random,
-                        'ward_id' => Ward::query()->where('district_id', $random)->first()->id,
-                        'street' => $i . ' ' . Ward::query()->where('id', $i)->first()->name,
-                        'phone' => '0' . random_int(310000000, 999999999),
-                        'role' => UserRole::SHIPPER,
-                        'group_id' => $i,
-                        'position' => 'Hạ sĩ',
-                        'created_at' => Carbon::now()->addDays(-$i),
-                        'updated_at' => Carbon::now()->addDays(-$i),]
-                );
-            }
         }
     }
 }

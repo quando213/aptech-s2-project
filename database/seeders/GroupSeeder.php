@@ -17,7 +17,7 @@ class GroupSeeder extends Seeder
      */
     public function run()
     {
-        $array = ['Trung Đoàn','Đại đội','Trung đội','Tiểu đội','Tiểu Đoàn','Sư đội','Phân đội','Tổ đội'];
+        $array = ['Trung đoàn','Đại đội','Trung đội','Tiểu đội','Tiểu đoàn','Sư đội','Phân đội','Tổ đội'];
         for ($i = 1 ; $i <= 579; $i++){
             $type = $array[random_int(0,7)];
             Group::create([

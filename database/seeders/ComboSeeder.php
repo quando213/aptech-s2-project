@@ -15,7 +15,6 @@ class ComboSeeder extends Seeder
      */
     public function run()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         DB::table('combos')->truncate();
         DB::table('combos')->insert([
             [
@@ -98,6 +97,5 @@ class ComboSeeder extends Seeder
                 'created_at' => Carbon::now()->addDays(-1),
             ],
         ]);
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }
