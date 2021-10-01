@@ -24,7 +24,6 @@ class OrderSeeder extends Seeder
      */
     public function run()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         DB::table('orders')->truncate();
         DB::table('orders')->insert([
             [
@@ -179,10 +178,11 @@ class OrderSeeder extends Seeder
             ],
 
         ]);
-        for ($i = 100; $i >=0; $i--) {
+        $count_id = 11;
+        for ($i = 40; $i >=0; $i--) {
             Cart::destroy();
             $random = random_int(30, 80);
-            $randomUser = random_int(9, 70);
+            $randomUser = random_int(9, 20);
             $randomDistrict = random_int(1, 30);
             $randomQuantity = random_int(1, 10);
             for ($j = 1; $j <= random_int(2, 5); $j++) {
@@ -191,6 +191,7 @@ class OrderSeeder extends Seeder
                 Cart::add($product->id, $product->name, $quantity, $product->price, 100, ['thumbnail' => $product->thumbnail]);
             }
             $order = new Order();
+            $order->id = $count_id++;
             $order->shipping_name = User::find($randomUser)->first_name . " " . User::find($randomUser)->last_name;
             $order->shipping_phone = '0' . random_int(310000000, 999999999);
             $order->paid_at = Carbon::now('Asia/Ho_Chi_Minh');
@@ -215,10 +216,10 @@ class OrderSeeder extends Seeder
                 $order_detail->save();
             }
         }
-        for ($i = 90; $i >=0; $i--) {
+        for ($i = 35; $i >=0; $i--) {
             Cart::destroy();
             $random = random_int(30, 80);
-            $randomUser = random_int(9, 70);
+            $randomUser = random_int(9, 20);
             $randomDistrict = random_int(1, 30);
             $randomQuantity = random_int(1, 10);
             for ($j = 1; $j <= random_int(2, 5); $j++) {
@@ -227,6 +228,7 @@ class OrderSeeder extends Seeder
                 Cart::add($product->id, $product->name, $quantity, $product->price, 100, ['thumbnail' => $product->thumbnail]);
             }
             $order = new Order();
+            $order->id = $count_id++;
             $order->shipping_name = User::find($randomUser)->first_name . "" . User::find($randomUser)->last_name;
             $order->shipping_phone = '0' . random_int(310000000, 999999999);
             $order->paid_at = Carbon::now('Asia/Ho_Chi_Minh')->addDays(-1);
@@ -251,10 +253,10 @@ class OrderSeeder extends Seeder
                 $order_detail->save();
             }
         }
-        for ($i = 85; $i >=0; $i--) {
+        for ($i = 30; $i >=0; $i--) {
             Cart::destroy();
             $random = random_int(30, 80);
-            $randomUser = random_int(9, 70);
+            $randomUser = random_int(9, 20);
             $randomDistrict = random_int(1, 30);
             $randomQuantity = random_int(1, 10);
             for ($j = 1; $j <= random_int(2, 5); $j++) {
@@ -263,6 +265,7 @@ class OrderSeeder extends Seeder
                 Cart::add($product->id, $product->name, $quantity, $product->price, 100, ['thumbnail' => $product->thumbnail]);
             }
             $order = new Order();
+            $order->id = $count_id++;
             $order->shipping_name = User::find($randomUser)->first_name . "" . User::find($randomUser)->last_name;
             $order->shipping_phone = '0' . random_int(310000000, 999999999);
             $order->paid_at = Carbon::now('Asia/Ho_Chi_Minh')->addDays(-2);
@@ -287,10 +290,10 @@ class OrderSeeder extends Seeder
                 $order_detail->save();
             }
         }
-        for ($i = 60; $i >=0; $i--) {
+        for ($i = 25; $i >=0; $i--) {
             Cart::destroy();
             $random = random_int(30, 80);
-            $randomUser = random_int(9, 70);
+            $randomUser = random_int(9, 20);
             $randomDistrict = random_int(1, 30);
             $randomQuantity = random_int(1, 10);
             for ($j = 1; $j <= random_int(2, 5); $j++) {
@@ -299,6 +302,7 @@ class OrderSeeder extends Seeder
                 Cart::add($product->id, $product->name, $quantity, $product->price, 100, ['thumbnail' => $product->thumbnail]);
             }
             $order = new Order();
+            $order->id = $count_id++;
             $order->shipping_name = User::find($randomUser)->first_name . "" . User::find($randomUser)->last_name;
             $order->shipping_phone = '0' . random_int(310000000, 999999999);
             $order->paid_at = Carbon::now('Asia/Ho_Chi_Minh')->addDays(-3);
@@ -323,10 +327,10 @@ class OrderSeeder extends Seeder
                 $order_detail->save();
             }
         }
-        for ($i = 50; $i >=0; $i--) {
+        for ($i = 18; $i >=0; $i--) {
             Cart::destroy();
             $random = random_int(30, 80);
-            $randomUser = random_int(9, 70);
+            $randomUser = random_int(9, 20);
             $randomDistrict = random_int(1, 30);
             $randomQuantity = random_int(1, 10);
             for ($j = 1; $j <= random_int(2, 5); $j++) {
@@ -335,6 +339,7 @@ class OrderSeeder extends Seeder
                 Cart::add($product->id, $product->name, $quantity, $product->price, 100, ['thumbnail' => $product->thumbnail]);
             }
             $order = new Order();
+            $order->id = $count_id++;
             $order->shipping_name = User::find($randomUser)->first_name . "" . User::find($randomUser)->last_name;
             $order->shipping_phone = '0' . random_int(310000000, 999999999);
             $order->paid_at = Carbon::now('Asia/Ho_Chi_Minh')->addDays(-4);
@@ -360,10 +365,10 @@ class OrderSeeder extends Seeder
             }
         }
 
-        for ($i = 35; $i >=0; $i--) {
+        for ($i = 12; $i >=0; $i--) {
             Cart::destroy();
             $random = random_int(30, 80);
-            $randomUser = random_int(9, 70);
+            $randomUser = random_int(9, 20);
             $randomDistrict = random_int(1, 30);
             $randomQuantity = random_int(1, 10);
             for ($j = 1; $j <= random_int(2, 5); $j++) {
@@ -372,6 +377,7 @@ class OrderSeeder extends Seeder
                 Cart::add($product->id, $product->name, $quantity, $product->price, 100, ['thumbnail' => $product->thumbnail]);
             }
             $order = new Order();
+            $order->id = $count_id++;
             $order->shipping_name = User::find($randomUser)->first_name . "" . User::find($randomUser)->last_name;
             $order->shipping_phone = '0' . random_int(310000000, 999999999);
             $order->paid_at = Carbon::now('Asia/Ho_Chi_Minh')->addDays(-5);
@@ -396,10 +402,10 @@ class OrderSeeder extends Seeder
                 $order_detail->save();
             }
         }
-        for ($i = 30; $i >=0; $i--) {
+        for ($i = 10; $i >=0; $i--) {
             Cart::destroy();
             $random = random_int(30, 80);
-            $randomUser = random_int(9, 70);
+            $randomUser = random_int(9, 20);
             $randomDistrict = random_int(1, 30);
             $randomQuantity = random_int(1, 10);
             for ($j = 1; $j <= random_int(2, 5); $j++) {
@@ -408,6 +414,7 @@ class OrderSeeder extends Seeder
                 Cart::add($product->id, $product->name, $quantity, $product->price, 100, ['thumbnail' => $product->thumbnail]);
             }
             $order = new Order();
+            $order->id = $count_id++;
             $order->shipping_name = User::find($randomUser)->first_name . "" . User::find($randomUser)->last_name;
             $order->shipping_phone = '0' . random_int(310000000, 999999999);
             $order->paid_at = Carbon::now('Asia/Ho_Chi_Minh')->addDays(-6);
@@ -436,7 +443,7 @@ class OrderSeeder extends Seeder
         for ($i = 7; $i <= 108; $i++) {
             Cart::destroy();
             $random = random_int(30, 80);
-            $randomUser = random_int(9, 70);
+            $randomUser = random_int(9, 20);
             $randomDistrict = random_int(1, 30);
             $randomQuantity = random_int(1, 10);
             for ($h = 10; $h >= 0; $h--){
@@ -447,6 +454,7 @@ class OrderSeeder extends Seeder
                 }
 
                 $order = new Order();
+                $order->id = $count_id++;
                 $order->shipping_name = User::find($randomUser)->first_name . "" . User::find($randomUser)->last_name;
                 $order->shipping_phone = '0' . random_int(310000000, 999999999);
                 $order->paid_at = Carbon::now('Asia/Ho_Chi_Minh')->addDays(-$i);
@@ -472,7 +480,7 @@ class OrderSeeder extends Seeder
                 }
                 Cart::destroy();
                 $random = random_int(30, 80);
-                $randomUser = random_int(9, 70);
+                $randomUser = random_int(9, 20);
                 $randomDistrict = random_int(1, 30);
                 $randomQuantity = random_int(1, 10);
                 for ($j = 1; $j <= random_int(2, 5); $j++) {
@@ -481,6 +489,7 @@ class OrderSeeder extends Seeder
                     Cart::add($product->id, $product->name, $quantity, $product->price, 100, ['thumbnail' => $product->thumbnail]);
                 }
                 $order = new Order();
+                $order->id = $count_id++;
                 $order->shipping_name = User::find($randomUser)->first_name . "" . User::find($randomUser)->last_name;
                 $order->shipping_phone = '0' . random_int(310000000, 999999999);
                 $order->paid_at = Carbon::now('Asia/Ho_Chi_Minh')->addDays(-$i)->hours(-3);
