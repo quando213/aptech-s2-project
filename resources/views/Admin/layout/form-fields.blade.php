@@ -7,7 +7,7 @@
                      col="{{ $field['col'] ?? 0 }}"
                      placeholder="{{ $field['placeholder'] ?? '' }}"
                      type="{{ $field['type'] ?? 'text' }}"
-                     value="{{ $field['value'] ?? ((!array_key_exists('type', $field) || $field['type'] != 'password') && isset($data) && $data && $data[$field['name']] ? $data[$field['name']] : '') }}"
+                     value="{{ $field['value'] ?? old($field['name']) ?? ((!array_key_exists('type', $field) || $field['type'] != 'password') && isset($data) && $data[$field['name']] ? $data[$field['name']] : '') }}"
             ></x-input>
             @break
 

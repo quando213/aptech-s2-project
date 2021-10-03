@@ -14,6 +14,8 @@ class DistrictWardSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('districts')->truncate();
+        DB::table('wards')->truncate();
         $path = './database/seeders/countries.sql';
         DB::unprepared(file_get_contents($path));
     }
