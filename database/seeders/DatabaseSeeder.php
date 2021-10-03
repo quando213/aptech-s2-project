@@ -14,8 +14,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('districts')->truncate();
-        DB::table('wards')->truncate();
         $this->call([
             DistrictWardSeeder::class,
             CategorySeeder::class,
